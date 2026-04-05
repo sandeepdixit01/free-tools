@@ -1,0 +1,185 @@
+/**
+ * ControlPanel Styles
+ * Reusable control panel styles
+ */
+
+.control-panel {
+  width: 100%;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.control-panel-header {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control-panel-header.collapsible {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.control-panel-header.collapsible:hover {
+  background: #f0f2f5;
+}
+
+.control-panel-header-content {
+  flex: 1;
+}
+
+.control-panel-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 0.25rem 0;
+}
+
+.control-panel-subtitle {
+  font-size: 0.95rem;
+  color: #718096;
+  margin: 0;
+}
+
+.control-panel-toggle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #cbd5e0;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-panel-toggle:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.control-panel-content {
+  padding: 1.5rem;
+}
+
+.control-panel-content.control-panel-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.control-panel-content.control-panel-horizontal {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.control-panel-actions {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.control-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-action.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.control-action.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.control-action.secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.control-action.secondary:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.control-action.danger {
+  background: #e53e3e;
+  color: white;
+}
+
+.control-action.danger:hover:not(:disabled) {
+  background: #c53030;
+}
+
+.control-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-icon {
+  font-size: 1.125rem;
+}
+
+.action-text {
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .control-panel-header {
+    padding: 1rem;
+  }
+
+  .control-panel-title {
+    font-size: 1.125rem;
+  }
+
+  .control-panel-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .control-panel-content {
+    padding: 1rem;
+  }
+
+  .control-panel-content.control-panel-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .control-panel-actions {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .control-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

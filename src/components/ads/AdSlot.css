@@ -1,0 +1,95 @@
+/* AdSlot Component Styles (Refactored) */
+
+.ad-slot-wrapper {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Position-specific styles */
+.ad-slot-position-top-banner {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ad-slot-position-below-hero {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ad-slot-position-mid-content {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.ad-slot-position-bottom-banner {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* AdSense container (future) */
+.ad-slot-adsense {
+  width: 100%;
+  max-width: 728px;
+  min-height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+  border-radius: 8px;
+  position: relative;
+}
+
+.ad-slot-loading {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ad-slot-wrapper {
+    margin: 1.5rem 0;
+  }
+
+  .ad-slot-position-top-banner {
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ad-slot-position-below-hero {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ad-slot-position-mid-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .ad-slot-position-bottom-banner {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ad-slot-adsense {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ad-slot-wrapper {
+    margin: 1rem 0;
+  }
+
+  .ad-slot-position-top-banner,
+  .ad-slot-position-below-hero,
+  .ad-slot-position-mid-content,
+  .ad-slot-position-bottom-banner {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
