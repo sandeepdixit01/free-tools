@@ -1,0 +1,197 @@
+.ad-slot {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.ad-label {
+  font-size: 0.625rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.ad-content {
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.ad-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* Banner type - horizontal (full width, fixed height) */
+.ad-slot-banner {
+  height: 180px;
+  max-width: 728px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f3f4f6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ad-slot-banner .ad-label {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+.ad-slot-banner .ad-content {
+  height: 100%;
+}
+
+.ad-slot-banner .ad-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 8px;
+}
+
+/* Native Tool Card Style - matches ToolCard.css exactly */
+.ad-slot-native {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.ad-slot-native:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.ad-slot-native:active {
+  transform: translateY(0);
+}
+
+.ad-label-native {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.5625rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.ad-tool-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.ad-tool-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.ad-tool-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ad-tool-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.ad-tool-feature {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ad-tool-cta {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .ad-slot {
+    margin: 0;
+    padding: 0;
+  }
+
+  .ad-slot-banner {
+    max-width: 100%;
+  }
+
+  .ad-slot-rectangle {
+    max-width: 100%;
+  }
+
+  .ad-content {
+    font-size: 0.875rem;
+  }
+
+  .ad-label {
+    font-size: 0.5625rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ad-slot-banner {
+    max-width: 100%;
+  }
+}
+
+/* Hover effect - subtle */
+.ad-slot:hover {
+  opacity: 0.95;
+}
+
+/* Ready for AdSense injection */
+.ad-slot[data-ad-loaded="true"] {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.ad-slot[data-ad-loaded="true"] .ad-label,
+.ad-slot[data-ad-loaded="true"] .ad-content {
+  display: none;
+}
+

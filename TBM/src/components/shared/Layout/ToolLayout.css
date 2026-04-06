@@ -1,0 +1,126 @@
+/**
+ * ToolLayout Styles
+ * Base styles for tool page layout
+ */
+
+.tool-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-layout-section {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.tool-layout-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 1rem;
+}
+
+.tool-layout-main {
+  background: #f8f9fa;
+  padding: 2rem 1rem;
+  flex: 1;
+}
+
+.tool-layout-features {
+  background: white;
+  padding: 3rem 1rem;
+}
+
+.tool-layout-howto {
+  background: #f8f9fa;
+  padding: 3rem 1rem;
+}
+
+.tool-layout-seo {
+  background: white;
+  padding: 3rem 1rem;
+}
+
+.tool-layout-trust {
+  background: #f8f9fa;
+  padding: 2rem 1rem;
+}
+
+.tool-layout-faq {
+  background: white;
+  padding: 3rem 1rem;
+}
+
+.tool-layout-ad-slot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+.tool-layout-ad-top {
+  margin-bottom: 1rem;
+}
+
+.tool-layout-ad-after-result {
+  margin: 2rem 0;
+}
+
+.tool-layout-ad-mid-content {
+  margin: 2rem 0;
+}
+
+.tool-layout-ad-bottom {
+  margin-top: 1rem;
+}
+
+.tool-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Tool Content Area */
+.tool-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Privacy Notice */
+.privacy-notice {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: #1565c0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tool-layout-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .tool-layout-hero {
+    padding: 2rem 0.75rem;
+  }
+
+  .tool-layout-main {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .tool-container {
+    padding: 0 0.75rem;
+  }
+}
+

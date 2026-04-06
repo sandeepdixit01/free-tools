@@ -1,0 +1,261 @@
+/**
+ * All Tools Page Styles
+ * Responsive design for tools listing page
+ */
+
+.all-tools-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Hero Section */
+.all-tools-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Page Ad - After Hero */
+.page-ad-top {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f8fafc;
+}
+
+/* Intro Section */
+.all-tools-intro {
+  padding: 60px 20px;
+  background-color: white;
+}
+
+.all-tools-intro .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.all-tools-intro h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e293b;
+  text-align: center;
+}
+
+.all-tools-intro p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+/* Category Sections */
+.all-tools-categories {
+  padding: 60px 20px;
+}
+
+.category-section {
+  margin-bottom: 80px;
+}
+
+.category-section:last-child {
+  margin-bottom: 0;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.category-description {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tools Grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* Features Section */
+.all-tools-features {
+  padding: 60px 20px;
+  background-color: white;
+}
+
+/* Use Cases Section */
+.all-tools-use-cases {
+  padding: 60px 20px;
+}
+
+/* FAQ Section */
+.all-tools-faq {
+  padding: 60px 20px;
+  background-color: white;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .category-title {
+    font-size: 2rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-tools-hero {
+    padding: 60px 20px 40px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .all-tools-intro {
+    padding: 40px 20px;
+  }
+
+  .all-tools-intro h2 {
+    font-size: 1.75rem;
+  }
+
+  .all-tools-intro p {
+    font-size: 1rem;
+  }
+
+  .all-tools-categories {
+    padding: 40px 20px;
+  }
+
+  .category-section {
+    margin-bottom: 60px;
+  }
+
+  .category-header {
+    margin-bottom: 30px;
+  }
+
+  .category-title {
+    font-size: 1.75rem;
+  }
+
+  .category-description {
+    font-size: 1rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .category-ad {
+    margin: 40px 0;
+  }
+
+  .all-tools-features,
+  .all-tools-use-cases,
+  .all-tools-faq {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-tools-hero {
+    padding: 40px 16px 30px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .all-tools-intro {
+    padding: 30px 16px;
+  }
+
+  .all-tools-intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .all-tools-categories {
+    padding: 30px 16px;
+  }
+
+  .category-section {
+    margin-bottom: 50px;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+
+  .category-description {
+    font-size: 0.9375rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .all-tools-features,
+  .all-tools-use-cases,
+  .all-tools-faq {
+    padding: 30px 16px;
+  }
+}
+

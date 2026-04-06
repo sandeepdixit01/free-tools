@@ -1,0 +1,59 @@
+.tool-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tool-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.tool-card:active {
+  transform: translateY(0);
+}
+
+.tool-card-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.tool-card-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tool-card-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .tool-card {
+    padding: 1.25rem;
+  }
+  
+  .tool-card-icon {
+    font-size: 1.75rem;
+  }
+  
+  .tool-card-name {
+    font-size: 1rem;
+  }
+  
+  .tool-card-description {
+    font-size: 0.8125rem;
+  }
+}
+
