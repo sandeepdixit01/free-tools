@@ -4,7 +4,8 @@
  *
  * FEATURES:
  * - Config-driven design
- * - Dynamic tool filtering from registry
+ * - Dynamic tool filtering from central data
+ * - Only shows ACTIVE tools
  * - Reuses existing components (ToolHero, SEOContent, FAQ)
  * - Empty state handling
  * - Bilingual support
@@ -28,8 +29,8 @@ import ToolGrid from '../components/home/ToolGrid'
 import AdSlot from '../components/ads/AdSlot'
 import { AD_POSITIONS } from '../configs/adPositions'
 
-// Tool Registry
-import { getToolsByCategory } from '../configs/toolRegistry'
+// Central Tool Data
+import { getToolsByCategory } from '../data/tools'
 
 // Styles
 import './CategoryPage.css'
@@ -47,9 +48,9 @@ const CategoryPage = ({ categoryConfig }) => {
   const seoContent = categoryConfig.seoContent?.[language] || categoryConfig.seoContent?.en || {}
   const faq = categoryConfig.faq?.[language] || categoryConfig.faq?.en || {}
 
-  // Filter tools by category from registry
+  // Filter tools by category - only active tools
   const categoryTools = useMemo(() => {
-    return getToolsByCategory(categoryConfig.id)
+    return getToolsByCategory(categoryConfig.id, true) // activeOnly = true
   }, [categoryConfig.id])
 
   // Get title for tools section from config
@@ -84,24 +85,45 @@ const CategoryPage = ({ categoryConfig }) => {
         {/* Below Hero Ad */}
         <AdSlot position={AD_POSITIONS.BELOW_HERO} excludeCategory={categoryConfig.id} />
 
-        {/* Tools Grid Section */}
+        {/* Tools Grid Section - REAL FUNCTIONAL TOOLS */}
         <section className="category-tools-section">
-          <ToolGrid
-            tools={categoryTools}
-            title={toolsTitle}
-            showViewAll={false}
-          />
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">
+                {language === 'hi' ? 'उपलब्ध टूल्स' : 'Available Tools'}
+              </h2>
+              <p className="section-subtitle">
+                {language === 'hi'
+                  ? 'तुरंत इस्तेमाल के लिए तैयार टूल्स'
+                  : 'Ready to use instantly'}
+              </p>
+            </div>
+            <ToolGrid
+              tools={categoryTools}
+              showViewAll={false}
+            />
+          </div>
         </section>
 
         {/* Mid Content Ad */}
         <AdSlot position={AD_POSITIONS.MID_CONTENT} excludeCategory={categoryConfig.id} />
 
-        {/* SEO Content Section */}
+        {/* SEO Content Section - INFORMATIONAL GUIDES */}
         {seoContent.mainTitle && (
-          <section className="category-seo-section">
+          <section className="category-guides-section">
             <div className="container">
+              <div className="section-header">
+                <h2 className="section-title">
+                  {language === 'hi' ? 'गाइड्स और जानकारी' : 'Guides & Information'}
+                </h2>
+                <p className="section-subtitle">
+                  {language === 'hi'
+                    ? 'इन टूल्स के बारे में और जानें'
+                    : 'Learn more about these tools'}
+                </p>
+              </div>
               <SEOContent
-                title={seoContent.mainTitle}
+                title={null}
                 intro={seoContent.intro}
                 sections={seoContent.sections}
               />

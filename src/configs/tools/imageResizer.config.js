@@ -103,8 +103,8 @@ const imageResizerConfig = {
     // SEO Metadata (for SEOHead component)
     seo: {
       en: {
-        title: 'Resize Image to 50KB Online | Compress Images Instantly 2024',
-        description: 'Resize images to 50KB, 20KB, or 100KB online. Compress images without quality loss. Free, secure, and works in your browser.',
+        title: 'Resize Image Online Free (20KB, 50KB, 100KB)',
+        description: 'Resize images online to 20KB, 50KB or 100KB. Free, fast, secure and works on mobile.',
         keywords: {
           primary: 'resize image to 50kb online',
           secondary: [

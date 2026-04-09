@@ -1,0 +1,584 @@
+{
+  "availablePages": {
+    "home": "/",
+    "categories": {
+      "text": "/tools/text",
+      "image": "/tools/image",
+      "pdf": "/tools/pdf",
+      "developer": "/tools/developer"
+    },
+    "tools": {
+      "imageResizer": "/tools/resize-image",
+      "mergePdf": "/tools/merge-pdf",
+      "wordCounter": "/tools/word-counter",
+      "textCaseConverter": "/tools/text-case-converter",
+      "removeExtraSpaces": "/tools/remove-extra-spaces",
+      "characterCounter": "/tools/character-counter",
+      "jsonFormatter": "/tools/json-formatter"
+    },
+    "static": {
+      "about": "/about",
+      "contact": "/contact",
+      "privacy": "/privacy-policy"
+    }
+  },
+  "homepage": {
+    "currentPage": "/",
+    "mustLinkPages": [
+      {
+        "url": "/tools/resize-image",
+        "anchorText": "resize images online",
+        "placement": "inside content",
+        "context": "In 'Popular Tools' section: 'Need to resize images online for social media or web? Try our Image Resizer.'"
+      },
+      {
+        "url": "/tools/word-counter",
+        "anchorText": "word counter tool",
+        "placement": "inside content",
+        "context": "In 'Popular Tools' section: 'Track your writing progress with our word counter tool.'"
+      },
+      {
+        "url": "/tools/text",
+        "anchorText": "text processing tools",
+        "placement": "inside content",
+        "context": "In 'Categories' section: 'Explore our complete collection of text processing tools.'"
+      },
+      {
+        "url": "/tools/merge-pdf",
+        "anchorText": "merge PDF files",
+        "placement": "inside content",
+        "context": "In 'Popular Tools' section: 'Combine documents with our tool to merge PDF files.'"
+      },
+      {
+        "url": "/tools/json-formatter",
+        "anchorText": "JSON formatter",
+        "placement": "inside content",
+        "context": "In 'Developer Tools' section: 'Format and validate JSON with our JSON formatter.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Why Use Section",
+        "to": "/tools/image",
+        "anchorText": "image optimization tools",
+        "reason": "Privacy message connects to image tools"
+      },
+      {
+        "from": "Who Uses Section",
+        "to": "/tools/developer",
+        "anchorText": "developer utilities",
+        "reason": "Developer persona mentioned"
+      }
+    ]
+  },
+  "imageResizerTool": {
+    "currentPage": "/tools/resize-image",
+    "mustLinkPages": [
+      {
+        "url": "/tools/image",
+        "anchorText": "image tools",
+        "placement": "breadcrumb + below tool",
+        "context": "Breadcrumb: Home > Image Tools > Image Resizer. Below tool: 'Explore more image tools.'"
+      },
+      {
+        "url": "/",
+        "anchorText": "free online tools",
+        "placement": "breadcrumb",
+        "context": "Breadcrumb navigation to homepage"
+      },
+      {
+        "url": "/tools/merge-pdf",
+        "anchorText": "merge PDFs",
+        "placement": "FAQ section",
+        "context": "In FAQ answer: 'Need to combine documents? You can also merge PDFs with our tool.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/word-counter",
+        "anchorText": "check word count",
+        "reason": "Blog/content creation use case overlap"
+      },
+      {
+        "from": "Tips Section",
+        "to": "/tools/character-counter",
+        "anchorText": "character counter",
+        "reason": "File size and character limits related"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "In 'Common Use Cases' section, link to related tools for specific scenarios",
+      "belowTool": "Add 'Try These Tools Next' section with 3 related tool cards",
+      "faqSection": "Natural mentions in FAQ answers where relevant"
+    }
+  },
+  "mergePdfTool": {
+    "currentPage": "/tools/merge-pdf",
+    "mustLinkPages": [
+      {
+        "url": "/tools/pdf",
+        "anchorText": "PDF tools",
+        "placement": "breadcrumb + below tool",
+        "context": "Breadcrumb: Home > PDF Tools > Merge PDF. Below tool: 'View all PDF tools.'"
+      },
+      {
+        "url": "/",
+        "anchorText": "home",
+        "placement": "breadcrumb",
+        "context": "Breadcrumb navigation"
+      },
+      {
+        "url": "/tools/resize-image",
+        "anchorText": "resize images",
+        "placement": "FAQ section",
+        "context": "In FAQ: 'Need to optimize images for your PDF? Resize images first.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/word-counter",
+        "anchorText": "word counter",
+        "reason": "Academic papers and reports use case"
+      },
+      {
+        "from": "Tips Section",
+        "to": "/tools/remove-extra-spaces",
+        "anchorText": "clean text formatting",
+        "reason": "Document preparation workflow"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "In 'When to Merge PDFs' section, link to complementary tools",
+      "belowTool": "'Related Tools' section with image and text tools",
+      "faqSection": "Link to image tools in quality-related answers"
+    }
+  },
+  "wordCounterTool": {
+    "currentPage": "/tools/word-counter",
+    "mustLinkPages": [
+      {
+        "url": "/tools/text",
+        "anchorText": "text tools",
+        "placement": "breadcrumb + below tool",
+        "context": "Breadcrumb: Home > Text Tools > Word Counter. Below: 'Explore all text tools.'"
+      },
+      {
+        "url": "/tools/character-counter",
+        "anchorText": "character counter",
+        "placement": "inside content",
+        "context": "In 'Multiple Metrics' section: 'Need to check character limits? Use our character counter.'"
+      },
+      {
+        "url": "/tools/text-case-converter",
+        "anchorText": "convert text case",
+        "placement": "below tool",
+        "context": "In 'Try These Next': 'Format your text with our case converter.'"
+      },
+      {
+        "url": "/tools/remove-extra-spaces",
+        "anchorText": "remove extra spaces",
+        "placement": "FAQ section",
+        "context": "In FAQ about accuracy: 'Clean your text first by removing extra spaces.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Who Needs Section",
+        "to": "/tools/resize-image",
+        "anchorText": "optimize images",
+        "reason": "Content creators use both tools"
+      },
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/merge-pdf",
+        "anchorText": "merge PDF documents",
+        "reason": "Academic writing workflow"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "In 'Who Needs Word Counting' section, link to related text tools",
+      "belowTool": "Show 3 related text tools in cards",
+      "faqSection": "Link to character counter in character-related answers"
+    }
+  },
+  "textCaseConverterTool": {
+    "currentPage": "/tools/text-case-converter",
+    "mustLinkPages": [
+      {
+        "url": "/tools/text",
+        "anchorText": "text tools",
+        "placement": "breadcrumb + below tool",
+        "context": "Breadcrumb navigation and category link"
+      },
+      {
+        "url": "/tools/word-counter",
+        "anchorText": "word counter",
+        "placement": "below tool",
+        "context": "'Try These Next' section for content writers"
+      },
+      {
+        "url": "/tools/remove-extra-spaces",
+        "anchorText": "clean text formatting",
+        "placement": "inside content",
+        "context": "In 'Common Use Cases': 'Clean your text formatting before converting case.'"
+      },
+      {
+        "url": "/tools/json-formatter",
+        "anchorText": "format JSON",
+        "placement": "FAQ section",
+        "context": "In programming conventions FAQ: 'Need to format JSON? Try our JSON formatter.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/developer",
+        "anchorText": "developer tools",
+        "reason": "Coding use case mentioned"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "In 'Common Use Cases' section, link to related tools per scenario",
+      "belowTool": "Related text tools for writers and developers",
+      "faqSection": "Link to developer tools in coding-related answers"
+    }
+  },
+  "removeExtraSpacesTool": {
+    "currentPage": "/tools/remove-extra-spaces",
+    "mustLinkPages": [
+      {
+        "url": "/tools/text",
+        "anchorText": "text tools",
+        "placement": "breadcrumb + below tool",
+        "context": "Standard breadcrumb and category navigation"
+      },
+      {
+        "url": "/tools/word-counter",
+        "anchorText": "word counter",
+        "placement": "inside content",
+        "context": "In 'Why Remove' section: 'Get accurate statistics with our word counter.'"
+      },
+      {
+        "url": "/tools/text-case-converter",
+        "anchorText": "text case converter",
+        "placement": "below tool",
+        "context": "'Try These Next' for text formatting workflow"
+      },
+      {
+        "url": "/tools/merge-pdf",
+        "anchorText": "merge PDF files",
+        "placement": "FAQ section",
+        "context": "In PDF FAQ: 'After cleaning text, you can merge PDF files.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Scenarios Section",
+        "to": "/tools/developer",
+        "anchorText": "developer tools",
+        "reason": "Data cleaning use case"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "In 'Common Scenarios' section, link to workflow-related tools",
+      "belowTool": "Text processing workflow tools",
+      "faqSection": "Link to PDF tools in document preparation answers"
+    }
+  },
+  "characterCounterTool": {
+    "currentPage": "/tools/character-counter",
+    "mustLinkPages": [
+      {
+        "url": "/tools/text",
+        "anchorText": "text tools",
+        "placement": "breadcrumb + below tool",
+        "context": "Breadcrumb and category navigation"
+      },
+      {
+        "url": "/tools/word-counter",
+        "anchorText": "word counter",
+        "placement": "inside content",
+        "context": "In 'Character Counting Modes': 'Need word count too? Use our word counter.'"
+      },
+      {
+        "url": "/tools/remove-extra-spaces",
+        "anchorText": "remove extra spaces",
+        "placement": "FAQ section",
+        "context": "In FAQ about accuracy: 'Clean your text by removing extra spaces first.'"
+      },
+      {
+        "url": "/tools/resize-image",
+        "anchorText": "resize images",
+        "placement": "below tool",
+        "context": "'Try These Next' for social media content creators"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Platform Limits Section",
+        "to": "/tools/image",
+        "anchorText": "image tools",
+        "reason": "Social media optimization overlap"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "In 'Platform Character Limits' section, link to related tools",
+      "belowTool": "Social media optimization tools (image + text)",
+      "faqSection": "Link to word counter in comparison answers"
+    }
+  },
+  "jsonFormatterTool": {
+    "currentPage": "/tools/json-formatter",
+    "mustLinkPages": [
+      {
+        "url": "/tools/developer",
+        "anchorText": "developer tools",
+        "placement": "breadcrumb + below tool",
+        "context": "Breadcrumb and category navigation"
+      },
+      {
+        "url": "/",
+        "anchorText": "all tools",
+        "placement": "breadcrumb",
+        "context": "Homepage link in breadcrumb"
+      },
+      {
+        "url": "/tools/text-case-converter",
+        "anchorText": "text case converter",
+        "placement": "below tool",
+        "context": "'Try These Next' for code formatting workflow"
+      },
+      {
+        "url": "/tools/word-counter",
+        "anchorText": "count characters",
+        "placement": "FAQ section",
+        "context": "In FAQ about file size: 'Check your JSON length with our character counter.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Developer Tasks Section",
+        "to": "/tools/text",
+        "anchorText": "text processing tools",
+        "reason": "Code formatting and text manipulation overlap"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "In 'Common Developer Tasks' section, link to text tools",
+      "belowTool": "Developer workflow tools (text + code)",
+      "faqSection": "Link to text tools in formatting-related answers"
+    }
+  },
+  "textToolsCategory": {
+    "currentPage": "/tools/text",
+    "mustLinkPages": [
+      {
+        "url": "/",
+        "anchorText": "home",
+        "placement": "breadcrumb",
+        "context": "Breadcrumb navigation"
+      },
+      {
+        "url": "/tools/word-counter",
+        "anchorText": "word counter",
+        "placement": "inside content",
+        "context": "In 'Available Tools' section with description"
+      },
+      {
+        "url": "/tools/text-case-converter",
+        "anchorText": "text case converter",
+        "placement": "inside content",
+        "context": "In 'Available Tools' section with description"
+      },
+      {
+        "url": "/tools/character-counter",
+        "anchorText": "character counter",
+        "placement": "inside content",
+        "context": "In 'Available Tools' section with description"
+      },
+      {
+        "url": "/tools/remove-extra-spaces",
+        "anchorText": "remove extra spaces",
+        "placement": "inside content",
+        "context": "In 'Available Tools' section with description"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/image",
+        "anchorText": "image tools",
+        "reason": "Content creation workflow"
+      },
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/developer",
+        "anchorText": "developer tools",
+        "reason": "Code formatting mentioned"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "Each tool gets a card with link in 'Available Tools' section",
+      "belowTools": "Cross-category suggestions for content creators",
+      "faqSection": "N/A for category pages"
+    }
+  },
+  "imageToolsCategory": {
+    "currentPage": "/tools/image",
+    "mustLinkPages": [
+      {
+        "url": "/",
+        "anchorText": "home",
+        "placement": "breadcrumb",
+        "context": "Breadcrumb navigation"
+      },
+      {
+        "url": "/tools/resize-image",
+        "anchorText": "image resizer",
+        "placement": "inside content",
+        "context": "In 'Available Tools' section with full description"
+      },
+      {
+        "url": "/tools/text",
+        "anchorText": "text tools",
+        "placement": "below tools",
+        "context": "In 'Related Categories': 'Optimize your content with text tools.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/character-counter",
+        "anchorText": "check character limits",
+        "reason": "Social media optimization overlap"
+      },
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/merge-pdf",
+        "anchorText": "merge PDFs",
+        "reason": "Document preparation workflow"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "Link to image resizer with prominent CTA",
+      "belowTools": "Related categories for content creators",
+      "faqSection": "N/A for category pages"
+    }
+  },
+  "pdfToolsCategory": {
+    "currentPage": "/tools/pdf",
+    "mustLinkPages": [
+      {
+        "url": "/",
+        "anchorText": "home",
+        "placement": "breadcrumb",
+        "context": "Breadcrumb navigation"
+      },
+      {
+        "url": "/tools/merge-pdf",
+        "anchorText": "merge PDF",
+        "placement": "inside content",
+        "context": "In 'Available Tools' section with description"
+      },
+      {
+        "url": "/tools/image",
+        "anchorText": "image tools",
+        "placement": "below tools",
+        "context": "In 'Related Categories': 'Optimize images for your PDFs.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/word-counter",
+        "anchorText": "word counter",
+        "reason": "Academic and business document workflow"
+      },
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/resize-image",
+        "anchorText": "resize images",
+        "reason": "Document preparation with images"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "Link to merge PDF with prominent CTA",
+      "belowTools": "Document workflow tools (image + text)",
+      "faqSection": "N/A for category pages"
+    }
+  },
+  "developerToolsCategory": {
+    "currentPage": "/tools/developer",
+    "mustLinkPages": [
+      {
+        "url": "/",
+        "anchorText": "home",
+        "placement": "breadcrumb",
+        "context": "Breadcrumb navigation"
+      },
+      {
+        "url": "/tools/json-formatter",
+        "anchorText": "JSON formatter",
+        "placement": "inside content",
+        "context": "In 'Available Tools' section with description"
+      },
+      {
+        "url": "/tools/text",
+        "anchorText": "text tools",
+        "placement": "below tools",
+        "context": "In 'Related Categories': 'Format code with text tools.'"
+      }
+    ],
+    "crossCategoryOpportunities": [
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/text-case-converter",
+        "anchorText": "convert text case",
+        "reason": "Code formatting workflow"
+      },
+      {
+        "from": "Use Cases Section",
+        "to": "/tools/character-counter",
+        "anchorText": "character counter",
+        "reason": "API response size checking"
+      }
+    ],
+    "suggestedPlacement": {
+      "insideContent": "Link to JSON formatter with developer-focused CTA",
+      "belowTools": "Code formatting and text processing tools",
+      "faqSection": "N/A for category pages"
+    }
+  },
+  "linkingBestPractices": {
+    "anchorTextRules": [
+      "Use keyword-rich anchor text naturally",
+      "Vary anchor text (don't repeat exact phrases)",
+      "Make anchor text descriptive (avoid 'click here')",
+      "Keep anchor text concise (2-5 words ideal)",
+      "Match anchor text to target page's primary keyword"
+    ],
+    "placementGuidelines": [
+      "Breadcrumbs: Always link to parent category and homepage",
+      "Inside Content: 3-5 contextual links maximum",
+      "Below Tool: 'Try These Next' section with 3 related tools",
+      "FAQ Section: Natural mentions only (1-2 links max)",
+      "Footer: Standard site navigation (not counted as internal links)"
+    ],
+    "avoidOverLinking": [
+      "Maximum 8-10 internal links per page",
+      "Don't link same URL multiple times on one page",
+      "Prioritize high-value pages (tools over categories)",
+      "Use nofollow for less important links if needed",
+      "Focus on user journey, not just SEO"
+    ],
+    "crossCategoryStrategy": [
+      "Link tools with complementary workflows",
+      "Connect content creation tools (image + text)",
+      "Link document preparation tools (PDF + image + text)",
+      "Connect developer tools with text formatting",
+      "Use 'Related Tools' sections for cross-category links"
+    ]
+  }
+}

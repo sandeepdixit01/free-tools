@@ -7,9 +7,11 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import './index.css'
 
+
 // Lazy load pages for better performance
 const App = lazy(() => import('./App'))
 const ImageResizerNew = lazy(() => import('./pages/ImageResizerNew'))
+const ImageResizer50KB = lazy(() => import('./pages/ImageResizer50KB'))
 const WordCounter = lazy(() => import('./pages/WordCounter'))
 const TextCaseConverter = lazy(() => import('./pages/TextCaseConverter'))
 const RemoveExtraSpaces = lazy(() => import('./pages/RemoveExtraSpaces'))
@@ -18,6 +20,9 @@ const JSONFormatter = lazy(() => import('./pages/JSONFormatter'))
 const MergePdf = lazy(() => import('./pages/MergePdf'))
 const AllToolsPage = lazy(() => import('./pages/AllToolsPage'))
 const CategoryPage = lazy(() => import('./pages/CategoryPage'))
+const AboutPage = lazy(() => import('./pages/AboutPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'))
 
 // Category configs
 import { imageCategoryConfig } from './configs/categories/image.config'
@@ -50,6 +55,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Routes>
                 <Route path="/" element={<App />} />
                 
+                {/* Static Pages */}
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                
                 {/* All Tools Page */}
                 <Route path="/tools" element={<AllToolsPage />} />
                 
@@ -62,6 +72,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 {/* Individual Tool Pages */}
                 {/* Image Tools */}
                 <Route path="/tools/resize-image" element={<ImageResizerNew />} />
+                <Route path="/image-resizer-50kb" element={<ImageResizer50KB />} />
                 <Route path="/resize-image-to-50kb" element={<ImageResizerNew />} />
                 <Route path="/resize-image-to-20kb" element={<ImageResizerNew />} />
                 <Route path="/resize-image-to-100kb" element={<ImageResizerNew />} />

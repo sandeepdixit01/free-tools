@@ -18,22 +18,51 @@
   padding: 0 1.5rem;
 }
 
-/* Tools Section */
+/* Tools Section - Real functional tools */
 .category-tools-section {
-  padding: 3rem 0;
-  background: #f8f9fa;
-}
-
-/* SEO Content Section */
-.category-seo-section {
-  padding: 4rem 0;
+  padding: 4rem 0 3rem;
   background: #ffffff;
 }
 
-.category-seo-section .container {
+.category-tools-section .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+/* Guides Section - Informational content */
+.category-guides-section {
+  padding: 4rem 0;
+  background: #fafbfc;
+  border-top: 2px solid #e2e8f0;
+}
+
+.category-guides-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 0.75rem 0;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #4a5568;
+  margin: 0;
 }
 
 /* FAQ Section */
@@ -55,10 +84,10 @@
   }
 
   .category-tools-section {
-    padding: 2rem 0;
+    padding: 3rem 0 2rem;
   }
 
-  .category-seo-section {
+  .category-guides-section {
     padding: 3rem 0;
   }
 
@@ -66,7 +95,20 @@
     padding: 3rem 0;
   }
 
-  .category-seo-section .container,
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .category-tools-section .container,
+  .category-guides-section .container,
   .category-faq-section .container {
     padding: 0 1rem;
   }
@@ -78,15 +120,23 @@
   }
 
   .category-tools-section {
-    padding: 1.5rem 0;
+    padding: 2rem 0 1.5rem;
   }
 
-  .category-seo-section {
+  .category-guides-section {
     padding: 2rem 0;
   }
 
   .category-faq-section {
     padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
   }
 }
 

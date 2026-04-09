@@ -1,0 +1,530 @@
+{
+  "homepage": {
+    "pageName": "Homepage",
+    "primaryKeyword": "free online tools",
+    "faqs": [
+      {
+        "question": "Are these online tools really free?",
+        "answer": "Yes, all our tools are 100% free with no hidden costs, premium tiers, or credit card requirements. You get full access to every feature without any limitations."
+      },
+      {
+        "question": "Do I need to create an account to use these tools?",
+        "answer": "No account needed. All tools work instantly without sign-ups, registrations, or email verification. Just open the tool and start using it immediately."
+      },
+      {
+        "question": "Are my files safe when using these online tools?",
+        "answer": "Absolutely. All files are processed locally in your browser. Your files never leave your device, ensuring complete privacy and security. We don't upload, store, or access your data."
+      },
+      {
+        "question": "Can I use these tools offline?",
+        "answer": "Yes, once the page loads, most tools work without internet connection. Your browser handles all processing locally, so you can use tools anywhere."
+      },
+      {
+        "question": "What types of tools are available?",
+        "answer": "We offer 7+ tools across 4 categories: Image Tools (resize, compress), PDF Tools (merge, split), Text Tools (word counter, case converter), and Developer Tools (JSON formatter, validators)."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are these online tools really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all our tools are 100% free with no hidden costs, premium tiers, or credit card requirements. You get full access to every feature without any limitations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to create an account to use these tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No account needed. All tools work instantly without sign-ups, registrations, or email verification. Just open the tool and start using it immediately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my files safe when using these online tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All files are processed locally in your browser. Your files never leave your device, ensuring complete privacy and security. We don't upload, store, or access your data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use these tools offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, once the page loads, most tools work without internet connection. Your browser handles all processing locally, so you can use tools anywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of tools are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer 7+ tools across 4 categories: Image Tools (resize, compress), PDF Tools (merge, split), Text Tools (word counter, case converter), and Developer Tools (JSON formatter, validators)."
+          }
+        }
+      ]
+    }
+  },
+  "imageResizerTool": {
+    "pageName": "Image Resizer",
+    "primaryKeyword": "resize image online free",
+    "faqs": [
+      {
+        "question": "How do I resize an image to exactly 20KB or 50KB?",
+        "answer": "Upload your image, select your target size (20KB, 50KB, or 100KB), and our tool automatically compresses it to that exact size while maintaining quality. Download the result instantly."
+      },
+      {
+        "question": "Does resizing reduce image quality?",
+        "answer": "Our smart compression minimizes quality loss. While some reduction is necessary to achieve smaller file sizes, our algorithm preserves visual clarity better than standard compression methods."
+      },
+      {
+        "question": "What image formats are supported?",
+        "answer": "We support JPG, PNG, and WebP formats. JPG works best for photos, PNG for graphics with transparency, and WebP for superior compression with modern browser support."
+      },
+      {
+        "question": "Can I resize multiple images at once?",
+        "answer": "Currently, our tool processes one image at a time for optimal quality. Batch processing is coming soon. For now, you can resize images sequentially in seconds."
+      },
+      {
+        "question": "Will my images be uploaded to your servers?",
+        "answer": "No. All image processing happens in your browser. Your images never leave your device, ensuring complete privacy and security. No uploads, no storage, no data collection."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I resize an image to exactly 20KB or 50KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload your image, select your target size (20KB, 50KB, or 100KB), and our tool automatically compresses it to that exact size while maintaining quality. Download the result instantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does resizing reduce image quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our smart compression minimizes quality loss. While some reduction is necessary to achieve smaller file sizes, our algorithm preserves visual clarity better than standard compression methods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We support JPG, PNG, and WebP formats. JPG works best for photos, PNG for graphics with transparency, and WebP for superior compression with modern browser support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I resize multiple images at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Currently, our tool processes one image at a time for optimal quality. Batch processing is coming soon. For now, you can resize images sequentially in seconds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my images be uploaded to your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All image processing happens in your browser. Your images never leave your device, ensuring complete privacy and security. No uploads, no storage, no data collection."
+          }
+        }
+      ]
+    }
+  },
+  "mergePdfTool": {
+    "pageName": "Merge PDF",
+    "primaryKeyword": "merge pdf online free",
+    "faqs": [
+      {
+        "question": "Is there a limit on PDF file size when merging?",
+        "answer": "No size limits. Merge PDFs of any size without restrictions. Our tool handles large files efficiently in your browser, processing hundreds of pages without issues."
+      },
+      {
+        "question": "Can I merge password-protected PDFs?",
+        "answer": "PDFs must be unlocked before merging. Remove password protection first, then merge your documents. This ensures proper processing and maintains document integrity."
+      },
+      {
+        "question": "Will the merged PDF have watermarks?",
+        "answer": "No watermarks ever. Unlike many free PDF tools, we never add branding or watermarks to your documents. Your merged PDFs remain clean and professional."
+      },
+      {
+        "question": "How many PDFs can I merge at once?",
+        "answer": "No limit on the number of PDFs. Merge 2, 10, or 100+ documents in a single operation. Performance depends on your device capabilities and total file size."
+      },
+      {
+        "question": "Are my PDFs stored on your servers?",
+        "answer": "No. All PDF processing happens in your browser. Your documents never leave your device, ensuring complete privacy for sensitive business and personal files."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there a limit on PDF file size when merging?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No size limits. Merge PDFs of any size without restrictions. Our tool handles large files efficiently in your browser, processing hundreds of pages without issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I merge password-protected PDFs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDFs must be unlocked before merging. Remove password protection first, then merge your documents. This ensures proper processing and maintains document integrity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the merged PDF have watermarks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No watermarks ever. Unlike many free PDF tools, we never add branding or watermarks to your documents. Your merged PDFs remain clean and professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many PDFs can I merge at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No limit on the number of PDFs. Merge 2, 10, or 100+ documents in a single operation. Performance depends on your device capabilities and total file size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my PDFs stored on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All PDF processing happens in your browser. Your documents never leave your device, ensuring complete privacy for sensitive business and personal files."
+          }
+        }
+      ]
+    }
+  },
+  "wordCounterTool": {
+    "pageName": "Word Counter",
+    "primaryKeyword": "word counter online free",
+    "faqs": [
+      {
+        "question": "How accurate is the word count?",
+        "answer": "Extremely accurate. We use standard word counting algorithms that match Microsoft Word and Google Docs. Words are counted by spaces, following industry-standard methods."
+      },
+      {
+        "question": "Does punctuation count as characters?",
+        "answer": "Yes. Punctuation marks, numbers, and symbols all count as characters. We show both character counts with and without spaces for flexibility across different platforms."
+      },
+      {
+        "question": "What's a good average sentence length?",
+        "answer": "15-20 words per sentence is ideal for readability. Shorter sentences improve comprehension, especially for online content. Vary sentence length to maintain reader interest."
+      },
+      {
+        "question": "How do I reduce word count without losing meaning?",
+        "answer": "Remove filler words (very, really, just), use active voice instead of passive, eliminate redundancies, and replace phrases with single words. Focus on clarity and conciseness."
+      },
+      {
+        "question": "Can I check word count for multiple documents?",
+        "answer": "Process one document at a time for accurate results. Clear the text area and paste new content to check different documents sequentially. Results update instantly."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How accurate is the word count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Extremely accurate. We use standard word counting algorithms that match Microsoft Word and Google Docs. Words are counted by spaces, following industry-standard methods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does punctuation count as characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Punctuation marks, numbers, and symbols all count as characters. We show both character counts with and without spaces for flexibility across different platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's a good average sentence length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "15-20 words per sentence is ideal for readability. Shorter sentences improve comprehension, especially for online content. Vary sentence length to maintain reader interest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I reduce word count without losing meaning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Remove filler words (very, really, just), use active voice instead of passive, eliminate redundancies, and replace phrases with single words. Focus on clarity and conciseness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check word count for multiple documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Process one document at a time for accurate results. Clear the text area and paste new content to check different documents sequentially. Results update instantly."
+          }
+        }
+      ]
+    }
+  },
+  "textCaseConverterTool": {
+    "pageName": "Text Case Converter",
+    "primaryKeyword": "text case converter online",
+    "faqs": [
+      {
+        "question": "What's the difference between title case and sentence case?",
+        "answer": "Title case capitalizes the first letter of most words (excluding articles and short prepositions). Sentence case only capitalizes the first word of sentences and proper nouns."
+      },
+      {
+        "question": "How should I handle acronyms in title case?",
+        "answer": "Keep acronyms in all caps (NASA, FBI, HTML). They're proper nouns and should maintain their standard formatting regardless of the surrounding text case."
+      },
+      {
+        "question": "Can I convert text with special characters?",
+        "answer": "Yes. Special characters, numbers, and punctuation remain unchanged. Only letters are converted between cases. Emojis and symbols are preserved exactly as entered."
+      },
+      {
+        "question": "Is there a character limit for conversion?",
+        "answer": "No character limit. Convert single words or entire documents instantly. Our tool handles any text length efficiently in your browser without performance issues."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between title case and sentence case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Title case capitalizes the first letter of most words (excluding articles and short prepositions). Sentence case only capitalizes the first word of sentences and proper nouns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should I handle acronyms in title case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep acronyms in all caps (NASA, FBI, HTML). They're proper nouns and should maintain their standard formatting regardless of the surrounding text case."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert text with special characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Special characters, numbers, and punctuation remain unchanged. Only letters are converted between cases. Emojis and symbols are preserved exactly as entered."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a character limit for conversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No character limit. Convert single words or entire documents instantly. Our tool handles any text length efficiently in your browser without performance issues."
+          }
+        }
+      ]
+    }
+  },
+  "removeExtraSpacesTool": {
+    "pageName": "Remove Extra Spaces",
+    "primaryKeyword": "remove extra spaces online",
+    "faqs": [
+      {
+        "question": "Will this tool remove all spaces from my text?",
+        "answer": "No. It removes only extra spaces, keeping single spaces between words. Your text remains readable and properly formatted with correct spacing."
+      },
+      {
+        "question": "Can I keep paragraph breaks while removing extra spaces?",
+        "answer": "Yes. Choose to preserve line breaks while removing extra spaces. This maintains your document structure while cleaning up formatting issues."
+      },
+      {
+        "question": "Does it work with tab characters?",
+        "answer": "Yes. Optionally convert tabs to spaces or remove them entirely. Standardize whitespace across your document for consistent formatting."
+      },
+      {
+        "question": "How do I clean text copied from PDFs?",
+        "answer": "Copy text from your PDF, paste it into our tool, and click clean. Extra spaces and formatting issues from PDF extraction are removed instantly."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will this tool remove all spaces from my text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It removes only extra spaces, keeping single spaces between words. Your text remains readable and properly formatted with correct spacing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep paragraph breaks while removing extra spaces?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Choose to preserve line breaks while removing extra spaces. This maintains your document structure while cleaning up formatting issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with tab characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Optionally convert tabs to spaces or remove them entirely. Standardize whitespace across your document for consistent formatting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I clean text copied from PDFs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copy text from your PDF, paste it into our tool, and click clean. Extra spaces and formatting issues from PDF extraction are removed instantly."
+          }
+        }
+      ]
+    }
+  },
+  "characterCounterTool": {
+    "pageName": "Character Counter",
+    "primaryKeyword": "character counter online",
+    "faqs": [
+      {
+        "question": "Do spaces count as characters?",
+        "answer": "It depends on the platform. Twitter, SMS, and most social media count spaces as characters. Our tool shows both counts (with and without spaces) for flexibility."
+      },
+      {
+        "question": "How are emojis counted?",
+        "answer": "Emojis typically count as 2 characters, but complex emojis may count as more. Test on the actual platform to be sure, as counting methods vary."
+      },
+      {
+        "question": "What's the difference between character count and word count?",
+        "answer": "Word count tracks words separated by spaces. Character count tracks every letter, number, space, and punctuation mark. Different platforms use different metrics."
+      },
+      {
+        "question": "Can I check multiple texts at once?",
+        "answer": "Process one text at a time for accurate results. Clear the text area and paste new content to check different texts sequentially. Counts update in real-time."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do spaces count as characters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the platform. Twitter, SMS, and most social media count spaces as characters. Our tool shows both counts (with and without spaces) for flexibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are emojis counted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Emojis typically count as 2 characters, but complex emojis may count as more. Test on the actual platform to be sure, as counting methods vary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between character count and word count?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Word count tracks words separated by spaces. Character count tracks every letter, number, space, and punctuation mark. Different platforms use different metrics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check multiple texts at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Process one text at a time for accurate results. Clear the text area and paste new content to check different texts sequentially. Counts update in real-time."
+          }
+        }
+      ]
+    }
+  },
+  "jsonFormatterTool": {
+    "pageName": "JSON Formatter",
+    "primaryKeyword": "json formatter online free",
+    "faqs": [
+      {
+        "question": "What's the difference between format and minify?",
+        "answer": "Format adds indentation and line breaks for readability. Minify removes all whitespace to reduce file size. Use format for development, minify for production."
+      },
+      {
+        "question": "How do I fix common JSON syntax errors?",
+        "answer": "Check for missing commas between properties, ensure keys are in double quotes, remove trailing commas (not allowed in JSON), and verify all brackets and braces match."
+      },
+      {
+        "question": "Can it handle large JSON files?",
+        "answer": "Yes. Process JSON files with thousands of lines. Performance depends on your device, but most files format instantly without issues."
+      },
+      {
+        "question": "Does it support JSON5 or JSONC?",
+        "answer": "Currently supports standard JSON only. JSON5 features like comments and trailing commas will show as syntax errors. Use standard JSON format for validation."
+      }
+    ],
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between format and minify?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Format adds indentation and line breaks for readability. Minify removes all whitespace to reduce file size. Use format for development, minify for production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I fix common JSON syntax errors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check for missing commas between properties, ensure keys are in double quotes, remove trailing commas (not allowed in JSON), and verify all brackets and braces match."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it handle large JSON files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Process JSON files with thousands of lines. Performance depends on your device, but most files format instantly without issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it support JSON5 or JSONC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Currently supports standard JSON only. JSON5 features like comments and trailing commas will show as syntax errors. Use standard JSON format for validation."
+          }
+        }
+      ]
+    }
+  }
+}

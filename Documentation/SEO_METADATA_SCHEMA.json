@@ -1,0 +1,581 @@
+{
+  "homepage": {
+    "pageType": "home",
+    "pageName": "Homepage",
+    "primaryKeyword": "free online tools",
+    "url": "/",
+    "metaTitle": "Free Online Tools - Image, PDF, Text & Developer Tools",
+    "metaDescription": "Access 7+ free online tools instantly. Resize images, merge PDFs, count words, format JSON & more. No download, no sign-up. 100% private & secure.",
+    "openGraph": {
+      "ogTitle": "Free Online Tools - No Download Required",
+      "ogDescription": "7+ free tools for images, PDFs, text & code. Works in your browser. Private & secure.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Free Online Tools",
+      "url": "https://yourdomain.com",
+      "description": "Free online tools for image editing, PDF manipulation, text processing, and development",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yourdomain.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  },
+  "textToolsCategory": {
+    "pageType": "category",
+    "pageName": "Text Tools",
+    "primaryKeyword": "free text tools online",
+    "url": "/tools/text",
+    "metaTitle": "Free Text Tools - Word Counter, Case Converter & More",
+    "metaDescription": "Free text tools for word counting, case conversion, space removal & character counting. 4 tools available. No download. 100% private & secure.",
+    "openGraph": {
+      "ogTitle": "Free Text Tools - Word Counter, Case Converter & More",
+      "ogDescription": "4 free text processing tools. Count words, convert case, remove spaces, count characters. Works in your browser.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/text"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Text Tools",
+      "description": "Free online text processing tools including word counter, case converter, space remover, and character counter",
+      "url": "https://yourdomain.com/tools/text",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Text Tools",
+            "item": "https://yourdomain.com/tools/text"
+          }
+        ]
+      }
+    }
+  },
+  "imageToolsCategory": {
+    "pageType": "category",
+    "pageName": "Image Tools",
+    "primaryKeyword": "free image tools online",
+    "url": "/tools/image",
+    "metaTitle": "Free Image Tools - Resize, Compress & Edit Online",
+    "metaDescription": "Free image tools for resizing, compressing & editing. Optimize images for web, social media & email. No upload required. 100% private & secure.",
+    "openGraph": {
+      "ogTitle": "Free Image Tools - Resize, Compress & Edit Online",
+      "ogDescription": "Free image resizer and optimizer. Compress to 20KB, 50KB, 100KB. Works in your browser. No file upload.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/image"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Image Tools",
+      "description": "Free online image editing tools for resizing, compressing, and optimizing images",
+      "url": "https://yourdomain.com/tools/image",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Image Tools",
+            "item": "https://yourdomain.com/tools/image"
+          }
+        ]
+      }
+    }
+  },
+  "pdfToolsCategory": {
+    "pageType": "category",
+    "pageName": "PDF Tools",
+    "primaryKeyword": "free pdf tools online",
+    "url": "/tools/pdf",
+    "metaTitle": "Free PDF Tools - Merge, Split & Convert PDFs Online",
+    "metaDescription": "Free PDF tools for merging, splitting & converting. Combine multiple PDFs into one. No software required. 100% secure. No watermarks.",
+    "openGraph": {
+      "ogTitle": "Free PDF Tools - Merge, Split & Convert PDFs Online",
+      "ogDescription": "Free PDF merger and editor. Combine PDFs without software. No watermarks. Works in your browser.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/pdf"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "PDF Tools",
+      "description": "Free online PDF tools for merging, splitting, and converting PDF documents",
+      "url": "https://yourdomain.com/tools/pdf",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PDF Tools",
+            "item": "https://yourdomain.com/tools/pdf"
+          }
+        ]
+      }
+    }
+  },
+  "developerToolsCategory": {
+    "pageType": "category",
+    "pageName": "Developer Tools",
+    "primaryKeyword": "free developer tools online",
+    "url": "/tools/developer",
+    "metaTitle": "Free Developer Tools - JSON Formatter & Code Utilities",
+    "metaDescription": "Free developer tools for JSON formatting, code validation & data processing. Built for developers. No sign-up. 100% private & secure.",
+    "openGraph": {
+      "ogTitle": "Free Developer Tools - JSON Formatter & Code Utilities",
+      "ogDescription": "Free JSON formatter, code validator & developer utilities. Works in your browser. No server uploads.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/developer"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Developer Tools",
+      "description": "Free online developer tools including JSON formatter, code validators, and programming utilities",
+      "url": "https://yourdomain.com/tools/developer",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Developer Tools",
+            "item": "https://yourdomain.com/tools/developer"
+          }
+        ]
+      }
+    }
+  },
+  "imageResizerTool": {
+    "pageType": "tool",
+    "pageName": "Image Resizer",
+    "primaryKeyword": "resize image online free",
+    "url": "/tools/resize-image",
+    "metaTitle": "Resize Image Online Free - Compress to 20KB, 50KB, 100KB",
+    "metaDescription": "Resize images online free. Compress to 20KB, 50KB, 100KB instantly. No upload required. Your images stay private. Works in your browser.",
+    "openGraph": {
+      "ogTitle": "Resize Image Online Free - Compress to Exact Sizes",
+      "ogDescription": "Free image resizer. Compress to 20KB, 50KB, 100KB. No file upload. 100% private. Instant results.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/resize-image"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image Resizer",
+      "description": "Free online tool to resize images to exact file sizes (20KB, 50KB, 100KB) with quality preservation",
+      "url": "https://yourdomain.com/tools/resize-image",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Resize to exact KB sizes",
+        "Quality preservation",
+        "No file upload required",
+        "Supports JPG, PNG, WebP"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Image Tools",
+            "item": "https://yourdomain.com/tools/image"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Image Resizer",
+            "item": "https://yourdomain.com/tools/resize-image"
+          }
+        ]
+      }
+    }
+  },
+  "mergePdfTool": {
+    "pageType": "tool",
+    "pageName": "Merge PDF",
+    "primaryKeyword": "merge pdf online free",
+    "url": "/tools/merge-pdf",
+    "metaTitle": "Merge PDF Online Free - Combine Multiple PDFs into One",
+    "metaDescription": "Merge PDF files online free. Combine multiple PDFs into one document. No watermarks. No file size limits. 100% secure. Works in your browser.",
+    "openGraph": {
+      "ogTitle": "Merge PDF Online Free - Combine PDFs Instantly",
+      "ogDescription": "Free PDF merger. Combine multiple PDFs. No watermarks. No size limits. 100% secure processing.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/merge-pdf"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Merge PDF",
+      "description": "Free online tool to merge multiple PDF files into a single document without watermarks",
+      "url": "https://yourdomain.com/tools/merge-pdf",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Merge unlimited PDFs",
+        "No file size limits",
+        "No watermarks",
+        "Secure browser processing"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PDF Tools",
+            "item": "https://yourdomain.com/tools/pdf"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Merge PDF",
+            "item": "https://yourdomain.com/tools/merge-pdf"
+          }
+        ]
+      }
+    }
+  },
+  "wordCounterTool": {
+    "pageType": "tool",
+    "pageName": "Word Counter",
+    "primaryKeyword": "word counter online free",
+    "url": "/tools/word-counter",
+    "metaTitle": "Word Counter Online Free - Count Words & Characters",
+    "metaDescription": "Count words, characters & sentences online free. Real-time counting. See reading time. Perfect for essays & articles. 100% private.",
+    "openGraph": {
+      "ogTitle": "Word Counter Online Free - Instant Text Statistics",
+      "ogDescription": "Free word counter. Count words, characters, sentences. Real-time results. Reading time estimates.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/word-counter"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Word Counter",
+      "description": "Free online tool to count words, characters, sentences, and paragraphs with reading time estimates",
+      "url": "https://yourdomain.com/tools/word-counter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Real-time word counting",
+        "Character count with/without spaces",
+        "Sentence and paragraph count",
+        "Reading time estimates"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Text Tools",
+            "item": "https://yourdomain.com/tools/text"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Word Counter",
+            "item": "https://yourdomain.com/tools/word-counter"
+          }
+        ]
+      }
+    }
+  },
+  "textCaseConverterTool": {
+    "pageType": "tool",
+    "pageName": "Text Case Converter",
+    "primaryKeyword": "text case converter online",
+    "url": "/tools/text-case-converter",
+    "metaTitle": "Text Case Converter - UPPERCASE, lowercase, Title Case",
+    "metaDescription": "Convert text case online free. UPPERCASE, lowercase, Title Case, Sentence case & more. Instant conversion. No sign-up required.",
+    "openGraph": {
+      "ogTitle": "Text Case Converter - Transform Text Case Instantly",
+      "ogDescription": "Free case converter. UPPERCASE, lowercase, Title Case, Sentence case. One-click conversion.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/text-case-converter"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Text Case Converter",
+      "description": "Free online tool to convert text between UPPERCASE, lowercase, Title Case, Sentence case, and alternating case",
+      "url": "https://yourdomain.com/tools/text-case-converter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "UPPERCASE conversion",
+        "lowercase conversion",
+        "Title Case formatting",
+        "Sentence case formatting",
+        "Alternating case"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Text Tools",
+            "item": "https://yourdomain.com/tools/text"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Text Case Converter",
+            "item": "https://yourdomain.com/tools/text-case-converter"
+          }
+        ]
+      }
+    }
+  },
+  "removeExtraSpacesTool": {
+    "pageType": "tool",
+    "pageName": "Remove Extra Spaces",
+    "primaryKeyword": "remove extra spaces online",
+    "url": "/tools/remove-extra-spaces",
+    "metaTitle": "Remove Extra Spaces Online - Clean Text Formatting",
+    "metaDescription": "Remove extra spaces online free. Clean text formatting instantly. Fix copy-paste issues. Remove multiple spaces, leading & trailing whitespace.",
+    "openGraph": {
+      "ogTitle": "Remove Extra Spaces Online - Text Cleaner Tool",
+      "ogDescription": "Free text cleaner. Remove extra spaces, leading/trailing whitespace. Fix formatting instantly.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/remove-extra-spaces"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Remove Extra Spaces",
+      "description": "Free online tool to remove extra spaces, leading/trailing whitespace, and clean text formatting",
+      "url": "https://yourdomain.com/tools/remove-extra-spaces",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Remove multiple spaces",
+        "Remove leading spaces",
+        "Remove trailing spaces",
+        "Clean line breaks"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Text Tools",
+            "item": "https://yourdomain.com/tools/text"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Remove Extra Spaces",
+            "item": "https://yourdomain.com/tools/remove-extra-spaces"
+          }
+        ]
+      }
+    }
+  },
+  "characterCounterTool": {
+    "pageType": "tool",
+    "pageName": "Character Counter",
+    "primaryKeyword": "character counter online",
+    "url": "/tools/character-counter",
+    "metaTitle": "Character Counter Online - Count With & Without Spaces",
+    "metaDescription": "Count characters online free. With & without spaces. Check Twitter, SMS, meta description limits. Real-time counting. 100% private.",
+    "openGraph": {
+      "ogTitle": "Character Counter Online - Check Platform Limits",
+      "ogDescription": "Free character counter. Count with/without spaces. Check Twitter, SMS, meta limits. Real-time results.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/character-counter"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Character Counter",
+      "description": "Free online tool to count characters with and without spaces, check platform limits for Twitter, SMS, and meta descriptions",
+      "url": "https://yourdomain.com/tools/character-counter",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Count with spaces",
+        "Count without spaces",
+        "Platform limit checking",
+        "Real-time counting"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Text Tools",
+            "item": "https://yourdomain.com/tools/text"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Character Counter",
+            "item": "https://yourdomain.com/tools/character-counter"
+          }
+        ]
+      }
+    }
+  },
+  "jsonFormatterTool": {
+    "pageType": "tool",
+    "pageName": "JSON Formatter",
+    "primaryKeyword": "json formatter online free",
+    "url": "/tools/json-formatter",
+    "metaTitle": "JSON Formatter Online Free - Format, Minify & Validate",
+    "metaDescription": "Format JSON online free. Beautify, minify & validate JSON data. Syntax highlighting. Instant error detection. 100% private. No server uploads.",
+    "openGraph": {
+      "ogTitle": "JSON Formatter Online Free - Beautify & Validate JSON",
+      "ogDescription": "Free JSON formatter. Format, minify, validate. Syntax highlighting. Instant results. No uploads.",
+      "ogType": "website",
+      "ogUrl": "https://yourdomain.com/tools/json-formatter"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JSON Formatter",
+      "description": "Free online tool to format, beautify, minify, and validate JSON data with syntax highlighting",
+      "url": "https://yourdomain.com/tools/json-formatter",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Format and beautify JSON",
+        "Minify JSON",
+        "Validate syntax",
+        "Syntax highlighting",
+        "Error detection"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yourdomain.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Developer Tools",
+            "item": "https://yourdomain.com/tools/developer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "JSON Formatter",
+            "item": "https://yourdomain.com/tools/json-formatter"
+          }
+        ]
+      }
+    }
+  }
+}

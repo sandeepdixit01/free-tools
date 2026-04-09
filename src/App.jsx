@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useLanguage } from './contexts/LanguageContext'
+import SEOHead from './components/SEO/SEOHead'
 import Hero from './components/Hero'
 import SectionHeader from './components/home/SectionHeader'
 import ToolGrid from './components/home/ToolGrid'
@@ -10,20 +11,35 @@ import FAQ from './components/shared/Content/FAQ'
 import AdSlot from './components/ads/AdSlot'
 import { AD_POSITIONS } from './configs/adPositions'
 import { homeConfig } from './configs/homeConfig'
-import { toolRegistry } from './configs/toolRegistry'
+import { getPopularTools, getRandomTools, getFeaturedTools } from './data/tools'
 import './App.css'
 
 function App() {
   const { language } = useLanguage()
   
-  // Get popular tools (first 8 tools from registry)
-  const popularTools = toolRegistry.slice(0, 8)
+  // Get popular tools dynamically (sorted by usageCount)
+  // STANDARDIZED: Exactly 6 tools for Popular Tools section
+  const popularTools = useMemo(() => getPopularTools(6), [])
 
-  // Get quick access tools (first 4 tools)
-  const quickAccessTools = toolRegistry.slice(0, 4)
+  // Get quick access tools (featured tools for hero section)
+  // STANDARDIZED: Exactly 4 tools for hero quick access
+  const quickAccessTools = useMemo(() => getFeaturedTools(4), [])
 
   return (
-    <main className="main-content">
+    <>
+      {/* SEO Head */}
+      <SEOHead
+        title={language === 'hi'
+          ? "फ्री ऑनलाइन टूल्स - इमेज, PDF, टेक्स्ट और डेवलपर टूल्स"
+          : "Free Online Tools - Image, PDF, Text & Developer Tools"}
+        description={language === 'hi'
+          ? "इमेज, PDF, टेक्स्ट और डेवलपर्स के लिए फ्री ऑनलाइन टूल्स। तेज़, सुरक्षित और मोबाइल-फ्रेंडली।"
+          : "Free online tools for images, PDFs, text, and developers. Fast, secure, and mobile-friendly."}
+        keywords="free online tools, image tools, pdf tools, text tools, developer tools, image resizer, pdf merger, word counter, json formatter"
+        canonical="https://freetools.com"
+      />
+      
+      <main className="main-content">
       {/* Hero Section */}
       <Hero
         config={homeConfig.hero}
@@ -87,6 +103,7 @@ function App() {
       {/* Ad Slot: Bottom Banner */}
       <AdSlot position={AD_POSITIONS.BOTTOM_BANNER} />
     </main>
+    </>
   )
 }
 

@@ -9,15 +9,15 @@ export const developerCategoryConfig = {
   // SEO Metadata
   seo: {
     en: {
-      title: 'Free Developer Tools Online | JSON Formatter, Base64 Encoder, URL Encoder',
-      description: 'Free online developer tools. Format JSON, encode/decode Base64, URL encoding, color picker, and more. No signup required.',
-      keywords: 'developer tools, json formatter, base64 encoder, url encoder, color picker, free dev tools',
+      title: 'Free Developer Tools Online | JSON Formatter',
+      description: 'Free online JSON formatter tool. Format, validate, and beautify JSON data instantly. No signup required.',
+      keywords: 'developer tools, json formatter, json validator, format json, free dev tools',
       canonical: 'https://freetools.com/tools/developer'
     },
     hi: {
-      title: 'फ्री डेवलपर टूल्स ऑनलाइन | JSON फॉर्मेटर, Base64 एनकोडर, URL एनकोडर',
-      description: 'फ्री ऑनलाइन डेवलपर टूल्स। JSON फॉर्मेट करें, Base64 एनकोड/डीकोड करें, URL एनकोडिंग, कलर पिकर और बहुत कुछ। साइनअप की ज़रूरत नहीं।',
-      keywords: 'developer tools, json formatter, base64 encoder, url encoder, color picker, free dev tools',
+      title: 'फ्री डेवलपर टूल्स ऑनलाइन | JSON फॉर्मेटर',
+      description: 'फ्री ऑनलाइन JSON फॉर्मेटर टूल। JSON डेटा तुरंत फॉर्मेट, वैलिडेट और ब्यूटिफाई करें। साइनअप की ज़रूरत नहीं।',
+      keywords: 'developer tools, json formatter, json validator, json format kare, free dev tools',
       canonical: 'https://freetools.com/tools/developer'
     }
   },
@@ -50,55 +50,35 @@ export const developerCategoryConfig = {
   seoContent: {
     en: {
       mainTitle: 'Essential Developer Tools for Modern Development',
-      intro: 'Our comprehensive suite of developer tools helps you format, encode, decode, and convert data with ease. Whether you need to format JSON for debugging, encode Base64 for APIs, or pick colors for design, our tools provide instant results.',
+      intro: 'Our JSON formatter tool helps you format, validate, and beautify JSON data with ease. Perfect for debugging APIs, viewing configuration files, and working with JSON responses.',
       
       sections: [
         {
-          title: 'JSON Formatter',
-          content: 'Format, validate, and beautify JSON data. Perfect for debugging APIs, viewing configuration files, and working with JSON responses. Syntax highlighting and error detection included.',
-          keywords: 'json formatter, json validator, format json'
+          title: 'JSON Formatter & Validator',
+          content: 'Format, validate, and beautify JSON data instantly. Perfect for debugging APIs, viewing configuration files, and working with JSON responses. Syntax highlighting and error detection included. Works entirely in your browser for complete privacy.',
+          keywords: 'json formatter, json validator, format json, beautify json'
         },
         {
-          title: 'Base64 Encoder/Decoder',
-          content: 'Encode and decode Base64 strings instantly. Essential for working with APIs, email attachments, and data URIs. Supports text and file encoding.',
-          keywords: 'base64 encoder, base64 decoder, encode base64'
-        },
-        {
-          title: 'URL Encoder/Decoder',
-          content: 'Encode and decode URLs safely. Perfect for creating query strings, handling special characters, and working with web APIs. Follows RFC 3986 standards.',
-          keywords: 'url encoder, url decoder, encode url'
-        },
-        {
-          title: 'Color Picker',
-          content: 'Pick colors and convert between HEX, RGB, HSL, and other formats. Perfect for web design, CSS styling, and creating color palettes. Includes color harmony suggestions.',
-          keywords: 'color picker, hex to rgb, color converter'
+          title: 'Why Use Our JSON Formatter?',
+          content: 'Our JSON formatter provides instant formatting with syntax validation, error highlighting, and beautification. It works completely offline in your browser, ensuring your data remains private. Perfect for developers working with APIs, configuration files, and JSON data.',
+          keywords: 'json tool, json beautifier, json pretty print'
         }
       ]
     },
     hi: {
       mainTitle: 'मॉडर्न डेवलपमेंट के लिए ज़रूरी डेवलपर टूल्स',
-      intro: 'हमारे डेवलपर टूल्स का कॉम्प्रिहेंसिव सूट आपको डेटा फॉर्मेट, एनकोड, डीकोड और कन्वर्ट करने में आसानी से मदद करता है। चाहे आपको डीबगिंग के लिए JSON फॉर्मेट करना हो, API के लिए Base64 एनकोड करना हो, या डिज़ाइन के लिए कलर पिक करना हो, हमारे टूल्स तुरंत रिज़ल्ट देते हैं।',
+      intro: 'हमारा JSON फॉर्मेटर टूल आपको JSON डेटा फॉर्मेट, वैलिडेट और ब्यूटिफाई करने में आसानी से मदद करता है। API डीबगिंग, कॉन्फिगरेशन फाइल देखने और JSON रिस्पॉन्स के साथ काम करने के लिए परफेक्ट।',
       
       sections: [
         {
-          title: 'JSON फॉर्मेटर',
-          content: 'JSON डेटा फॉर्मेट, वैलिडेट और ब्यूटिफाई करें। API डीबगिंग, कॉन्फिगरेशन फाइल देखने और JSON रिस्पॉन्स के साथ काम करने के लिए परफेक्ट। सिंटैक्स हाइलाइटिंग और एरर डिटेक्शन शामिल है।',
-          keywords: 'json formatter, json validator, json format kare'
+          title: 'JSON फॉर्मेटर और वैलिडेटर',
+          content: 'JSON डेटा तुरंत फॉर्मेट, वैलिडेट और ब्यूटिफाई करें। API डीबगिंग, कॉन्फिगरेशन फाइल देखने और JSON रिस्पॉन्स के साथ काम करने के लिए परफेक्ट। सिंटैक्स हाइलाइटिंग और एरर डिटेक्शन शामिल है। पूरी प्राइवेसी के लिए पूरी तरह से आपके ब्राउज़र में काम करता है।',
+          keywords: 'json formatter, json validator, json format kare, json beautify'
         },
         {
-          title: 'Base64 एनकोडर/डीकोडर',
-          content: 'Base64 स्ट्रिंग तुरंत एनकोड और डीकोड करें। API, ईमेल अटैचमेंट और डेटा URI के साथ काम करने के लिए ज़रूरी। टेक्स्ट और फाइल एनकोडिंग सपोर्ट करता है।',
-          keywords: 'base64 encoder, base64 decoder, base64 encode kare'
-        },
-        {
-          title: 'URL एनकोडर/डीकोडर',
-          content: 'URL को सुरक्षित रूप से एनकोड और डीकोड करें। क्वेरी स्ट्रिंग बनाने, स्पेशल कैरेक्टर हैंडल करने और वेब API के साथ काम करने के लिए परफेक्ट। RFC 3986 स्टैंडर्ड फॉलो करता है।',
-          keywords: 'url encoder, url decoder, url encode kare'
-        },
-        {
-          title: 'कलर पिकर',
-          content: 'कलर पिक करें और HEX, RGB, HSL और अन्य फॉर्मेट के बीच कन्वर्ट करें। वेब डिज़ाइन, CSS स्टाइलिंग और कलर पैलेट बनाने के लिए परफेक्ट। कलर हार्मनी सजेशन शामिल हैं।',
-          keywords: 'color picker, hex to rgb, color converter'
+          title: 'हमारा JSON फॉर्मेटर क्यों इस्तेमाल करें?',
+          content: 'हमारा JSON फॉर्मेटर सिंटैक्स वैलिडेशन, एरर हाइलाइटिंग और ब्यूटिफिकेशन के साथ तुरंत फॉर्मेटिंग प्रदान करता है। यह पूरी तरह से आपके ब्राउज़र में ऑफलाइन काम करता है, जिससे आपका डेटा प्राइवेट रहता है। API, कॉन्फिगरेशन फाइल और JSON डेटा के साथ काम करने वाले डेवलपर्स के लिए परफेक्ट।',
+          keywords: 'json tool, json beautifier, json pretty print'
         }
       ]
     }
@@ -126,8 +106,8 @@ export const developerCategoryConfig = {
           answer: 'Yes! Our JSON formatter automatically validates syntax and highlights errors. It helps you identify and fix JSON formatting issues quickly.'
         },
         {
-          question: 'What encoding standards do you support?',
-          answer: 'We support industry-standard encoding: Base64 (RFC 4648), URL encoding (RFC 3986), and UTF-8 character encoding.'
+          question: 'Can I format large JSON files?',
+          answer: 'Yes! Our JSON formatter can handle large JSON files efficiently. All processing happens in your browser, so performance depends on your device capabilities.'
         }
       ]
     },
@@ -151,8 +131,8 @@ export const developerCategoryConfig = {
           answer: 'हाँ! हमारा JSON फॉर्मेटर ऑटोमैटिकली सिंटैक्स वैलिडेट करता है और एरर हाइलाइट करता है। यह आपको JSON फॉर्मेटिंग इश्यू जल्दी आइडेंटिफाई और फिक्स करने में मदद करता है।'
         },
         {
-          question: 'आप कौन से एनकोडिंग स्टैंडर्ड सपोर्ट करते हैं?',
-          answer: 'हम इंडस्ट्री-स्टैंडर्ड एनकोडिंग सपोर्ट करते हैं: Base64 (RFC 4648), URL encoding (RFC 3986), और UTF-8 character encoding।'
+          question: 'क्या मैं बड़ी JSON फाइलें फॉर्मेट कर सकता हूँ?',
+          answer: 'हाँ! हमारा JSON फॉर्मेटर बड़ी JSON फाइलों को कुशलता से हैंडल कर सकता है। सभी प्रोसेसिंग आपके ब्राउज़र में होती है, इसलिए परफॉर्मेंस आपके डिवाइस की क्षमताओं पर निर्भर करती है।'
         }
       ]
     }
