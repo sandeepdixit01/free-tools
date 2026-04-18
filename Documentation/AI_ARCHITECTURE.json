@@ -1,0 +1,99 @@
+{
+  "app": {
+    "fw": "React+Vite",
+    "router": "react-router-dom",
+    "pages": ["home", "tool", "category", "static"]
+  },
+  "pages": {
+    "home": {
+      "req": ["SEOHead", "Hero", "ToolGrid", "CategoryGrid", "WhyUseOurTools", "FAQ"],
+      "opt": ["SEOContent", "AdSlot"],
+      "seo": ["meta", "h1", "faq_schema"]
+    },
+    "tool": {
+      "req": ["SEOHead", "ToolLayout", "ToolHero", "FileUpload", "PreviewPane", "DownloadButton", "FAQ"],
+      "opt": ["ControlPanel", "ToolFeatures", "ToolHowTo", "SEOContent", "AdSlot"],
+      "seo": ["meta", "h1", "faq_schema", "howto_schema"]
+    },
+    "category": {
+      "req": ["SEOHead", "ToolHero", "ToolGrid", "FAQ"],
+      "opt": ["SEOContent", "AdSlot"],
+      "seo": ["meta", "h1", "faq_schema"]
+    },
+    "static": {
+      "req": ["SEOHead"],
+      "opt": ["AdSlot"],
+      "seo": ["meta", "h1"]
+    }
+  },
+  "components": {
+    "SEOHead": {"p": ["title", "description", "keywords", "canonical"], "u": "*", "req": 1},
+    "Hero": {"p": ["config", "quickAccessTools"], "u": ["home"], "h1": "config.hero[L].title"},
+    "ToolHero": {"p": ["title", "subtitle", "benefits", "ctaText", "privacyNotice"], "u": ["tool", "category"], "h1": "title"},
+    "ToolLayout": {"p": ["heroComponent", "featuresComponent", "howToComponent", "seoComponent", "faqComponent", "adSlots", "children"], "u": ["tool"], "wrap": 1},
+    "FileUpload": {"p": ["accept", "maxSize", "maxFiles", "files", "onFileSelect", "onDrop", "onClear"], "u": ["tool"], "dep": "useFileUpload"},
+    "ControlPanel": {"p": ["title", "children"], "u": ["tool"], "custom": 1},
+    "PreviewPane": {"p": ["items", "showComparison", "comparisonLabels"], "u": ["tool"], "dep": "preparePreviewData"},
+    "DownloadButton": {"p": ["onClick", "text", "variant", "size"], "u": ["tool"]},
+    "ToolGrid": {"p": ["tools", "showViewAll"], "u": ["home", "category"], "src": "getActiveTools()"},
+    "CategoryGrid": {"p": ["categories"], "u": ["home"], "src": "homeConfig.categories"},
+    "FAQ": {"p": ["title", "items"], "u": "*", "schema": 1},
+    "SEOContent": {"p": ["title", "intro", "sections"], "u": "*", "opt": 1},
+    "AdSlot": {"p": ["position", "excludeCategory"], "u": "*", "pos": ["TOP_BANNER", "BELOW_HERO", "MID_CONTENT", "BOTTOM_BANNER"]}
+  },
+  "seo": {
+    "handler": "SEOHead",
+    "schemas": {
+      "home": ["Organization", "WebSite", "FAQPage"],
+      "tool": ["WebApplication", "HowTo", "FAQPage"],
+      "category": ["CollectionPage", "FAQPage"]
+    },
+    "faq": "*",
+    "links": {"home→category": "CategoryGrid", "home→tool": "ToolGrid", "category→tool": "ToolGrid"}
+  },
+  "data": {
+    "cfg": "src/configs/",
+    "tools": "src/data/tools.js",
+    "flow": "cfg[L]→props",
+    "static": "cfg",
+    "dynamic": "getActiveTools()|getToolsByCategory()"
+  },
+  "naming": {
+    "routes": {"/": "home", "/tools/:toolId": "tool", "/tools/:categoryId": "category", "/:page": "static"},
+    "comp": "PascalCase",
+    "cfg": "camelCase.config.js",
+    "props": "camelCase"
+  },
+  "reuse": {
+    "must": ["SEOHead", "ToolHero", "FAQ", "SEOContent", "AdSlot", "ToolGrid"],
+    "no_dup": ["h1", "meta", "faq_schema"],
+    "cfg_driven": ["text", "seo", "ui"]
+  },
+  "templates": {
+    "home": ["SEOHead", "Hero", "AdSlot(BELOW_HERO)", "ToolGrid", "CategoryGrid", "AdSlot(MID_CONTENT)", "WhyUseOurTools", "SEOContent", "FAQ", "AdSlot(BOTTOM_BANNER)"],
+    "tool": ["SEOHead", "ToolLayout[ToolHero, AdSlot(TOP), FileUpload, ControlPanel?, PreviewPane, DownloadButton, AdSlot(BELOW_HERO), ToolFeatures?, ToolHowTo?, AdSlot(MID), SEOContent?, FAQ, AdSlot(BOTTOM)]"],
+    "category": ["SEOHead", "ToolHero", "AdSlot(BELOW_HERO)", "ToolGrid", "AdSlot(MID_CONTENT)", "SEOContent?", "FAQ", "AdSlot(BOTTOM_BANNER)"]
+  },
+  "rules": {
+    "h1": "1/page_in_hero",
+    "meta": "unique/cfg",
+    "faq": "req_all",
+    "links": "category+tool",
+    "ads": "position_based",
+    "tools": "active_only"
+  },
+  "tool_sys": {
+    "base": "BaseTool",
+    "methods": ["process(file,settings)", "validate(settings)"],
+    "wrapper": "ToolPage",
+    "controls": "custom_per_tool",
+    "hooks": ["useFileUpload", "useProcessing"],
+    "utils": ["downloadHelper", "previewHelper", "fileValidation"]
+  },
+  "cfg_schema": {
+    "struct": {"seo": {"en": {}, "hi": {}}, "content": {"hero|features|howTo|faq|seoContent": {"en": {}, "hi": {}}}, "uiText": {"en": {}, "hi": {}}, "validation": {}, "defaultSettings": {}},
+    "extract": "cfg[section][L]",
+    "fallback": "en"
+  },
+  "legend": {"L": "lang(en|hi)", "p": "props", "u": "usage", "req": "required", "opt": "optional", "dep": "dependency", "src": "data_source", "cfg": "config", "*": "all_pages", "?": "optional"}
+}
