@@ -342,5 +342,3 @@ export default {
   isToolActive,
   getHomePageTools
 }
-
-// Made with Bob

@@ -297,5 +297,3 @@ const AboutPage = () => {
 }
 
 export default AboutPage
-
-// Made with Bob

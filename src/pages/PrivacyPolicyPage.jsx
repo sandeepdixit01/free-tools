@@ -416,5 +416,3 @@ const PrivacyPolicyPage = () => {
 }
 
 export default PrivacyPolicyPage
-
-// Made with Bob

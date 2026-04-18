@@ -304,5 +304,3 @@ const ContactPage = () => {
 }
 
 export default ContactPage
-
-// Made with Bob

@@ -51,5 +51,3 @@ const ImageResizer50KB = () => {
 };
 
 export default ImageResizer50KB;
-
-// Made with Bob
