@@ -6,16 +6,17 @@
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { useLanguage } from '../../contexts/LanguageContext'
-import { toolRegistry } from '../../configs/toolRegistry'
+import { getActiveTools } from '../../data/tools'
 import ToolCard from '../ToolCard'
 import './AdFallback.css'
 
 const AdFallback = ({ type = 'tools', count = 3, excludeCategory = null }) => {
   const { language } = useLanguage()
 
-  // Get random tools from registry
+  // Get random active tools
   const promotedTools = useMemo(() => {
-    let availableTools = [...toolRegistry]
+    // Get only active tools
+    let availableTools = getActiveTools()
     
     // Exclude current category if specified
     if (excludeCategory) {

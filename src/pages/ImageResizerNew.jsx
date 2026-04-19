@@ -24,6 +24,7 @@ import ImageResizerControls from '../components/ImageResizer/ImageResizerControl
 import imageResizerConfig from '../configs/tools/imageResizer.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
 
+
 const ImageResizerNew = () => {
   // Validate configuration in development mode
   useEffect(() => {

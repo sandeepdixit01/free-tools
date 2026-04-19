@@ -90,6 +90,22 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
     return extracted;
   }, [adaptedConfig.content, language]);
   
+  // Extract SEO data - check both root level (new schema) and content.seo (old schema)
+  const seoData = useMemo(() => {
+    // New schema: seo.en or seo.hi at root level
+    if (adaptedConfig.seo?.[language]) {
+      return adaptedConfig.seo[language];
+    }
+    if (adaptedConfig.seo?.en) {
+      return adaptedConfig.seo.en;
+    }
+    // Old schema: content.seo.en or content.seo.hi
+    if (content.seo) {
+      return content.seo;
+    }
+    return {};
+  }, [adaptedConfig.seo, content.seo, language]);
+  
   const uiText = adaptedConfig.uiText?.[language] || adaptedConfig.uiText?.en || {};
   
   // Initialize tool instance
@@ -249,10 +265,10 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
     <>
       {/* SEO Head */}
       <SEOHead
-        title={content.seo?.title}
-        description={content.seo?.description}
-        keywords={content.seo?.keywords}
-        canonical={content.seo?.canonical}
+        title={seoData?.title}
+        description={seoData?.description}
+        keywords={seoData?.keywords}
+        canonical={seoData?.canonical}
       />
       
       {/* Tool Layout */}

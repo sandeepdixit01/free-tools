@@ -18,17 +18,17 @@ const Footer = () => {
           <div className="footer-links">
             <div className="footer-column">
               <h4 className="footer-column-title">Tools</h4>
-              <a href="/category/pdf" className="footer-link">PDF Tools</a>
-              <a href="/category/image" className="footer-link">Image Tools</a>
-              <a href="/category/text" className="footer-link">Text Tools</a>
-              <a href="/category/developer" className="footer-link">Developer Tools</a>
+              <a href="/tools/pdf" className="footer-link">PDF Tools</a>
+              <a href="/tools/image" className="footer-link">Image Tools</a>
+              <a href="/tools/text" className="footer-link">Text Tools</a>
+              <a href="/tools/developer" className="footer-link">Developer Tools</a>
             </div>
 
             <div className="footer-column">
               <h4 className="footer-column-title">Company</h4>
               <a href="/about" className="footer-link">About</a>
               <a href="/contact" className="footer-link">Contact</a>
-              <a href="/privacy" className="footer-link">Privacy Policy</a>
+              <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
             </div>
           </div>
         </div>

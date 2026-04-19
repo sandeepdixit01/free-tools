@@ -1,8 +1,9 @@
 /**
  * All Tools Page
- * 
+ *
  * Displays all available tools grouped by category
- * Fully dynamic - pulls from toolRegistry
+ * Fully dynamic - pulls from central tools data
+ * Only shows ACTIVE tools
  */
 
 import React, { useMemo } from 'react';
@@ -15,7 +16,7 @@ import FeatureList from '../components/shared/Content/FeatureList';
 import UseCaseList from '../components/shared/Content/UseCaseList';
 import AdSlot from '../components/ads/AdSlot';
 import { AD_POSITIONS } from '../configs/adPositions';
-import { toolRegistry, getToolsByCategory } from '../configs/toolRegistry';
+import { getToolsByCategory, getAllCategories } from '../data/tools';
 import { allToolsConfig } from '../configs/pages/allTools.config';
 import './AllToolsPage.css';
 
@@ -32,15 +33,15 @@ const AllToolsPage = () => {
     return allToolsConfig.seo?.[language] || allToolsConfig.seo?.en || {};
   }, [language]);
 
-  // Group tools by category
+  // Group tools by category - only active tools
   const toolsByCategory = useMemo(() => {
-    const categories = ['image', 'pdf', 'text', 'developer'];
+    const categories = getAllCategories();
     return categories.map(categoryId => ({
       id: categoryId,
       title: content.categories?.[categoryId]?.title || categoryId,
       description: content.categories?.[categoryId]?.description || '',
-      tools: getToolsByCategory(categoryId).filter(tool => tool.config !== null) // Only show implemented tools
-    })).filter(category => category.tools.length > 0); // Only show categories with tools
+      tools: getToolsByCategory(categoryId, true) // activeOnly = true
+    })).filter(category => category.tools.length > 0); // Only show categories with active tools
   }, [content]);
 
   // Handle tool card click
