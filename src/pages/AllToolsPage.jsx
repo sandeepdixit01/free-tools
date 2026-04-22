@@ -9,6 +9,7 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl';
 import SEOHead from '../components/SEO/SEOHead';
 import ToolCard from '../components/ToolCard';
 import FAQ from '../components/shared/Content/FAQ';
@@ -23,6 +24,7 @@ import './AllToolsPage.css';
 const AllToolsPage = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
+  const canonical = useCanonicalUrl();
 
   // Get language-specific content
   const content = useMemo(() => {
@@ -62,7 +64,7 @@ const AllToolsPage = () => {
                 : [...(seoData.keywords.primary || []), ...(seoData.keywords.secondary || []), ...(seoData.keywords.longTail || [])].join(', '))
             : ''
         }
-        canonical={seoData.canonical}
+        canonical={canonical}
       />
 
       <div className="all-tools-page">
@@ -133,12 +135,12 @@ const AllToolsPage = () => {
         <AdSlot position={AD_POSITIONS.MID_CONTENT} />
 
         {/* Use Cases Section */}
-        {content.useCases && (
+        {content.useCases && content.useCases.items && (
           <section className="all-tools-use-cases">
             <div className="container">
               <UseCaseList
                 title={content.useCases.title}
-                items={content.useCases.items}
+                useCases={content.useCases.items}
               />
             </div>
           </section>

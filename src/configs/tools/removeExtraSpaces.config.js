@@ -39,16 +39,26 @@ export const removeExtraSpacesConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Remove Extra Spaces from Text Online | Clean Text Formatting 2024',
-      description: 'Remove extra spaces from text online. Clean up multiple spaces, trim whitespace, and normalize text formatting instantly. Perfect for cleaning copied text.',
+      title: 'Remove Extra Spaces | Clean Text Formatting Online',
+      description: 'Remove extra spaces from text online. Clean up multiple spaces, trim whitespace, and normalize text formatting instantly.',
       keywords: {
-        primary: 'remove extra spaces from text',
+        primary: [
+          'remove extra spaces',
+          'clean text formatting',
+          'trim whitespace'
+        ],
         secondary: [
-          'clean multiple spaces online',
-          'trim whitespace from text',
           'remove double spaces',
           'normalize text spacing',
-          'text cleanup online'
+          'text cleanup online',
+          'clean multiple spaces'
+        ],
+        longTail: [
+          'remove extra spaces from text online free',
+          'clean multiple spaces between words',
+          'trim whitespace from text online',
+          'remove double spaces from document',
+          'normalize text spacing online'
         ]
       },
       canonical: 'https://freetools.com/tools/remove-extra-spaces',
@@ -67,16 +77,26 @@ export const removeExtraSpacesConfig = {
       }
     },
     hi: {
-      title: 'टेक्स्ट से एक्स्ट्रा स्पेस ऑनलाइन हटाएं | टेक्स्ट फॉर्मेटिंग क्लीन करें 2024',
-      description: 'टेक्स्ट से एक्स्ट्रा स्पेस ऑनलाइन हटाएं। मल्टिपल स्पेस क्लीन करें, व्हाइटस्पेस ट्रिम करें और टेक्स्ट फॉर्मेटिंग तुरंत नॉर्मलाइज़ करें। कॉपी किए गए टेक्स्ट को साफ करने के लिए परफेक्ट।',
+      title: 'एक्स्ट्रा स्पेस हटाएं | टेक्स्ट फॉर्मेटिंग क्लीन करें',
+      description: 'टेक्स्ट से एक्स्ट्रा स्पेस ऑनलाइन हटाएं। मल्टिपल स्पेस क्लीन करें, व्हाइटस्पेस ट्रिम करें और टेक्स्ट फॉर्मेटिंग तुरंत नॉर्मलाइज़ करें।',
       keywords: {
-        primary: 'text se extra space hataye',
+        primary: [
+          'extra space hataye',
+          'text formatting clean kare',
+          'whitespace trim kare'
+        ],
         secondary: [
-          'multiple space online clean kare',
-          'text se whitespace trim kare',
           'double space remove kare',
           'text spacing normalize kare',
-          'text cleanup online'
+          'text cleanup online',
+          'multiple space clean kare'
+        ],
+        longTail: [
+          'text se extra space online free hataye',
+          'words ke beech multiple space clean kare',
+          'text se whitespace online trim kare',
+          'document se double space remove kare',
+          'text spacing online normalize kare'
         ]
       },
       canonical: 'https://freetools.com/hi/tools/remove-extra-spaces',
@@ -103,7 +123,7 @@ export const removeExtraSpacesConfig = {
     en: {
       // Hero Section
       hero: {
-        title: 'Free Remove Extra Spaces - Clean Text Formatting Instantly',
+        title: 'Remove Extra Spaces',
         subtitle: 'Remove multiple spaces between words, trim leading and trailing whitespace, and normalize text formatting. Perfect for cleaning up copied text and documents.',
         benefits: [
           { icon: '⚡', text: 'Instant cleanup' },
@@ -214,7 +234,7 @@ export const removeExtraSpacesConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'Complete Guide to Removing Extra Spaces from Text',
-        intro: 'This free online tool helps you remove extra spaces from text instantly. Clean up multiple consecutive spaces, trim leading and trailing whitespace, and normalize text formatting. Perfect for cleaning copied text from PDFs, websites, or documents with formatting issues. All processing happens in your browser for complete privacy.',
+        intro: 'This free online tool helps you remove extra spaces from text instantly. Clean up multiple consecutive spaces, trim leading and trailing whitespace, and normalize text formatting. Perfect for cleaning copied text from PDFs, websites, or documents with formatting issues. All processing happens in your browser for complete privacy. You can also <a href="/tools/word-counter">count words</a> or <a href="/tools/text-case-converter">change text case</a> after cleaning.',
         sections: [
           {
             title: 'Why Remove Extra Spaces from Text?',
@@ -401,7 +421,7 @@ export const removeExtraSpacesConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'टेक्स्ट से एक्स्ट्रा स्पेस हटाने की पूरी गाइड',
-        intro: 'यह फ्री ऑनलाइन टूल आपको तुरंत टेक्स्ट से एक्स्ट्रा स्पेस हटाने में मदद करता है। मल्टिपल कंसीक्यूटिव स्पेस क्लीन करें, लीडिंग और ट्रेलिंग व्हाइटस्पेस ट्रिम करें और टेक्स्ट फॉर्मेटिंग नॉर्मलाइज़ करें। PDF, वेबसाइट या फॉर्मेटिंग इश्यूज़ वाले डॉक्यूमेंट से कॉपी किए गए टेक्स्ट को साफ करने के लिए परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है।',
+        intro: 'यह फ्री ऑनलाइन टूल आपको तुरंत टेक्स्ट से एक्स्ट्रा स्पेस हटाने में मदद करता है। मल्टिपल कंसीक्यूटिव स्पेस क्लीन करें, लीडिंग और ट्रेलिंग व्हाइटस्पेस ट्रिम करें और टेक्स्ट फॉर्मेटिंग नॉर्मलाइज़ करें। PDF, वेबसाइट या फॉर्मेटिंग इश्यूज़ वाले डॉक्यूमेंट से कॉपी किए गए टेक्स्ट को साफ करने के लिए परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आप <a href="/tools/word-counter">शब्द गिन</a> भी सकते हैं या सफाई के बाद <a href="/tools/text-case-converter">टेक्स्ट केस बदल</a> सकते हैं।',
         sections: [
           {
             title: 'टेक्स्ट से एक्स्ट्रा स्पेस क्यों हटाएं?',

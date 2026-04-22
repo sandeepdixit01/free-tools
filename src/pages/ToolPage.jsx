@@ -15,11 +15,15 @@
 import React, { useState, useEffect, useMemo, memo } from 'react';
 import PropTypes from 'prop-types';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl';
 import SEOHead from '../components/SEO/SEOHead';
 
 // ⚠️ TEMPORARY: Config adapter for backward compatibility
 // TODO: Remove after all tools migrated to new schema
 import { adaptConfig } from '../utils/configAdapter';
+
+// Structured Data Helper
+import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
 
 // Layout Components
 import ToolLayout from '../components/shared/Layout/ToolLayout';
@@ -59,16 +63,28 @@ import { preparePreviewData } from '../utils/previewHelper';
  */
 const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
   const { language } = useLanguage();
+  const canonical = useCanonicalUrl();
   
   // ⚠️ TEMPORARY: Adapt config for backward compatibility
   // TODO: Remove after all tools migrated to new schema
   const adaptedConfig = useMemo(() => adaptConfig(config), [config]);
   
   // Get language-specific content from config
-  // Config structure has nested language objects (e.g., hero.en, features.en)
+  // Schema v2.0: content.en, content.hi (language at top level)
+  // Old schema: content.hero.en, content.hero.hi (language at second level)
   const content = useMemo(() => {
     if (!adaptedConfig.content) return {};
-    // Extract language-specific content from nested structure
+    
+    // Check if using Schema v2.0 (language at top level)
+    if (adaptedConfig.content[language]) {
+      // Schema v2.0: Return the entire language object
+      return adaptedConfig.content[language];
+    } else if (adaptedConfig.content.en) {
+      // Schema v2.0: Fallback to English
+      return adaptedConfig.content.en;
+    }
+    
+    // Old schema: Extract language-specific content from nested structure
     const extracted = {};
     Object.keys(adaptedConfig.content).forEach(key => {
       if (adaptedConfig.content[key] && typeof adaptedConfig.content[key] === 'object') {
@@ -107,6 +123,9 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
   }, [adaptedConfig.seo, content.seo, language]);
   
   const uiText = adaptedConfig.uiText?.[language] || adaptedConfig.uiText?.en || {};
+  
+  // Extract toolId from config metadata for breadcrumb
+  const toolId = adaptedConfig.metadata?.id || null;
   
   // Initialize tool instance
   const toolInstance = useMemo(() => new ToolClass(), [ToolClass]);
@@ -260,6 +279,15 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
       bottom: <AdSlot position={AD_POSITIONS.BOTTOM_BANNER} excludeCategory={toolCategory} />
     };
   }, [toolCategory]);
+
+  // Generate structured data schemas
+  const structuredData = useMemo(() => {
+    return {
+      webApplication: generateWebApplicationSchema(adaptedConfig, language),
+      howTo: generateHowToSchema(adaptedConfig, language),
+      faq: generateFAQSchema(adaptedConfig, language)
+    };
+  }, [adaptedConfig, language]);
   
   return (
     <>
@@ -268,11 +296,17 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
         title={seoData?.title}
         description={seoData?.description}
         keywords={seoData?.keywords}
-        canonical={seoData?.canonical}
+        canonical={canonical}
+        webApplicationData={structuredData.webApplication}
+        howToData={structuredData.howTo}
+        faqData={structuredData.faq}
       />
       
       {/* Tool Layout */}
       <ToolLayout
+        // Tool identification for breadcrumb
+        toolId={toolId}
+        
         // Hero Section
         showHero={true}
         heroComponent={

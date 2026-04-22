@@ -32,7 +32,12 @@ const SEOContent = ({
         {(title || intro) && (
           <div className="seo-content-header">
             {title && <h2 className="seo-content-title">{title}</h2>}
-            {intro && <p className="seo-content-intro">{intro}</p>}
+            {intro && (
+              <p
+                className="seo-content-intro"
+                dangerouslySetInnerHTML={{ __html: intro }}
+              />
+            )}
           </div>
         )}
 
@@ -53,7 +58,8 @@ const SEOContent = ({
               {section.content && (
                 <div className="seo-section-content">
                   {typeof section.content === 'string' ? (
-                    <p>{section.content}</p>
+                    // Support HTML content for contextual internal linking
+                    <p dangerouslySetInnerHTML={{ __html: section.content }} />
                   ) : (
                     section.content
                   )}
@@ -64,8 +70,8 @@ const SEOContent = ({
               {(section.link || section.keywords) && (
                 <div className="seo-section-footer">
                   {section.link && section.linkText && (
-                    <Link 
-                      to={section.link} 
+                    <Link
+                      to={section.link}
                       className="seo-section-link"
                       onClick={section.onLinkClick}
                     >
@@ -73,7 +79,11 @@ const SEOContent = ({
                     </Link>
                   )}
                   {section.keywords && (
-                    <span className="seo-keywords">{section.keywords}</span>
+                    <span className="seo-keywords">
+                      {Array.isArray(section.keywords)
+                        ? section.keywords.join(', ')
+                        : section.keywords}
+                    </span>
                   )}
                 </div>
               )}
@@ -113,7 +123,10 @@ SEOContent.propTypes = {
       linkText: PropTypes.string,
       onLinkClick: PropTypes.func,
       anchor: PropTypes.string,
-      keywords: PropTypes.string,
+      keywords: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string)
+      ]),
       detailedContent: PropTypes.node
     })
   ).isRequired,

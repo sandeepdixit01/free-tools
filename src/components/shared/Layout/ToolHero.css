@@ -5,7 +5,7 @@
 
 .tool-hero {
   width: 100%;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem 1.5rem 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
 }
@@ -22,23 +22,23 @@
 .tool-hero-title {
   font-size: 2.5rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.75rem 0;
   line-height: 1.2;
 }
 
 .tool-hero-subtitle {
-  font-size: 1.25rem;
-  margin: 0 0 2rem 0;
+  font-size: 1.125rem;
+  margin: 0 0 1.5rem 0;
   opacity: 0.95;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .tool-hero-benefits {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 1.5rem 0 1rem 0;
 }
 
 .tool-hero-benefit {
@@ -69,8 +69,8 @@
 
 .tool-hero-cta {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  font-size: 1.125rem;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #667eea;
   background: white;
@@ -78,7 +78,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 1.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -95,18 +95,18 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.625rem 1.25rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
-  font-size: 0.95rem;
-  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  margin-top: 1rem;
   backdrop-filter: blur(10px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .tool-hero {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem 1.25rem 1rem;
   }
 
   .tool-hero-title {

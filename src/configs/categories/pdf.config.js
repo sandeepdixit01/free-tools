@@ -50,7 +50,7 @@ export const pdfCategoryConfig = {
   seoContent: {
     en: {
       mainTitle: 'Professional PDF Tools for Every Task',
-      intro: 'Our comprehensive suite of PDF tools helps you manage, optimize, and convert PDF files with ease. Whether you need to compress large PDFs, merge multiple documents, split pages, or convert images to PDF, our tools provide professional results instantly.',
+      intro: 'Our comprehensive suite of PDF tools helps you manage, optimize, and convert PDF files with ease. Whether you need to <a href="/tools/merge-pdf">merge multiple documents</a>, <a href="/tools/split-pdf">split pages</a>, or <a href="/tools/image-to-pdf">convert images to PDF</a>, our tools provide professional results instantly.',
       
       sections: [
         {
@@ -77,7 +77,7 @@ export const pdfCategoryConfig = {
     },
     hi: {
       mainTitle: 'हर काम के लिए प्रोफेशनल PDF टूल्स',
-      intro: 'हमारे PDF टूल्स का कॉम्प्रिहेंसिव सूट आपको PDF फाइल मैनेज, ऑप्टिमाइज़ और कन्वर्ट करने में आसानी से मदद करता है। चाहे आपको बड़ी PDF कंप्रेस करनी हो, मल्टीपल डॉक्यूमेंट मर्ज करने हों, पेज स्प्लिट करने हों, या इमेज को PDF में कन्वर्ट करना हो, हमारे टूल्स तुरंत प्रोफेशनल रिज़ल्ट देते हैं।',
+      intro: 'हमारे PDF टूल्स का कॉम्प्रिहेंसिव सूट आपको PDF फाइल मैनेज, ऑप्टिमाइज़ और कन्वर्ट करने में आसानी से मदद करता है। चाहे आपको <a href="/tools/merge-pdf">मल्टीपल डॉक्यूमेंट मर्ज</a> करने हों, <a href="/tools/split-pdf">पेज स्प्लिट</a> करने हों, या <a href="/tools/image-to-pdf">इमेज को PDF में कन्वर्ट</a> करना हो, हमारे टूल्स तुरंत प्रोफेशनल रिज़ल्ट देते हैं।',
       
       sections: [
         {

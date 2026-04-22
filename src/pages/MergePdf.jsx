@@ -20,6 +20,7 @@ import MergePdfTool from '../tools/MergePdfTool';
 import MergePdfControls from '../components/MergePdf/MergePdfControls';
 import { mergePdfConfig } from '../configs/tools/mergePdf.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
+import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
 
 const MergePdf = () => {
   const { language } = useLanguage();
@@ -72,6 +73,15 @@ const MergePdf = () => {
     };
   }, [toolCategory]);
 
+  // Generate structured data schemas
+  const structuredData = useMemo(() => {
+    return {
+      webApplication: generateWebApplicationSchema(mergePdfConfig, language),
+      howTo: generateHowToSchema(mergePdfConfig, language),
+      faq: generateFAQSchema(mergePdfConfig, language)
+    };
+  }, [language]);
+
   return (
     <>
       {/* SEO Head */}
@@ -86,10 +96,16 @@ const MergePdf = () => {
             : ''
         }
         canonical={seoData.canonical}
+        webApplicationData={structuredData.webApplication}
+        howToData={structuredData.howTo}
+        faqData={structuredData.faq}
       />
 
       {/* Tool Layout */}
       <ToolLayout
+        // Tool identification for breadcrumb
+        toolId="merge-pdf"
+        
         // Hero Section
         showHero={true}
         heroComponent={
@@ -129,8 +145,8 @@ const MergePdf = () => {
         useCasesComponent={
           content.useCases ? (
             <UseCaseList
+              useCases={content.useCases.items}
               title={content.useCases.title}
-              items={content.useCases.items}
             />
           ) : null
         }

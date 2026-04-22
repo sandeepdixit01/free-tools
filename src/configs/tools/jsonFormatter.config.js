@@ -42,7 +42,18 @@ export const jsonFormatterConfig = {
       title: 'JSON Formatter Online | Validate and Beautify JSON 2024',
       description: 'Format, minify, and validate JSON data online. Free JSON formatter and validator for developers, API testing, and debugging.',
       keywords: {
-        primary: 'json formatter online',
+        primary: [
+          'json formatter online',
+          'validate json online',
+          'beautify json code'
+        ],
+        longTail: [
+          'json formatter online free',
+          'validate and format json',
+          'json minify and beautify',
+          'json syntax checker online',
+          'format json data online'
+        ],
         secondary: [
           'validate json online',
           'beautify json code',
@@ -70,7 +81,18 @@ export const jsonFormatterConfig = {
       title: 'JSON फॉर्मेटर ऑनलाइन | JSON वैलिडेट और ब्यूटिफाई करें 2024',
       description: 'JSON डेटा को ऑनलाइन फॉर्मेट, मिनिफाई और वैलिडेट करें। डेवलपर्स, API टेस्टिंग और डिबगिंग के लिए फ्री JSON फॉर्मेटर और वैलिडेटर।',
       keywords: {
-        primary: 'json formatter online',
+        primary: [
+          'json formatter online',
+          'json online validate kare',
+          'json code beautify kare'
+        ],
+        longTail: [
+          'json formatter online free hindi',
+          'json validate aur format kare',
+          'json minify aur beautify kare',
+          'json syntax checker online hindi',
+          'json data format kare online'
+        ],
         secondary: [
           'json online validate kare',
           'json code beautify kare',
@@ -103,7 +125,7 @@ export const jsonFormatterConfig = {
     en: {
       // Hero Section
       hero: {
-        title: 'Free JSON Formatter - Format, Validate & Minify JSON',
+        title: 'JSON Formatter',
         subtitle: 'Format, validate, and minify JSON data instantly. Perfect for developers, API testing, and debugging. Works with any JSON structure.',
         benefits: [
           { icon: '⚡', text: 'Instant formatting' },
@@ -214,7 +236,7 @@ export const jsonFormatterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'Complete Guide to JSON Formatting and Validation',
-        intro: 'This free online JSON formatter helps you format, validate, and minify JSON data instantly. Perfect for developers working with APIs, configuration files, and data structures. All processing happens in your browser for complete privacy and security.',
+        intro: 'This free online JSON formatter helps you format, validate, and minify JSON data instantly. Perfect for developers working with APIs, configuration files, and data structures. All processing happens in your browser for complete privacy and security. You can also convert JSON using our <a href="/tools/json-to-csv">JSON to CSV Converter</a> or encode data with <a href="/tools/base64-encoder-decoder">Base64 Encoder</a>.',
         sections: [
           {
             title: 'JSON Formatter for Developers',
@@ -300,7 +322,7 @@ export const jsonFormatterConfig = {
     hi: {
       // Hero Section
       hero: {
-        title: 'फ्री JSON फॉर्मेटर - JSON फॉर्मेट, वैलिडेट और मिनिफाई करें',
+        title: 'JSON फॉर्मेटर',
         subtitle: 'JSON डेटा को तुरंत फॉर्मेट, वैलिडेट और मिनिफाई करें। डेवलपर्स, API टेस्टिंग और डिबगिंग के लिए परफेक्ट। किसी भी JSON स्ट्रक्चर के साथ काम करता है।',
         benefits: [
           { icon: '⚡', text: 'तुरंत फॉर्मेटिंग' },
@@ -411,7 +433,7 @@ export const jsonFormatterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'JSON फॉर्मेटिंग और वैलिडेशन की पूरी गाइड',
-        intro: 'यह फ्री ऑनलाइन JSON फॉर्मेटर आपको JSON डेटा को तुरंत फॉर्मेट, वैलिडेट और मिनिफाई करने में मदद करता है। APIs, कॉन्फिगरेशन फाइल्स और डेटा स्ट्रक्चर के साथ काम करने वाले डेवलपर्स के लिए परफेक्ट। पूरी प्राइवेसी और सिक्योरिटी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है।',
+        intro: 'यह फ्री ऑनलाइन JSON फॉर्मेटर आपको JSON डेटा को तुरंत फॉर्मेट, वैलिडेट और मिनिफाई करने में मदद करता है। APIs, कॉन्फिगरेशन फाइल्स और डेटा स्ट्रक्चर के साथ काम करने वाले डेवलपर्स के लिए परफेक्ट। पूरी प्राइवेसी और सिक्योरिटी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आप हमारे <a href="/tools/json-to-csv">JSON to CSV Converter</a> का उपयोग करके JSON को कन्वर्ट भी कर सकते हैं या <a href="/tools/base64-encoder-decoder">Base64 Encoder</a> से डेटा एनकोड कर सकते हैं।',
         sections: [
           {
             title: 'डेवलपर्स के लिए JSON फॉर्मेटर',

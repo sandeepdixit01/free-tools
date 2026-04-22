@@ -1,0 +1,275 @@
+/**
+ * URLEncoderControls Component Styles
+ * Reuses Base64 Encoder styling patterns for consistency
+ */
+
+.url-encoder-controls {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Input Section */
+.url-encoder-input-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.url-encoder-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.url-encoder-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.url-encoder-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.url-encoder-textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.url-encoder-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.url-encoder-textarea::placeholder {
+  color: #95a5a6;
+}
+
+/* Button Group */
+.url-encoder-button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.url-encoder-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.url-encoder-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  flex: 1;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.url-encoder-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.url-encoder-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.url-encoder-btn-secondary {
+  background: #ecf0f1;
+  color: #2c3e50;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.url-encoder-btn-secondary:hover:not(:disabled) {
+  background: #d5dbdb;
+}
+
+.url-encoder-btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result Section */
+.url-encoder-result-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.url-encoder-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.url-encoder-result-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.url-encoder-result {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.url-encoder-result-pre {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.url-encoder-result-pre code {
+  color: #2c3e50;
+}
+
+/* Error Display */
+.url-encoder-error {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #fff5f5;
+  border: 2px solid #feb2b2;
+  border-radius: 8px;
+  align-items: flex-start;
+}
+
+.url-encoder-error-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.url-encoder-error-content {
+  flex: 1;
+}
+
+.url-encoder-error-title {
+  font-weight: 600;
+  color: #c53030;
+  margin-bottom: 0.5rem;
+}
+
+.url-encoder-error-message {
+  color: #742a2a;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Empty State */
+.url-encoder-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+}
+
+.url-encoder-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.url-encoder-empty-message {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .url-encoder-controls {
+    padding: 1rem 0;
+  }
+
+  .url-encoder-input-section,
+  .url-encoder-result-section {
+    padding: 1.5rem;
+  }
+
+  .url-encoder-textarea {
+    min-height: 200px;
+    font-size: 0.9rem;
+  }
+
+  .url-encoder-button-group {
+    flex-direction: column;
+  }
+
+  .url-encoder-btn-primary {
+    min-width: 100%;
+  }
+
+  .url-encoder-input-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .url-encoder-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .url-encoder-result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .url-encoder-input-section,
+  .url-encoder-result-section {
+    padding: 1rem;
+  }
+
+  .url-encoder-label {
+    font-size: 1rem;
+  }
+
+  .url-encoder-result-title {
+    font-size: 1.1rem;
+  }
+
+  .url-encoder-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+

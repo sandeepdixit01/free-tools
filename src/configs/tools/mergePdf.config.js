@@ -42,7 +42,18 @@ export const mergePdfConfig = {
       title: 'Merge PDF Files Online | Combine PDF Documents Instantly 2024',
       description: 'Combine multiple PDF files into one document online. Free PDF merger that works in your browser. Secure, no file size limits.',
       keywords: {
-        primary: 'merge pdf files online',
+        primary: [
+          'merge pdf files online',
+          'combine multiple pdf files',
+          'join pdf documents'
+        ],
+        longTail: [
+          'merge pdf files online free',
+          'combine pdf without software',
+          'join multiple pdf into one',
+          'pdf merger online tool',
+          'merge pdf pages online'
+        ],
         secondary: [
           'combine multiple pdf files',
           'join pdf documents',
@@ -70,7 +81,18 @@ export const mergePdfConfig = {
       title: 'PDF फाइलें ऑनलाइन मर्ज करें | PDF डॉक्यूमेंट तुरंत कंबाइन करें 2024',
       description: 'कई PDF फाइलों को एक डॉक्यूमेंट में ऑनलाइन कंबाइन करें। फ्री PDF मर्जर जो आपके ब्राउज़र में काम करता है। सिक्योर, कोई फाइल साइज़ लिमिट नहीं।',
       keywords: {
-        primary: 'pdf files online merge kare',
+        primary: [
+          'pdf files online merge kare',
+          'multiple pdf files combine kare',
+          'pdf documents join kare'
+        ],
+        longTail: [
+          'pdf files online free merge kare',
+          'bina software pdf combine kare',
+          'multiple pdf ko ek me join kare',
+          'pdf merger online tool hindi',
+          'pdf pages online merge kare'
+        ],
         secondary: [
           'multiple pdf files combine kare',
           'pdf documents join kare',
@@ -103,7 +125,7 @@ export const mergePdfConfig = {
     en: {
       // Hero Section
       hero: {
-        title: 'Merge PDF Files Online',
+        title: 'Merge PDF',
         subtitle: 'Combine multiple PDF documents into one file instantly',
         benefits: [
           { icon: '⚡', text: 'Instant merging' },
@@ -219,6 +241,34 @@ export const mergePdfConfig = {
         ]
       },
 
+      // SEO Content Section
+      seoContent: {
+        mainTitle: 'Complete Guide to Merging PDF Files Online',
+        intro: 'This free online PDF merger helps you combine multiple PDF documents into a single file instantly. Merge PDFs without software installation, maintain original quality, and keep your files completely secure. Perfect for business documents, academic papers, legal files, and any situation where you need to consolidate multiple PDFs. All processing happens in your browser for complete privacy. After merging, you can also <a href="/tools/split-pdf">split PDF files</a> or <a href="/tools/rotate-pdf">rotate PDF pages</a> as needed.',
+        sections: [
+          {
+            title: 'How to Merge PDF Files Online',
+            content: 'Merging PDF files online is simple and secure with our browser-based tool. Upload multiple PDF files, arrange them in your desired order, and click merge to combine them into a single document. The entire process happens in your browser, ensuring your files never leave your device. This method is faster than desktop software and works on any device without installation.',
+            keywords: ['merge pdf online', 'combine pdf files', 'pdf merger tool']
+          },
+          {
+            title: 'Why Merge PDF Documents?',
+            content: 'Combining multiple PDF files into one document offers numerous benefits. It simplifies file management by reducing clutter, makes sharing easier with a single file instead of multiple attachments, and creates professional-looking documents by consolidating related content. Common use cases include merging invoices for accounting, combining research papers for academic submissions, consolidating legal documents for court filings, and creating comprehensive reports from multiple sources.',
+            keywords: ['why merge pdfs', 'pdf consolidation benefits', 'combine documents']
+          },
+          {
+            title: 'Secure PDF Merging in Your Browser',
+            content: 'Security is paramount when handling sensitive documents. Our PDF merger processes everything directly in your browser using JavaScript and the pdf-lib library. Your files are never uploaded to any server, eliminating privacy concerns and data breach risks. This client-side processing ensures complete confidentiality for business contracts, financial documents, personal records, and any sensitive information.',
+            keywords: ['secure pdf merger', 'private pdf combining', 'browser-based pdf tool']
+          },
+          {
+            title: 'Maintain PDF Quality When Merging',
+            content: 'Quality preservation is crucial when combining PDFs. Our tool maintains the original resolution, formatting, fonts, images, and metadata of your PDF files. Unlike some online tools that compress or degrade quality, we use advanced PDF manipulation techniques to ensure the merged document looks exactly like the originals. Perfect for professional documents, high-resolution images, and print-ready files.',
+            keywords: ['pdf quality preservation', 'lossless pdf merge', 'maintain pdf formatting']
+          }
+        ]
+      },
+
       // Use Cases Section
       useCases: {
         title: 'Common Use Cases',
@@ -253,7 +303,7 @@ export const mergePdfConfig = {
     hi: {
       // Hero Section
       hero: {
-        title: 'PDF फाइलें ऑनलाइन मर्ज करें',
+        title: 'PDF मर्ज करें',
         subtitle: 'कई PDF दस्तावेज़ों को तुरंत एक फाइल में मिलाएं',
         benefits: [
           { icon: '⚡', text: 'तुरंत मर्जिंग' },
@@ -365,6 +415,34 @@ export const mergePdfConfig = {
           {
             question: 'क्या मैं पासवर्ड-प्रोटेक्टेड PDF मर्ज कर सकता हूं?',
             answer: 'वर्तमान में, पासवर्ड-प्रोटेक्टेड PDF को मर्ज करने से पहले अनलॉक करने की ज़रूरत है। आप पहले हमारे PDF अनलॉक टूल का उपयोग कर सकते हैं, फिर फाइलें मर्ज कर सकते हैं।'
+          }
+        ]
+      },
+
+      // SEO Content Section
+      seoContent: {
+        mainTitle: 'PDF फाइलें ऑनलाइन मर्ज करने की पूरी गाइड',
+        intro: 'यह फ्री ऑनलाइन PDF मर्जर आपको कई PDF दस्तावेज़ों को तुरंत एक फाइल में मिलाने में मदद करता है। बिना सॉफ्टवेयर इंस्टॉलेशन के PDF मर्ज करें, मूल क्वालिटी बनाए रखें और अपनी फाइलों को पूरी तरह सुरक्षित रखें। व्यावसायिक दस्तावेज़, शैक्षणिक पेपर, कानूनी फाइलें और किसी भी स्थिति के लिए परफेक्ट जहां आपको कई PDF को समेकित करने की ज़रूरत है। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है। मर्ज करने के बाद, आप <a href="/tools/split-pdf">PDF फाइलों को स्प्लिट</a> कर सकते हैं या ज़रूरत के अनुसार <a href="/tools/rotate-pdf">PDF पेज रोटेट</a> कर सकते हैं।',
+        sections: [
+          {
+            title: 'PDF फाइलें ऑनलाइन कैसे मर्ज करें',
+            content: 'हमारे ब्राउज़र-बेस्ड टूल के साथ PDF फाइलें ऑनलाइन मर्ज करना सरल और सुरक्षित है। कई PDF फाइलें अपलोड करें, उन्हें अपने वांछित क्रम में व्यवस्थित करें, और उन्हें एक दस्तावेज़ में मिलाने के लिए मर्ज पर क्लिक करें। पूरी प्रोसेस आपके ब्राउज़र में होती है, यह सुनिश्चित करते हुए कि आपकी फाइलें आपके डिवाइस को कभी नहीं छोड़तीं। यह तरीका डेस्कटॉप सॉफ्टवेयर से तेज़ है और बिना इंस्टॉलेशन के किसी भी डिवाइस पर काम करता है।',
+            keywords: ['pdf online merge kare', 'pdf files combine kare', 'pdf merger tool']
+          },
+          {
+            title: 'PDF दस्तावेज़ क्यों मर्ज करें?',
+            content: 'कई PDF फाइलों को एक दस्तावेज़ में मिलाने से कई फायदे मिलते हैं। यह क्लटर कम करके फाइल मैनेजमेंट को सरल बनाता है, कई अटैचमेंट के बजाय एक फाइल के साथ शेयरिंग को आसान बनाता है, और संबंधित कंटेंट को समेकित करके प्रोफेशनल दिखने वाले दस्तावेज़ बनाता है। सामान्य उपयोग के मामलों में अकाउंटिंग के लिए इनवॉइस मर्ज करना, शैक्षणिक सबमिशन के लिए रिसर्च पेपर कंबाइन करना, कोर्ट फाइलिंग के लिए कानूनी दस्तावेज़ समेकित करना, और कई सोर्स से व्यापक रिपोर्ट बनाना शामिल है।',
+            keywords: ['pdf kyu merge kare', 'pdf consolidation ke fayde', 'documents combine kare']
+          },
+          {
+            title: 'अपने ब्राउज़र में सुरक्षित PDF मर्जिंग',
+            content: 'संवेदनशील दस्तावेज़ों को हैंडल करते समय सुरक्षा सर्वोपरि है। हमारा PDF मर्जर JavaScript और pdf-lib लाइब्रेरी का उपयोग करके सीधे आपके ब्राउज़र में सब कुछ प्रोसेस करता है। आपकी फाइलें कभी भी किसी सर्वर पर अपलोड नहीं होतीं, जो प्राइवेसी चिंताओं और डेटा ब्रीच रिस्क को खत्म करती है। यह क्लाइंट-साइड प्रोसेसिंग व्यावसायिक कॉन्ट्रैक्ट, वित्तीय दस्तावेज़, व्यक्तिगत रिकॉर्ड और किसी भी संवेदनशील जानकारी के लिए पूर्ण गोपनीयता सुनिश्चित करती है।',
+            keywords: ['secure pdf merger', 'private pdf combining', 'browser-based pdf tool']
+          },
+          {
+            title: 'मर्ज करते समय PDF क्वालिटी बनाए रखें',
+            content: 'PDF को कंबाइन करते समय क्वालिटी प्रिज़र्वेशन क्रूशियल है। हमारा टूल आपकी PDF फाइलों के मूल रेज़ोल्यूशन, फॉर्मेटिंग, फॉन्ट, इमेज और मेटाडेटा को बनाए रखता है। कुछ ऑनलाइन टूल्स के विपरीत जो कंप्रेस या क्वालिटी डिग्रेड करते हैं, हम यह सुनिश्चित करने के लिए एडवांस्ड PDF मैनिपुलेशन तकनीकों का उपयोग करते हैं कि मर्ज किया गया दस्तावेज़ बिल्कुल ओरिजिनल जैसा दिखे। प्रोफेशनल दस्तावेज़, हाई-रेज़ोल्यूशन इमेज और प्रिंट-रेडी फाइलों के लिए परफेक्ट।',
+            keywords: ['pdf quality preservation', 'lossless pdf merge', 'pdf formatting maintain kare']
           }
         ]
       },

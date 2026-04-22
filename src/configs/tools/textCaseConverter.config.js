@@ -39,16 +39,26 @@ export const textCaseConverterConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Text Case Converter Online | Uppercase Lowercase Title Case 2024',
+      title: 'Text Case Converter | Uppercase Lowercase Title Case',
       description: 'Convert text to UPPERCASE, lowercase, Title Case, or Sentence case online. Free text case converter for formatting documents and content.',
       keywords: {
-        primary: 'text case converter online',
+        primary: [
+          'text case converter',
+          'uppercase lowercase converter',
+          'title case converter'
+        ],
         secondary: [
-          'uppercase to lowercase converter',
-          'title case converter',
           'sentence case converter',
           'change text capitalization',
-          'convert text case'
+          'convert text case',
+          'text formatting tool'
+        ],
+        longTail: [
+          'convert text to uppercase online',
+          'lowercase to uppercase converter free',
+          'title case converter online free',
+          'change text case online',
+          'text capitalization converter'
         ]
       },
       canonical: 'https://freetools.com/tools/text-case-converter',
@@ -67,16 +77,26 @@ export const textCaseConverterConfig = {
       }
     },
     hi: {
-      title: 'टेक्स्ट केस कन्वर्टर ऑनलाइन | अपरकेस लोअरकेस टाइटल केस 2024',
+      title: 'टेक्स्ट केस कन्वर्टर | अपरकेस लोअरकेस टाइटल केस',
       description: 'टेक्स्ट को UPPERCASE, lowercase, Title Case या Sentence case में ऑनलाइन कन्वर्ट करें। डॉक्यूमेंट और कंटेंट फॉर्मेट करने के लिए फ्री टेक्स्ट केस कन्वर्टर।',
       keywords: {
-        primary: 'text case converter online',
+        primary: [
+          'text case converter',
+          'uppercase lowercase converter',
+          'title case converter'
+        ],
         secondary: [
-          'uppercase se lowercase converter',
-          'title case converter',
           'sentence case converter',
           'text capitalization badle',
-          'text case convert kare'
+          'text case convert kare',
+          'text formatting tool'
+        ],
+        longTail: [
+          'text ko uppercase mein convert kare online',
+          'lowercase se uppercase converter free',
+          'title case converter online free',
+          'text case online badle',
+          'text capitalization converter'
         ]
       },
       canonical: 'https://freetools.com/hi/tools/text-case-converter',
@@ -103,7 +123,7 @@ export const textCaseConverterConfig = {
     en: {
       // Hero Section
       hero: {
-        title: 'Free Text Case Converter - Change Text Case Instantly',
+        title: 'Text Case Converter',
         subtitle: 'Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and more. Perfect for formatting documents, emails, and content.',
         benefits: [
           { icon: '⚡', text: 'Instant conversion' },
@@ -214,7 +234,7 @@ export const textCaseConverterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'Complete Guide to Text Case Conversion',
-        intro: 'This free online text case converter helps you transform text instantly. Convert to UPPERCASE, lowercase, Title Case, Sentence case, and more. Perfect for writers formatting documents, professionals creating emails, content creators managing social media, and anyone who needs quick text transformation. All processing happens in your browser for complete privacy.',
+        intro: 'This free online text case converter helps you transform text instantly. Convert to UPPERCASE, lowercase, Title Case, Sentence case, and more. Perfect for writers formatting documents, professionals creating emails, content creators managing social media, and anyone who needs quick text transformation. All processing happens in your browser for complete privacy. You can also <a href="/tools/word-counter">count words</a> or <a href="/tools/remove-extra-spaces">clean up spacing</a> in your text.',
         sections: [
           {
             title: 'UPPERCASE Converter - Make Text All Caps',
@@ -290,7 +310,7 @@ export const textCaseConverterConfig = {
     hi: {
       // Hero Section
       hero: {
-        title: 'फ्री टेक्स्ट केस कन्वर्टर - टेक्स्ट केस तुरंत बदलें',
+        title: 'टेक्स्ट केस कन्वर्टर',
         subtitle: 'टेक्स्ट को UPPERCASE, lowercase, Title Case, Sentence case और अधिक में कन्वर्ट करें। डॉक्यूमेंट, ईमेल और कंटेंट फॉर्मेट करने के लिए परफेक्ट।',
         benefits: [
           { icon: '⚡', text: 'तुरंत कन्वर्ज़न' },
@@ -401,7 +421,7 @@ export const textCaseConverterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'टेक्स्ट केस कन्वर्ज़न की पूरी गाइड',
-        intro: 'यह फ्री ऑनलाइन टेक्स्ट केस कन्वर्टर आपको तुरंत टेक्स्ट ट्रांसफॉर्म करने में मदद करता है। UPPERCASE, lowercase, Title Case, Sentence case और अधिक में कन्वर्ट करें। डॉक्यूमेंट फॉर्मेट करने वाले लेखकों, ईमेल बनाने वाले प्रोफेशनल्स, सोशल मीडिया मैनेज करने वाले कंटेंट क्रिएटर्स और त्वरित टेक्स्ट ट्रांसफॉर्मेशन की ज़रूरत वाले किसी के लिए भी परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है।',
+        intro: 'यह फ्री ऑनलाइन टेक्स्ट केस कन्वर्टर आपको तुरंत टेक्स्ट ट्रांसफॉर्म करने में मदद करता है। UPPERCASE, lowercase, Title Case, Sentence case और अधिक में कन्वर्ट करें। डॉक्यूमेंट फॉर्मेट करने वाले लेखकों, ईमेल बनाने वाले प्रोफेशनल्स, सोशल मीडिया मैनेज करने वाले कंटेंट क्रिएटर्स और त्वरित टेक्स्ट ट्रांसफॉर्मेशन की ज़रूरत वाले किसी के लिए भी परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आप <a href="/tools/word-counter">शब्द गिन</a> भी सकते हैं या <a href="/tools/remove-extra-spaces">स्पेसिंग साफ</a> कर सकते हैं।',
         sections: [
           {
             title: 'UPPERCASE कन्वर्टर - टेक्स्ट को ऑल कैप्स बनाएं',

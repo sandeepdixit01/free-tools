@@ -42,7 +42,18 @@ export const wordCounterConfig = {
       title: 'Word Counter Online | Count Words and Characters Instantly 2024',
       description: 'Count words, characters, sentences, and paragraphs online. Free word counter for essays, articles, and content writing. Instant results.',
       keywords: {
-        primary: 'word counter online',
+        primary: [
+          'word counter online',
+          'count words and characters',
+          'word count checker'
+        ],
+        longTail: [
+          'word counter online free',
+          'count words characters sentences',
+          'essay word counter tool',
+          'reading time calculator online',
+          'character counter with spaces'
+        ],
         secondary: [
           'count words and characters',
           'word count checker',
@@ -71,7 +82,18 @@ export const wordCounterConfig = {
       title: 'वर्ड काउंटर ऑनलाइन | शब्द और कैरेक्टर तुरंत गिनें 2024',
       description: 'शब्द, कैरेक्टर, सेंटेंस और पैराग्राफ ऑनलाइन गिनें। निबंध, आर्टिकल और कंटेंट राइटिंग के लिए फ्री वर्ड काउंटर। तुरंत रिज़ल्ट।',
       keywords: {
-        primary: 'word counter online',
+        primary: [
+          'word counter online',
+          'shabd aur character gine',
+          'word count checker'
+        ],
+        longTail: [
+          'word counter online free hindi',
+          'shabd character sentence gine',
+          'essay word counter hindi',
+          'reading time calculator hindi',
+          'character counter with spaces hindi'
+        ],
         secondary: [
           'shabd aur character gine',
           'word count checker',
@@ -105,7 +127,7 @@ export const wordCounterConfig = {
     en: {
       // Hero Section
       hero: {
-        title: 'Free Word Counter - Count Words, Characters & More',
+        title: 'Word Counter',
         subtitle: 'Instantly count words, characters, sentences, paragraphs, and calculate reading time. Perfect for writers, students, and content creators.',
         benefits: [
           { icon: '⚡', text: 'Real-time counting' },
@@ -216,7 +238,7 @@ export const wordCounterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'Complete Guide to Word Counting and Text Analysis',
-        intro: 'This free online word counter helps you analyze text instantly. Count words, characters (with and without spaces), sentences, paragraphs, and calculate reading time. Perfect for students writing essays, content creators managing word limits, writers tracking progress, and anyone who needs accurate text statistics. All processing happens in your browser for complete privacy.',
+        intro: 'This free online word counter helps you analyze text instantly. Count words, characters (with and without spaces), sentences, paragraphs, and calculate reading time. Perfect for students writing essays, content creators managing word limits, writers tracking progress, and anyone who needs accurate text statistics. All processing happens in your browser for complete privacy. You can also use our <a href="/tools/character-counter">Character Counter</a> or <a href="/tools/text-case-converter">Text Case Converter</a> for more text tools.',
         sections: [
           {
             title: 'Word Counter for Essays and Academic Writing',
@@ -292,7 +314,7 @@ export const wordCounterConfig = {
     hi: {
       // Hero Section
       hero: {
-        title: 'फ्री वर्ड काउंटर - शब्द, कैरेक्टर और अधिक गिनें',
+        title: 'वर्ड काउंटर',
         subtitle: 'तुरंत शब्द, कैरेक्टर, सेंटेंस, पैराग्राफ गिनें और रीडिंग टाइम कैलकुलेट करें। लेखकों, स्टूडेंट्स और कंटेंट क्रिएटर्स के लिए परफेक्ट।',
         benefits: [
           { icon: '⚡', text: 'रियल-टाइम काउंटिंग' },
@@ -403,7 +425,7 @@ export const wordCounterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'वर्ड काउंटिंग और टेक्स्ट एनालिसिस की पूरी गाइड',
-        intro: 'यह फ्री ऑनलाइन वर्ड काउंटर आपको तुरंत टेक्स्ट एनालाइज़ करने में मदद करता है। शब्द, कैरेक्टर (स्पेस के साथ और बिना), सेंटेंस, पैराग्राफ गिनें और रीडिंग टाइम कैलकुलेट करें। निबंध लिखने वाले स्टूडेंट्स, वर्ड लिमिट मैनेज करने वाले कंटेंट क्रिएटर्स, प्रोग्रेस ट्रैक करने वाले लेखकों और एक्यूरेट टेक्स्ट स्टैटिस्टिक्स की ज़रूरत वाले किसी के लिए भी परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है।',
+        intro: 'यह फ्री ऑनलाइन वर्ड काउंटर आपको तुरंत टेक्स्ट एनालाइज़ करने में मदद करता है। शब्द, कैरेक्टर (स्पेस के साथ और बिना), सेंटेंस, पैराग्राफ गिनें और रीडिंग टाइम कैलकुलेट करें। निबंध लिखने वाले स्टूडेंट्स, वर्ड लिमिट मैनेज करने वाले कंटेंट क्रिएटर्स, प्रोग्रेस ट्रैक करने वाले लेखकों और एक्यूरेट टेक्स्ट स्टैटिस्टिक्स की ज़रूरत वाले किसी के लिए भी परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आप हमारे <a href="/tools/character-counter">Character Counter</a> या <a href="/tools/text-case-converter">Text Case Converter</a> का भी उपयोग कर सकते हैं।',
         sections: [
           {
             title: 'निबंध और एकेडमिक राइटिंग के लिए वर्ड काउंटर',

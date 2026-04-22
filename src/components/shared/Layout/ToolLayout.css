@@ -18,7 +18,14 @@
 .tool-layout-hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 3rem 1rem;
+  padding: 0;
+}
+
+.tool-layout-breadcrumb {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
 }
 
 .tool-layout-main {
@@ -113,6 +120,10 @@
 
   .tool-layout-hero {
     padding: 2rem 0.75rem;
+  }
+
+  .tool-layout-breadcrumb {
+    padding: 0.75rem 0.75rem 0;
   }
 
   .tool-layout-main {

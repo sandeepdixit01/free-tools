@@ -19,6 +19,7 @@ import WordCounterTool from '../tools/WordCounterTool';
 import WordCounterControls from '../components/WordCounter/WordCounterControls';
 import wordCounterConfig from '../configs/tools/wordCounter.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
+import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
 
 const WordCounter = () => {
   const { language } = useLanguage();
@@ -70,6 +71,15 @@ const WordCounter = () => {
     };
   }, [toolCategory]);
 
+  // Generate structured data schemas
+  const structuredData = useMemo(() => {
+    return {
+      webApplication: generateWebApplicationSchema(wordCounterConfig, language),
+      howTo: generateHowToSchema(wordCounterConfig, language),
+      faq: generateFAQSchema(wordCounterConfig, language)
+    };
+  }, [language]);
+
   return (
     <>
       {/* SEO Head */}
@@ -84,10 +94,16 @@ const WordCounter = () => {
             : ''
         }
         canonical={seoData.canonical}
+        webApplicationData={structuredData.webApplication}
+        howToData={structuredData.howTo}
+        faqData={structuredData.faq}
       />
 
       {/* Tool Layout */}
       <ToolLayout
+        // Tool identification for breadcrumb
+        toolId="word-counter"
+        
         // Hero Section
         showHero={true}
         heroComponent={

@@ -17,23 +17,54 @@ const imageResizer50kbConfig = {
   },
 
   // Override SEO
-  content: {
-    ...imageResizerConfig.content,
-    
-    seo: {
-      en: {
-        title: 'Resize Image to 50KB Online Free',
-        description: 'Compress and resize image to 50KB online. Free, fast, secure.',
-        keywords: 'resize image to 50KB, compress to 50KB, reduce image size 50KB',
-        canonical: 'https://freetools.com/image-resizer-50kb'
+  seo: {
+    en: {
+      title: 'Resize Image to 50KB Online Free',
+      description: 'Compress and resize image to 50KB online. Free, fast, secure.',
+      keywords: 'resize image to 50KB, compress to 50KB, reduce image size 50KB',
+      canonical: 'https://freetools.com/image-resizer-50kb',
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: 'Image Resizer 50KB',
+        description: 'Free online tool to resize images to exactly 50KB',
+        applicationCategory: 'UtilityApplication',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD'
+        }
       }
     },
+    hi: {
+      title: 'इमेज रीसाइज़र 50KB',
+      description: 'इमेज को 50KB में ऑनलाइन कंप्रेस और रीसाइज़ करें। फ्री, तेज़, सुरक्षित।',
+      keywords: 'image ko 50KB me resize, 50KB me compress, image size 50KB kam kare',
+      canonical: 'https://freetools.com/hi/image-resizer-50kb',
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: 'इमेज रीसाइज़र 50KB',
+        description: 'इमेज को बिल्कुल 50KB में रीसाइज़ करने के लिए फ्री ऑनलाइन टूल',
+        applicationCategory: 'UtilityApplication',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD'
+        }
+      }
+    }
+  },
+
+  // Override Content
+  content: {
+    ...imageResizerConfig.content,
 
     // Override Hero
     hero: {
       en: {
-        title: 'Resize Image to 50KB Online',
-        subtitle: 'Free online tool to compress and resize images to exactly 50KB',
+        title: 'Image Resizer 50KB',
+        subtitle: 'Resize images to exactly 50KB online. Free tool to compress and resize images to 50KB',
         benefits: [
           { icon: '⚡', text: 'Instant processing' },
           { icon: '🔒', text: '100% Private' },

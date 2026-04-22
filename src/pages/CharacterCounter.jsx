@@ -19,6 +19,7 @@ import CharacterCounterTool from '../tools/CharacterCounterTool';
 import CharacterCounterControls from '../components/CharacterCounter/CharacterCounterControls';
 import characterCounterConfig from '../configs/tools/characterCounter.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
+import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
 
 const CharacterCounter = () => {
   const { language } = useLanguage();
@@ -70,6 +71,15 @@ const CharacterCounter = () => {
     };
   }, [toolCategory]);
 
+  // Generate structured data schemas
+  const structuredData = useMemo(() => {
+    return {
+      webApplication: generateWebApplicationSchema(characterCounterConfig, language),
+      howTo: generateHowToSchema(characterCounterConfig, language),
+      faq: generateFAQSchema(characterCounterConfig, language)
+    };
+  }, [language]);
+
   return (
     <>
       {/* SEO Head */}
@@ -84,10 +94,16 @@ const CharacterCounter = () => {
             : ''
         }
         canonical={seoData.canonical}
+        webApplicationData={structuredData.webApplication}
+        howToData={structuredData.howTo}
+        faqData={structuredData.faq}
       />
 
       {/* Tool Layout */}
       <ToolLayout
+        // Tool identification for breadcrumb
+        toolId="character-counter"
+        
         // Hero Section
         showHero={true}
         heroComponent={
