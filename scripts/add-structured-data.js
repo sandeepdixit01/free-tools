@@ -227,4 +227,3 @@ function main() {
 
 main();
 
-// Made with Bob
