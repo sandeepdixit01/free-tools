@@ -1,0 +1,31 @@
+diff a/clean.patch b/clean.patch	(rejected hunks)
+@@ -140,9 +140,6 @@ index 0000000..2defca9
+ +    <priority>0.3</priority>
+ +  </url>
+ +</urlset>
+-diff --git a/src/.DS_Store b/src/.DS_Store
+-index 1479edb..022c5b8 100644
+-Binary files a/src/.DS_Store and b/src/.DS_Store differ
+ diff --git a/src/App.jsx b/src/App.jsx
+ index 7249ae6..cd2d14b 100644
+ --- a/src/App.jsx
+@@ -205,9 +202,6 @@ index 7249ae6..cd2d14b 100644
+    )
+  }
+  
+-diff --git a/src/components/.DS_Store b/src/components/.DS_Store
+-index d3aff3a..4d7369b 100644
+-Binary files a/src/components/.DS_Store and b/src/components/.DS_Store differ
+ diff --git a/src/components/Footer.jsx b/src/components/Footer.jsx
+ index 08e3ef0..633661e 100644
+ --- a/src/components/Footer.jsx
+@@ -716,9 +710,6 @@ index 6924c46..00fdd7e 100644
+  }
+  
+  .seo-section-content {
+-diff --git a/src/configs/.DS_Store b/src/configs/.DS_Store
+-index e3ec054..45c96f3 100644
+-Binary files a/src/configs/.DS_Store and b/src/configs/.DS_Store differ
+ diff --git a/src/configs/categories/developer.config.js b/src/configs/categories/developer.config.js
+ index 6ace122..d2a509f 100644
+ --- a/src/configs/categories/developer.config.js

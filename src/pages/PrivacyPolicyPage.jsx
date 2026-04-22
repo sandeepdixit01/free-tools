@@ -5,11 +5,13 @@
 
 import React from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
 import './PrivacyPolicyPage.css'
 
 const PrivacyPolicyPage = () => {
   const { language } = useLanguage()
+  const canonical = useCanonicalUrl()
 
   const content = {
     en: {
@@ -351,7 +353,7 @@ const PrivacyPolicyPage = () => {
       <SEOHead
         title={t.title}
         description={t.description}
-        canonical="https://free-tools-nine-delta.vercel.app/privacy-policy"
+        canonical={canonical}
       />
 
       <div className="privacy-page">

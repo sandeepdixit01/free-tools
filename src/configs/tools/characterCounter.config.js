@@ -39,16 +39,26 @@ export const characterCounterConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Character Counter Online | Count Characters with Spaces 2024',
+      title: 'Character Counter | Count Characters with Spaces',
       description: 'Count characters with and without spaces online. Free character counter for Twitter, Instagram, SMS, and content with character limits.',
       keywords: {
-        primary: 'character counter online',
+        primary: [
+          'character counter',
+          'count characters online',
+          'letter counter'
+        ],
         secondary: [
-          'count characters with spaces',
-          'character counter for twitter',
+          'character counter with spaces',
           'sms character counter',
           'instagram character counter',
-          'letter counter online'
+          'twitter character counter'
+        ],
+        longTail: [
+          'count characters with spaces online free',
+          'character counter for twitter posts',
+          'sms character counter online',
+          'instagram caption character counter',
+          'count letters and spaces online'
         ]
       },
       canonical: 'https://freetools.com/tools/character-counter',
@@ -67,16 +77,26 @@ export const characterCounterConfig = {
       }
     },
     hi: {
-      title: 'कैरेक्टर काउंटर ऑनलाइन | स्पेस के साथ कैरेक्टर गिनें 2024',
+      title: 'कैरेक्टर काउंटर | स्पेस के साथ कैरेक्टर गिनें',
       description: 'स्पेस के साथ और बिना कैरेक्टर ऑनलाइन गिनें। Twitter, Instagram, SMS और कैरेक्टर लिमिट वाले कंटेंट के लिए फ्री कैरेक्टर काउंटर।',
       keywords: {
-        primary: 'character counter online',
+        primary: [
+          'character counter',
+          'character online gine',
+          'letter counter'
+        ],
         secondary: [
-          'space ke sath character gine',
-          'twitter ke liye character counter',
+          'space ke sath character counter',
           'sms character counter',
           'instagram character counter',
-          'letter counter online'
+          'twitter character counter'
+        ],
+        longTail: [
+          'space ke sath character online free gine',
+          'twitter posts ke liye character counter',
+          'sms character counter online',
+          'instagram caption character counter',
+          'letters aur spaces online gine'
         ]
       },
       canonical: 'https://freetools.com/hi/tools/character-counter',
@@ -103,8 +123,8 @@ export const characterCounterConfig = {
     en: {
       // Hero Section
       hero: {
-        title: 'Free Character Counter - Count Characters Instantly',
-        subtitle: 'Count characters with and without spaces in real-time. Perfect for social media posts, SMS messages, and content with character limits.',
+        title: 'Character Counter',
+        subtitle: 'Free online tool to count characters with and without spaces in real-time. Perfect for social media posts, SMS messages, and content with character limits.',
         benefits: [
           { icon: '⚡', text: 'Real-time counting' },
           { icon: '🔒', text: '100% Private' },
@@ -214,7 +234,7 @@ export const characterCounterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'Complete Guide to Character Counting',
-        intro: 'This free online character counter helps you count characters instantly. Get both character count with spaces and without spaces for different platform requirements. Perfect for social media posts, SMS messages, email subjects, and any content with character limits. All processing happens in your browser for complete privacy.',
+        intro: 'This free online character counter helps you count characters instantly. Get both character count with spaces and without spaces for different platform requirements. Perfect for social media posts, SMS messages, email subjects, and any content with character limits. All processing happens in your browser for complete privacy. You can also <a href="/tools/word-counter">count words</a> or <a href="/tools/remove-extra-spaces">remove extra spaces</a> from your text.',
         sections: [
           {
             title: 'Character Counter for Social Media',
@@ -300,7 +320,7 @@ export const characterCounterConfig = {
     hi: {
       // Hero Section
       hero: {
-        title: 'फ्री कैरेक्टर काउंटर - तुरंत कैरेक्टर गिनें',
+        title: 'कैरेक्टर काउंटर',
         subtitle: 'रियल-टाइम में स्पेस के साथ और बिना कैरेक्टर गिनें। सोशल मीडिया पोस्ट, SMS मैसेज और कैरेक्टर लिमिट वाले कंटेंट के लिए परफेक्ट।',
         benefits: [
           { icon: '⚡', text: 'रियल-टाइम काउंटिंग' },
@@ -411,7 +431,7 @@ export const characterCounterConfig = {
       // SEO Content Section
       seoContent: {
         mainTitle: 'कैरेक्टर काउंटिंग की पूरी गाइड',
-        intro: 'यह फ्री ऑनलाइन कैरेक्टर काउंटर आपको तुरंत कैरेक्टर गिनने में मदद करता है। अलग-अलग प्लेटफॉर्म रिक्वायरमेंट्स के लिए स्पेस के साथ और बिना दोनों कैरेक्टर काउंट पाएं। सोशल मीडिया पोस्ट, SMS मैसेज, ईमेल सब्जेक्ट और कैरेक्टर लिमिट वाले किसी भी कंटेंट के लिए परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है।',
+        intro: 'यह फ्री ऑनलाइन कैरेक्टर काउंटर आपको तुरंत कैरेक्टर गिनने में मदद करता है। अलग-अलग प्लेटफॉर्म रिक्वायरमेंट्स के लिए स्पेस के साथ और बिना दोनों कैरेक्टर काउंट पाएं। सोशल मीडिया पोस्ट, SMS मैसेज, ईमेल सब्जेक्ट और कैरेक्टर लिमिट वाले किसी भी कंटेंट के लिए परफेक्ट। पूरी प्राइवेसी के लिए सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आप <a href="/tools/word-counter">शब्द गिन</a> भी सकते हैं या अपने टेक्स्ट से <a href="/tools/remove-extra-spaces">एक्स्ट्रा स्पेस हटा</a> सकते हैं।',
         sections: [
           {
             title: 'सोशल मीडिया के लिए कैरेक्टर काउंटर',

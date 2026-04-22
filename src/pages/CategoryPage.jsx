@@ -15,6 +15,7 @@
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
 
 // Layout Components
@@ -41,6 +42,7 @@ import './CategoryPage.css'
  */
 const CategoryPage = ({ categoryConfig }) => {
   const { language } = useLanguage()
+  const canonical = useCanonicalUrl()
 
   // Get language-specific content
   const seo = categoryConfig.seo?.[language] || categoryConfig.seo?.en || {}
@@ -66,7 +68,7 @@ const CategoryPage = ({ categoryConfig }) => {
         title={seo.title}
         description={seo.description}
         keywords={seo.keywords}
-        canonical={seo.canonical}
+        canonical={canonical}
       />
 
       <div className="category-page">

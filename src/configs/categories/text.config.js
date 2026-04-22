@@ -50,7 +50,7 @@ export const textCategoryConfig = {
   seoContent: {
     en: {
       mainTitle: 'Professional Text Tools for Writers and Content Creators',
-      intro: 'Our comprehensive suite of text tools helps you analyze, format, and transform text with ease. Whether you need to count words for an essay, convert text case for consistency, or format content for publishing, our tools provide instant results.',
+      intro: 'Our comprehensive suite of text tools helps you analyze, format, and transform text with ease. Whether you need to <a href="/tools/word-counter">count words for an essay</a>, <a href="/tools/text-case-converter">convert text case for consistency</a>, or <a href="/tools/character-counter">analyze character count</a>, our tools provide instant results.',
       
       sections: [
         {
@@ -67,7 +67,7 @@ export const textCategoryConfig = {
     },
     hi: {
       mainTitle: 'लेखकों और कंटेंट क्रिएटर्स के लिए प्रोफेशनल टेक्स्ट टूल्स',
-      intro: 'हमारे टेक्स्ट टूल्स का कॉम्प्रिहेंसिव सूट आपको टेक्स्ट एनालाइज़, फॉर्मेट और ट्रांसफॉर्म करने में आसानी से मदद करता है। चाहे आपको निबंध के लिए शब्द गिनने हों, कंसिस्टेंसी के लिए टेक्स्ट केस कन्वर्ट करना हो, या पब्लिशिंग के लिए कंटेंट फॉर्मेट करना हो, हमारे टूल्स तुरंत रिज़ल्ट देते हैं।',
+      intro: 'हमारे टेक्स्ट टूल्स का कॉम्प्रिहेंसिव सूट आपको टेक्स्ट एनालाइज़, फॉर्मेट और ट्रांसफॉर्म करने में आसानी से मदद करता है। चाहे आपको <a href="/tools/word-counter">निबंध के लिए शब्द गिनने</a> हों, <a href="/tools/text-case-converter">कंसिस्टेंसी के लिए टेक्स्ट केस कन्वर्ट</a> करना हो, या <a href="/tools/character-counter">कैरेक्टर काउंट एनालाइज़</a> करना हो, हमारे टूल्स तुरंत रिज़ल्ट देते हैं।',
       
       sections: [
         {

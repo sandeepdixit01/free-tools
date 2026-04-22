@@ -5,11 +5,13 @@
 
 import React, { useState } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
 import './ContactPage.css'
 
 const ContactPage = () => {
   const { language } = useLanguage()
+  const canonical = useCanonicalUrl()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -158,7 +160,7 @@ const ContactPage = () => {
       <SEOHead
         title={t.title}
         description={t.description}
-        canonical="https://free-tools-nine-delta.vercel.app/contact"
+        canonical={canonical}
       />
 
       <div className="contact-page">

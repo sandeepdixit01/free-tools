@@ -6,11 +6,13 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import Breadcrumb from '../Navigation/Breadcrumb'
 import './ToolLayout.css'
 
 const ToolLayout = ({
   // Layout configuration
   showHero = true,
+  showBreadcrumb = true,
   showFeatures = true,
   showHowTo = false,
   showFAQ = true,
@@ -40,6 +42,9 @@ const ToolLayout = ({
   containerClass = 'tool-container',
   maxWidth = '1200px',
   
+  // Tool identification (for breadcrumb)
+  toolId = null,
+
   // Additional props
   className = '',
   style = {}
@@ -51,6 +56,13 @@ const ToolLayout = ({
         <section className="tool-layout-section tool-layout-hero">
           {heroComponent}
         </section>
+      )}
+
+      {/* Breadcrumb Navigation */}
+      {showBreadcrumb && toolId && (
+        <div className="tool-layout-breadcrumb">
+          <Breadcrumb toolId={toolId} />
+        </div>
       )}
 
       {/* Ad Slot: Top */}
@@ -129,6 +141,7 @@ const ToolLayout = ({
 ToolLayout.propTypes = {
   // Layout toggles
   showHero: PropTypes.bool,
+  showBreadcrumb: PropTypes.bool,
   showFeatures: PropTypes.bool,
   showHowTo: PropTypes.bool,
   showFAQ: PropTypes.bool,
@@ -158,6 +171,9 @@ ToolLayout.propTypes = {
   containerClass: PropTypes.string,
   maxWidth: PropTypes.string,
   
+  // Tool identification
+  toolId: PropTypes.string,
+
   // Additional
   className: PropTypes.string,
   style: PropTypes.object

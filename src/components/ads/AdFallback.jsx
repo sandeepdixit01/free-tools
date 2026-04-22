@@ -5,28 +5,56 @@
 
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
 import { useLanguage } from '../../contexts/LanguageContext'
-import { getActiveTools } from '../../data/tools'
+import { getActiveTools, getToolByRoute } from '../../data/tools'
 import ToolCard from '../ToolCard'
 import './AdFallback.css'
 
 const AdFallback = ({ type = 'tools', count = 3, excludeCategory = null }) => {
   const { language } = useLanguage()
+  const location = useLocation()
 
-  // Get random active tools
+  // Get related tools (same category, exclude current tool)
   const promotedTools = useMemo(() => {
+    // Get current tool from route
+    const currentTool = getToolByRoute(location.pathname)
+
     // Get only active tools
     let availableTools = getActiveTools()
     
-    // Exclude current category if specified
-    if (excludeCategory) {
+    // If we have a current tool, show tools from SAME category
+    if (currentTool) {
+      // Filter to same category, exclude current tool
+      availableTools = availableTools.filter(
+        tool => tool.category === currentTool.category && tool.id !== currentTool.id
+      )
+
+      // If not enough same-category tools, add related category tools
+      if (availableTools.length < count) {
+        const relatedCategories = {
+          'developer': ['text'],
+          'text': ['developer'],
+          'image': ['pdf'],
+          'pdf': ['image']
+        }
+
+        const relatedCategory = relatedCategories[currentTool.category]?.[0]
+        if (relatedCategory) {
+          const relatedTools = getActiveTools().filter(
+            tool => tool.category === relatedCategory && tool.id !== currentTool.id
+          )
+          availableTools = [...availableTools, ...relatedTools]
+        }
+      }
+    } else if (excludeCategory) {
+      // Fallback: exclude specified category (for category pages)
       availableTools = availableTools.filter(tool => tool.category !== excludeCategory)
     }
     
-    // Shuffle and take requested count
-    const shuffled = availableTools.sort(() => 0.5 - Math.random())
-    return shuffled.slice(0, count)
-  }, [count, excludeCategory])
+    // Return first N tools (deterministic, no random shuffle)
+    return availableTools.slice(0, count)
+  }, [count, excludeCategory, location.pathname])
 
   // Single tool card fallback
   if (type === 'tool-card' && promotedTools.length > 0) {

@@ -5,11 +5,13 @@
 
 import React from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
 import './AboutPage.css'
 
 const AboutPage = () => {
   const { language } = useLanguage()
+  const canonical = useCanonicalUrl()
 
   const content = {
     en: {
@@ -203,7 +205,7 @@ const AboutPage = () => {
       <SEOHead
         title={t.title}
         description={t.description}
-        canonical="https://free-tools-nine-delta.vercel.app/about"
+        canonical={canonical}
       />
 
       <div className="about-page">

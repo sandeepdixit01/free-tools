@@ -19,6 +19,7 @@ import RemoveExtraSpacesTool from '../tools/RemoveExtraSpacesTool';
 import RemoveExtraSpacesControls from '../components/RemoveExtraSpaces/RemoveExtraSpacesControls';
 import removeExtraSpacesConfig from '../configs/tools/removeExtraSpaces.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
+import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
 
 const RemoveExtraSpaces = () => {
   const { language } = useLanguage();
@@ -70,6 +71,15 @@ const RemoveExtraSpaces = () => {
     };
   }, [toolCategory]);
 
+  // Generate structured data schemas
+  const structuredData = useMemo(() => {
+    return {
+      webApplication: generateWebApplicationSchema(removeExtraSpacesConfig, language),
+      howTo: generateHowToSchema(removeExtraSpacesConfig, language),
+      faq: generateFAQSchema(removeExtraSpacesConfig, language)
+    };
+  }, [language]);
+
   return (
     <>
       {/* SEO Head */}
@@ -84,10 +94,16 @@ const RemoveExtraSpaces = () => {
             : ''
         }
         canonical={seoData.canonical}
+        webApplicationData={structuredData.webApplication}
+        howToData={structuredData.howTo}
+        faqData={structuredData.faq}
       />
 
       {/* Tool Layout */}
       <ToolLayout
+        // Tool identification for breadcrumb
+        toolId="remove-extra-spaces"
+
         // Hero Section
         showHero={true}
         heroComponent={

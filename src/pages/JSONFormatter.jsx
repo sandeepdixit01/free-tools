@@ -19,6 +19,7 @@ import JSONFormatterTool from '../tools/JSONFormatterTool';
 import JSONFormatterControls from '../components/JSONFormatter/JSONFormatterControls';
 import jsonFormatterConfig from '../configs/tools/jsonFormatter.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
+import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
 
 const JSONFormatter = () => {
   const { language } = useLanguage();
@@ -70,6 +71,15 @@ const JSONFormatter = () => {
     };
   }, [toolCategory]);
 
+  // Generate structured data schemas
+  const structuredData = useMemo(() => {
+    return {
+      webApplication: generateWebApplicationSchema(jsonFormatterConfig, language),
+      howTo: generateHowToSchema(jsonFormatterConfig, language),
+      faq: generateFAQSchema(jsonFormatterConfig, language)
+    };
+  }, [language]);
+
   return (
     <>
       {/* SEO Head */}
@@ -84,10 +94,16 @@ const JSONFormatter = () => {
             : ''
         }
         canonical={seoData.canonical}
+        webApplicationData={structuredData.webApplication}
+        howToData={structuredData.howTo}
+        faqData={structuredData.faq}
       />
 
       {/* Tool Layout */}
       <ToolLayout
+        // Tool identification for breadcrumb
+        toolId="json-formatter"
+
         // Hero Section
         showHero={true}
         heroComponent={

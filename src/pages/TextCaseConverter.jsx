@@ -19,6 +19,7 @@ import TextCaseConverterTool from '../tools/TextCaseConverterTool';
 import TextCaseConverterControls from '../components/TextCaseConverter/TextCaseConverterControls';
 import textCaseConverterConfig from '../configs/tools/textCaseConverter.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
+import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
 
 const TextCaseConverter = () => {
   const { language } = useLanguage();
@@ -70,6 +71,15 @@ const TextCaseConverter = () => {
     };
   }, [toolCategory]);
 
+  // Generate structured data schemas
+  const structuredData = useMemo(() => {
+    return {
+      webApplication: generateWebApplicationSchema(textCaseConverterConfig, language),
+      howTo: generateHowToSchema(textCaseConverterConfig, language),
+      faq: generateFAQSchema(textCaseConverterConfig, language)
+    };
+  }, [language]);
+
   return (
     <>
       {/* SEO Head */}
@@ -84,10 +94,16 @@ const TextCaseConverter = () => {
             : ''
         }
         canonical={seoData.canonical}
+        webApplicationData={structuredData.webApplication}
+        howToData={structuredData.howTo}
+        faqData={structuredData.faq}
       />
 
       {/* Tool Layout */}
       <ToolLayout
+        // Tool identification for breadcrumb
+        toolId="text-case-converter"
+
         // Hero Section
         showHero={true}
         heroComponent={

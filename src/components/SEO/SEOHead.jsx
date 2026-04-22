@@ -16,12 +16,14 @@ import { Helmet } from 'react-helmet-async'
  * @param {string} ogImage - Open Graph image URL
  * @param {object} structuredData - Custom structured data (WebApplication, FAQPage, etc.)
  * @param {object} breadcrumbData - Custom breadcrumb structured data
- * @param {object} faqData - Custom FAQ structured data
+ * @param {object} faqData - Custom FAQ structured data (from FAQ component)
+ * @param {object} webApplicationData - WebApplication schema
+ * @param {object} howToData - HowTo schema
  */
 const SEOHead = ({
   title = "Free Online Tools - FreeTools",
   description = "Free online tools for images, PDFs, text, and developers. Fast, secure, and privacy-focused.",
-  canonical = "https://freetools.com",
+  canonical,
   keywords = "free online tools, image tools, pdf tools, text tools, developer tools",
   ogTitle,
   ogDescription,
@@ -29,12 +31,18 @@ const SEOHead = ({
   ogImage = "/og-image.png",
   structuredData,
   breadcrumbData,
-  faqData
+  faqData,
+  webApplicationData,
+  howToData
 }) => {
   // Convert keywords object to string if needed
-  const keywordsString = typeof keywords === 'object'
-    ? `${keywords.primary}, ${keywords.secondary?.join(', ') || ''}`
-    : keywords;
+  const keywordsString = typeof keywords === 'object' && keywords !== null
+    ? [
+        ...(Array.isArray(keywords.primary) ? keywords.primary : []),
+        ...(Array.isArray(keywords.secondary) ? keywords.secondary : []),
+        ...(Array.isArray(keywords.longTail) ? keywords.longTail : [])
+      ].filter(Boolean).join(', ')
+    : keywords || '';
 
   return (
     <Helmet>
@@ -66,20 +74,38 @@ const SEOHead = ({
       <meta property="twitter:description" content={ogDescription || description} />
       <meta property="twitter:image" content={ogImage} />
 
-      {/* Structured Data - Only render if provided */}
-      {structuredData && (
+      {/* Structured Data - WebApplication Schema */}
+      {webApplicationData && (
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {JSON.stringify(webApplicationData)}
         </script>
       )}
+
+      {/* Structured Data - HowTo Schema */}
+      {howToData && (
+        <script type="application/ld+json">
+          {JSON.stringify(howToData)}
+        </script>
+      )}
+
+      {/* Structured Data - FAQ Schema (from FAQ component) */}
+      {faqData && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqData)}
+        </script>
+      )}
+
+      {/* Structured Data - Breadcrumb Schema */}
       {breadcrumbData && (
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbData)}
         </script>
       )}
-      {faqData && (
+
+      {/* Legacy: Generic structured data (for backward compatibility) */}
+      {structuredData && !webApplicationData && !howToData && (
         <script type="application/ld+json">
-          {JSON.stringify(faqData)}
+          {JSON.stringify(structuredData)}
         </script>
       )}
     </Helmet>

@@ -50,7 +50,7 @@ export const imageCategoryConfig = {
   seoContent: {
     en: {
       mainTitle: 'Professional Image Tools for Every Need',
-      intro: 'Our comprehensive suite of image tools helps you resize, compress, crop, and convert images with ease. Whether you need to reduce image size for web optimization, resize photos for social media, or convert between formats, our tools provide professional results instantly.',
+      intro: 'Our comprehensive suite of image tools helps you resize, compress, crop, and convert images with ease. Whether you need to <a href="/tools/resize-image">resize photos for social media</a>, <a href="/tools/image-compressor">compress images for web optimization</a>, or <a href="/tools/image-crop">crop images to custom dimensions</a>, our tools provide professional results instantly.',
       
       sections: [
         {
@@ -72,7 +72,7 @@ export const imageCategoryConfig = {
     },
     hi: {
       mainTitle: 'हर ज़रूरत के लिए प्रोफेशनल इमेज टूल्स',
-      intro: 'हमारे इमेज टूल्स का कॉम्प्रिहेंसिव सूट आपको इमेज रीसाइज़, कंप्रेस, क्रॉप और कन्वर्ट करने में आसानी से मदद करता है। चाहे आपको वेब ऑप्टिमाइज़ेशन के लिए इमेज साइज़ कम करना हो, सोशल मीडिया के लिए फोटो रीसाइज़ करना हो, या फॉर्मेट के बीच कन्वर्ट करना हो, हमारे टूल्स तुरंत प्रोफेशनल रिज़ल्ट देते हैं।',
+      intro: 'हमारे इमेज टूल्स का कॉम्प्रिहेंसिव सूट आपको इमेज रीसाइज़, कंप्रेस, क्रॉप और कन्वर्ट करने में आसानी से मदद करता है। चाहे आपको <a href="/tools/resize-image">सोशल मीडिया के लिए फोटो रीसाइज़</a> करना हो, <a href="/tools/image-compressor">वेब ऑप्टिमाइज़ेशन के लिए इमेज कंप्रेस</a> करना हो, या <a href="/tools/image-crop">कस्टम डाइमेंशन में इमेज क्रॉप</a> करना हो, हमारे टूल्स तुरंत प्रोफेशनल रिज़ल्ट देते हैं।',
       
       sections: [
         {

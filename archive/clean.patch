@@ -1,0 +1,4114 @@
+diff --git a/public/robots.txt b/public/robots.txt
+new file mode 100644
+index 0000000..98e200a
+--- /dev/null
++++ b/public/robots.txt
+@@ -0,0 +1,4 @@
++User-agent: *
++Allow: /
++
++Sitemap: https://free-tools-nine-delta.vercel.app/sitemap.xml
+\ No newline at end of file
+diff --git a/public/sitemap.xml b/public/sitemap.xml
+new file mode 100644
+index 0000000..2defca9
+--- /dev/null
++++ b/public/sitemap.xml
+@@ -0,0 +1,125 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
++  <!-- Homepage -->
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>weekly</changefreq>
++    <priority>1.0</priority>
++  </url>
++
++  <!-- Tool Pages -->
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/resize-image</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.9</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/image-resizer-50kb</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/word-counter</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/json-formatter</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/text-case-converter</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/remove-extra-spaces</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/character-counter</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/merge-pdf</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.8</priority>
++  </url>
++
++  <!-- Category Pages -->
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>weekly</changefreq>
++    <priority>0.9</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/image</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>weekly</changefreq>
++    <priority>0.7</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/text</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>weekly</changefreq>
++    <priority>0.7</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/pdf</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>weekly</changefreq>
++    <priority>0.7</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/tools/developer</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>weekly</changefreq>
++    <priority>0.7</priority>
++  </url>
++
++  <!-- Static Pages -->
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/about</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.5</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/contact</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>monthly</changefreq>
++    <priority>0.5</priority>
++  </url>
++
++  <url>
++    <loc>https://free-tools-nine-delta.vercel.app/privacy-policy</loc>
++    <lastmod>2026-04-09</lastmod>
++    <changefreq>yearly</changefreq>
++    <priority>0.3</priority>
++  </url>
++</urlset>
+diff --git a/src/App.jsx b/src/App.jsx
+index 7249ae6..cd2d14b 100644
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -1,5 +1,6 @@
+-import React from 'react'
++import React, { useMemo } from 'react'
+ import { useLanguage } from './contexts/LanguageContext'
++import SEOHead from './components/SEO/SEOHead'
+ import Hero from './components/Hero'
+ import SectionHeader from './components/home/SectionHeader'
+ import ToolGrid from './components/home/ToolGrid'
+@@ -10,20 +11,35 @@ import FAQ from './components/shared/Content/FAQ'
+ import AdSlot from './components/ads/AdSlot'
+ import { AD_POSITIONS } from './configs/adPositions'
+ import { homeConfig } from './configs/homeConfig'
+-import { toolRegistry } from './configs/toolRegistry'
++import { getPopularTools, getRandomTools, getFeaturedTools } from './data/tools'
+ import './App.css'
+
+ function App() {
+   const { language } = useLanguage()
+
+-  // Get popular tools (first 8 tools from registry)
+-  const popularTools = toolRegistry.slice(0, 8)
++  // Get popular tools dynamically (sorted by usageCount)
++  // STANDARDIZED: Exactly 6 tools for Popular Tools section
++  const popularTools = useMemo(() => getPopularTools(6), [])
+
+-  // Get quick access tools (first 4 tools)
+-  const quickAccessTools = toolRegistry.slice(0, 4)
++  // Get quick access tools (featured tools for hero section)
++  // STANDARDIZED: Exactly 4 tools for hero quick access
++  const quickAccessTools = useMemo(() => getFeaturedTools(4), [])
+
+   return (
+-    <main className="main-content">
++    <>
++      {/* SEO Head */}
++      <SEOHead
++        title={language === 'hi'
++          ? "फ्री ऑनलाइन टूल्स - इमेज, PDF, टेक्स्ट और डेवलपर टूल्स"
++          : "Free Online Tools - Image, PDF, Text & Developer Tools"}
++        description={language === 'hi'
++          ? "इमेज, PDF, टेक्स्ट और डेवलपर्स के लिए फ्री ऑनलाइन टूल्स। तेज़, सुरक्षित और मोबाइल-फ्रेंडली।"
++          : "Free online tools for images, PDFs, text, and developers. Fast, secure, and mobile-friendly."}
++        keywords="free online tools, image tools, pdf tools, text tools, developer tools, image resizer, pdf merger, word counter, json formatter"
++        canonical="https://freetools.com"
++      />
++
++      <main className="main-content">
+       {/* Hero Section */}
+       <Hero
+         config={homeConfig.hero}
+@@ -87,6 +103,7 @@ function App() {
+       {/* Ad Slot: Bottom Banner */}
+       <AdSlot position={AD_POSITIONS.BOTTOM_BANNER} />
+     </main>
++    </>
+   )
+ }
+
+diff --git a/src/components/Footer.jsx b/src/components/Footer.jsx
+index 08e3ef0..633661e 100644
+--- a/src/components/Footer.jsx
++++ b/src/components/Footer.jsx
+@@ -18,17 +18,17 @@ const Footer = () => {
+           <div className="footer-links">
+             <div className="footer-column">
+               <h4 className="footer-column-title">Tools</h4>
+-              <a href="/category/pdf" className="footer-link">PDF Tools</a>
+-              <a href="/category/image" className="footer-link">Image Tools</a>
+-              <a href="/category/text" className="footer-link">Text Tools</a>
+-              <a href="/category/developer" className="footer-link">Developer Tools</a>
++              <a href="/tools/pdf" className="footer-link">PDF Tools</a>
++              <a href="/tools/image" className="footer-link">Image Tools</a>
++              <a href="/tools/text" className="footer-link">Text Tools</a>
++              <a href="/tools/developer" className="footer-link">Developer Tools</a>
+             </div>
+
+             <div className="footer-column">
+               <h4 className="footer-column-title">Company</h4>
+               <a href="/about" className="footer-link">About</a>
+               <a href="/contact" className="footer-link">Contact</a>
+-              <a href="/privacy" className="footer-link">Privacy Policy</a>
++              <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
+             </div>
+           </div>
+         </div>
+diff --git a/src/components/SEO/SEOHead.jsx b/src/components/SEO/SEOHead.jsx
+index 1679f4a..ffcacfc 100644
+--- a/src/components/SEO/SEOHead.jsx
++++ b/src/components/SEO/SEOHead.jsx
+@@ -1,115 +1,40 @@
+ import { Helmet } from 'react-helmet-async'
+
++/**
++ * SEOHead Component - Generic SEO metadata for all pages
++ *
++ * Provides meta tags, Open Graph, Twitter Cards, and structured data
++ * All parameters are optional with sensible fallbacks
++ *
++ * @param {string} title - Page title (max 60 chars recommended)
++ * @param {string} description - Meta description (max 155 chars recommended)
++ * @param {string} canonical - Canonical URL
++ * @param {string|object} keywords - Keywords string or object with primary/secondary
++ * @param {string} ogTitle - Open Graph title (defaults to title)
++ * @param {string} ogDescription - Open Graph description (defaults to description)
++ * @param {string} ogUrl - Open Graph URL (defaults to canonical)
++ * @param {string} ogImage - Open Graph image URL
++ * @param {object} structuredData - Custom structured data (WebApplication, FAQPage, etc.)
++ * @param {object} breadcrumbData - Custom breadcrumb structured data
++ * @param {object} faqData - Custom FAQ structured data
++ */
+ const SEOHead = ({
+-  title = "Resize Image to 50KB, 100KB Online Free | इमेज का साइज कम करें",
+-  description = "Resize and compress images to 20KB, 50KB, 100KB instantly. बिना क्वालिटी कम किए इमेज का साइज कम करें। Free, fast, secure. No signup required.",
+-  canonical = "https://freetools.com/tools/resize-image",
+-  keywords = "resize image, compress image, reduce image size, image compressor, resize to 50KB, resize to 20KB, compress JPG, image optimizer, इमेज का साइज कम करें, फोटो का साइज कम कैसे करें, image ko 50kb kaise kare, photo size kam kare, image compress kaise kare, whatsapp ke liye image resize",
++  title = "Free Online Tools - FreeTools",
++  description = "Free online tools for images, PDFs, text, and developers. Fast, secure, and privacy-focused.",
++  canonical = "https://freetools.com",
++  keywords = "free online tools, image tools, pdf tools, text tools, developer tools",
+   ogTitle,
+   ogDescription,
+   ogUrl,
+-  ogImage = "/og-image-resizer.png"
++  ogImage = "/og-image.png",
++  structuredData,
++  breadcrumbData,
++  faqData
+ }) => {
+-  const structuredData = {
+-    "@context": "https://schema.org",
+-    "@type": "WebApplication",
+-    "name": "Free Image Resizer & Compressor",
+-    "description": "Resize and compress images to exact file sizes instantly without quality loss. Supports JPG, PNG, WEBP formats.",
+-    "url": canonical,
+-    "applicationCategory": "UtilityApplication",
+-    "operatingSystem": "All",
+-    "offers": {
+-      "@type": "Offer",
+-      "price": "0",
+-      "priceCurrency": "USD"
+-    },
+-    "featureList": [
+-      "Resize images to exact KB size",
+-      "Compress images without quality loss",
+-      "Batch image processing",
+-      "100% client-side processing",
+-      "No registration required"
+-    ],
+-    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+-    "softwareVersion": "1.0",
+-    "aggregateRating": {
+-      "@type": "AggregateRating",
+-      "ratingValue": "4.8",
+-      "ratingCount": "1250"
+-    }
+-  }
+-
+-  const breadcrumbData = {
+-    "@context": "https://schema.org",
+-    "@type": "BreadcrumbList",
+-    "itemListElement": [
+-      {
+-        "@type": "ListItem",
+-        "position": 1,
+-        "name": "Home",
+-        "item": "https://freetools.com"
+-      },
+-      {
+-        "@type": "ListItem",
+-        "position": 2,
+-        "name": "Image Tools",
+-        "item": "https://freetools.com/category/image"
+-      },
+-      {
+-        "@type": "ListItem",
+-        "position": 3,
+-        "name": "Image Resizer",
+-        "item": canonical
+-      }
+-    ]
+-  }
+-
+-  const faqData = {
+-    "@context": "https://schema.org",
+-    "@type": "FAQPage",
+-    "mainEntity": [
+-      {
+-        "@type": "Question",
+-        "name": "How to reduce image size without losing quality?",
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": "Use our image compressor with quality slider set to 85-95%. Our tool uses advanced compression algorithms that preserve visual quality while reducing file size."
+-        }
+-      },
+-      {
+-        "@type": "Question",
+-        "name": "How to resize image to exact KB like 20KB or 50KB?",
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": "Select 'By File Size' mode and enter your target size in KB. Our algorithm automatically adjusts image dimensions and compression quality to meet your exact file size requirement."
+-        }
+-      },
+-      {
+-        "@type": "Question",
+-        "name": "Is it safe to upload images?",
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": "Yes, completely safe! Your images are processed entirely in your browser using JavaScript. They never leave your device or get uploaded to any server."
+-        }
+-      },
+-      {
+-        "@type": "Question",
+-        "name": "Image size kam kaise kare? (इमेज साइज़ कम कैसे करें?)",
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": "Image upload karo, 'By File Size' select karo aur apna target size (jaise 50KB, 100KB) enter karo. Tool automatically image ko compress kar dega bina quality loss ke."
+-        }
+-      },
+-      {
+-        "@type": "Question",
+-        "name": "Photo ko 50KB me kaise convert kare?",
+-        "acceptedAnswer": {
+-          "@type": "Answer",
+-          "text": "Apni photo upload karne ke baad 'By File Size' mode select karo aur 50 type karo. Tool automatically dimensions aur quality adjust karke exactly 50KB ki image bana dega."
+-        }
+-      }
+-    ]
+-  }
++  // Convert keywords object to string if needed
++  const keywordsString = typeof keywords === 'object'
++    ? `${keywords.primary}, ${keywords.secondary?.join(', ') || ''}`
++    : keywords;
+
+   return (
+     <Helmet>
+@@ -117,7 +42,7 @@ const SEOHead = ({
+       <title>{title}</title>
+       <meta name="title" content={title} />
+       <meta name="description" content={description} />
+-      <meta name="keywords" content={keywords} />
++      <meta name="keywords" content={keywordsString} />
+       <link rel="canonical" href={canonical} />
+       <meta name="robots" content="index, follow" />
+       <meta name="language" content="English, Hindi" />
+@@ -141,16 +66,22 @@ const SEOHead = ({
+       <meta property="twitter:description" content={ogDescription || description} />
+       <meta property="twitter:image" content={ogImage} />
+
+-      {/* Structured Data */}
+-      <script type="application/ld+json">
+-        {JSON.stringify(structuredData)}
+-      </script>
+-      <script type="application/ld+json">
+-        {JSON.stringify(breadcrumbData)}
+-      </script>
+-      <script type="application/ld+json">
+-        {JSON.stringify(faqData)}
+-      </script>
++      {/* Structured Data - Only render if provided */}
++      {structuredData && (
++        <script type="application/ld+json">
++          {JSON.stringify(structuredData)}
++        </script>
++      )}
++      {breadcrumbData && (
++        <script type="application/ld+json">
++          {JSON.stringify(breadcrumbData)}
++        </script>
++      )}
++      {faqData && (
++        <script type="application/ld+json">
++          {JSON.stringify(faqData)}
++        </script>
++      )}
+     </Helmet>
+   )
+ }
+diff --git a/src/components/ToolsGrid.css b/src/components/ToolsGrid.css
+deleted file mode 100644
+index 5fa2e4f..0000000
+--- a/src/components/ToolsGrid.css
++++ /dev/null
+@@ -1,77 +0,0 @@
+-.tools-grid-section {
+-  padding: 4rem 0;
+-  background: var(--bg-secondary);
+-}
+-
+-.tools-grid-title {
+-  font-size: 2rem;
+-  font-weight: 700;
+-  text-align: center;
+-  margin: 0 0 3rem 0;
+-  color: var(--text-primary);
+-}
+-
+-.tools-grid {
+-  display: grid;
+-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+-  gap: 1.25rem;
+-  margin-bottom: 3rem;
+-}
+-
+-.tools-grid-footer {
+-  text-align: center;
+-}
+-
+-.view-all-link {
+-  display: inline-block;
+-  color: var(--primary-color);
+-  font-size: 1.125rem;
+-  font-weight: 600;
+-  padding: 0.75rem 2rem;
+-  border: 2px solid var(--primary-color);
+-  border-radius: var(--radius);
+-  transition: all 0.2s;
+-}
+-
+-.view-all-link:hover {
+-  background: var(--primary-color);
+-  color: white;
+-  transform: translateY(-2px);
+-  box-shadow: var(--shadow-md);
+-}
+-
+-/* Mobile Styles */
+-@media (max-width: 767px) {
+-  .tools-grid-section {
+-    padding: 3rem 0;
+-  }
+-
+-  .tools-grid-title {
+-    font-size: 1.5rem;
+-    margin-bottom: 2rem;
+-  }
+-
+-  .tools-grid {
+-    grid-template-columns: 1fr;
+-    gap: 1rem;
+-    margin-bottom: 2rem;
+-  }
+-
+-  .view-all-link {
+-    font-size: 1rem;
+-    padding: 0.625rem 1.5rem;
+-  }
+-}
+-
+-@media (min-width: 768px) and (max-width: 1023px) {
+-  .tools-grid {
+-    grid-template-columns: repeat(2, 1fr);
+-  }
+-}
+-
+-@media (min-width: 1024px) {
+-  .tools-grid {
+-    grid-template-columns: repeat(3, 1fr);
+-  }
+-}
+-
+diff --git a/src/components/ToolsGrid.jsx b/src/components/ToolsGrid.jsx
+deleted file mode 100644
+index 9a87874..0000000
+--- a/src/components/ToolsGrid.jsx
++++ /dev/null
+@@ -1,112 +0,0 @@
+-import React from 'react'
+-import ToolCard from './ToolCard'
+-import { useLanguage } from '../contexts/LanguageContext'
+-import { translations } from '../translations/translations'
+-import './ToolsGrid.css'
+-
+-const ToolsGrid = () => {
+-  const { language } = useLanguage()
+-  const t = (key) => translations[language][key]
+-
+-  const tools = [
+-    {
+-      icon: '🗜️',
+-      name: t('compressPDFTool'),
+-      description: t('compressPDFToolDesc'),
+-      href: '/tools/compress-pdf'
+-    },
+-    {
+-      icon: '🔗',
+-      name: t('mergePDFTool'),
+-      description: t('mergePDFToolDesc'),
+-      href: '/tools/merge-pdf'
+-    },
+-    {
+-      icon: '📐',
+-      name: t('resizeImageTool'),
+-      description: t('resizeImageToolDesc'),
+-      href: '/tools/resize-image'
+-    },
+-    {
+-      icon: '🔄',
+-      name: t('convertJPGToPDF'),
+-      description: t('convertJPGToPDFDesc'),
+-      href: '/tools/jpg-to-pdf'
+-    },
+-    {
+-      icon: '📊',
+-      name: t('wordCounter'),
+-      description: t('wordCounterDesc'),
+-      href: '/tools/word-counter'
+-    },
+-    {
+-      icon: '{ }',
+-      name: t('jsonFormatter'),
+-      description: t('jsonFormatterDesc'),
+-      href: '/tools/json-formatter'
+-    },
+-    {
+-      icon: '🎨',
+-      name: t('imageCompressor'),
+-      description: t('imageCompressorDesc'),
+-      href: '/tools/compress-image'
+-    },
+-    {
+-      icon: '✂️',
+-      name: t('splitPDF'),
+-      description: t('splitPDFDesc'),
+-      href: '/tools/split-pdf'
+-    },
+-    {
+-      icon: '🔐',
+-      name: t('base64Encoder'),
+-      description: t('base64EncoderDesc'),
+-      href: '/tools/base64-encoder'
+-    },
+-    {
+-      icon: '🌈',
+-      name: t('colorPicker'),
+-      description: t('colorPickerDesc'),
+-      href: '/tools/color-picker'
+-    },
+-    {
+-      icon: '📝',
+-      name: t('textCaseConverter'),
+-      description: t('textCaseConverterDesc'),
+-      href: '/tools/text-case'
+-    },
+-    {
+-      icon: '🔍',
+-      name: t('urlEncoder'),
+-      description: t('urlEncoderDesc'),
+-      href: '/tools/url-encoder'
+-    }
+-  ]
+-
+-  return (
+-    <section className="tools-grid-section">
+-      <div className="container">
+-        <h2 className="tools-grid-title">{t('popularTools')}</h2>
+-        <div className="tools-grid">
+-          {tools.map((tool, index) => (
+-            <ToolCard
+-              key={index}
+-              icon={tool.icon}
+-              name={tool.name}
+-              description={tool.description}
+-              onClick={() => window.location.href = tool.href}
+-            />
+-          ))}
+-        </div>
+-        <div className="tools-grid-footer">
+-          <a href="/tools" className="view-all-link">
+-            {t('viewAllTools')}
+-          </a>
+-        </div>
+-      </div>
+-    </section>
+-  )
+-}
+-
+-export default ToolsGrid
+-
+diff --git a/src/components/ads/AdFallback.jsx b/src/components/ads/AdFallback.jsx
+index 0a7de66..ca452f5 100644
+--- a/src/components/ads/AdFallback.jsx
++++ b/src/components/ads/AdFallback.jsx
+@@ -6,16 +6,17 @@
+ import React, { useMemo } from 'react'
+ import PropTypes from 'prop-types'
+ import { useLanguage } from '../../contexts/LanguageContext'
+-import { toolRegistry } from '../../configs/toolRegistry'
++import { getActiveTools } from '../../data/tools'
+ import ToolCard from '../ToolCard'
+ import './AdFallback.css'
+
+ const AdFallback = ({ type = 'tools', count = 3, excludeCategory = null }) => {
+   const { language } = useLanguage()
+
+-  // Get random tools from registry
++  // Get random active tools
+   const promotedTools = useMemo(() => {
+-    let availableTools = [...toolRegistry]
++    // Get only active tools
++    let availableTools = getActiveTools()
+
+     // Exclude current category if specified
+     if (excludeCategory) {
+diff --git a/src/components/shared/Content/SEOContent.css b/src/components/shared/Content/SEOContent.css
+index 6924c46..00fdd7e 100644
+--- a/src/components/shared/Content/SEOContent.css
++++ b/src/components/shared/Content/SEOContent.css
+@@ -36,33 +36,46 @@
+ .seo-sections-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+-  gap: 2rem;
++  gap: 1.5rem;
+   margin-bottom: 3rem;
+ }
+
+ .seo-section-card {
+-  padding: 2rem;
+-  background: #f8f9fa;
+-  border: 1px solid #e2e8f0;
+-  border-radius: 12px;
+-  transition: all 0.3s ease;
++  padding: 1.75rem;
++  background: linear-gradient(135deg, #fdfbfb 0%, #f7f7f7 100%);
++  border-left: 4px solid #cbd5e0;
++  border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
++  position: relative;
++  /* Remove hover effects - not clickable */
++  cursor: default;
+ }
+
+-.seo-section-card:hover {
+-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+-  transform: translateY(-4px);
+-  border-color: #667eea;
++/* Badge for informational cards */
++.seo-section-card::before {
++  content: 'Guide';
++  position: absolute;
++  top: 1rem;
++  right: 1rem;
++  background: #edf2f7;
++  color: #4a5568;
++  font-size: 0.75rem;
++  font-weight: 600;
++  padding: 0.25rem 0.75rem;
++  border-radius: 12px;
++  text-transform: uppercase;
++  letter-spacing: 0.5px;
+ }
+
+ .seo-section-title {
+-  font-size: 1.25rem;
++  font-size: 1.125rem;
+   font-weight: 600;
+-  color: #1a202c;
++  color: #2d3748;
+   margin: 0;
+   line-height: 1.4;
++  padding-right: 4rem; /* Space for badge */
+ }
+
+ .seo-section-content {
+diff --git a/src/configs/categories/developer.config.js b/src/configs/categories/developer.config.js
+index 6ace122..d2a509f 100644
+--- a/src/configs/categories/developer.config.js
++++ b/src/configs/categories/developer.config.js
+@@ -9,15 +9,15 @@ export const developerCategoryConfig = {
+   // SEO Metadata
+   seo: {
+     en: {
+-      title: 'Free Developer Tools Online | JSON Formatter, Base64 Encoder, URL Encoder',
+-      description: 'Free online developer tools. Format JSON, encode/decode Base64, URL encoding, color picker, and more. No signup required.',
+-      keywords: 'developer tools, json formatter, base64 encoder, url encoder, color picker, free dev tools',
++      title: 'Free Developer Tools Online | JSON Formatter',
++      description: 'Free online JSON formatter tool. Format, validate, and beautify JSON data instantly. No signup required.',
++      keywords: 'developer tools, json formatter, json validator, format json, free dev tools',
+       canonical: 'https://freetools.com/tools/developer'
+     },
+     hi: {
+-      title: 'फ्री डेवलपर टूल्स ऑनलाइन | JSON फॉर्मेटर, Base64 एनकोडर, URL एनकोडर',
+-      description: 'फ्री ऑनलाइन डेवलपर टूल्स। JSON फॉर्मेट करें, Base64 एनकोड/डीकोड करें, URL एनकोडिंग, कलर पिकर और बहुत कुछ। साइनअप की ज़रूरत नहीं।',
+-      keywords: 'developer tools, json formatter, base64 encoder, url encoder, color picker, free dev tools',
++      title: 'फ्री डेवलपर टूल्स ऑनलाइन | JSON फॉर्मेटर',
++      description: 'फ्री ऑनलाइन JSON फॉर्मेटर टूल। JSON डेटा तुरंत फॉर्मेट, वैलिडेट और ब्यूटिफाई करें। साइनअप की ज़रूरत नहीं।',
++      keywords: 'developer tools, json formatter, json validator, json format kare, free dev tools',
+       canonical: 'https://freetools.com/tools/developer'
+     }
+   },
+@@ -50,55 +50,35 @@ export const developerCategoryConfig = {
+   seoContent: {
+     en: {
+       mainTitle: 'Essential Developer Tools for Modern Development',
+-      intro: 'Our comprehensive suite of developer tools helps you format, encode, decode, and convert data with ease. Whether you need to format JSON for debugging, encode Base64 for APIs, or pick colors for design, our tools provide instant results.',
++      intro: 'Our JSON formatter tool helps you format, validate, and beautify JSON data with ease. Perfect for debugging APIs, viewing configuration files, and working with JSON responses.',
+
+       sections: [
+         {
+-          title: 'JSON Formatter',
+-          content: 'Format, validate, and beautify JSON data. Perfect for debugging APIs, viewing configuration files, and working with JSON responses. Syntax highlighting and error detection included.',
+-          keywords: 'json formatter, json validator, format json'
++          title: 'JSON Formatter & Validator',
++          content: 'Format, validate, and beautify JSON data instantly. Perfect for debugging APIs, viewing configuration files, and working with JSON responses. Syntax highlighting and error detection included. Works entirely in your browser for complete privacy.',
++          keywords: 'json formatter, json validator, format json, beautify json'
+         },
+         {
+-          title: 'Base64 Encoder/Decoder',
+-          content: 'Encode and decode Base64 strings instantly. Essential for working with APIs, email attachments, and data URIs. Supports text and file encoding.',
+-          keywords: 'base64 encoder, base64 decoder, encode base64'
+-        },
+-        {
+-          title: 'URL Encoder/Decoder',
+-          content: 'Encode and decode URLs safely. Perfect for creating query strings, handling special characters, and working with web APIs. Follows RFC 3986 standards.',
+-          keywords: 'url encoder, url decoder, encode url'
+-        },
+-        {
+-          title: 'Color Picker',
+-          content: 'Pick colors and convert between HEX, RGB, HSL, and other formats. Perfect for web design, CSS styling, and creating color palettes. Includes color harmony suggestions.',
+-          keywords: 'color picker, hex to rgb, color converter'
++          title: 'Why Use Our JSON Formatter?',
++          content: 'Our JSON formatter provides instant formatting with syntax validation, error highlighting, and beautification. It works completely offline in your browser, ensuring your data remains private. Perfect for developers working with APIs, configuration files, and JSON data.',
++          keywords: 'json tool, json beautifier, json pretty print'
+         }
+       ]
+     },
+     hi: {
+       mainTitle: 'मॉडर्न डेवलपमेंट के लिए ज़रूरी डेवलपर टूल्स',
+-      intro: 'हमारे डेवलपर टूल्स का कॉम्प्रिहेंसिव सूट आपको डेटा फॉर्मेट, एनकोड, डीकोड और कन्वर्ट करने में आसानी से मदद करता है। चाहे आपको डीबगिंग के लिए JSON फॉर्मेट करना हो, API के लिए Base64 एनकोड करना हो, या डिज़ाइन के लिए कलर पिक करना हो, हमारे टूल्स तुरंत रिज़ल्ट देते हैं।',
++      intro: 'हमारा JSON फॉर्मेटर टूल आपको JSON डेटा फॉर्मेट, वैलिडेट और ब्यूटिफाई करने में आसानी से मदद करता है। API डीबगिंग, कॉन्फिगरेशन फाइल देखने और JSON रिस्पॉन्स के साथ काम करने के लिए परफेक्ट।',
+
+       sections: [
+         {
+-          title: 'JSON फॉर्मेटर',
+-          content: 'JSON डेटा फॉर्मेट, वैलिडेट और ब्यूटिफाई करें। API डीबगिंग, कॉन्फिगरेशन फाइल देखने और JSON रिस्पॉन्स के साथ काम करने के लिए परफेक्ट। सिंटैक्स हाइलाइटिंग और एरर डिटेक्शन शामिल है।',
+-          keywords: 'json formatter, json validator, json format kare'
+-        },
+-        {
+-          title: 'Base64 एनकोडर/डीकोडर',
+-          content: 'Base64 स्ट्रिंग तुरंत एनकोड और डीकोड करें। API, ईमेल अटैचमेंट और डेटा URI के साथ काम करने के लिए ज़रूरी। टेक्स्ट और फाइल एनकोडिंग सपोर्ट करता है।',
+-          keywords: 'base64 encoder, base64 decoder, base64 encode kare'
+-        },
+-        {
+-          title: 'URL एनकोडर/डीकोडर',
+-          content: 'URL को सुरक्षित रूप से एनकोड और डीकोड करें। क्वेरी स्ट्रिंग बनाने, स्पेशल कैरेक्टर हैंडल करने और वेब API के साथ काम करने के लिए परफेक्ट। RFC 3986 स्टैंडर्ड फॉलो करता है।',
+-          keywords: 'url encoder, url decoder, url encode kare'
++          title: 'JSON फॉर्मेटर और वैलिडेटर',
++          content: 'JSON डेटा तुरंत फॉर्मेट, वैलिडेट और ब्यूटिफाई करें। API डीबगिंग, कॉन्फिगरेशन फाइल देखने और JSON रिस्पॉन्स के साथ काम करने के लिए परफेक्ट। सिंटैक्स हाइलाइटिंग और एरर डिटेक्शन शामिल है। पूरी प्राइवेसी के लिए पूरी तरह से आपके ब्राउज़र में काम करता है।',
++          keywords: 'json formatter, json validator, json format kare, json beautify'
+         },
+         {
+-          title: 'कलर पिकर',
+-          content: 'कलर पिक करें और HEX, RGB, HSL और अन्य फॉर्मेट के बीच कन्वर्ट करें। वेब डिज़ाइन, CSS स्टाइलिंग और कलर पैलेट बनाने के लिए परफेक्ट। कलर हार्मनी सजेशन शामिल हैं।',
+-          keywords: 'color picker, hex to rgb, color converter'
++          title: 'हमारा JSON फॉर्मेटर क्यों इस्तेमाल करें?',
++          content: 'हमारा JSON फॉर्मेटर सिंटैक्स वैलिडेशन, एरर हाइलाइटिंग और ब्यूटिफिकेशन के साथ तुरंत फॉर्मेटिंग प्रदान करता है। यह पूरी तरह से आपके ब्राउज़र में ऑफलाइन काम करता है, जिससे आपका डेटा प्राइवेट रहता है। API, कॉन्फिगरेशन फाइल और JSON डेटा के साथ काम करने वाले डेवलपर्स के लिए परफेक्ट।',
++          keywords: 'json tool, json beautifier, json pretty print'
+         }
+       ]
+     }
+@@ -126,8 +106,8 @@ export const developerCategoryConfig = {
+           answer: 'Yes! Our JSON formatter automatically validates syntax and highlights errors. It helps you identify and fix JSON formatting issues quickly.'
+         },
+         {
+-          question: 'What encoding standards do you support?',
+-          answer: 'We support industry-standard encoding: Base64 (RFC 4648), URL encoding (RFC 3986), and UTF-8 character encoding.'
++          question: 'Can I format large JSON files?',
++          answer: 'Yes! Our JSON formatter can handle large JSON files efficiently. All processing happens in your browser, so performance depends on your device capabilities.'
+         }
+       ]
+     },
+@@ -151,8 +131,8 @@ export const developerCategoryConfig = {
+           answer: 'हाँ! हमारा JSON फॉर्मेटर ऑटोमैटिकली सिंटैक्स वैलिडेट करता है और एरर हाइलाइट करता है। यह आपको JSON फॉर्मेटिंग इश्यू जल्दी आइडेंटिफाई और फिक्स करने में मदद करता है।'
+         },
+         {
+-          question: 'आप कौन से एनकोडिंग स्टैंडर्ड सपोर्ट करते हैं?',
+-          answer: 'हम इंडस्ट्री-स्टैंडर्ड एनकोडिंग सपोर्ट करते हैं: Base64 (RFC 4648), URL encoding (RFC 3986), और UTF-8 character encoding।'
++          question: 'क्या मैं बड़ी JSON फाइलें फॉर्मेट कर सकता हूँ?',
++          answer: 'हाँ! हमारा JSON फॉर्मेटर बड़ी JSON फाइलों को कुशलता से हैंडल कर सकता है। सभी प्रोसेसिंग आपके ब्राउज़र में होती है, इसलिए परफॉर्मेंस आपके डिवाइस की क्षमताओं पर निर्भर करती है।'
+         }
+       ]
+     }
+diff --git a/src/configs/toolRegistry.js b/src/configs/toolRegistry.js
+index 9a60288..0429a21 100644
+--- a/src/configs/toolRegistry.js
++++ b/src/configs/toolRegistry.js
+@@ -1,295 +1,49 @@
+ /**
+- * Central Tool Registry
+- * Single source of truth for all tools in the application
+- *
+- * CATEGORIES (FIXED):
+- * - image
+- * - pdf
+- * - text
+- * - developer
++ * Tool Registry - DEPRECATED
++ *
++ * This file is kept for backward compatibility only.
++ * All new code should import from '../data/tools.js' instead.
++ *
++ * MIGRATION PATH:
++ * - Old: import { toolRegistry } from './configs/toolRegistry'
++ * - New: import { tools, getActiveTools } from './data/tools'
++ *
++ * This file simply re-exports from the new central data source.
+  */
+
+-import imageResizerConfig from './tools/imageResizer.config'
+-import wordCounterConfig from './tools/wordCounter.config'
+-import textCaseConverterConfig from './tools/textCaseConverter.config'
+-import removeExtraSpacesConfig from './tools/removeExtraSpaces.config'
+-import characterCounterConfig from './tools/characterCounter.config'
+-import jsonFormatterConfig from './tools/jsonFormatter.config'
+-import { mergePdfConfig } from './tools/mergePdf.config'
++import {
++  tools,
++  getActiveTools,
++  getToolsByCategory as getToolsByCategoryNew,
++  getToolById as getToolByIdNew,
++  getCategoriesWithCounts as getCategoriesWithCountsNew
++} from '../data/tools'
+
+ /**
+- * Tool Registry
+- * Each tool must have:
+- * - id: unique identifier
+- * - name: tool name (bilingual)
+- * - category: one of the 4 predefined categories
+- * - route: URL path
+- * - config: tool configuration object
+- * - icon: emoji or icon
+- * - description: brief description (bilingual)
++ * @deprecated Use 'tools' from '../data/tools' instead
++ * For backward compatibility, this returns ALL tools (including inactive)
+  */
+-export const toolRegistry = [
+-  // IMAGE TOOLS
+-  {
+-    id: 'image-resizer',
+-    name: {
+-      en: 'Image Resizer',
+-      hi: 'इमेज रीसाइज़र'
+-    },
+-    category: 'image',
+-    route: '/tools/resize-image',
+-    config: imageResizerConfig,
+-    icon: '📐',
+-    description: {
+-      en: 'Resize images to any size (20KB, 50KB, 100KB)',
+-      hi: 'इमेज को किसी भी साइज़ में रीसाइज़ करें (20KB, 50KB, 100KB)'
+-    }
+-  },
+-  {
+-    id: 'image-compressor',
+-    name: {
+-      en: 'Image Compressor',
+-      hi: 'इमेज कंप्रेसर'
+-    },
+-    category: 'image',
+-    route: '/tools/compress-image',
+-    config: null, // To be implemented
+-    icon: '🎨',
+-    description: {
+-      en: 'Compress images up to 90% smaller',
+-      hi: 'इमेज को 90% तक छोटा करें'
+-    }
+-  },
+-  {
+-    id: 'image-cropper',
+-    name: {
+-      en: 'Image Cropper',
+-      hi: 'इमेज क्रॉपर'
+-    },
+-    category: 'image',
+-    route: '/tools/crop-image',
+-    config: null, // To be implemented
+-    icon: '✂️',
+-    description: {
+-      en: 'Crop images to any size or aspect ratio',
+-      hi: 'किसी भी साइज़ या आस्पेक्ट रेशियो में इमेज क्रॉप करें'
+-    }
+-  },
+-
+-  // PDF TOOLS
+-  {
+-    id: 'compress-pdf',
+-    name: {
+-      en: 'Compress PDF',
+-      hi: 'PDF कंप्रेस करें'
+-    },
+-    category: 'pdf',
+-    route: '/tools/compress-pdf',
+-    config: null, // To be implemented
+-    icon: '🗜️',
+-    description: {
+-      en: 'Reduce PDF file size without losing quality',
+-      hi: 'बिना क्वालिटी कम किए PDF फाइल साइज़ कम करें'
+-    }
+-  },
+-  {
+-    id: 'merge-pdf',
+-    name: {
+-      en: 'Merge PDF',
+-      hi: 'PDF मर्ज करें'
+-    },
+-    category: 'pdf',
+-    route: '/tools/merge-pdf',
+-    config: mergePdfConfig,
+-    icon: '🔗',
+-    description: {
+-      en: 'Combine multiple PDFs into one file',
+-      hi: 'कई PDF को एक फाइल में कंबाइन करें'
+-    }
+-  },
+-  {
+-    id: 'split-pdf',
+-    name: {
+-      en: 'Split PDF',
+-      hi: 'PDF स्प्लिट करें'
+-    },
+-    category: 'pdf',
+-    route: '/tools/split-pdf',
+-    config: null, // To be implemented
+-    icon: '✂️',
+-    description: {
+-      en: 'Extract pages from PDF files',
+-      hi: 'PDF फाइल से पेज एक्सट्रैक्ट करें'
+-    }
+-  },
+-  {
+-    id: 'jpg-to-pdf',
+-    name: {
+-      en: 'JPG to PDF',
+-      hi: 'JPG को PDF में'
+-    },
+-    category: 'pdf',
+-    route: '/tools/jpg-to-pdf',
+-    config: null, // To be implemented
+-    icon: '🔄',
+-    description: {
+-      en: 'Convert images to PDF documents',
+-      hi: 'इमेज को PDF डॉक्यूमेंट में बदलें'
+-    }
+-  },
+-
+-  // TEXT TOOLS
+-  {
+-    id: 'word-counter',
+-    name: {
+-      en: 'Word Counter',
+-      hi: 'वर्ड काउंटर'
+-    },
+-    category: 'text',
+-    route: '/tools/word-counter',
+-    config: wordCounterConfig,
+-    icon: '📊',
+-    description: {
+-      en: 'Count words, characters, and sentences',
+-      hi: 'शब्द, कैरेक्टर और सेंटेंस गिनें'
+-    }
+-  },
+-  {
+-    id: 'text-case-converter',
+-    name: {
+-      en: 'Text Case Converter',
+-      hi: 'टेक्स्ट केस कन्वर्टर'
+-    },
+-    category: 'text',
+-    route: '/tools/text-case-converter',
+-    config: textCaseConverterConfig,
+-    icon: '🔤',
+-    description: {
+-      en: 'Convert text to UPPERCASE, lowercase, Title Case, and more',
+-      hi: 'टेक्स्ट को UPPERCASE, lowercase, Title Case और अधिक में कन्वर्ट करें'
+-    }
+-  },
+-  {
+-    id: 'remove-extra-spaces',
+-    name: {
+-      en: 'Remove Extra Spaces',
+-      hi: 'एक्स्ट्रा स्पेस हटाएं'
+-    },
+-    category: 'text',
+-    route: '/tools/remove-extra-spaces',
+-    config: removeExtraSpacesConfig,
+-    icon: '🧹',
+-    description: {
+-      en: 'Remove multiple spaces and clean up text formatting',
+-      hi: 'मल्टिपल स्पेस हटाएं और टेक्स्ट फॉर्मेटिंग साफ करें'
+-    }
+-  },
+-  {
+-    id: 'character-counter',
+-    name: {
+-      en: 'Character Counter',
+-      hi: 'कैरेक्टर काउंटर'
+-    },
+-    category: 'text',
+-    route: '/tools/character-counter',
+-    config: characterCounterConfig,
+-    icon: '🔢',
+-    description: {
+-      en: 'Count characters with and without spaces',
+-      hi: 'स्पेस के साथ और बिना कैरेक्टर गिनें'
+-    }
+-  },
+-
+-  // DEVELOPER TOOLS
+-  {
+-    id: 'json-formatter',
+-    name: {
+-      en: 'JSON Formatter',
+-      hi: 'JSON फॉर्मेटर'
+-    },
+-    category: 'developer',
+-    route: '/tools/json-formatter',
+-    config: jsonFormatterConfig,
+-    icon: '{ }',
+-    description: {
+-      en: 'Format, minify, and validate JSON data',
+-      hi: 'JSON डेटा को फॉर्मेट, मिनिफाई और वैलिडेट करें'
+-    }
+-  },
+-  {
+-    id: 'base64-encoder',
+-    name: {
+-      en: 'Base64 Encoder',
+-      hi: 'Base64 एनकोडर'
+-    },
+-    category: 'developer',
+-    route: '/tools/base64-encoder',
+-    config: null, // To be implemented
+-    icon: '🔐',
+-    description: {
+-      en: 'Encode and decode Base64 strings',
+-      hi: 'Base64 स्ट्रिंग एनकोड और डीकोड करें'
+-    }
+-  },
+-  {
+-    id: 'url-encoder',
+-    name: {
+-      en: 'URL Encoder',
+-      hi: 'URL एनकोडर'
+-    },
+-    category: 'developer',
+-    route: '/tools/url-encoder',
+-    config: null, // To be implemented
+-    icon: '🔍',
+-    description: {
+-      en: 'Encode and decode URLs safely',
+-      hi: 'URL को सुरक्षित रूप से एनकोड और डीकोड करें'
+-    }
+-  },
+-  {
+-    id: 'color-picker',
+-    name: {
+-      en: 'Color Picker',
+-      hi: 'कलर पिकर'
+-    },
+-    category: 'developer',
+-    route: '/tools/color-picker',
+-    config: null, // To be implemented
+-    icon: '🌈',
+-    description: {
+-      en: 'Pick and convert color codes',
+-      hi: 'कलर कोड पिक और कन्वर्ट करें'
+-    }
+-  }
+-]
++export const toolRegistry = tools
+
+ /**
+- * Get tools by category
+- * @param {string} category - Category ID (image, pdf, text, developer)
+- * @returns {Array} Filtered tools
++ * @deprecated Use getToolsByCategory(category, activeOnly) from '../data/tools' instead
++ * For backward compatibility, this returns ALL tools in category (including inactive)
+  */
+ export const getToolsByCategory = (category) => {
+-  return toolRegistry.filter(tool => tool.category === category)
++  return getToolsByCategoryNew(category, false) // Return all tools, not just active
+ }
+
+ /**
+- * Get tool by ID
+- * @param {string} id - Tool ID
+- * @returns {Object|null} Tool object or null
++ * @deprecated Use getToolById from '../data/tools' instead
+  */
+ export const getToolById = (id) => {
+-  return toolRegistry.find(tool => tool.id === id) || null
++  return getToolByIdNew(id)
+ }
+
+ /**
+- * Get all categories with tool counts
+- * @returns {Array} Categories with counts
++ * @deprecated Use getCategoriesWithCounts from '../data/tools' instead
+  */
+ export const getCategoriesWithCounts = () => {
+-  const categories = ['image', 'pdf', 'text', 'developer']
+-  return categories.map(category => ({
+-    id: category,
+-    count: getToolsByCategory(category).length
+-  }))
++  return getCategoriesWithCountsNew(false) // Count all tools, not just active
+ }
+
+diff --git a/src/configs/tools/imageResizer.config.js b/src/configs/tools/imageResizer.config.js
+index f566fa6..6717f6d 100644
+--- a/src/configs/tools/imageResizer.config.js
++++ b/src/configs/tools/imageResizer.config.js
+@@ -103,8 +103,8 @@ const imageResizerConfig = {
+     // SEO Metadata (for SEOHead component)
+     seo: {
+       en: {
+-        title: 'Resize Image to 50KB Online | Compress Images Instantly 2024',
+-        description: 'Resize images to 50KB, 20KB, or 100KB online. Compress images without quality loss. Free, secure, and works in your browser.',
++        title: 'Resize Image Online Free (20KB, 50KB, 100KB)',
++        description: 'Resize images online to 20KB, 50KB or 100KB. Free, fast, secure and works on mobile.',
+         keywords: {
+           primary: 'resize image to 50kb online',
+           secondary: [
+diff --git a/src/configs/tools/imageResizer50kb.config.js b/src/configs/tools/imageResizer50kb.config.js
+new file mode 100644
+index 0000000..25cc2b1
+--- /dev/null
++++ b/src/configs/tools/imageResizer50kb.config.js
+@@ -0,0 +1,140 @@
++/**
++ * Image Resizer 50KB Variant Configuration
++ * Reuses ImageResizerTool with 50KB-specific content
++ */
++
++import imageResizerConfig from './imageResizer.config'
++
++const imageResizer50kbConfig = {
++  // Inherit all tool settings from main config
++  ...imageResizerConfig,
++
++  // Override metadata
++  metadata: {
++    ...imageResizerConfig.metadata,
++    id: 'image-resizer-50kb',
++    slug: 'image-resizer-50kb'
++  },
++
++  // Override SEO
++  content: {
++    ...imageResizerConfig.content,
++
++    seo: {
++      en: {
++        title: 'Resize Image to 50KB Online Free',
++        description: 'Compress and resize image to 50KB online. Free, fast, secure.',
++        keywords: 'resize image to 50KB, compress to 50KB, reduce image size 50KB',
++        canonical: 'https://freetools.com/image-resizer-50kb'
++      }
++    },
++
++    // Override Hero
++    hero: {
++      en: {
++        title: 'Resize Image to 50KB Online',
++        subtitle: 'Free online tool to compress and resize images to exactly 50KB',
++        benefits: [
++          { icon: '⚡', text: 'Instant processing' },
++          { icon: '🔒', text: '100% Private' },
++          { icon: '🎯', text: 'Exact 50KB size' },
++          { icon: '🆓', text: 'Completely free' }
++        ],
++        privacyNotice: 'Images are processed in your browser. Not uploaded to any server.'
++      }
++    },
++
++    // Override How To
++    howTo: {
++      en: {
++        title: 'How to Resize Image to 50KB',
++        steps: [
++          {
++            number: 1,
++            title: 'Upload Your Image',
++            description: 'Click "Choose Files" or drag and drop your image.',
++            icon: '📤'
++          },
++          {
++            number: 2,
++            title: 'Adjust Quality/Size',
++            description: 'Select "By File Size" mode and enter 50 KB as target size.',
++            icon: '⚙️'
++          },
++          {
++            number: 3,
++            title: 'Download Result',
++            description: 'Preview and download your 50KB image.',
++            icon: '⬇️'
++          }
++        ]
++      }
++    },
++
++    // Override Features
++    features: {
++      en: {
++        title: 'Tips for Exact 50KB',
++        items: [
++          {
++            icon: '📷',
++            title: 'Use JPG for Better Compression',
++            description: 'JPG format provides better compression than PNG for photos'
++          },
++          {
++            icon: '📐',
++            title: 'Reduce Dimensions',
++            description: 'Smaller dimensions help achieve 50KB target more easily'
++          },
++          {
++            icon: '🎨',
++            title: 'Adjust Quality Slider',
++            description: 'Use quality slider between 80-90% for best balance'
++          }
++        ]
++      }
++    },
++
++    // Override SEO Content with internal links
++    seoContent: {
++      en: {
++        mainTitle: 'Resize Image to 50KB - Complete Guide',
++        intro: 'Need to compress your image to exactly 50KB? This free tool helps you resize images to 50KB for government forms, job applications, and document uploads.',
++
++        sections: [
++          {
++            title: 'Why 50KB Image Size?',
++            content: 'Many government forms, job portals, and online applications require images to be exactly 50KB or less. Our tool automatically adjusts quality and dimensions to meet this requirement.'
++          },
++          {
++            title: 'Best Practices for 50KB Images',
++            content: 'Use JPG format for photos, reduce image dimensions if needed, and adjust quality slider between 80-90%. The tool will automatically optimize to reach exactly 50KB.'
++          }
++        ]
++      }
++    },
++
++    // Override FAQ
++    faq: {
++      en: {
++        title: 'Frequently Asked Questions',
++        items: [
++          {
++            question: 'How to get exact 50KB size?',
++            answer: 'Select "By File Size" mode, enter 50 as target KB, and click resize. The tool automatically adjusts quality and dimensions to achieve exactly 50KB.'
++          },
++          {
++            question: 'Is this tool free?',
++            answer: 'Yes, completely free! No registration, no limits, no watermarks. Use it as many times as you need.'
++          },
++          {
++            question: 'Is my image safe?',
++            answer: 'Absolutely! Your images are processed entirely in your browser. They never leave your device or get uploaded to any server.'
++          }
++        ]
++      }
++    }
++  }
++}
++
++export default imageResizer50kbConfig
+diff --git a/src/data/tools.js b/src/data/tools.js
+new file mode 100644
+index 0000000..6f9cad4
+--- /dev/null
++++ b/src/data/tools.js
+@@ -0,0 +1,344 @@
++/**
++ * Central Tool Data Configuration
++ * Single source of truth for all tools in the application
++ *
++ * IMPORTANT: This is the ONLY place where tool metadata should be defined.
++ * All pages and components must use helper functions to access this data.
++ *
++ * TOOL PROPERTIES:
++ * - id: unique identifier (slug)
++ * - name: tool name (bilingual object)
++ * - description: brief description (bilingual object)
++ * - category: one of "pdf", "image", "text", "developer"
++ * - route: URL path
++ * - icon: emoji or icon
++ * - active: boolean - whether tool is ready for production
++ * - featured: boolean - whether tool should be featured
++ * - usageCount: number - tracks popularity (updated by analytics)
++ * - config: reference to tool configuration object
++ */
++
++import imageResizerConfig from '../configs/tools/imageResizer.config.js'
++import wordCounterConfig from '../configs/tools/wordCounter.config.js'
++import textCaseConverterConfig from '../configs/tools/textCaseConverter.config.js'
++import removeExtraSpacesConfig from '../configs/tools/removeExtraSpaces.config.js'
++import characterCounterConfig from '../configs/tools/characterCounter.config.js'
++import jsonFormatterConfig from '../configs/tools/jsonFormatter.config.js'
++import { mergePdfConfig } from '../configs/tools/mergePdf.config.js'
++
++/**
++ * All Tools Registry
++ * Add new tools here with all required properties
++ */
++export const tools = [
++  // ============================================
++  // IMAGE TOOLS
++  // ============================================
++  // ============================================
++  // IMAGE TOOLS
++  // ============================================
++  {
++    id: 'image-resizer',
++    name: {
++      en: 'Image Resizer',
++      hi: 'इमेज रीसाइज़र'
++    },
++    description: {
++      en: 'Resize images to any size (20KB, 50KB, 100KB)',
++      hi: 'इमेज को किसी भी साइज़ में रीसाइज़ करें (20KB, 50KB, 100KB)'
++    },
++    category: 'image',
++    route: '/tools/resize-image',
++    icon: '📐',
++    active: true,
++    featured: true,
++    usageCount: 0,
++    config: imageResizerConfig
++  },
++
++  // ============================================
++  // PDF TOOLS
++  // ============================================
++  {
++    id: 'merge-pdf',
++    name: {
++      en: 'Merge PDF',
++      hi: 'PDF मर्ज करें'
++    },
++    description: {
++      en: 'Combine multiple PDFs into one file',
++      hi: 'कई PDF को एक फाइल में कंबाइन करें'
++    },
++    category: 'pdf',
++    route: '/tools/merge-pdf',
++    icon: '🔗',
++    active: true,
++    featured: true,
++    usageCount: 0,
++    config: mergePdfConfig
++  },
++
++  // ============================================
++  // TEXT TOOLS
++  // ============================================
++  {
++    id: 'word-counter',
++    name: {
++      en: 'Word Counter',
++      hi: 'वर्ड काउंटर'
++    },
++    description: {
++      en: 'Count words, characters, and sentences',
++      hi: 'शब्द, कैरेक्टर और सेंटेंस गिनें'
++    },
++    category: 'text',
++    route: '/tools/word-counter',
++    icon: '📊',
++    active: true,
++    featured: true,
++    usageCount: 0,
++    config: wordCounterConfig
++  },
++  {
++    id: 'text-case-converter',
++    name: {
++      en: 'Text Case Converter',
++      hi: 'टेक्स्ट केस कन्वर्टर'
++    },
++    description: {
++      en: 'Convert text to UPPERCASE, lowercase, Title Case, and more',
++      hi: 'टेक्स्ट को UPPERCASE, lowercase, Title Case और अधिक में कन्वर्ट करें'
++    },
++    category: 'text',
++    route: '/tools/text-case-converter',
++    icon: '🔤',
++    active: true,
++    featured: true,
++    usageCount: 0,
++    config: textCaseConverterConfig
++  },
++  {
++    id: 'remove-extra-spaces',
++    name: {
++      en: 'Remove Extra Spaces',
++      hi: 'एक्स्ट्रा स्पेस हटाएं'
++    },
++    description: {
++      en: 'Remove multiple spaces and clean up text formatting',
++      hi: 'मल्टिपल स्पेस हटाएं और टेक्स्ट फॉर्मेटिंग साफ करें'
++    },
++    category: 'text',
++    route: '/tools/remove-extra-spaces',
++    icon: '🧹',
++    active: true,
++    featured: true,
++    usageCount: 0,
++    config: removeExtraSpacesConfig
++  },
++  {
++    id: 'character-counter',
++    name: {
++      en: 'Character Counter',
++      hi: 'कैरेक्टर काउंटर'
++    },
++    description: {
++      en: 'Count characters with and without spaces',
++      hi: 'स्पेस के साथ और बिना कैरेक्टर गिनें'
++    },
++    category: 'text',
++    route: '/tools/character-counter',
++    icon: '🔢',
++    active: true,
++    featured: true,
++    usageCount: 0,
++    config: characterCounterConfig
++  },
++
++  // ============================================
++  // DEVELOPER TOOLS
++  // ============================================
++  {
++    id: 'json-formatter',
++    name: {
++      en: 'JSON Formatter',
++      hi: 'JSON फॉर्मेटर'
++    },
++    description: {
++      en: 'Format, minify, and validate JSON data',
++      hi: 'JSON डेटा को फॉर्मेट, मिनिफाई और वैलिडेट करें'
++    },
++    category: 'developer',
++    route: '/tools/json-formatter',
++    icon: '{ }',
++    active: true,
++    featured: true,
++    usageCount: 0,
++    config: jsonFormatterConfig
++  }
++]
++
++// ============================================
++// HELPER FUNCTIONS
++// ============================================
++
++/**
++ * Get all active tools
++ * @returns {Array} Active tools only
++ */
++export const getActiveTools = () => {
++  return tools.filter(tool => tool.active === true)
++}
++
++/**
++ * Get popular tools sorted by usage count
++ * STANDARDIZED: Returns exactly 6 tools for homepage
++ * @param {number} limit - Maximum number of tools to return (default: 6)
++ * @returns {Array} Popular tools sorted by usageCount (descending)
++ */
++export const getPopularTools = (limit = 6) => {
++  const activeTools = getActiveTools()
++
++  // Sort by usageCount (descending)
++  const sorted = [...activeTools].sort((a, b) => b.usageCount - a.usageCount)
++
++  // If all tools have 0 usage, fallback to featured tools
++  const hasUsage = sorted.some(tool => tool.usageCount > 0)
++  if (!hasUsage) {
++    const featuredTools = sorted.filter(tool => tool.featured)
++    // If we have featured tools, use them; otherwise use first N active tools
++    if (featuredTools.length > 0) {
++      return featuredTools.slice(0, limit)
++    }
++  }
++
++  return sorted.slice(0, limit)
++}
++
++/**
++ * Get featured tools
++ * @param {number} limit - Maximum number of tools to return
++ * @returns {Array} Featured active tools
++ */
++export const getFeaturedTools = (limit = 6) => {
++  return getActiveTools()
++    .filter(tool => tool.featured)
++    .slice(0, limit)
++}
++
++/**
++ * Get random tools from active tools
++ * STANDARDIZED: Returns exactly 3 tools for "Try These" section
++ * @param {number} count - Number of random tools to return (default: 3)
++ * @param {Array} excludeIds - Tool IDs to exclude from selection
++ * @returns {Array} Random active tools (no duplicates)
++ */
++export const getRandomTools = (count = 3, excludeIds = []) => {
++  const activeTools = getActiveTools().filter(tool => !excludeIds.includes(tool.id))
++
++  if (activeTools.length === 0) {
++    return []
++  }
++
++  // Shuffle array using Fisher-Yates algorithm
++  const shuffled = [...activeTools]
++  for (let i = shuffled.length - 1; i > 0; i--) {
++    const j = Math.floor(Math.random() * (i + 1));
++    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
++  }
++
++  return shuffled.slice(0, Math.min(count, shuffled.length))
++}
++
++/**
++ * Get tools by category
++ * @param {string} category - Category ID (image, pdf, text, developer)
++ * @param {boolean} activeOnly - Whether to return only active tools
++ * @returns {Array} Filtered tools
++ */
++export const getToolsByCategory = (category, activeOnly = true) => {
++  let filtered = tools.filter(tool => tool.category === category)
++
++  if (activeOnly) {
++    filtered = filtered.filter(tool => tool.active === true)
++  }
++
++  return filtered
++}
++
++/**
++ * Get tool by ID
++ * @param {string} id - Tool ID
++ * @returns {Object|null} Tool object or null
++ */
++export const getToolById = (id) => {
++  return tools.find(tool => tool.id === id) || null
++}
++
++/**
++ * Get tool by route
++ * @param {string} route - Tool route path
++ * @returns {Object|null} Tool object or null
++ */
++export const getToolByRoute = (route) => {
++  return tools.find(tool => tool.route === route) || null
++}
++
++/**
++ * Get all categories with tool counts
++ * @param {boolean} activeOnly - Whether to count only active tools
++ * @returns {Array} Categories with counts
++ */
++export const getCategoriesWithCounts = (activeOnly = true) => {
++  const categories = ['image', 'pdf', 'text', 'developer']
++  return categories.map(category => ({
++    id: category,
++    count: getToolsByCategory(category, activeOnly).length,
++    totalCount: getToolsByCategory(category, false).length
++  }))
++}
++
++/**
++ * Get all unique categories
++ * @returns {Array} Array of category IDs
++ */
++export const getAllCategories = () => {
++  return ['image', 'pdf', 'text', 'developer']
++}
++
++/**
++ * Check if a tool is active
++ * @param {string} id - Tool ID
++ * @returns {boolean} Whether tool is active
++ */
++export const isToolActive = (id) => {
++  const tool = getToolById(id)
++  return tool ? tool.active : false
++}
++
++/**
++ * Get tools for homepage sections
++ * @returns {Object} Object with different tool lists for homepage
++ */
++export const getHomePageTools = () => {
++  return {
++    popular: getPopularTools(6),
++    tryThese: getRandomTools(3),
++    featured: getFeaturedTools(4)
++  }
++}
++
++// Export default for convenience
++export default {
++  tools,
++  getActiveTools,
++  getPopularTools,
++  getFeaturedTools,
++  getRandomTools,
++  getToolsByCategory,
++  getToolById,
++  getToolByRoute,
++  getCategoriesWithCounts,
++  getAllCategories,
++  isToolActive,
++  getHomePageTools
++}
+diff --git a/src/main.jsx b/src/main.jsx
+index ed5d248..c8649a9 100644
+--- a/src/main.jsx
++++ b/src/main.jsx
+@@ -7,9 +7,11 @@ import Header from './components/Header'
+ import Footer from './components/Footer'
+ import './index.css'
+
++
+ // Lazy load pages for better performance
+ const App = lazy(() => import('./App'))
+ const ImageResizerNew = lazy(() => import('./pages/ImageResizerNew'))
++const ImageResizer50KB = lazy(() => import('./pages/ImageResizer50KB'))
+ const WordCounter = lazy(() => import('./pages/WordCounter'))
+ const TextCaseConverter = lazy(() => import('./pages/TextCaseConverter'))
+ const RemoveExtraSpaces = lazy(() => import('./pages/RemoveExtraSpaces'))
+@@ -18,6 +20,9 @@ const JSONFormatter = lazy(() => import('./pages/JSONFormatter'))
+ const MergePdf = lazy(() => import('./pages/MergePdf'))
+ const AllToolsPage = lazy(() => import('./pages/AllToolsPage'))
+ const CategoryPage = lazy(() => import('./pages/CategoryPage'))
++const AboutPage = lazy(() => import('./pages/AboutPage'))
++const ContactPage = lazy(() => import('./pages/ContactPage'))
++const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'))
+
+ // Category configs
+ import { imageCategoryConfig } from './configs/categories/image.config'
+@@ -50,6 +55,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
+               <Routes>
+                 <Route path="/" element={<App />} />
+
++                {/* Static Pages */}
++                <Route path="/about" element={<AboutPage />} />
++                <Route path="/contact" element={<ContactPage />} />
++                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
++
+                 {/* All Tools Page */}
+                 <Route path="/tools" element={<AllToolsPage />} />
+
+@@ -62,6 +72,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
+                 {/* Individual Tool Pages */}
+                 {/* Image Tools */}
+                 <Route path="/tools/resize-image" element={<ImageResizerNew />} />
++                <Route path="/image-resizer-50kb" element={<ImageResizer50KB />} />
+                 <Route path="/resize-image-to-50kb" element={<ImageResizerNew />} />
+                 <Route path="/resize-image-to-20kb" element={<ImageResizerNew />} />
+                 <Route path="/resize-image-to-100kb" element={<ImageResizerNew />} />
+diff --git a/src/pages/AboutPage.css b/src/pages/AboutPage.css
+new file mode 100644
+index 0000000..6a7b1b9
+--- /dev/null
++++ b/src/pages/AboutPage.css
+@@ -0,0 +1,282 @@
++/* About Page Styles */
++
++.about-page {
++  min-height: 100vh;
++  background: #ffffff;
++}
++
++/* Hero Section */
++.about-hero {
++  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++  padding: 4rem 1rem 3rem;
++  color: white;
++  text-align: center;
++}
++
++.about-h1 {
++  font-size: 2.5rem;
++  font-weight: 700;
++  margin: 0 0 1rem 0;
++  color: white;
++}
++
++.about-subtitle {
++  font-size: 1.25rem;
++  margin: 0;
++  opacity: 0.95;
++}
++
++/* Sections */
++.about-section {
++  padding: 4rem 1rem;
++}
++
++.about-section:nth-child(even) {
++  background: #f8f9fa;
++}
++
++.container {
++  max-width: 1200px;
++  margin: 0 auto;
++}
++
++.section-title {
++  font-size: 2rem;
++  font-weight: 700;
++  color: #1a202c;
++  margin: 0 0 1rem 0;
++  text-align: center;
++}
++
++.section-subtitle {
++  font-size: 1.125rem;
++  color: #4a5568;
++  text-align: center;
++  margin: 0 0 3rem 0;
++}
++
++/* Intro */
++.about-intro {
++  font-size: 1.125rem;
++  line-height: 1.8;
++  color: #2d3748;
++  text-align: center;
++  max-width: 800px;
++  margin: 0 auto;
++}
++
++/* Secure Section */
++.secure-section {
++  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
++}
++
++.secure-grid {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++  gap: 2rem;
++  margin-top: 3rem;
++}
++
++.secure-card {
++  background: white;
++  padding: 2rem;
++  border-radius: 12px;
++  text-align: center;
++  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
++  transition: transform 0.3s ease, box-shadow 0.3s ease;
++}
++
++.secure-card:hover {
++  transform: translateY(-4px);
++  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
++}
++
++.secure-icon {
++  font-size: 3rem;
++  margin-bottom: 1rem;
++}
++
++.secure-card-title {
++  font-size: 1.25rem;
++  font-weight: 600;
++  color: #1a202c;
++  margin: 0 0 0.75rem 0;
++}
++
++.secure-card-description {
++  font-size: 1rem;
++  color: #4a5568;
++  line-height: 1.6;
++  margin: 0;
++}
++
++/* Mission */
++.mission-content {
++  font-size: 1.125rem;
++  line-height: 1.8;
++  color: #2d3748;
++  text-align: center;
++  max-width: 800px;
++  margin: 0 auto;
++}
++
++/* Features */
++.features-section {
++  background: white;
++}
++
++.features-grid {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
++  gap: 2rem;
++  margin-top: 3rem;
++}
++
++.feature-card {
++  padding: 2rem;
++  background: #f8f9fa;
++  border-radius: 8px;
++  border-left: 4px solid #667eea;
++}
++
++.feature-title {
++  font-size: 1.25rem;
++  font-weight: 600;
++  color: #1a202c;
++  margin: 0 0 0.75rem 0;
++}
++
++.feature-description {
++  font-size: 1rem;
++  color: #4a5568;
++  line-height: 1.6;
++  margin: 0;
++}
++
++/* Tools Categories */
++.tools-categories {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++  gap: 2rem;
++  margin-top: 2rem;
++}
++
++.category-item {
++  padding: 1.5rem;
++  background: #f8f9fa;
++  border-radius: 8px;
++}
++
++.category-name {
++  font-size: 1.125rem;
++  font-weight: 600;
++  color: #1a202c;
++  margin: 0 0 0.5rem 0;
++}
++
++.category-description {
++  font-size: 0.95rem;
++  color: #4a5568;
++  line-height: 1.6;
++  margin: 0;
++}
++
++/* Contact Section */
++.contact-section {
++  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++  color: white;
++  text-align: center;
++}
++
++.contact-section .section-title {
++  color: white;
++}
++
++.contact-description {
++  font-size: 1.125rem;
++  margin: 0 0 2rem 0;
++  opacity: 0.95;
++}
++
++.contact-info {
++  max-width: 600px;
++  margin: 0 auto;
++}
++
++.contact-email {
++  font-size: 1.125rem;
++  margin: 0 0 1rem 0;
++}
++
++.contact-email a {
++  color: white;
++  text-decoration: underline;
++  font-weight: 600;
++}
++
++.contact-email a:hover {
++  opacity: 0.8;
++}
++
++.contact-location {
++  font-size: 1.125rem;
++  margin: 0;
++  opacity: 0.95;
++}
++
++/* Responsive */
++@media (max-width: 768px) {
++  .about-hero {
++    padding: 3rem 1rem 2rem;
++  }
++
++  .about-h1 {
++    font-size: 2rem;
++  }
++
++  .about-subtitle {
++    font-size: 1.125rem;
++  }
++
++  .about-section {
++    padding: 3rem 1rem;
++  }
++
++  .section-title {
++    font-size: 1.75rem;
++  }
++
++  .section-subtitle {
++    font-size: 1rem;
++  }
++
++  .secure-grid,
++  .features-grid,
++  .tools-categories {
++    grid-template-columns: 1fr;
++    gap: 1.5rem;
++  }
++
++  .about-intro,
++  .mission-content {
++    font-size: 1rem;
++  }
++}
++
++@media (max-width: 480px) {
++  .about-h1 {
++    font-size: 1.75rem;
++  }
++
++  .about-subtitle {
++    font-size: 1rem;
++  }
++
++  .section-title {
++    font-size: 1.5rem;
++  }
++
++  .secure-icon {
++    font-size: 2.5rem;
++  }
++}
+diff --git a/src/pages/AboutPage.jsx b/src/pages/AboutPage.jsx
+new file mode 100644
+index 0000000..37680e8
+--- /dev/null
++++ b/src/pages/AboutPage.jsx
+@@ -0,0 +1,299 @@
++/**
++ * About Page
++ * Information about FreeTools and our privacy-first approach
++ */
++
++import React from 'react'
++import { useLanguage } from '../contexts/LanguageContext'
++import SEOHead from '../components/SEO/SEOHead'
++import './AboutPage.css'
++
++const AboutPage = () => {
++  const { language } = useLanguage()
++
++  const content = {
++    en: {
++      title: 'About FreeTools - Privacy-First Online Tools',
++      description: 'Learn about FreeTools - free online tools that process files locally in your browser. No uploads, no storage, complete privacy.',
++      h1: 'About FreeTools',
++      subtitle: 'Free, Fast, and Privacy-First Online Tools',
++
++      intro: 'FreeTools provides a comprehensive suite of free online tools for everyday tasks. Whether you need to resize images, merge PDFs, count words, or format JSON, we have the perfect tool for you.',
++
++      mission: {
++        title: 'Our Mission',
++        content: 'To provide fast, reliable, and completely free online tools that respect your privacy. We believe powerful tools should be accessible to everyone without compromising security or requiring registration.'
++      },
++
++      secure: {
++        title: 'Secure & Private by Design',
++        subtitle: 'Your files never leave your device',
++        points: [
++          {
++            icon: '🔒',
++            title: '100% Local Processing',
++            description: 'All file processing happens entirely in your browser using JavaScript. Your files are never uploaded to any server.'
++          },
++          {
++            icon: '🚫',
++            title: 'No File Storage',
++            description: 'We don\'t store, save, or have access to your files. Once you close the browser, everything is gone.'
++          },
++          {
++            icon: '⚡',
++            title: 'Instant Results',
++            description: 'Since processing happens locally, you get instant results without waiting for server uploads or downloads.'
++          },
++          {
++            icon: '🌐',
++            title: 'Works Offline',
++            description: 'Once the page loads, most tools work even without an internet connection.'
++          }
++        ]
++      },
++
++      features: {
++        title: 'Why Choose FreeTools?',
++        list: [
++          {
++            title: 'Completely Free',
++            description: 'No hidden fees, no premium plans, no watermarks. All tools are 100% free forever.'
++          },
++          {
++            title: 'No Registration Required',
++            description: 'Start using any tool immediately. No sign-up, no email required.'
++          },
++          {
++            title: 'Mobile Friendly',
++            description: 'All tools work perfectly on smartphones, tablets, and desktops.'
++          },
++          {
++            title: 'Regular Updates',
++            description: 'We continuously add new tools and improve existing ones based on user feedback.'
++          }
++        ]
++      },
++
++      tools: {
++        title: 'Our Tools',
++        categories: [
++          {
++            name: 'Image Tools',
++            description: 'Resize, compress, crop, and convert images to exact dimensions or file sizes.'
++          },
++          {
++            name: 'PDF Tools',
++            description: 'Merge, split, compress PDFs and convert images to PDF format.'
++          },
++          {
++            name: 'Text Tools',
++            description: 'Count words, convert text case, format text, and analyze content.'
++          },
++          {
++            name: 'Developer Tools',
++            description: 'Format JSON, encode Base64, and other utilities for developers.'
++          }
++        ]
++      },
++
++      contact: {
++        title: 'Get in Touch',
++        description: 'Have questions or suggestions? We\'d love to hear from you.',
++        email: 'developernewai@gmail.com',
++        location: 'Based in India 🇮🇳'
++      }
++    },
++    hi: {
++      title: 'FreeTools के बारे में - प्राइवेसी-फर्स्ट ऑनलाइन टूल्स',
++      description: 'FreeTools के बारे में जानें - फ्री ऑनलाइन टूल्स जो आपके ब्राउज़र में लोकली फाइलें प्रोसेस करते हैं। कोई अपलोड नहीं, कोई स्टोरेज नहीं, पूरी प्राइवेसी।',
++      h1: 'FreeTools के बारे में',
++      subtitle: 'फ्री, तेज़ और प्राइवेसी-फर्स्ट ऑनलाइन टूल्स',
++
++      intro: 'FreeTools रोज़मर्रा के कामों के लिए फ्री ऑनलाइन टूल्स का एक कॉम्प्रिहेंसिव सूट प्रदान करता है। चाहे आपको इमेज रीसाइज़ करनी हो, PDF मर्ज करने हों, शब्द गिनने हों, या JSON फॉर्मेट करना हो, हमारे पास आपके लिए परफेक्ट टूल है।',
++
++      mission: {
++        title: 'हमारा मिशन',
++        content: 'तेज़, विश्वसनीय और पूरी तरह से फ्री ऑनलाइन टूल्स प्रदान करना जो आपकी प्राइवेसी का सम्मान करते हैं। हम मानते हैं कि पावरफुल टूल्स सभी के लिए सुलभ होने चाहिए बिना सिक्योरिटी से समझौता किए या रजिस्ट्रेशन की आवश्यकता के।'
++      },
++
++      secure: {
++        title: 'डिज़ाइन से सुरक्षित और प्राइवेट',
++        subtitle: 'आपकी फाइलें कभी आपके डिवाइस से बाहर नहीं जातीं',
++        points: [
++          {
++            icon: '🔒',
++            title: '100% लोकल प्रोसेसिंग',
++            description: 'सभी फाइल प्रोसेसिंग पूरी तरह से आपके ब्राउज़र में JavaScript का उपयोग करके होती है। आपकी फाइलें कभी किसी सर्वर पर अपलोड नहीं होतीं।'
++          },
++          {
++            icon: '🚫',
++            title: 'कोई फाइल स्टोरेज नहीं',
++            description: 'हम आपकी फाइलों को स्टोर, सेव या एक्सेस नहीं करते। एक बार जब आप ब्राउज़र बंद करते हैं, सब कुछ चला जाता है।'
++          },
++          {
++            icon: '⚡',
++            title: 'तुरंत रिज़ल्ट',
++            description: 'चूंकि प्रोसेसिंग लोकली होती है, आपको सर्वर अपलोड या डाउनलोड के इंतज़ार के बिना तुरंत रिज़ल्ट मिलते हैं।'
++          },
++          {
++            icon: '🌐',
++            title: 'ऑफलाइन काम करता है',
++            description: 'एक बार पेज लोड होने के बाद, ज़्यादातर टूल्स बिना इंटरनेट कनेक्शन के भी काम करते हैं।'
++          }
++        ]
++      },
++
++      features: {
++        title: 'FreeTools क्यों चुनें?',
++        list: [
++          {
++            title: 'पूरी तरह फ्री',
++            description: 'कोई हिडन फीस नहीं, कोई प्रीमियम प्लान नहीं, कोई वॉटरमार्क नहीं। सभी टूल्स हमेशा के लिए 100% फ्री हैं।'
++          },
++          {
++            title: 'रजिस्ट्रेशन की ज़रूरत नहीं',
++            description: 'किसी भी टूल का तुरंत इस्तेमाल शुरू करें। कोई साइन-अप नहीं, कोई ईमेल की ज़रूरत नहीं।'
++          },
++          {
++            title: 'मोबाइल फ्रेंडली',
++            description: 'सभी टूल्स स्मार्टफोन, टैबलेट और डेस्कटॉप पर परफेक्टली काम करते हैं।'
++          },
++          {
++            title: 'नियमित अपडेट',
++            description: 'हम यूज़र फीडबैक के आधार पर लगातार नए टूल्स जोड़ते हैं और मौजूदा टूल्स को बेहतर बनाते हैं।'
++          }
++        ]
++      },
++
++      tools: {
++        title: 'हमारे टूल्स',
++        categories: [
++          {
++            name: 'इमेज टूल्स',
++            description: 'इमेज को एक्ज़ैक्ट डाइमेंशन या फाइल साइज़ में रीसाइज़, कंप्रेस, क्रॉप और कन्वर्ट करें।'
++          },
++          {
++            name: 'PDF टूल्स',
++            description: 'PDF मर्ज, स्प्लिट, कंप्रेस करें और इमेज को PDF फॉर्मेट में कन्वर्ट करें।'
++          },
++          {
++            name: 'टेक्स्ट टूल्स',
++            description: 'शब्द गिनें, टेक्स्ट केस कन्वर्ट करें, टेक्स्ट फॉर्मेट करें और कंटेंट एनालाइज़ करें।'
++          },
++          {
++            name: 'डेवलपर टूल्स',
++            description: 'JSON फॉर्मेट करें, Base64 एनकोड करें और डेवलपर्स के लिए अन्य यूटिलिटीज़।'
++          }
++        ]
++      },
++
++      contact: {
++        title: 'संपर्क करें',
++        description: 'सवाल या सुझाव हैं? हम आपसे सुनना पसंद करेंगे।',
++        email: 'developernewai@gmail.com',
++        location: 'भारत में स्थित 🇮🇳'
++      }
++    }
++  }
++
++  const t = content[language]
++
++  return (
++    <>
++      <SEOHead
++        title={t.title}
++        description={t.description}
++        canonical="https://free-tools-nine-delta.vercel.app/about"
++      />
++
++      <div className="about-page">
++        {/* Hero Section */}
++        <section className="about-hero">
++          <div className="container">
++            <h1 className="about-h1">{t.h1}</h1>
++            <p className="about-subtitle">{t.subtitle}</p>
++          </div>
++        </section>
++
++        {/* Intro */}
++        <section className="about-section">
++          <div className="container">
++            <p className="about-intro">{t.intro}</p>
++          </div>
++        </section>
++
++        {/* Secure & Private Section */}
++        <section className="about-section secure-section">
++          <div className="container">
++            <h2 className="section-title">{t.secure.title}</h2>
++            <p className="section-subtitle">{t.secure.subtitle}</p>
++
++            <div className="secure-grid">
++              {t.secure.points.map((point, index) => (
++                <div key={index} className="secure-card">
++                  <div className="secure-icon">{point.icon}</div>
++                  <h3 className="secure-card-title">{point.title}</h3>
++                  <p className="secure-card-description">{point.description}</p>
++                </div>
++              ))}
++            </div>
++          </div>
++        </section>
++
++        {/* Mission */}
++        <section className="about-section">
++          <div className="container">
++            <h2 className="section-title">{t.mission.title}</h2>
++            <p className="mission-content">{t.mission.content}</p>
++          </div>
++        </section>
++
++        {/* Features */}
++        <section className="about-section features-section">
++          <div className="container">
++            <h2 className="section-title">{t.features.title}</h2>
++            <div className="features-grid">
++              {t.features.list.map((feature, index) => (
++                <div key={index} className="feature-card">
++                  <h3 className="feature-title">{feature.title}</h3>
++                  <p className="feature-description">{feature.description}</p>
++                </div>
++              ))}
++            </div>
++          </div>
++        </section>
++
++        {/* Tools Categories */}
++        <section className="about-section">
++          <div className="container">
++            <h2 className="section-title">{t.tools.title}</h2>
++            <div className="tools-categories">
++              {t.tools.categories.map((category, index) => (
++                <div key={index} className="category-item">
++                  <h3 className="category-name">{category.name}</h3>
++                  <p className="category-description">{category.description}</p>
++                </div>
++              ))}
++            </div>
++          </div>
++        </section>
++
++        {/* Contact */}
++        <section className="about-section contact-section">
++          <div className="container">
++            <h2 className="section-title">{t.contact.title}</h2>
++            <p className="contact-description">{t.contact.description}</p>
++            <div className="contact-info">
++              <p className="contact-email">
++                <strong>Email:</strong> <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
++              </p>
++              <p className="contact-location">{t.contact.location}</p>
++            </div>
++          </div>
++        </section>
++      </div>
++    </>
++  )
++}
++
++export default AboutPage
+diff --git a/src/pages/AllToolsPage.jsx b/src/pages/AllToolsPage.jsx
+index 57cdc6f..927d07b 100644
+--- a/src/pages/AllToolsPage.jsx
++++ b/src/pages/AllToolsPage.jsx
+@@ -1,8 +1,9 @@
+ /**
+  * All Tools Page
+- *
++ *
+  * Displays all available tools grouped by category
+- * Fully dynamic - pulls from toolRegistry
++ * Fully dynamic - pulls from central tools data
++ * Only shows ACTIVE tools
+  */
+
+ import React, { useMemo } from 'react';
+@@ -15,7 +16,7 @@ import FeatureList from '../components/shared/Content/FeatureList';
+ import UseCaseList from '../components/shared/Content/UseCaseList';
+ import AdSlot from '../components/ads/AdSlot';
+ import { AD_POSITIONS } from '../configs/adPositions';
+-import { toolRegistry, getToolsByCategory } from '../configs/toolRegistry';
++import { getToolsByCategory, getAllCategories } from '../data/tools';
+ import { allToolsConfig } from '../configs/pages/allTools.config';
+ import './AllToolsPage.css';
+
+@@ -32,15 +33,15 @@ const AllToolsPage = () => {
+     return allToolsConfig.seo?.[language] || allToolsConfig.seo?.en || {};
+   }, [language]);
+
+-  // Group tools by category
++  // Group tools by category - only active tools
+   const toolsByCategory = useMemo(() => {
+-    const categories = ['image', 'pdf', 'text', 'developer'];
++    const categories = getAllCategories();
+     return categories.map(categoryId => ({
+       id: categoryId,
+       title: content.categories?.[categoryId]?.title || categoryId,
+       description: content.categories?.[categoryId]?.description || '',
+-      tools: getToolsByCategory(categoryId).filter(tool => tool.config !== null) // Only show implemented tools
+-    })).filter(category => category.tools.length > 0); // Only show categories with tools
++      tools: getToolsByCategory(categoryId, true) // activeOnly = true
++    })).filter(category => category.tools.length > 0); // Only show categories with active tools
+   }, [content]);
+
+   // Handle tool card click
+diff --git a/src/pages/CategoryPage.css b/src/pages/CategoryPage.css
+index 1c90438..c512f08 100644
+--- a/src/pages/CategoryPage.css
++++ b/src/pages/CategoryPage.css
+@@ -18,24 +18,53 @@
+   padding: 0 1.5rem;
+ }
+
+-/* Tools Section */
++/* Tools Section - Real functional tools */
+ .category-tools-section {
+-  padding: 3rem 0;
+-  background: #f8f9fa;
++  padding: 4rem 0 3rem;
++  background: #ffffff;
++}
++
++.category-tools-section .container {
++  max-width: 1200px;
++  margin: 0 auto;
++  padding: 0 1.5rem;
+ }
+
+-/* SEO Content Section */
+-.category-seo-section {
++/* Guides Section - Informational content */
++.category-guides-section {
+   padding: 4rem 0;
+-  background: #ffffff;
++  background: #fafbfc;
++  border-top: 2px solid #e2e8f0;
+ }
+
+-.category-seo-section .container {
++.category-guides-section .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1.5rem;
+ }
+
++/* Section Headers */
++.section-header {
++  text-align: center;
++  margin-bottom: 3rem;
++  max-width: 800px;
++  margin-left: auto;
++  margin-right: auto;
++}
++
++.section-title {
++  font-size: 2rem;
++  font-weight: 700;
++  color: #1a202c;
++  margin: 0 0 0.75rem 0;
++}
++
++.section-subtitle {
++  font-size: 1.125rem;
++  color: #4a5568;
++  margin: 0;
++}
++
+ /* FAQ Section */
+ .category-faq-section {
+   padding: 4rem 0;
+@@ -55,10 +84,10 @@
+   }
+
+   .category-tools-section {
+-    padding: 2rem 0;
++    padding: 3rem 0 2rem;
+   }
+
+-  .category-seo-section {
++  .category-guides-section {
+     padding: 3rem 0;
+   }
+
+@@ -66,7 +95,20 @@
+     padding: 3rem 0;
+   }
+
+-  .category-seo-section .container,
++  .section-header {
++    margin-bottom: 2rem;
++  }
++
++  .section-title {
++    font-size: 1.5rem;
++  }
++
++  .section-subtitle {
++    font-size: 1rem;
++  }
++
++  .category-tools-section .container,
++  .category-guides-section .container,
+   .category-faq-section .container {
+     padding: 0 1rem;
+   }
+@@ -78,15 +120,23 @@
+   }
+
+   .category-tools-section {
+-    padding: 1.5rem 0;
++    padding: 2rem 0 1.5rem;
+   }
+
+-  .category-seo-section {
++  .category-guides-section {
+     padding: 2rem 0;
+   }
+
+   .category-faq-section {
+     padding: 2rem 0;
+   }
++
++  .section-title {
++    font-size: 1.25rem;
++  }
++
++  .section-subtitle {
++    font-size: 0.95rem;
++  }
+ }
+
+diff --git a/src/pages/CategoryPage.jsx b/src/pages/CategoryPage.jsx
+index 6aa21c1..d6793a6 100644
+--- a/src/pages/CategoryPage.jsx
++++ b/src/pages/CategoryPage.jsx
+@@ -4,7 +4,8 @@
+  *
+  * FEATURES:
+  * - Config-driven design
+- * - Dynamic tool filtering from registry
++ * - Dynamic tool filtering from central data
++ * - Only shows ACTIVE tools
+  * - Reuses existing components (ToolHero, SEOContent, FAQ)
+  * - Empty state handling
+  * - Bilingual support
+@@ -28,8 +29,8 @@ import ToolGrid from '../components/home/ToolGrid'
+ import AdSlot from '../components/ads/AdSlot'
+ import { AD_POSITIONS } from '../configs/adPositions'
+
+-// Tool Registry
+-import { getToolsByCategory } from '../configs/toolRegistry'
++// Central Tool Data
++import { getToolsByCategory } from '../data/tools'
+
+ // Styles
+ import './CategoryPage.css'
+@@ -47,9 +48,9 @@ const CategoryPage = ({ categoryConfig }) => {
+   const seoContent = categoryConfig.seoContent?.[language] || categoryConfig.seoContent?.en || {}
+   const faq = categoryConfig.faq?.[language] || categoryConfig.faq?.en || {}
+
+-  // Filter tools by category from registry
++  // Filter tools by category - only active tools
+   const categoryTools = useMemo(() => {
+-    return getToolsByCategory(categoryConfig.id)
++    return getToolsByCategory(categoryConfig.id, true) // activeOnly = true
+   }, [categoryConfig.id])
+
+   // Get title for tools section from config
+@@ -84,24 +85,45 @@ const CategoryPage = ({ categoryConfig }) => {
+         {/* Below Hero Ad */}
+         <AdSlot position={AD_POSITIONS.BELOW_HERO} excludeCategory={categoryConfig.id} />
+
+-        {/* Tools Grid Section */}
++        {/* Tools Grid Section - REAL FUNCTIONAL TOOLS */}
+         <section className="category-tools-section">
+-          <ToolGrid
+-            tools={categoryTools}
+-            title={toolsTitle}
+-            showViewAll={false}
+-          />
++          <div className="container">
++            <div className="section-header">
++              <h2 className="section-title">
++                {language === 'hi' ? 'उपलब्ध टूल्स' : 'Available Tools'}
++              </h2>
++              <p className="section-subtitle">
++                {language === 'hi'
++                  ? 'तुरंत इस्तेमाल के लिए तैयार टूल्स'
++                  : 'Ready to use instantly'}
++              </p>
++            </div>
++            <ToolGrid
++              tools={categoryTools}
++              showViewAll={false}
++            />
++          </div>
+         </section>
+
+         {/* Mid Content Ad */}
+         <AdSlot position={AD_POSITIONS.MID_CONTENT} excludeCategory={categoryConfig.id} />
+
+-        {/* SEO Content Section */}
++        {/* SEO Content Section - INFORMATIONAL GUIDES */}
+         {seoContent.mainTitle && (
+-          <section className="category-seo-section">
++          <section className="category-guides-section">
+             <div className="container">
++              <div className="section-header">
++                <h2 className="section-title">
++                  {language === 'hi' ? 'गाइड्स और जानकारी' : 'Guides & Information'}
++                </h2>
++                <p className="section-subtitle">
++                  {language === 'hi'
++                    ? 'इन टूल्स के बारे में और जानें'
++                    : 'Learn more about these tools'}
++                </p>
++              </div>
+               <SEOContent
+-                title={seoContent.mainTitle}
++                title={null}
+                 intro={seoContent.intro}
+                 sections={seoContent.sections}
+               />
+diff --git a/src/pages/ContactPage.css b/src/pages/ContactPage.css
+new file mode 100644
+index 0000000..2add1ee
+--- /dev/null
++++ b/src/pages/ContactPage.css
+@@ -0,0 +1,329 @@
++/* Contact Page Styles */
++
++.contact-page {
++  min-height: 100vh;
++  background: #ffffff;
++}
++
++/* Hero Section */
++.contact-hero {
++  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++  padding: 4rem 1rem 3rem;
++  color: white;
++  text-align: center;
++}
++
++.contact-h1 {
++  font-size: 2.5rem;
++  font-weight: 700;
++  margin: 0 0 1rem 0;
++  color: white;
++}
++
++.contact-subtitle {
++  font-size: 1.25rem;
++  margin: 0;
++  opacity: 0.95;
++}
++
++/* Content Section */
++.contact-content {
++  padding: 4rem 1rem;
++}
++
++.contact-intro {
++  font-size: 1.125rem;
++  line-height: 1.8;
++  color: #2d3748;
++  text-align: center;
++  max-width: 800px;
++  margin: 0 auto 3rem;
++}
++
++/* Grid Layout */
++.contact-grid {
++  display: grid;
++  grid-template-columns: 1.5fr 1fr;
++  gap: 3rem;
++  max-width: 1200px;
++  margin: 0 auto;
++}
++
++/* Form Section */
++.contact-form-section {
++  background: #f8f9fa;
++  padding: 2.5rem;
++  border-radius: 12px;
++}
++
++.form-title {
++  font-size: 1.75rem;
++  font-weight: 700;
++  color: #1a202c;
++  margin: 0 0 2rem 0;
++}
++
++.contact-form {
++  display: flex;
++  flex-direction: column;
++  gap: 1.5rem;
++}
++
++.form-group {
++  display: flex;
++  flex-direction: column;
++  gap: 0.5rem;
++}
++
++.form-group label {
++  font-size: 1rem;
++  font-weight: 600;
++  color: #2d3748;
++}
++
++.required {
++  color: #e53e3e;
++}
++
++.form-group input,
++.form-group textarea {
++  padding: 0.875rem 1rem;
++  font-size: 1rem;
++  border: 2px solid #e2e8f0;
++  border-radius: 8px;
++  background: white;
++  color: #2d3748;
++  transition: border-color 0.2s ease;
++  font-family: inherit;
++}
++
++.form-group input:focus,
++.form-group textarea:focus {
++  outline: none;
++  border-color: #667eea;
++}
++
++.form-group textarea {
++  resize: vertical;
++  min-height: 120px;
++}
++
++.submit-button {
++  padding: 1rem 2rem;
++  font-size: 1.125rem;
++  font-weight: 600;
++  color: white;
++  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++  border: none;
++  border-radius: 8px;
++  cursor: pointer;
++  transition: transform 0.2s ease, box-shadow 0.2s ease;
++}
++
++.submit-button:hover {
++  transform: translateY(-2px);
++  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
++}
++
++.submit-button:active {
++  transform: translateY(0);
++}
++
++/* Success Message */
++.success-message {
++  text-align: center;
++  padding: 3rem 2rem;
++}
++
++.success-title {
++  font-size: 2rem;
++  font-weight: 700;
++  color: #38a169;
++  margin: 0 0 1rem 0;
++}
++
++.success-text {
++  font-size: 1.125rem;
++  color: #2d3748;
++  margin: 0 0 2rem 0;
++  line-height: 1.6;
++}
++
++.reset-button {
++  padding: 0.875rem 1.75rem;
++  font-size: 1rem;
++  font-weight: 600;
++  color: #667eea;
++  background: white;
++  border: 2px solid #667eea;
++  border-radius: 8px;
++  cursor: pointer;
++  transition: all 0.2s ease;
++}
++
++.reset-button:hover {
++  background: #667eea;
++  color: white;
++}
++
++/* Contact Info Section */
++.contact-info-section {
++  display: flex;
++  flex-direction: column;
++  gap: 2rem;
++}
++
++.info-title {
++  font-size: 1.75rem;
++  font-weight: 700;
++  color: #1a202c;
++  margin: 0 0 1.5rem 0;
++}
++
++.info-card {
++  background: #f8f9fa;
++  padding: 2rem;
++  border-radius: 12px;
++  display: flex;
++  flex-direction: column;
++  gap: 1.5rem;
++}
++
++.info-item {
++  display: flex;
++  gap: 1rem;
++  align-items: flex-start;
++}
++
++.info-icon {
++  font-size: 2rem;
++  flex-shrink: 0;
++}
++
++.info-content {
++  flex: 1;
++}
++
++.info-label {
++  font-size: 0.875rem;
++  font-weight: 600;
++  color: #718096;
++  text-transform: uppercase;
++  letter-spacing: 0.5px;
++  margin: 0 0 0.25rem 0;
++}
++
++.info-value {
++  font-size: 1.125rem;
++  color: #2d3748;
++  margin: 0;
++  word-break: break-word;
++}
++
++.info-value a {
++  color: #667eea;
++  text-decoration: none;
++  font-weight: 600;
++}
++
++.info-value a:hover {
++  text-decoration: underline;
++}
++
++/* Privacy Note */
++.privacy-note {
++  background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
++  padding: 1.5rem;
++  border-radius: 8px;
++  border-left: 4px solid #667eea;
++}
++
++.privacy-title {
++  font-size: 1rem;
++  font-weight: 600;
++  color: #1a202c;
++  margin: 0 0 0.5rem 0;
++}
++
++.privacy-message {
++  font-size: 0.95rem;
++  color: #4a5568;
++  line-height: 1.6;
++  margin: 0;
++}
++
++/* Responsive */
++@media (max-width: 968px) {
++  .contact-grid {
++    grid-template-columns: 1fr;
++    gap: 2rem;
++  }
++}
++
++@media (max-width: 768px) {
++  .contact-hero {
++    padding: 3rem 1rem 2rem;
++  }
++
++  .contact-h1 {
++    font-size: 2rem;
++  }
++
++  .contact-subtitle {
++    font-size: 1.125rem;
++  }
++
++  .contact-content {
++    padding: 3rem 1rem;
++  }
++
++  .contact-intro {
++    font-size: 1rem;
++    margin-bottom: 2rem;
++  }
++
++  .contact-form-section {
++    padding: 2rem 1.5rem;
++  }
++
++  .form-title,
++  .info-title {
++    font-size: 1.5rem;
++  }
++
++  .info-card {
++    padding: 1.5rem;
++  }
++}
++
++@media (max-width: 480px) {
++  .contact-h1 {
++    font-size: 1.75rem;
++  }
++
++  .contact-subtitle {
++    font-size: 1rem;
++  }
++
++  .contact-form-section {
++    padding: 1.5rem 1rem;
++  }
++
++  .form-title,
++  .info-title {
++    font-size: 1.25rem;
++  }
++
++  .submit-button {
++    padding: 0.875rem 1.5rem;
++    font-size: 1rem;
++  }
++
++  .info-icon {
++    font-size: 1.5rem;
++  }
++
++  .info-value {
++    font-size: 1rem;
++  }
++}
+diff --git a/src/pages/ContactPage.jsx b/src/pages/ContactPage.jsx
+new file mode 100644
+index 0000000..3275da4
+--- /dev/null
++++ b/src/pages/ContactPage.jsx
+@@ -0,0 +1,306 @@
++/**
++ * Contact Page
++ * Contact form and information
++ */
++
++import React, { useState } from 'react'
++import { useLanguage } from '../contexts/LanguageContext'
++import SEOHead from '../components/SEO/SEOHead'
++import './ContactPage.css'
++
++const ContactPage = () => {
++  const { language } = useLanguage()
++  const [formData, setFormData] = useState({
++    name: '',
++    email: '',
++    subject: '',
++    message: ''
++  })
++  const [submitted, setSubmitted] = useState(false)
++
++  const content = {
++    en: {
++      title: 'Contact Us - FreeTools',
++      description: 'Get in touch with FreeTools. Send us your questions, suggestions, or feedback.',
++      h1: 'Contact Us',
++      subtitle: 'We\'d love to hear from you',
++
++      intro: 'Have questions, suggestions, or feedback? Feel free to reach out to us. We typically respond within 24-48 hours.',
++
++      form: {
++        title: 'Send us a message',
++        name: 'Your Name',
++        namePlaceholder: 'John Doe',
++        email: 'Your Email',
++        emailPlaceholder: 'john@example.com',
++        subject: 'Subject',
++        subjectPlaceholder: 'What is this about?',
++        message: 'Message',
++        messagePlaceholder: 'Tell us more...',
++        submit: 'Send Message',
++        required: 'Required'
++      },
++
++      success: {
++        title: '✅ Message Sent!',
++        message: 'Thank you for contacting us. We\'ll get back to you soon.',
++        button: 'Send Another Message'
++      },
++
++      info: {
++        title: 'Contact Information',
++        email: {
++          label: 'Email',
++          value: 'developernewai@gmail.com'
++        },
++        location: {
++          label: 'Location',
++          value: 'India 🇮🇳'
++        },
++        response: {
++          label: 'Response Time',
++          value: '24-48 hours'
++        }
++      },
++
++      privacy: {
++        title: 'Privacy Note',
++        message: 'Your contact information will only be used to respond to your inquiry. We never share your data with third parties.'
++      }
++    },
++    hi: {
++      title: 'संपर्क करें - FreeTools',
++      description: 'FreeTools से संपर्क करें। हमें अपने सवाल, सुझाव या फीडबैक भेजें।',
++      h1: 'संपर्क करें',
++      subtitle: 'हम आपसे सुनना पसंद करेंगे',
++
++      intro: 'सवाल, सुझाव या फीडबैक हैं? बेझिझक हमसे संपर्क करें। हम आमतौर पर 24-48 घंटों के भीतर जवाब देते हैं।',
++
++      form: {
++        title: 'हमें संदेश भेजें',
++        name: 'आपका नाम',
++        namePlaceholder: 'राज कुमार',
++        email: 'आपका ईमेल',
++        emailPlaceholder: 'raj@example.com',
++        subject: 'विषय',
++        subjectPlaceholder: 'यह किस बारे में है?',
++        message: 'संदेश',
++        messagePlaceholder: 'हमें और बताएं...',
++        submit: 'संदेश भेजें',
++        required: 'आवश्यक'
++      },
++
++      success: {
++        title: '✅ संदेश भेजा गया!',
++        message: 'हमसे संपर्क करने के लिए धन्यवाद। हम जल्द ही आपसे संपर्क करेंगे।',
++        button: 'एक और संदेश भेजें'
++      },
++
++      info: {
++        title: 'संपर्क जानकारी',
++        email: {
++          label: 'ईमेल',
++          value: 'developernewai@gmail.com'
++        },
++        location: {
++          label: 'स्थान',
++          value: 'भारत 🇮🇳'
++        },
++        response: {
++          label: 'जवाब का समय',
++          value: '24-48 घंटे'
++        }
++      },
++
++      privacy: {
++        title: 'प्राइवेसी नोट',
++        message: 'आपकी संपर्क जानकारी का उपयोग केवल आपकी पूछताछ का जवाब देने के लिए किया जाएगा। हम कभी भी आपका डेटा तीसरे पक्ष के साथ साझा नहीं करते।'
++      }
++    }
++  }
++
++  const t = content[language]
++
++  const handleChange = (e) => {
++    setFormData({
++      ...formData,
++      [e.target.name]: e.target.value
++    })
++  }
++
++  const handleSubmit = (e) => {
++    e.preventDefault()
++    // Frontend only - just show success message
++    setSubmitted(true)
++    // Reset form after 3 seconds
++    setTimeout(() => {
++      setFormData({
++        name: '',
++        email: '',
++        subject: '',
++        message: ''
++      })
++    }, 3000)
++  }
++
++  const handleReset = () => {
++    setSubmitted(false)
++    setFormData({
++      name: '',
++      email: '',
++      subject: '',
++      message: ''
++    })
++  }
++
++  return (
++    <>
++      <SEOHead
++        title={t.title}
++        description={t.description}
++        canonical="https://free-tools-nine-delta.vercel.app/contact"
++      />
++
++      <div className="contact-page">
++        {/* Hero Section */}
++        <section className="contact-hero">
++          <div className="container">
++            <h1 className="contact-h1">{t.h1}</h1>
++            <p className="contact-subtitle">{t.subtitle}</p>
++          </div>
++        </section>
++
++        {/* Main Content */}
++        <section className="contact-content">
++          <div className="container">
++            <p className="contact-intro">{t.intro}</p>
++
++            <div className="contact-grid">
++              {/* Contact Form */}
++              <div className="contact-form-section">
++                <h2 className="form-title">{t.form.title}</h2>
++
++                {!submitted ? (
++                  <form className="contact-form" onSubmit={handleSubmit}>
++                    <div className="form-group">
++                      <label htmlFor="name">
++                        {t.form.name} <span className="required">*</span>
++                      </label>
++                      <input
++                        type="text"
++                        id="name"
++                        name="name"
++                        value={formData.name}
++                        onChange={handleChange}
++                        placeholder={t.form.namePlaceholder}
++                        required
++                      />
++                    </div>
++
++                    <div className="form-group">
++                      <label htmlFor="email">
++                        {t.form.email} <span className="required">*</span>
++                      </label>
++                      <input
++                        type="email"
++                        id="email"
++                        name="email"
++                        value={formData.email}
++                        onChange={handleChange}
++                        placeholder={t.form.emailPlaceholder}
++                        required
++                      />
++                    </div>
++
++                    <div className="form-group">
++                      <label htmlFor="subject">
++                        {t.form.subject} <span className="required">*</span>
++                      </label>
++                      <input
++                        type="text"
++                        id="subject"
++                        name="subject"
++                        value={formData.subject}
++                        onChange={handleChange}
++                        placeholder={t.form.subjectPlaceholder}
++                        required
++                      />
++                    </div>
++
++                    <div className="form-group">
++                      <label htmlFor="message">
++                        {t.form.message} <span className="required">*</span>
++                      </label>
++                      <textarea
++                        id="message"
++                        name="message"
++                        value={formData.message}
++                        onChange={handleChange}
++                        placeholder={t.form.messagePlaceholder}
++                        rows="6"
++                        required
++                      />
++                    </div>
++
++                    <button type="submit" className="submit-button">
++                      {t.form.submit}
++                    </button>
++                  </form>
++                ) : (
++                  <div className="success-message">
++                    <h3 className="success-title">{t.success.title}</h3>
++                    <p className="success-text">{t.success.message}</p>
++                    <button onClick={handleReset} className="reset-button">
++                      {t.success.button}
++                    </button>
++                  </div>
++                )}
++              </div>
++
++              {/* Contact Info */}
++              <div className="contact-info-section">
++                <h2 className="info-title">{t.info.title}</h2>
++
++                <div className="info-card">
++                  <div className="info-item">
++                    <div className="info-icon">📧</div>
++                    <div className="info-content">
++                      <h3 className="info-label">{t.info.email.label}</h3>
++                      <a href={`mailto:${t.info.email.value}`} className="info-value">
++                        {t.info.email.value}
++                      </a>
++                    </div>
++                  </div>
++
++                  <div className="info-item">
++                    <div className="info-icon">📍</div>
++                    <div className="info-content">
++                      <h3 className="info-label">{t.info.location.label}</h3>
++                      <p className="info-value">{t.info.location.value}</p>
++                    </div>
++                  </div>
++
++                  <div className="info-item">
++                    <div className="info-icon">⏱️</div>
++                    <div className="info-content">
++                      <h3 className="info-label">{t.info.response.label}</h3>
++                      <p className="info-value">{t.info.response.value}</p>
++                    </div>
++                  </div>
++                </div>
++
++                {/* Privacy Note */}
++                <div className="privacy-note">
++                  <h3 className="privacy-title">{t.privacy.title}</h3>
++                  <p className="privacy-message">{t.privacy.message}</p>
++                </div>
++              </div>
++            </div>
++          </div>
++        </section>
++      </div>
++    </>
++  )
++}
++
++export default ContactPage
+diff --git a/src/pages/ImageResizer50KB.css b/src/pages/ImageResizer50KB.css
+new file mode 100644
+index 0000000..43f3d6e
+--- /dev/null
++++ b/src/pages/ImageResizer50KB.css
+@@ -0,0 +1,75 @@
++/* Internal Links Section */
++.internal-links-section {
++  padding: 3rem 0;
++  background: #f8f9fa;
++}
++
++.internal-links-section h2 {
++  text-align: center;
++  font-size: 1.75rem;
++  margin-bottom: 2rem;
++  color: #2c3e50;
++}
++
++.internal-links-grid {
++  display: grid;
++  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++  gap: 1.5rem;
++  max-width: 900px;
++  margin: 0 auto;
++}
++
++.internal-link-card {
++  display: flex;
++  flex-direction: column;
++  align-items: center;
++  padding: 2rem 1.5rem;
++  background: white;
++  border-radius: 12px;
++  text-decoration: none;
++  transition: all 0.3s ease;
++  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
++}
++
++.internal-link-card:hover {
++  transform: translateY(-4px);
++  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
++}
++
++.link-icon {
++  font-size: 2.5rem;
++  margin-bottom: 1rem;
++}
++
++.link-title {
++  font-size: 1.125rem;
++  font-weight: 600;
++  color: #2c3e50;
++  margin-bottom: 0.5rem;
++}
++
++.link-desc {
++  font-size: 0.875rem;
++  color: #6c757d;
++  text-align: center;
++}
++
++/* Mobile responsive */
++@media (max-width: 768px) {
++  .internal-links-section {
++    padding: 2rem 0;
++  }
++
++  .internal-links-section h2 {
++    font-size: 1.5rem;
++  }
++
++  .internal-links-grid {
++    grid-template-columns: 1fr;
++    gap: 1rem;
++  }
++
++  .internal-link-card {
++    padding: 1.5rem 1rem;
++  }
++}
+diff --git a/src/pages/ImageResizer50KB.jsx b/src/pages/ImageResizer50KB.jsx
+new file mode 100644
+index 0000000..b3095ab
+--- /dev/null
++++ b/src/pages/ImageResizer50KB.jsx
+@@ -0,0 +1,53 @@
++/**
++ * Image Resizer 50KB Page
++ * Dedicated page for resizing images to exactly 50KB
++ * Reuses ImageResizerTool with 50KB-specific content
++ */
++
++import React from 'react';
++import { Link } from 'react-router-dom';
++import ToolPage from './ToolPage';
++import ImageResizerTool from '../tools/ImageResizerTool';
++import ImageResizerControls from '../components/ImageResizer/ImageResizerControls';
++import imageResizer50kbConfig from '../configs/tools/imageResizer50kb.config';
++import './ImageResizer50KB.css';
++
++const ImageResizer50KB = () => {
++  return (
++    <>
++      <ToolPage
++        config={imageResizer50kbConfig}
++        ToolClass={ImageResizerTool}
++        customControls={ImageResizerControls}
++      />
++
++      {/* Internal Links Section */}
++      <section className="internal-links-section">
++        <div className="container">
++          <h2>Try Other Free Tools</h2>
++          <div className="internal-links-grid">
++            <Link to="/tools/resize-image" className="internal-link-card">
++              <span className="link-icon">🖼️</span>
++              <span className="link-title">Image Resizer</span>
++              <span className="link-desc">Resize to any size or dimension</span>
++            </Link>
++
++            <Link to="/tools/word-counter" className="internal-link-card">
++              <span className="link-icon">📝</span>
++              <span className="link-title">Word Counter</span>
++              <span className="link-desc">Count words and characters</span>
++            </Link>
++
++            <Link to="/tools/json-formatter" className="internal-link-card">
++              <span className="link-icon">{ }</span>
++              <span className="link-title">JSON Formatter</span>
++              <span className="link-desc">Format and validate JSON</span>
++            </Link>
++          </div>
++        </div>
++      </section>
++    </>
++  );
++};
++
++export default ImageResizer50KB;
+diff --git a/src/pages/ImageResizerNew.jsx b/src/pages/ImageResizerNew.jsx
+index 1011151..03b3c53 100644
+--- a/src/pages/ImageResizerNew.jsx
++++ b/src/pages/ImageResizerNew.jsx
+@@ -24,6 +24,7 @@ import ImageResizerControls from '../components/ImageResizer/ImageResizerControl
+ import imageResizerConfig from '../configs/tools/imageResizer.config';
+ import { validateConfig, getValidationReport } from '../utils/configValidator';
+
++
+ const ImageResizerNew = () => {
+   // Validate configuration in development mode
+   useEffect(() => {
+diff --git a/src/pages/PrivacyPolicyPage.css b/src/pages/PrivacyPolicyPage.css
+new file mode 100644
+index 0000000..128a880
+--- /dev/null
++++ b/src/pages/PrivacyPolicyPage.css
+@@ -0,0 +1,273 @@
++/* Privacy Policy Page Styles */
++
++.privacy-page {
++  min-height: 100vh;
++  background: #ffffff;
++}
++
++/* Hero Section */
++.privacy-hero {
++  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++  padding: 4rem 1rem 3rem;
++  color: white;
++  text-align: center;
++}
++
++.privacy-h1 {
++  font-size: 2.5rem;
++  font-weight: 700;
++  margin: 0 0 0.5rem 0;
++  color: white;
++}
++
++.privacy-date {
++  font-size: 1rem;
++  margin: 0;
++  opacity: 0.9;
++}
++
++/* Content Section */
++.privacy-content {
++  padding: 4rem 1rem;
++}
++
++.privacy-content .container {
++  max-width: 900px;
++  margin: 0 auto;
++}
++
++/* Intro */
++.privacy-intro {
++  font-size: 1.125rem;
++  line-height: 1.8;
++  color: #2d3748;
++  margin: 0 0 3rem 0;
++  text-align: center;
++}
++
++/* Highlight Box */
++.privacy-highlight {
++  background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
++  padding: 2.5rem;
++  border-radius: 12px;
++  border-left: 6px solid #667eea;
++  margin-bottom: 3rem;
++  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
++}
++
++.highlight-title {
++  font-size: 1.5rem;
++  font-weight: 700;
++  color: #1a202c;
++  margin: 0 0 1.5rem 0;
++}
++
++.highlight-list {
++  list-style: none;
++  padding: 0;
++  margin: 0;
++  display: flex;
++  flex-direction: column;
++  gap: 1rem;
++}
++
++.highlight-list li {
++  font-size: 1.125rem;
++  color: #2d3748;
++  padding-left: 2rem;
++  position: relative;
++  line-height: 1.6;
++}
++
++.highlight-list li::before {
++  content: '✓';
++  position: absolute;
++  left: 0;
++  color: #38a169;
++  font-weight: 700;
++  font-size: 1.25rem;
++}
++
++/* Sections */
++.privacy-sections {
++  display: flex;
++  flex-direction: column;
++  gap: 3rem;
++}
++
++.privacy-section {
++  padding-bottom: 2rem;
++  border-bottom: 1px solid #e2e8f0;
++}
++
++.privacy-section:last-child {
++  border-bottom: none;
++}
++
++.section-title {
++  font-size: 1.5rem;
++  font-weight: 700;
++  color: #1a202c;
++  margin: 0 0 1.5rem 0;
++}
++
++.section-content {
++  margin-bottom: 1.5rem;
++}
++
++.section-content:last-child {
++  margin-bottom: 0;
++}
++
++.section-subtitle {
++  font-size: 1.125rem;
++  font-weight: 600;
++  color: #2d3748;
++  margin: 0 0 0.75rem 0;
++}
++
++.section-content p {
++  font-size: 1rem;
++  line-height: 1.8;
++  color: #4a5568;
++  margin: 0 0 1rem 0;
++}
++
++.section-content p:last-child {
++  margin-bottom: 0;
++}
++
++.content-list {
++  list-style: disc;
++  padding-left: 2rem;
++  margin: 1rem 0;
++}
++
++.content-list li {
++  font-size: 1rem;
++  line-height: 1.8;
++  color: #4a5568;
++  margin-bottom: 0.5rem;
++}
++
++.content-list li:last-child {
++  margin-bottom: 0;
++}
++
++/* Summary */
++.privacy-summary {
++  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
++  padding: 2.5rem;
++  border-radius: 12px;
++  margin-top: 3rem;
++  text-align: center;
++}
++
++.summary-title {
++  font-size: 1.75rem;
++  font-weight: 700;
++  color: #1a202c;
++  margin: 0 0 1rem 0;
++}
++
++.summary-text {
++  font-size: 1.125rem;
++  line-height: 1.8;
++  color: #2d3748;
++  margin: 0;
++}
++
++/* Responsive */
++@media (max-width: 768px) {
++  .privacy-hero {
++    padding: 3rem 1rem 2rem;
++  }
++
++  .privacy-h1 {
++    font-size: 2rem;
++  }
++
++  .privacy-date {
++    font-size: 0.95rem;
++  }
++
++  .privacy-content {
++    padding: 3rem 1rem;
++  }
++
++  .privacy-intro {
++    font-size: 1rem;
++    margin-bottom: 2rem;
++  }
++
++  .privacy-highlight {
++    padding: 2rem 1.5rem;
++  }
++
++  .highlight-title {
++    font-size: 1.25rem;
++  }
++
++  .highlight-list li {
++    font-size: 1rem;
++    padding-left: 1.75rem;
++  }
++
++  .privacy-sections {
++    gap: 2rem;
++  }
++
++  .section-title {
++    font-size: 1.25rem;
++  }
++
++  .section-subtitle {
++    font-size: 1rem;
++  }
++
++  .privacy-summary {
++    padding: 2rem 1.5rem;
++  }
++
++  .summary-title {
++    font-size: 1.5rem;
++  }
++
++  .summary-text {
++    font-size: 1rem;
++  }
++}
++
++@media (max-width: 480px) {
++  .privacy-h1 {
++    font-size: 1.75rem;
++  }
++
++  .privacy-highlight {
++    padding: 1.5rem 1rem;
++  }
++
++  .highlight-title {
++    font-size: 1.125rem;
++  }
++
++  .highlight-list li {
++    font-size: 0.95rem;
++  }
++
++  .section-title {
++    font-size: 1.125rem;
++  }
++
++  .privacy-summary {
++    padding: 1.5rem 1rem;
++  }
++
++  .summary-title {
++    font-size: 1.25rem;
++  }
++
++  .summary-text {
++    font-size: 0.95rem;
++  }
++}
+diff --git a/src/pages/PrivacyPolicyPage.jsx b/src/pages/PrivacyPolicyPage.jsx
+new file mode 100644
+index 0000000..be1eb70
+--- /dev/null
++++ b/src/pages/PrivacyPolicyPage.jsx
+@@ -0,0 +1,418 @@
++/**
++ * Privacy Policy Page
++ * Privacy policy with emphasis on local processing
++ */
++
++import React from 'react'
++import { useLanguage } from '../contexts/LanguageContext'
++import SEOHead from '../components/SEO/SEOHead'
++import './PrivacyPolicyPage.css'
++
++const PrivacyPolicyPage = () => {
++  const { language } = useLanguage()
++
++  const content = {
++    en: {
++      title: 'Privacy Policy - FreeTools',
++      description: 'FreeTools Privacy Policy. Your files are processed locally in your browser. No uploads, no storage, complete privacy.',
++      h1: 'Privacy Policy',
++      lastUpdated: 'Last Updated: April 7, 2026',
++
++      intro: 'At FreeTools, your privacy is our top priority. This privacy policy explains how we handle your data and protect your privacy.',
++
++      highlight: {
++        title: '🔒 Your Files Are 100% Private',
++        points: [
++          'All file processing happens locally in your browser',
++          'Your files are NEVER uploaded to our servers',
++          'We do NOT store, save, or have access to your files',
++          'Once you close the browser, everything is gone'
++        ]
++      },
++
++      sections: [
++        {
++          title: '1. Information We Collect',
++          content: [
++            {
++              subtitle: '1.1 Files You Process',
++              text: 'When you use our tools (image resizer, PDF merger, etc.), all file processing happens entirely in your browser using JavaScript. Your files never leave your device and are never uploaded to any server.'
++            },
++            {
++              subtitle: '1.2 Analytics Data',
++              text: 'We may use analytics services (like Google Analytics) to understand how visitors use our website. This includes:'
++            },
++            {
++              list: [
++                'Pages visited',
++                'Time spent on site',
++                'Browser type and version',
++                'Device type (mobile, desktop, tablet)',
++                'General location (country/city level)',
++                'Referral source'
++              ]
++            },
++            {
++              text: 'This data is anonymous and does not include any personal information or file content.'
++            }
++          ]
++        },
++        {
++          title: '2. How We Use Your Information',
++          content: [
++            {
++              text: 'We use the collected information to:'
++            },
++            {
++              list: [
++                'Improve our website and tools',
++                'Understand user behavior and preferences',
++                'Fix bugs and technical issues',
++                'Analyze which tools are most popular',
++                'Make informed decisions about new features'
++              ]
++            }
++          ]
++        },
++        {
++          title: '3. Cookies',
++          content: [
++            {
++              text: 'We use cookies for:'
++            },
++            {
++              list: [
++                'Remembering your language preference (English/Hindi)',
++                'Analytics tracking (if you consent)',
++                'Improving user experience'
++              ]
++            },
++            {
++              text: 'You can disable cookies in your browser settings, but some features may not work properly.'
++            }
++          ]
++        },
++        {
++          title: '4. Third-Party Services',
++          content: [
++            {
++              subtitle: '4.1 Analytics',
++              text: 'We may use Google Analytics or similar services to track website usage. These services have their own privacy policies.'
++            },
++            {
++              subtitle: '4.2 Advertising (Future)',
++              text: 'We may display advertisements from third-party networks (like Google AdSense) in the future. These networks may use cookies to show relevant ads. You can opt out of personalized advertising through your browser settings or ad network preferences.'
++            }
++          ]
++        },
++        {
++          title: '5. Data Security',
++          content: [
++            {
++              text: 'Since all file processing happens locally in your browser:'
++            },
++            {
++              list: [
++                'Your files never travel over the internet',
++                'We cannot access your files',
++                'No one can intercept your files',
++                'Your data is as secure as your own device'
++              ]
++            },
++            {
++              text: 'For analytics data, we use industry-standard security measures to protect information.'
++            }
++          ]
++        },
++        {
++          title: '6. Your Rights',
++          content: [
++            {
++              text: 'You have the right to:'
++            },
++            {
++              list: [
++                'Use our tools without providing any personal information',
++                'Disable cookies in your browser',
++                'Opt out of analytics tracking',
++                'Contact us with privacy concerns'
++              ]
++            }
++          ]
++        },
++        {
++          title: '7. Children\'s Privacy',
++          content: [
++            {
++              text: 'Our services are available to users of all ages. Since we don\'t collect personal information or store files, there are no special privacy concerns for children. However, we recommend parental supervision for young users.'
++            }
++          ]
++        },
++        {
++          title: '8. Changes to This Policy',
++          content: [
++            {
++              text: 'We may update this privacy policy from time to time. The "Last Updated" date at the top will reflect any changes. Continued use of our services after changes constitutes acceptance of the updated policy.'
++            }
++          ]
++        },
++        {
++          title: '9. Contact Us',
++          content: [
++            {
++              text: 'If you have questions about this privacy policy, please contact us at:'
++            },
++            {
++              text: 'Email: developernewai@gmail.com'
++            },
++            {
++              text: 'Location: India'
++            }
++          ]
++        }
++      ],
++
++      summary: {
++        title: 'Summary',
++        text: 'FreeTools is designed with privacy at its core. Your files are processed locally in your browser and never uploaded to our servers. We only collect anonymous analytics data to improve our services. You can use all our tools without providing any personal information.'
++      }
++    },
++    hi: {
++      title: 'प्राइवेसी पॉलिसी - FreeTools',
++      description: 'FreeTools प्राइवेसी पॉलिसी। आपकी फाइलें आपके ब्राउज़र में लोकली प्रोसेस होती हैं। कोई अपलोड नहीं, कोई स्टोरेज नहीं, पूरी प्राइवेसी।',
++      h1: 'प्राइवेसी पॉलिसी',
++      lastUpdated: 'अंतिम अपडेट: 7 अप्रैल, 2026',
++
++      intro: 'FreeTools में, आपकी प्राइवेसी हमारी सर्वोच्च प्राथमिकता है। यह प्राइवेसी पॉलिसी बताती है कि हम आपके डेटा को कैसे हैंडल करते हैं और आपकी प्राइवेसी की रक्षा कैसे करते हैं।',
++
++      highlight: {
++        title: '🔒 आपकी फाइलें 100% प्राइवेट हैं',
++        points: [
++          'सभी फाइल प्रोसेसिंग आपके ब्राउज़र में लोकली होती है',
++          'आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं',
++          'हम आपकी फाइलों को स्टोर, सेव या एक्सेस नहीं करते',
++          'एक बार जब आप ब्राउज़र बंद करते हैं, सब कुछ चला जाता है'
++        ]
++      },
++
++      sections: [
++        {
++          title: '1. हम कौन सी जानकारी एकत्र करते हैं',
++          content: [
++            {
++              subtitle: '1.1 आपके द्वारा प्रोसेस की गई फाइलें',
++              text: 'जब आप हमारे टूल्स (इमेज रीसाइज़र, PDF मर्जर, आदि) का उपयोग करते हैं, तो सभी फाइल प्रोसेसिंग पूरी तरह से आपके ब्राउज़र में JavaScript का उपयोग करके होती है। आपकी फाइलें कभी आपके डिवाइस से बाहर नहीं जातीं और कभी किसी सर्वर पर अपलोड नहीं होतीं।'
++            },
++            {
++              subtitle: '1.2 एनालिटिक्स डेटा',
++              text: 'हम यह समझने के लिए एनालिटिक्स सर्विसेज़ (जैसे Google Analytics) का उपयोग कर सकते हैं कि विज़िटर हमारी वेबसाइट का उपयोग कैसे करते हैं। इसमें शामिल है:'
++            },
++            {
++              list: [
++                'देखे गए पेज',
++                'साइट पर बिताया गया समय',
++                'ब्राउज़र टाइप और वर्जन',
++                'डिवाइस टाइप (मोबाइल, डेस्कटॉप, टैबलेट)',
++                'सामान्य स्थान (देश/शहर स्तर)',
++                'रेफरल सोर्स'
++              ]
++            },
++            {
++              text: 'यह डेटा एनोनिमस है और इसमें कोई व्यक्तिगत जानकारी या फाइल कंटेंट शामिल नहीं है।'
++            }
++          ]
++        },
++        {
++          title: '2. हम आपकी जानकारी का उपयोग कैसे करते हैं',
++          content: [
++            {
++              text: 'हम एकत्रित जानकारी का उपयोग इसके लिए करते हैं:'
++            },
++            {
++              list: [
++                'हमारी वेबसाइट और टूल्स को बेहतर बनाना',
++                'यूज़र व्यवहार और प्राथमिकताओं को समझना',
++                'बग और तकनीकी समस्याओं को ठीक करना',
++                'यह एनालाइज़ करना कि कौन से टूल्स सबसे लोकप्रिय हैं',
++                'नई फीचर्स के बारे में सूचित निर्णय लेना'
++              ]
++            }
++          ]
++        },
++        {
++          title: '3. कुकीज़',
++          content: [
++            {
++              text: 'हम कुकीज़ का उपयोग इसके लिए करते हैं:'
++            },
++            {
++              list: [
++                'आपकी भाषा प्राथमिकता याद रखना (अंग्रेज़ी/हिंदी)',
++                'एनालिटिक्स ट्रैकिंग (यदि आप सहमति देते हैं)',
++                'यूज़र एक्सपीरियंस में सुधार'
++              ]
++            },
++            {
++              text: 'आप अपनी ब्राउज़र सेटिंग्स में कुकीज़ को डिसेबल कर सकते हैं, लेकिन कुछ फीचर्स ठीक से काम नहीं कर सकते।'
++            }
++          ]
++        },
++        {
++          title: '4. थर्ड-पार्टी सर्विसेज़',
++          content: [
++            {
++              subtitle: '4.1 एनालिटिक्स',
++              text: 'हम वेबसाइट उपयोग को ट्रैक करने के लिए Google Analytics या समान सर्विसेज़ का उपयोग कर सकते हैं। इन सर्विसेज़ की अपनी प्राइवेसी पॉलिसी होती है।'
++            },
++            {
++              subtitle: '4.2 विज्ञापन (भविष्य में)',
++              text: 'हम भविष्य में थर्ड-पार्टी नेटवर्क (जैसे Google AdSense) से विज्ञापन प्रदर्शित कर सकते हैं। ये नेटवर्क प्रासंगिक विज्ञापन दिखाने के लिए कुकीज़ का उपयोग कर सकते हैं। आप अपनी ब्राउज़र सेटिंग्स या विज्ञापन नेटवर्क प्राथमिकताओं के माध्यम से व्यक्तिगत विज्ञापन से ऑप्ट आउट कर सकते हैं।'
++            }
++          ]
++        },
++        {
++          title: '5. डेटा सिक्योरिटी',
++          content: [
++            {
++              text: 'चूंकि सभी फाइल प्रोसेसिंग आपके ब्राउज़र में लोकली होती है:'
++            },
++            {
++              list: [
++                'आपकी फाइलें कभी इंटरनेट पर ट्रैवल नहीं करतीं',
++                'हम आपकी फाइलों को एक्सेस नहीं कर सकते',
++                'कोई भी आपकी फाइलों को इंटरसेप्ट नहीं कर सकता',
++                'आपका डेटा आपके अपने डिवाइस जितना सुरक्षित है'
++              ]
++            },
++            {
++              text: 'एनालिटिक्स डेटा के लिए, हम जानकारी की सुरक्षा के लिए इंडस्ट्री-स्टैंडर्ड सिक्योरिटी उपायों का उपयोग करते हैं।'
++            }
++          ]
++        },
++        {
++          title: '6. आपके अधिकार',
++          content: [
++            {
++              text: 'आपको अधिकार है:'
++            },
++            {
++              list: [
++                'बिना कोई व्यक्तिगत जानकारी दिए हमारे टूल्स का उपयोग करना',
++                'अपने ब्राउज़र में कुकीज़ को डिसेबल करना',
++                'एनालिटिक्स ट्रैकिंग से ऑप्ट आउट करना',
++                'प्राइवेसी चिंताओं के साथ हमसे संपर्क करना'
++              ]
++            }
++          ]
++        },
++        {
++          title: '7. बच्चों की प्राइवेसी',
++          content: [
++            {
++              text: 'हमारी सर्विसेज़ सभी उम्र के यूज़र्स के लिए उपलब्ध हैं। चूंकि हम व्यक्तिगत जानकारी एकत्र नहीं करते या फाइलें स्टोर नहीं करते, इसलिए बच्चों के लिए कोई विशेष प्राइवेसी चिंता नहीं है। हालांकि, हम युवा यूज़र्स के लिए माता-पिता की निगरानी की सिफारिश करते हैं।'
++            }
++          ]
++        },
++        {
++          title: '8. इस पॉलिसी में बदलाव',
++          content: [
++            {
++              text: 'हम समय-समय पर इस प्राइवेसी पॉलिसी को अपडेट कर सकते हैं। शीर्ष पर "अंतिम अपडेट" तारीख किसी भी बदलाव को दर्शाएगी। बदलावों के बाद हमारी सर्विसेज़ का निरंतर उपयोग अपडेटेड पॉलिसी की स्वीकृति का गठन करता है।'
++            }
++          ]
++        },
++        {
++          title: '9. हमसे संपर्क करें',
++          content: [
++            {
++              text: 'यदि आपके पास इस प्राइवेसी पॉलिसी के बारे में सवाल हैं, तो कृपया हमसे संपर्क करें:'
++            },
++            {
++              text: 'ईमेल: developernewai@gmail.com'
++            },
++            {
++              text: 'स्थान: भारत'
++            }
++          ]
++        }
++      ],
++
++      summary: {
++        title: 'सारांश',
++        text: 'FreeTools को इसके कोर में प्राइवेसी के साथ डिज़ाइन किया गया है। आपकी फाइलें आपके ब्राउज़र में लोकली प्रोसेस होती हैं और कभी हमारे सर्वर पर अपलोड नहीं होतीं। हम केवल हमारी सर्विसेज़ को बेहतर बनाने के लिए एनोनिमस एनालिटिक्स डेटा एकत्र करते हैं। आप बिना कोई व्यक्तिगत जानकारी दिए हमारे सभी टूल्स का उपयोग कर सकते हैं।'
++      }
++    }
++  }
++
++  const t = content[language]
++
++  return (
++    <>
++      <SEOHead
++        title={t.title}
++        description={t.description}
++        canonical="https://free-tools-nine-delta.vercel.app/privacy-policy"
++      />
++
++      <div className="privacy-page">
++        {/* Hero Section */}
++        <section className="privacy-hero">
++          <div className="container">
++            <h1 className="privacy-h1">{t.h1}</h1>
++            <p className="privacy-date">{t.lastUpdated}</p>
++          </div>
++        </section>
++
++        {/* Content */}
++        <section className="privacy-content">
++          <div className="container">
++            {/* Intro */}
++            <p className="privacy-intro">{t.intro}</p>
++
++            {/* Highlight Box */}
++            <div className="privacy-highlight">
++              <h2 className="highlight-title">{t.highlight.title}</h2>
++              <ul className="highlight-list">
++                {t.highlight.points.map((point, index) => (
++                  <li key={index}>{point}</li>
++                ))}
++              </ul>
++            </div>
++
++            {/* Sections */}
++            <div className="privacy-sections">
++              {t.sections.map((section, index) => (
++                <div key={index} className="privacy-section">
++                  <h2 className="section-title">{section.title}</h2>
++                  {section.content.map((item, idx) => (
++                    <div key={idx} className="section-content">
++                      {item.subtitle && (
++                        <h3 className="section-subtitle">{item.subtitle}</h3>
++                      )}
++                      {item.text && <p>{item.text}</p>}
++                      {item.list && (
++                        <ul className="content-list">
++                          {item.list.map((listItem, listIdx) => (
++                            <li key={listIdx}>{listItem}</li>
++                          ))}
++                        </ul>
++                      )}
++                    </div>
++                  ))}
++                </div>
++              ))}
++            </div>
++
++            {/* Summary */}
++            <div className="privacy-summary">
++              <h2 className="summary-title">{t.summary.title}</h2>
++              <p className="summary-text">{t.summary.text}</p>
++            </div>
++          </div>
++        </section>
++      </div>
++    </>
++  )
++}
++
++export default PrivacyPolicyPage
+diff --git a/src/pages/ToolPage.jsx b/src/pages/ToolPage.jsx
+index 2f1507b..5242b11 100644
+--- a/src/pages/ToolPage.jsx
++++ b/src/pages/ToolPage.jsx
+@@ -90,6 +90,22 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
+     return extracted;
+   }, [adaptedConfig.content, language]);
+
++  // Extract SEO data - check both root level (new schema) and content.seo (old schema)
++  const seoData = useMemo(() => {
++    // New schema: seo.en or seo.hi at root level
++    if (adaptedConfig.seo?.[language]) {
++      return adaptedConfig.seo[language];
++    }
++    if (adaptedConfig.seo?.en) {
++      return adaptedConfig.seo.en;
++    }
++    // Old schema: content.seo.en or content.seo.hi
++    if (content.seo) {
++      return content.seo;
++    }
++    return {};
++  }, [adaptedConfig.seo, content.seo, language]);
++
+   const uiText = adaptedConfig.uiText?.[language] || adaptedConfig.uiText?.en || {};
+
+   // Initialize tool instance
+@@ -249,10 +265,10 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
+     <>
+       {/* SEO Head */}
+       <SEOHead
+-        title={content.seo?.title}
+-        description={content.seo?.description}
+-        keywords={content.seo?.keywords}
+-        canonical={content.seo?.canonical}
++        title={seoData?.title}
++        description={seoData?.description}
++        keywords={seoData?.keywords}
++        canonical={seoData?.canonical}
+       />
+
+       {/* Tool Layout */}

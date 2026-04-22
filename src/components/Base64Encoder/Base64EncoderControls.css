@@ -1,0 +1,274 @@
+/**
+ * Base64EncoderControls Component Styles
+ * Reuses JSON Formatter styling patterns for consistency
+ */
+
+.base64-encoder-controls {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Input Section */
+.base64-encoder-input-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.base64-encoder-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.base64-encoder-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.base64-encoder-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.base64-encoder-textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.base64-encoder-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.base64-encoder-textarea::placeholder {
+  color: #95a5a6;
+}
+
+/* Button Group */
+.base64-encoder-button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.base64-encoder-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.base64-encoder-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  flex: 1;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.base64-encoder-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.base64-encoder-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.base64-encoder-btn-secondary {
+  background: #ecf0f1;
+  color: #2c3e50;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.base64-encoder-btn-secondary:hover:not(:disabled) {
+  background: #d5dbdb;
+}
+
+.base64-encoder-btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result Section */
+.base64-encoder-result-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.base64-encoder-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.base64-encoder-result-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.base64-encoder-result {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.base64-encoder-result-pre {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.base64-encoder-result-pre code {
+  color: #2c3e50;
+}
+
+/* Error Display */
+.base64-encoder-error {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #fff5f5;
+  border: 2px solid #feb2b2;
+  border-radius: 8px;
+  align-items: flex-start;
+}
+
+.base64-encoder-error-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.base64-encoder-error-content {
+  flex: 1;
+}
+
+.base64-encoder-error-title {
+  font-weight: 600;
+  color: #c53030;
+  margin-bottom: 0.5rem;
+}
+
+.base64-encoder-error-message {
+  color: #742a2a;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Empty State */
+.base64-encoder-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+}
+
+.base64-encoder-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.base64-encoder-empty-message {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .base64-encoder-controls {
+    padding: 1rem 0;
+  }
+
+  .base64-encoder-input-section,
+  .base64-encoder-result-section {
+    padding: 1.5rem;
+  }
+
+  .base64-encoder-textarea {
+    min-height: 200px;
+    font-size: 0.9rem;
+  }
+
+  .base64-encoder-button-group {
+    flex-direction: column;
+  }
+
+  .base64-encoder-btn-primary {
+    min-width: 100%;
+  }
+
+  .base64-encoder-input-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .base64-encoder-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .base64-encoder-result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .base64-encoder-input-section,
+  .base64-encoder-result-section {
+    padding: 1rem;
+  }
+
+  .base64-encoder-label {
+    font-size: 1rem;
+  }
+
+  .base64-encoder-result-title {
+    font-size: 1.1rem;
+  }
+
+  .base64-encoder-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

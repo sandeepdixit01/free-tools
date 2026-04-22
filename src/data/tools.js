@@ -24,7 +24,20 @@ import textCaseConverterConfig from '../configs/tools/textCaseConverter.config.j
 import removeExtraSpacesConfig from '../configs/tools/removeExtraSpaces.config.js'
 import characterCounterConfig from '../configs/tools/characterCounter.config.js'
 import jsonFormatterConfig from '../configs/tools/jsonFormatter.config.js'
+import base64EncoderConfig from '../configs/tools/base64Encoder.config.js'
+import urlEncoderConfig from '../configs/tools/urlEncoder.config.js'
+import jsonToCSVConfig from '../configs/tools/jsonToCSV.config.js'
+import { removeDuplicateLinesConfig } from '../configs/tools/removeDuplicateLines.config.js'
+import { wordSorterConfig } from '../configs/tools/wordSorter.config.js'
 import { mergePdfConfig } from '../configs/tools/mergePdf.config.js'
+import { imageToPdfConfig } from '../configs/tools/imageToPdf.config.js'
+import { pdfToImageConfig } from '../configs/tools/pdfToImage.config.js'
+import { splitPdfConfig } from '../configs/tools/splitPdf.config.js'
+import { rotatePdfConfig } from '../configs/tools/rotatePdf.config.js'
+import { deletePdfPagesConfig } from '../configs/tools/deletePdfPages.config.js'
+import { imageCompressorConfig } from '../configs/tools/imageCompressor.config.js'
+import { imageFormatConverterConfig } from '../configs/tools/imageFormatConverter.config.js'
+import { imageCropConfig } from '../configs/tools/imageCrop.config.js'
 
 /**
  * All Tools Registry
@@ -55,6 +68,78 @@ export const tools = [
     usageCount: 0,
     config: imageResizerConfig
   },
+  {
+    id: 'image-to-pdf',
+    name: {
+      en: 'Image to PDF',
+      hi: 'इमेज से PDF'
+    },
+    description: {
+      en: 'Convert multiple images to a single PDF',
+      hi: 'कई इमेज को एक PDF में बदलें'
+    },
+    category: 'image',
+    route: '/tools/image-to-pdf',
+    icon: '📄',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: imageToPdfConfig
+  },
+  {
+    id: 'image-compressor',
+    name: {
+      en: 'Image Compressor',
+      hi: 'इमेज कंप्रेसर'
+    },
+    description: {
+      en: 'Compress images with adjustable quality',
+      hi: 'एडजस्टेबल क्वालिटी के साथ इमेज कंप्रेस करें'
+    },
+    category: 'image',
+    route: '/tools/image-compressor',
+    icon: '🗜️',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: imageCompressorConfig
+  },
+  {
+    id: 'image-format-converter',
+    name: {
+      en: 'Image Format Converter',
+      hi: 'इमेज फॉर्मेट कन्वर्टर'
+    },
+    description: {
+      en: 'Convert images between JPG, PNG, and WEBP formats',
+      hi: 'JPG, PNG और WEBP प्रारूपों के बीच छवियों को परिवर्तित करें'
+    },
+    category: 'image',
+    route: '/tools/image-format-converter',
+    icon: '🔄',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: imageFormatConverterConfig
+  },
+  {
+    id: 'image-crop',
+    name: {
+      en: 'Image Crop Tool',
+      hi: 'इमेज क्रॉप टूल'
+    },
+    description: {
+      en: 'Crop images with custom dimensions and aspect ratios',
+      hi: 'कस्टम डाइमेंशन और आस्पेक्ट रेशियो के साथ इमेज क्रॉप करें'
+    },
+    category: 'image',
+    route: '/tools/image-crop',
+    icon: '✂️',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: imageCropConfig
+  },
 
   // ============================================
   // PDF TOOLS
@@ -76,6 +161,78 @@ export const tools = [
     featured: true,
     usageCount: 0,
     config: mergePdfConfig
+  },
+  {
+    id: 'pdf-to-image',
+    name: {
+      en: 'PDF to Image',
+      hi: 'PDF से इमेज'
+    },
+    description: {
+      en: 'Convert PDF pages to images (PNG or JPG)',
+      hi: 'PDF पेज को इमेज (PNG या JPG) में बदलें'
+    },
+    category: 'pdf',
+    route: '/tools/pdf-to-image',
+    icon: '🖼️',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: pdfToImageConfig
+  },
+  {
+    id: 'split-pdf',
+    name: {
+      en: 'Split PDF',
+      hi: 'PDF स्प्लिट करें'
+    },
+    description: {
+      en: 'Split PDF into separate files by pages or ranges',
+      hi: 'PDF को पेज या रेंज द्वारा अलग फाइलों में विभाजित करें'
+    },
+    category: 'pdf',
+    route: '/tools/split-pdf',
+    icon: '✂️',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: splitPdfConfig
+  },
+  {
+    id: 'rotate-pdf',
+    name: {
+      en: 'Rotate PDF',
+      hi: 'PDF रोटेट करें'
+    },
+    description: {
+      en: 'Rotate PDF pages by 90°, 180°, or 270°',
+      hi: 'PDF पेज को 90°, 180°, या 270° रोटेट करें'
+    },
+    category: 'pdf',
+    route: '/tools/rotate-pdf',
+    icon: '🔄',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: rotatePdfConfig
+  },
+  {
+    id: 'delete-pdf-pages',
+    name: {
+      en: 'Delete PDF Pages',
+      hi: 'PDF पेज डिलीट करें'
+    },
+    description: {
+      en: 'Remove unwanted pages from PDF documents',
+      hi: 'PDF दस्तावेज़ों से अनचाहे पेज हटाएं'
+    },
+    category: 'pdf',
+    route: '/tools/delete-pdf-pages',
+    icon: '🗑️',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: deletePdfPagesConfig
   },
 
   // ============================================
@@ -136,6 +293,42 @@ export const tools = [
     config: removeExtraSpacesConfig
   },
   {
+    id: 'remove-duplicate-lines',
+    name: {
+      en: 'Remove Duplicate Lines',
+      hi: 'डुप्लीकेट लाइन हटाएं'
+    },
+    description: {
+      en: 'Remove duplicate lines from text while preserving order',
+      hi: 'क्रम बनाए रखते हुए टेक्स्ट से डुप्लीकेट लाइन हटाएं'
+    },
+    category: 'text',
+    route: '/tools/remove-duplicate-lines',
+    icon: '📋',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: removeDuplicateLinesConfig
+  },
+  {
+    id: 'word-sorter',
+    name: {
+      en: 'Word Sorter',
+      hi: 'वर्ड सॉर्टर'
+    },
+    description: {
+      en: 'Sort text lines alphabetically in ascending or descending order',
+      hi: 'टेक्स्ट लाइनों को आरोही या अवरोही क्रम में वर्णानुक्रम में सॉर्ट करें'
+    },
+    category: 'text',
+    route: '/tools/word-sorter',
+    icon: '🔤',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: wordSorterConfig
+  },
+  {
     id: 'character-counter',
     name: {
       en: 'Character Counter',
@@ -174,6 +367,60 @@ export const tools = [
     featured: true,
     usageCount: 0,
     config: jsonFormatterConfig
+  },
+  {
+    id: 'base64-encoder',
+    name: {
+      en: 'Base64 Encoder/Decoder',
+      hi: 'Base64 एनकोडर/डिकोडर'
+    },
+    description: {
+      en: 'Encode and decode Base64 strings with UTF-8 support',
+      hi: 'UTF-8 सपोर्ट के साथ Base64 स्ट्रिंग्स को एनकोड और डिकोड करें'
+    },
+    category: 'developer',
+    route: '/tools/base64-encoder-decoder',
+    icon: '🔐',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: base64EncoderConfig
+  },
+  {
+    id: 'url-encoder',
+    name: {
+      en: 'URL Encoder/Decoder',
+      hi: 'URL एनकोडर/डिकोडर'
+    },
+    description: {
+      en: 'Encode and decode URL strings for safe transmission',
+      hi: 'सुरक्षित ट्रांसमिशन के लिए URL स्ट्रिंग्स को एनकोड और डिकोड करें'
+    },
+    category: 'developer',
+    route: '/tools/url-encoder-decoder',
+    icon: '🔗',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: urlEncoderConfig
+  },
+  {
+    id: 'json-to-csv',
+    name: {
+      en: 'JSON to CSV Converter',
+      hi: 'JSON to CSV कन्वर्टर'
+    },
+    description: {
+      en: 'Convert JSON data to CSV format with nested object support',
+      hi: 'नेस्टेड ऑब्जेक्ट सपोर्ट के साथ JSON डेटा को CSV फॉर्मेट में बदलें'
+    },
+    category: 'developer',
+    route: '/tools/json-to-csv',
+    icon: '📊',
+    active: true,
+    featured: true,
+    usageCount: 0,
+    config: jsonToCSVConfig
   }
 ]
 

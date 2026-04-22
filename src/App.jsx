@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { useLanguage } from './contexts/LanguageContext'
+import { useCanonicalUrl } from './hooks/useCanonicalUrl'
 import SEOHead from './components/SEO/SEOHead'
 import Hero from './components/Hero'
 import SectionHeader from './components/home/SectionHeader'
@@ -16,6 +17,7 @@ import './App.css'
 
 function App() {
   const { language } = useLanguage()
+  const canonical = useCanonicalUrl()
   
   // Get popular tools dynamically (sorted by usageCount)
   // STANDARDIZED: Exactly 6 tools for Popular Tools section
@@ -36,7 +38,7 @@ function App() {
           ? "इमेज, PDF, टेक्स्ट और डेवलपर्स के लिए फ्री ऑनलाइन टूल्स। तेज़, सुरक्षित और मोबाइल-फ्रेंडली।"
           : "Free online tools for images, PDFs, text, and developers. Fast, secure, and mobile-friendly."}
         keywords="free online tools, image tools, pdf tools, text tools, developer tools, image resizer, pdf merger, word counter, json formatter"
-        canonical="https://freetools.com"
+        canonical={canonical}
       />
       
       <main className="main-content">

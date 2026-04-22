@@ -35,9 +35,16 @@
 
 .seo-sections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
   gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+/* Force 2-column layout on larger screens */
+@media (min-width: 769px) {
+  .seo-sections-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 .seo-section-card {
@@ -202,6 +209,22 @@
 
 .seo-detailed-section a:hover {
   text-decoration: underline;
+}
+
+/* Contextual links in content */
+.seo-content-intro a,
+.seo-section-content a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.3);
+  transition: all 0.2s ease;
+}
+
+.seo-content-intro a:hover,
+.seo-section-content a:hover {
+  color: #764ba2;
+  border-bottom-color: #764ba2;
 }
 
 /* Responsive */
