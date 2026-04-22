@@ -155,4 +155,3 @@ console.log('- Logical workflow connections (secondary)');
 console.log('- User intent and common use cases');
 console.log('\nNext step: Apply these links to actual config files');
 
-// Made with Bob

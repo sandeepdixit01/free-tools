@@ -6,6 +6,7 @@
 
 import React, { useEffect, useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl';
 import SEOHead from '../components/SEO/SEOHead';
 import ToolLayout from '../components/shared/Layout/ToolLayout';
 import ToolHero from '../components/shared/Layout/ToolHero';
@@ -24,6 +25,7 @@ import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } 
 
 const DeletePdfPages = () => {
   const { language } = useLanguage();
+  const canonical = useCanonicalUrl();
 
   // Validate configuration in development mode
   useEffect(() => {
@@ -95,7 +97,7 @@ const DeletePdfPages = () => {
                 : [...(seoData.keywords.primary || []), ...(seoData.keywords.secondary || []), ...(seoData.keywords.longTail || [])].join(', '))
             : ''
         }
-        canonical={seoData.canonical}
+        canonical={canonical}
         webApplicationData={structuredData.webApplication}
         howToData={structuredData.howTo}
         faqData={structuredData.faq}

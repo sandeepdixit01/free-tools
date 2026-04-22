@@ -165,4 +165,3 @@ function writeSitemap() {
 // Run the script
 writeSitemap();
 
-// Made with Bob

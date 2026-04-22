@@ -5,6 +5,7 @@
 
 import React, { useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useCanonicalUrl } from '../hooks/useCanonicalUrl';
 import SEOHead from '../components/SEO/SEOHead';
 import ToolLayout from '../components/shared/Layout/ToolLayout';
 import ToolHero from '../components/shared/Layout/ToolHero';
@@ -22,6 +23,7 @@ import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } 
 
 const JSONToCSV = () => {
   const { language } = useLanguage();
+  const canonical = useCanonicalUrl();
 
   // Get language-specific content
   const content = useMemo(() => {
@@ -63,7 +65,7 @@ const JSONToCSV = () => {
         title={seoData.title}
         description={seoData.description}
         keywords={seoData.keywords}
-        canonical={seoData.canonical}
+        canonical={canonical}
         webApplicationData={structuredData.webApplication}
         howToData={structuredData.howTo}
         faqData={structuredData.faq}
