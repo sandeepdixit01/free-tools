@@ -1,6 +1,6 @@
 /**
  * About Page
- * Information about FreeTools and our privacy-first approach
+ * Information about DesiTechLabs and our privacy-first approach
  */
 
 import React from 'react'
@@ -15,12 +15,13 @@ const AboutPage = () => {
 
   const content = {
     en: {
-      title: 'About FreeTools - Privacy-First Online Tools',
-      description: 'Learn about FreeTools - free online tools that process files locally in your browser. No uploads, no storage, complete privacy.',
-      h1: 'About FreeTools',
-      subtitle: 'Free, Fast, and Privacy-First Online Tools',
+      title: 'About DesiTechLabs - Privacy-First Online Tools',
+      description: 'Learn about DesiTechLabs - building useful things for the internet. Free online tools that process files locally in your browser.',
+      h1: 'About DesiTechLabs',
+      subtitle: 'Building useful things for the internet',
+      tagline: 'Free, Fast, and Privacy-First Online Tools',
       
-      intro: 'FreeTools provides a comprehensive suite of free online tools for everyday tasks. Whether you need to resize images, merge PDFs, count words, or format JSON, we have the perfect tool for you.',
+      intro: 'DesiTechLabs provides a comprehensive suite of free online tools for everyday tasks. Whether you need to resize images, merge PDFs, count words, or format JSON, we have the perfect tool for you.',
       
       mission: {
         title: 'Our Mission',
@@ -55,7 +56,7 @@ const AboutPage = () => {
       },
       
       features: {
-        title: 'Why Choose FreeTools?',
+        title: 'Why Choose DesiTechLabs?',
         list: [
           {
             title: 'Completely Free',
@@ -106,12 +107,13 @@ const AboutPage = () => {
       }
     },
     hi: {
-      title: 'FreeTools के बारे में - प्राइवेसी-फर्स्ट ऑनलाइन टूल्स',
-      description: 'FreeTools के बारे में जानें - फ्री ऑनलाइन टूल्स जो आपके ब्राउज़र में लोकली फाइलें प्रोसेस करते हैं। कोई अपलोड नहीं, कोई स्टोरेज नहीं, पूरी प्राइवेसी।',
-      h1: 'FreeTools के बारे में',
-      subtitle: 'फ्री, तेज़ और प्राइवेसी-फर्स्ट ऑनलाइन टूल्स',
+      title: 'DesiTechLabs के बारे में - प्राइवेसी-फर्स्ट ऑनलाइन टूल्स',
+      description: 'DesiTechLabs के बारे में जानें - इंटरनेट के लिए उपयोगी चीजें बनाना। फ्री ऑनलाइन टूल्स जो आपके ब्राउज़र में लोकली फाइलें प्रोसेस करते हैं।',
+      h1: 'DesiTechLabs के बारे में',
+      subtitle: 'इंटरनेट के लिए उपयोगी चीजें बनाना',
+      tagline: 'फ्री, तेज़ और प्राइवेसी-फर्स्ट ऑनलाइन टूल्स',
       
-      intro: 'FreeTools रोज़मर्रा के कामों के लिए फ्री ऑनलाइन टूल्स का एक कॉम्प्रिहेंसिव सूट प्रदान करता है। चाहे आपको इमेज रीसाइज़ करनी हो, PDF मर्ज करने हों, शब्द गिनने हों, या JSON फॉर्मेट करना हो, हमारे पास आपके लिए परफेक्ट टूल है।',
+      intro: 'DesiTechLabs रोज़मर्रा के कामों के लिए फ्री ऑनलाइन टूल्स का एक कॉम्प्रिहेंसिव सूट प्रदान करता है। चाहे आपको इमेज रीसाइज़ करनी हो, PDF मर्ज करने हों, शब्द गिनने हों, या JSON फॉर्मेट करना हो, हमारे पास आपके लिए परफेक्ट टूल है।',
       
       mission: {
         title: 'हमारा मिशन',
@@ -146,7 +148,7 @@ const AboutPage = () => {
       },
       
       features: {
-        title: 'FreeTools क्यों चुनें?',
+        title: 'DesiTechLabs क्यों चुनें?',
         list: [
           {
             title: 'पूरी तरह फ्री',
@@ -209,15 +211,25 @@ const AboutPage = () => {
       />
 
       <div className="about-page">
-        {/* Hero Section */}
-        <section className="about-hero">
+        {/* Brand Banner with Image */}
+        <section className="about-banner">
+          <div className="banner-image-wrapper">
+            <img
+              src="/Banner.png"
+              alt="DesiTechLabs Banner"
+              className="banner-image"
+            />
+          </div>
           <div className="container">
-            <h1 className="about-h1">{t.h1}</h1>
-            <p className="about-subtitle">{t.subtitle}</p>
+            <div className="banner-content">
+              <h1 className="about-h1">{t.h1}</h1>
+              <p className="about-subtitle">{t.subtitle}</p>
+              {t.tagline && <p className="about-tagline">{t.tagline}</p>}
+            </div>
           </div>
         </section>
 
-        {/* Intro */}
+        {/* Intro Section */}
         <section className="about-section">
           <div className="container">
             <p className="about-intro">{t.intro}</p>

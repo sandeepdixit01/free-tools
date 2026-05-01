@@ -42,7 +42,7 @@
 
 .upload-hint {
   font-size: 14px;
-  color: #64748b;
+  color: #475569;
 }
 
 /* File Info Section */
@@ -81,7 +81,7 @@
 
 .file-size {
   font-size: 14px;
-  color: #64748b;
+  color: #475569;
 }
 
 .remove-btn {
@@ -125,7 +125,7 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  color: #64748b;
+  color: #475569;
   transition: all 0.2s;
 }
 
@@ -158,7 +158,7 @@
 
 .range-hint {
   font-size: 14px;
-  color: #64748b;
+  color: #475569;
   margin: 0;
 }
 
@@ -185,7 +185,7 @@
 
 .range-separator {
   font-weight: 600;
-  color: #64748b;
+  color: #475569;
 }
 
 .remove-range-btn {

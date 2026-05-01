@@ -23,6 +23,7 @@ export const imageResizerConfig = {
   // 1. METADATA (Required)
   // ============================================================================
   metadata: {
+    id: 'image-resizer',
     version: '2.0.0',
     lastUpdated: '2026-04-02',
     author: 'FreeTools',
@@ -33,7 +34,6 @@ export const imageResizerConfig = {
   // ============================================================================
   // 2. BASIC INFO (Required)
   // ============================================================================
-  id: 'image-resizer',
   name: {
     en: 'Image Resizer',
     hi: 'इमेज रीसाइज़र'

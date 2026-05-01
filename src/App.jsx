@@ -104,6 +104,17 @@ function App() {
       
       {/* Ad Slot: Bottom Banner */}
       <AdSlot position={AD_POSITIONS.BOTTOM_BANNER} />
+      
+      {/* Subtle Branding */}
+      <section className="home-branding">
+        <div className="container">
+          <p className="branding-text">
+            {language === 'hi'
+              ? 'DesiTechLabs का एक उत्पाद'
+              : 'A product by DesiTechLabs'}
+          </p>
+        </div>
+      </section>
     </main>
     </>
   )

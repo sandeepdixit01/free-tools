@@ -21,7 +21,7 @@ import { Helmet } from 'react-helmet-async'
  * @param {object} howToData - HowTo schema
  */
 const SEOHead = ({
-  title = "Free Online Tools - FreeTools",
+  title = "Free Online Tools - DesiTechLabs",
   description = "Free online tools for images, PDFs, text, and developers. Fast, secure, and privacy-focused.",
   canonical,
   keywords = "free online tools, image tools, pdf tools, text tools, developer tools",
@@ -57,7 +57,7 @@ const SEOHead = ({
       <meta name="geo.region" content="IN" />
       <meta name="geo.placename" content="India" />
       <meta name="revisit-after" content="7 days" />
-      <meta name="author" content="FreeTools" />
+      <meta name="author" content="DesiTechLabs" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
@@ -65,7 +65,7 @@ const SEOHead = ({
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={ogDescription || description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="FreeTools" />
+      <meta property="og:site_name" content="DesiTechLabs" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />

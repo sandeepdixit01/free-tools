@@ -1,0 +1,35 @@
+From ed2daffe1f03c5ffa3595f648d85a9a478722ead Mon Sep 17 00:00:00 2001
+From: Sandeep <sandeepdixit01@gmail.com>
+Date: Wed, 29 Apr 2026 13:39:21 +0530
+Subject: [PATCH] Add vercel.json configuration
+
+---
+ vercel.json | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 vercel.json
+
+diff --git a/vercel.json b/vercel.json
+new file mode 100644
+index 0000000..5d4c6c5
+--- /dev/null
++++ b/vercel.json
+@@ -0,0 +1,16 @@
++{
++  "rewrites": [
++    {
++      "source": "/((?!sitemap\\.xml|robots\\.txt).*)",
++      "destination": "/index.html"
++    }
++  ],
++  "headers": [
++    {
++      "source": "/sitemap.xml",
++      "headers": [
++        { "key": "Content-Type", "value": "application/xml" }
++      ]
++    }
++  ]
++}
+-- 
+2.50.1 (Apple Git-155)
+

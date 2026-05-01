@@ -15,12 +15,14 @@ const PrivacyPolicyPage = () => {
 
   const content = {
     en: {
-      title: 'Privacy Policy - FreeTools',
-      description: 'FreeTools Privacy Policy. Your files are processed locally in your browser. No uploads, no storage, complete privacy.',
+      title: 'Privacy Policy - DesiTechLabs',
+      description: 'DesiTechLabs Privacy Policy. Your files are processed locally in your browser. No uploads, no storage, complete privacy.',
       h1: 'Privacy Policy',
       lastUpdated: 'Last Updated: April 7, 2026',
       
-      intro: 'At FreeTools, your privacy is our top priority. This privacy policy explains how we handle your data and protect your privacy.',
+      intro: 'This Privacy Policy describes how DesiTechLabs collects, uses, and protects information when you use our online tools.',
+      
+      trustStatement: 'All tools are processed locally in your browser. DesiTechLabs does not store or transmit your files.',
       
       highlight: {
         title: '🔒 Your Files Are 100% Private',
@@ -370,6 +372,13 @@ const PrivacyPolicyPage = () => {
           <div className="container">
             {/* Intro */}
             <p className="privacy-intro">{t.intro}</p>
+
+            {/* Trust Statement */}
+            {t.trustStatement && (
+              <div className="trust-statement">
+                <p className="trust-text">🔒 {t.trustStatement}</p>
+              </div>
+            )}
 
             {/* Highlight Box */}
             <div className="privacy-highlight">

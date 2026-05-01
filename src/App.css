@@ -26,6 +26,21 @@
   line-height: 0;
 }
 
+/* Home Branding Section */
+.home-branding {
+  padding: 2rem 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.branding-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
 /* Tablet and below */
 @media (max-width: 768px) {
   .home-section {

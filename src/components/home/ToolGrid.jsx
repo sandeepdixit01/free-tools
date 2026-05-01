@@ -30,7 +30,7 @@ const ToolGrid = ({ tools, maxTools }) => {
         <ToolCard
           key={tool.id}
           icon={tool.icon}
-          title={tool.name[language] || tool.name.en}
+          name={tool.name[language] || tool.name.en || 'Untitled Tool'}
           description={tool.description[language] || tool.description.en}
           onClick={() => window.location.href = tool.route}
         />

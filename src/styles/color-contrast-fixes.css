@@ -1,0 +1,23 @@
+/* 
+ * Global Color Contrast Improvements
+ * Replacing light grey colors with darker, more readable alternatives
+ * All colors meet WCAG AA standards (4.5:1 contrast ratio minimum)
+ * 
+ * Color Mapping:
+ * #718096 (old light grey) → #4b5563 (new dark grey)
+ * #64748b (old slate grey) → #475569 (new dark slate)
+ * #6c757d (old grey) → #4b5563 (new dark grey)
+ * #6b7280 (old grey) → #4b5563 (new dark grey)
+ * #94a3b8 (old very light) → #64748b (new medium grey)
+ * #adb5bd (old very light) → #6b7280 (new grey)
+ * #a0aec0 (old very light) → #6b7280 (new grey)
+ */
+
+:root {
+  --text-secondary-old: #6b7280;
+  --text-secondary-new: #4b5563;
+  --text-tertiary-old: #94a3b8;
+  --text-tertiary-new: #64748b;
+}
+
+/* Made with Bob */

@@ -43,7 +43,7 @@
 
 .upload-hint {
   font-size: 0.9rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 /* Compression Settings */
@@ -121,7 +121,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 .format-selector {
@@ -231,7 +231,7 @@
 
 .file-size {
   font-size: 0.85rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 .remove-btn {
@@ -379,11 +379,11 @@
 }
 
 .original-size {
-  color: #718096;
+  color: #4b5563;
 }
 
 .arrow {
-  color: #a0aec0;
+  color: #6b7280;
 }
 
 .compressed-size {
@@ -392,7 +392,7 @@
 }
 
 .reduction {
-  color: #718096;
+  color: #4b5563;
   font-size: 0.85rem;
 }
 

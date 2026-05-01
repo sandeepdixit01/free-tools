@@ -43,7 +43,7 @@
 
 .upload-hint {
   font-size: 0.9rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 /* Format Settings */
@@ -179,7 +179,7 @@
 
 .file-size {
   font-size: 0.85rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 .remove-btn {
@@ -327,12 +327,12 @@
 }
 
 .original-format {
-  color: #718096;
+  color: #4b5563;
   font-weight: 500;
 }
 
 .arrow {
-  color: #a0aec0;
+  color: #6b7280;
 }
 
 .new-format {
@@ -341,7 +341,7 @@
 }
 
 .size-info {
-  color: #718096;
+  color: #4b5563;
   font-size: 0.85rem;
 }
 

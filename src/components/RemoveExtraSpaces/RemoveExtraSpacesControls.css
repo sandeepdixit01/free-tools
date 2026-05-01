@@ -171,7 +171,7 @@
 
 .remove-spaces-no-changes {
   text-align: center;
-  color: var(--gray-500, #6b7280);
+  color: var(--gray-500, #4b5563);
   font-size: 1rem;
   margin: 0;
   padding: 2rem;
@@ -187,7 +187,7 @@
 }
 
 .remove-spaces-empty-message {
-  color: var(--gray-500, #6b7280);
+  color: var(--gray-500, #4b5563);
   font-size: 1rem;
   margin: 0;
 }

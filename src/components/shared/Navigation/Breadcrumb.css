@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   font-size: 0.875rem;
-  color: #6c757d;
+  color: #4b5563;
 }
 
 .breadcrumb-item {
@@ -26,7 +26,7 @@
 
 .breadcrumb-separator {
   margin: 0 0.5rem;
-  color: #adb5bd;
+  color: #6b7280;
   user-select: none;
 }
 
@@ -75,7 +75,7 @@
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .breadcrumb-list {
-    color: #adb5bd;
+    color: #9ca3af;
   }
 
   .breadcrumb-link {
@@ -91,7 +91,7 @@
   }
 
   .breadcrumb-separator {
-    color: #6c757d;
+    color: #6b7280;
   }
 }
 

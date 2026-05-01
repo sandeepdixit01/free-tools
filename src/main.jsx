@@ -5,8 +5,8 @@ import { HelmetProvider } from 'react-helmet-async'
 import { LanguageProvider } from './contexts/LanguageContext'
 import GATracker from './components/GATracker'
 import ScrollToTop from './components/ScrollToTop'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/shared/Navigation/Header'
+import Footer from './components/shared/Navigation/Footer'
 import './index.css'
 
 

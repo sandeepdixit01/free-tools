@@ -108,8 +108,8 @@ const AllToolsPage = () => {
                     <ToolCard
                       key={tool.id}
                       icon={tool.icon}
-                      name={tool.name[language] || tool.name.en}
-                      description={tool.description[language] || tool.description.en}
+                      name={tool.name[language] || tool.name.en || 'Untitled Tool'}
+                      description={tool.description[language] || tool.description.en || ''}
                       onClick={() => handleToolClick(tool.route)}
                     />
                   ))}

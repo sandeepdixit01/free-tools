@@ -106,7 +106,7 @@
 
 .character-counter-empty-message {
   text-align: center;
-  color: var(--gray-500, #6b7280);
+  color: var(--gray-500, #4b5563);
   padding: 2rem;
   font-size: 1rem;
 }

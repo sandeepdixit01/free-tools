@@ -1,0 +1,29 @@
+From da2b92b34aba347817037a3196b62f64d3c48486 Mon Sep 17 00:00:00 2001
+From: Sandeep <sandeepdixit01@gmail.com>
+Date: Thu, 30 Apr 2026 17:19:37 +0530
+Subject: [PATCH] Update vercel config
+
+---
+ vercel.json | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/vercel.json b/vercel.json
+index 5d4c6c5..eee505d 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -1,9 +1,8 @@
+ {
+   "rewrites": [
+-    {
+-      "source": "/((?!sitemap\\.xml|robots\\.txt).*)",
+-      "destination": "/index.html"
+-    }
++    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
++    { "source": "/robots.txt", "destination": "/robots.txt" },
++    { "source": "/(.*)", "destination": "/index.html" }
+   ],
+   "headers": [
+     {
+-- 
+2.50.1 (Apple Git-155)
+

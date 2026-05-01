@@ -65,7 +65,7 @@
 
 .upload-or {
   font-size: 0.95rem;
-  color: #718096;
+  color: #4b5563;
   margin: 1rem 0;
 }
 
@@ -113,7 +113,7 @@
 
 .upload-support {
   font-size: 0.875rem;
-  color: #718096;
+  color: #4b5563;
   margin: 1rem 0 0 0;
 }
 
@@ -220,7 +220,7 @@
 
 .file-size {
   font-size: 0.875rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 .file-remove {
@@ -230,7 +230,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: #718096;
+  color: #4b5563;
   border: none;
   border-radius: 50%;
   font-size: 1.5rem;

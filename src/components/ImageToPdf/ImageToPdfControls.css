@@ -45,7 +45,7 @@
 
 .upload-hint {
   font-size: 0.875rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 /* File List */
@@ -78,7 +78,7 @@
   background: transparent;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  color: #718096;
+  color: #4b5563;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -141,14 +141,14 @@
 
 .file-size {
   font-size: 0.75rem;
-  color: #718096;
+  color: #4b5563;
 }
 
 .remove-btn {
   padding: 0.25rem 0.5rem;
   background: transparent;
   border: none;
-  color: #718096;
+  color: #4b5563;
   font-size: 1.25rem;
   cursor: pointer;
   transition: color 0.2s;

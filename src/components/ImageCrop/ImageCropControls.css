@@ -46,7 +46,7 @@
 
 .upload-subtext {
   font-size: 14px;
-  color: #718096;
+  color: #4b5563;
 }
 
 /* Error Message */
@@ -405,7 +405,7 @@
   }
 
   .upload-subtext {
-    color: #a0aec0;
+    color: #6b7280;
   }
 
   .crop-hint {
@@ -431,7 +431,7 @@
   }
 
   .info-label {
-    color: #cbd5e0;
+    color: #9ca3af;
   }
 
   .control-group label {

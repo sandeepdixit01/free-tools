@@ -83,11 +83,16 @@ export const adaptConfig = (config) => {
     ...config,
     
     // Add metadata if missing (with defaults)
-    metadata: config.metadata || {
-      version: '1.0.0',
-      lastUpdated: new Date().toISOString().split('T')[0],
-      author: 'Unknown',
-      category: config.category || 'general'
+    // Also move id into metadata if it's at root level
+    metadata: {
+      ...(config.metadata || {
+        version: '1.0.0',
+        lastUpdated: new Date().toISOString().split('T')[0],
+        author: 'Unknown',
+        category: config.category || 'general'
+      }),
+      // Move id from root to metadata if not already there
+      id: config.metadata?.id || config.id
     },
     
     // Always use generated defaultSettings (don't check config.defaultSettings)

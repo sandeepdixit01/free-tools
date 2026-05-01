@@ -1,9 +1,10 @@
 /**
  * Contact Page
- * Contact form and information
+ * Contact form with EmailJS integration
  */
 
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
@@ -18,16 +19,21 @@ const ContactPage = () => {
     subject: '',
     message: ''
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: false,
+    errorMessage: ''
+  })
 
   const content = {
     en: {
-      title: 'Contact Us - FreeTools',
-      description: 'Get in touch with FreeTools. Send us your questions, suggestions, or feedback.',
+      title: 'Contact Us - DesiTechLabs',
+      description: 'Get in touch with DesiTechLabs. Send us your questions, suggestions, or feedback about our online tools.',
       h1: 'Contact Us',
-      subtitle: 'We\'d love to hear from you',
+      subtitle: 'Get in touch with DesiTechLabs',
       
-      intro: 'Have questions, suggestions, or feedback? Feel free to reach out to us. We typically respond within 24-48 hours.',
+      intro: 'For queries related to DesiTechLabs tools, contact us below. We typically respond within 24-48 hours.',
       
       form: {
         title: 'Send us a message',
@@ -40,14 +46,23 @@ const ContactPage = () => {
         message: 'Message',
         messagePlaceholder: 'Tell us more...',
         submit: 'Send Message',
+        sending: 'Sending...',
         required: 'Required'
       },
       
       success: {
-        title: '✅ Message Sent!',
-        message: 'Thank you for contacting us. We\'ll get back to you soon.',
+        title: '✅ Message Sent Successfully!',
+        message: 'Thank you for contacting us. We\'ll get back to you within 24-48 hours.',
         button: 'Send Another Message'
       },
+      
+      error: {
+        title: '❌ Failed to Send Message',
+        message: 'Something went wrong. Please try again or email us directly.',
+        button: 'Try Again'
+      },
+      
+      fallback: 'If the form does not work, email us directly at',
       
       info: {
         title: 'Contact Information',
@@ -71,12 +86,12 @@ const ContactPage = () => {
       }
     },
     hi: {
-      title: 'संपर्क करें - FreeTools',
-      description: 'FreeTools से संपर्क करें। हमें अपने सवाल, सुझाव या फीडबैक भेजें।',
+      title: 'संपर्क करें - DesiTechLabs',
+      description: 'DesiTechLabs से संपर्क करें। हमारे ऑनलाइन टूल्स के बारे में अपने सवाल, सुझाव या फीडबैक भेजें।',
       h1: 'संपर्क करें',
-      subtitle: 'हम आपसे सुनना पसंद करेंगे',
+      subtitle: 'DesiTechLabs से संपर्क करें',
       
-      intro: 'सवाल, सुझाव या फीडबैक हैं? बेझिझक हमसे संपर्क करें। हम आमतौर पर 24-48 घंटों के भीतर जवाब देते हैं।',
+      intro: 'DesiTechLabs टूल्स से संबंधित प्रश्नों के लिए, नीचे हमसे संपर्क करें। हम आमतौर पर 24-48 घंटों के भीतर जवाब देते हैं।',
       
       form: {
         title: 'हमें संदेश भेजें',
@@ -89,14 +104,23 @@ const ContactPage = () => {
         message: 'संदेश',
         messagePlaceholder: 'हमें और बताएं...',
         submit: 'संदेश भेजें',
+        sending: 'भेजा जा रहा है...',
         required: 'आवश्यक'
       },
       
       success: {
-        title: '✅ संदेश भेजा गया!',
-        message: 'हमसे संपर्क करने के लिए धन्यवाद। हम जल्द ही आपसे संपर्क करेंगे।',
+        title: '✅ संदेश सफलतापूर्वक भेजा गया!',
+        message: 'हमसे संपर्क करने के लिए धन्यवाद। हम 24-48 घंटों के भीतर आपसे संपर्क करेंगे।',
         button: 'एक और संदेश भेजें'
       },
+      
+      error: {
+        title: '❌ संदेश भेजने में विफल',
+        message: 'कुछ गलत हो गया। कृपया पुनः प्रयास करें या हमें सीधे ईमेल करें।',
+        button: 'पुनः प्रयास करें'
+      },
+      
+      fallback: 'यदि फॉर्म काम नहीं करता है, तो हमें सीधे ईमेल करें',
       
       info: {
         title: 'संपर्क जानकारी',
@@ -128,25 +152,99 @@ const ContactPage = () => {
       ...formData,
       [e.target.name]: e.target.value
     })
+    // Clear error when user starts typing
+    if (status.error) {
+      setStatus({ ...status, error: false, errorMessage: '' })
+    }
   }
 
-  const handleSubmit = (e) => {
+  const validateForm = () => {
+    if (!formData.name.trim()) return false
+    if (!formData.email.trim()) return false
+    if (!formData.subject.trim()) return false
+    if (!formData.message.trim()) return false
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) return false
+    
+    return true
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Frontend only - just show success message
-    setSubmitted(true)
-    // Reset form after 3 seconds
-    setTimeout(() => {
+    
+    // Validate form
+    if (!validateForm()) {
+      setStatus({
+        submitting: false,
+        submitted: false,
+        error: true,
+        errorMessage: 'Please fill in all fields correctly.'
+      })
+      return
+    }
+
+    // Set submitting state
+    setStatus({
+      submitting: true,
+      submitted: false,
+      error: false,
+      errorMessage: ''
+    })
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'developernewai@gmail.com'
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
+      console.log('Email sent successfully:', result.text)
+      
+      // Set success state
+      setStatus({
+        submitting: false,
+        submitted: true,
+        error: false,
+        errorMessage: ''
+      })
+      
+      // Reset form
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       })
-    }, 3000)
+    } catch (error) {
+      console.error('Email send error:', error)
+      
+      // Set error state
+      setStatus({
+        submitting: false,
+        submitted: false,
+        error: true,
+        errorMessage: error.text || 'Failed to send message'
+      })
+    }
   }
 
   const handleReset = () => {
-    setSubmitted(false)
+    setStatus({
+      submitting: false,
+      submitted: false,
+      error: false,
+      errorMessage: ''
+    })
     setFormData({
       name: '',
       email: '',
@@ -182,7 +280,23 @@ const ContactPage = () => {
               <div className="contact-form-section">
                 <h2 className="form-title">{t.form.title}</h2>
                 
-                {!submitted ? (
+                {status.submitted ? (
+                  <div className="success-message">
+                    <h3 className="success-title">{t.success.title}</h3>
+                    <p className="success-text">{t.success.message}</p>
+                    <button onClick={handleReset} className="reset-button">
+                      {t.success.button}
+                    </button>
+                  </div>
+                ) : status.error ? (
+                  <div className="error-message">
+                    <h3 className="error-title">{t.error.title}</h3>
+                    <p className="error-text">{t.error.message}</p>
+                    <button onClick={handleReset} className="reset-button">
+                      {t.error.button}
+                    </button>
+                  </div>
+                ) : (
                   <form className="contact-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="name">
@@ -196,6 +310,7 @@ const ContactPage = () => {
                         onChange={handleChange}
                         placeholder={t.form.namePlaceholder}
                         required
+                        disabled={status.submitting}
                       />
                     </div>
 
@@ -211,6 +326,7 @@ const ContactPage = () => {
                         onChange={handleChange}
                         placeholder={t.form.emailPlaceholder}
                         required
+                        disabled={status.submitting}
                       />
                     </div>
 
@@ -226,6 +342,7 @@ const ContactPage = () => {
                         onChange={handleChange}
                         placeholder={t.form.subjectPlaceholder}
                         required
+                        disabled={status.submitting}
                       />
                     </div>
 
@@ -241,21 +358,26 @@ const ContactPage = () => {
                         placeholder={t.form.messagePlaceholder}
                         rows="6"
                         required
+                        disabled={status.submitting}
                       />
                     </div>
 
-                    <button type="submit" className="submit-button">
-                      {t.form.submit}
+                    <button 
+                      type="submit" 
+                      className="submit-button"
+                      disabled={status.submitting}
+                    >
+                      {status.submitting ? t.form.sending : t.form.submit}
                     </button>
+                    
+                    {/* Fallback */}
+                    <p className="form-fallback">
+                      {t.fallback}{' '}
+                      <a href="mailto:developernewai@gmail.com" className="fallback-link">
+                        developernewai@gmail.com
+                      </a>
+                    </p>
                   </form>
-                ) : (
-                  <div className="success-message">
-                    <h3 className="success-title">{t.success.title}</h3>
-                    <p className="success-text">{t.success.message}</p>
-                    <button onClick={handleReset} className="reset-button">
-                      {t.success.button}
-                    </button>
-                  </div>
                 )}
               </div>
 
@@ -306,3 +428,5 @@ const ContactPage = () => {
 }
 
 export default ContactPage
+
+// Made with Bob

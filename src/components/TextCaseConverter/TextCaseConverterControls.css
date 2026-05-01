@@ -214,7 +214,7 @@
 }
 
 .text-case-empty-message {
-  color: var(--gray-500, #6b7280);
+  color: var(--gray-500, #4b5563);
   font-size: 1rem;
   margin: 0;
 }

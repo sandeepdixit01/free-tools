@@ -46,7 +46,7 @@
 
 .upload-hint {
   font-size: 14px;
-  color: #718096;
+  color: #4b5563;
 }
 
 /* File Info Section */
@@ -84,7 +84,7 @@
 
 .file-size {
   font-size: 14px;
-  color: #718096;
+  color: #4b5563;
 }
 
 .remove-btn {
@@ -169,7 +169,7 @@
 
 .pages-hint {
   font-size: 14px;
-  color: #718096;
+  color: #4b5563;
   margin-bottom: 16px;
 }
 
@@ -336,7 +336,7 @@
 
 .stat-label {
   font-size: 13px;
-  color: #718096;
+  color: #4b5563;
   font-weight: 500;
 }
 
@@ -375,7 +375,7 @@
 
 .file-size-result {
   font-size: 14px;
-  color: #718096;
+  color: #4b5563;
 }
 
 .download-btn {

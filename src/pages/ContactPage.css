@@ -117,6 +117,67 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+/* Form Fallback */
+.form-fallback {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  color: #4a5568;
+  text-align: center;
+}
+
+.fallback-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.fallback-link:hover {
+  text-decoration: underline;
+}
+
+/* Error Message */
+.error-message {
+  background: #fff5f5;
+  border: 2px solid #fc8181;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c53030;
+  margin: 0 0 1rem 0;
+}
+
+.error-text {
+  font-size: 1.125rem;
+  color: #742a2a;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+/* Disabled State */
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background: #f7fafc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.submit-button:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button:disabled:hover {
+  background: #cbd5e0;
+  box-shadow: none;
+}
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -207,7 +268,7 @@
 .info-label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #718096;
+  color: #4b5563;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0 0 0.25rem 0;
