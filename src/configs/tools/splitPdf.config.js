@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-19
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const splitPdfConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const splitPdfConfig = {
           'pdf separator tool'
         ]
       },
-      canonical: 'https://freetools.com/tools/split-pdf',
-      ogImage: '/images/tools/split-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Split PDF',
-        description: 'Free online PDF splitter tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('split-pdf', 'en'),
+      ogImage: '/images/tools/split-pdf-og.jpg'
     },
     hi: {
       title: 'PDF ऑनलाइन स्प्लिट करें | PDF पेज फ्री अलग करें 2024',
@@ -101,20 +91,8 @@ export const splitPdfConfig = {
           'pdf separator tool'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/split-pdf',
-      ogImage: '/images/tools/split-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'PDF स्प्लिट करें',
-        description: 'फ्री ऑनलाइन PDF स्प्लिटर टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('split-pdf', 'hi'),
+      ogImage: '/images/tools/split-pdf-og.jpg'
     }
   },
 

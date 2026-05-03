@@ -7,6 +7,8 @@
  * @lastUpdated 2026-04-04
  */
 
+import { getPageCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const allToolsConfig = {
   // ============================================================================
   // 1. METADATA
@@ -48,7 +50,7 @@ export const allToolsConfig = {
           'online productivity tools'
         ]
       },
-      canonical: 'https://freetools.com/tools',
+      canonical: getPageCanonicalUrl('tools', 'en'),
       ogImage: '/images/all-tools-og.jpg'
     },
     hi: {
@@ -77,7 +79,7 @@ export const allToolsConfig = {
           'ऑनलाइन प्रोडक्टिविटी टूल्स'
         ]
       },
-      canonical: 'https://freetools.com/tools',
+      canonical: getPageCanonicalUrl('tools', 'en'),
       ogImage: '/images/all-tools-og.jpg'
     }
   },

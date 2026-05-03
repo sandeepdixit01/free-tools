@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-04
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const removeExtraSpacesConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -61,20 +63,8 @@ export const removeExtraSpacesConfig = {
           'normalize text spacing online'
         ]
       },
-      canonical: 'https://freetools.com/tools/remove-extra-spaces',
-      ogImage: '/images/tools/remove-extra-spaces-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Remove Extra Spaces',
-        description: 'Free online tool to remove extra spaces from text',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('remove-extra-spaces', 'en'),
+      ogImage: '/images/tools/remove-extra-spaces-og.jpg'
     },
     hi: {
       title: 'एक्स्ट्रा स्पेस हटाएं | टेक्स्ट फॉर्मेटिंग क्लीन करें',
@@ -99,20 +89,8 @@ export const removeExtraSpacesConfig = {
           'text spacing online normalize kare'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/remove-extra-spaces',
-      ogImage: '/images/tools/remove-extra-spaces-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'एक्स्ट्रा स्पेस हटाएं',
-        description: 'टेक्स्ट से एक्स्ट्रा स्पेस हटाने के लिए फ्री ऑनलाइन टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('remove-extra-spaces', 'hi'),
+      ogImage: '/images/tools/remove-extra-spaces-og.jpg'
     }
   },
 

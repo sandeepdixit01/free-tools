@@ -27,7 +27,6 @@ export const usePageTracking = () => {
 
       // Optional: Log in development for debugging
       if (process.env.NODE_ENV === 'development') {
-        console.log('GA4 Page View:', location.pathname + location.search);
       }
     }
   }, [location]);

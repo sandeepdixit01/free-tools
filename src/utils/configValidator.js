@@ -246,12 +246,14 @@ export const validateConfig = (config, options = {}) => {
     return result
   }
 
-  if (!config.id) {
-    result.addError('config.id is required', 'id')
+  // Check for id in either location (backward compatibility)
+  const toolId = config.metadata?.id || config.id;
+  if (!toolId) {
+    result.addError('config.id or config.metadata.id is required', 'id')
   }
 
   // Validate metadata
-  validateMetadata(config.metadata, result, config.id)
+  validateMetadata(config.metadata, result, toolId)
 
   // Validate SEO (bilingual)
   validateBilingualContent(config.seo, result, 'seo')

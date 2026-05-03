@@ -3,16 +3,25 @@
  * Contact form with EmailJS integration
  */
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
+import CategoryBreadcrumb from '../components/shared/Navigation/CategoryBreadcrumb'
 import './ContactPage.css'
 
 const ContactPage = () => {
   const { language } = useLanguage()
   const canonical = useCanonicalUrl()
+  
+  // Initialize EmailJS
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      emailjs.init(publicKey)
+    }
+  }, [])
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -195,20 +204,19 @@ const ContactPage = () => {
 
     try {
       // Send email using EmailJS
-      const result = await emailjs.send(
+      // Note: Variable names must match your EmailJS template
+      await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
+          to_name: 'DesiTechLabs',
           from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
+          reply_to: formData.email,
           message: formData.message,
-          to_email: 'developernewai@gmail.com'
+          subject: formData.subject
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
-
-      console.log('Email sent successfully:', result.text)
       
       // Set success state
       setStatus({
@@ -262,6 +270,11 @@ const ContactPage = () => {
       />
 
       <div className="contact-page">
+        {/* Breadcrumb Navigation */}
+        <div className="container">
+          <CategoryBreadcrumb categoryName={language === 'hi' ? 'संपर्क करें' : 'Contact'} />
+        </div>
+
         {/* Hero Section */}
         <section className="contact-hero">
           <div className="container">
@@ -429,4 +442,3 @@ const ContactPage = () => {
 
 export default ContactPage
 
-// Made with Bob

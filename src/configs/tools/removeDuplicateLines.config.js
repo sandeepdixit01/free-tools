@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-20
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const removeDuplicateLinesConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const removeDuplicateLinesConfig = {
           'clean duplicate text'
         ]
       },
-      canonical: 'https://freetools.com/tools/remove-duplicate-lines',
-      ogImage: '/images/tools/remove-duplicate-lines-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Remove Duplicate Lines',
-        description: 'Free online tool to remove duplicate lines from text',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('remove-duplicate-lines', 'en'),
+      ogImage: '/images/tools/remove-duplicate-lines-og.jpg'
     },
     hi: {
       title: 'डुप्लीकेट लाइन ऑनलाइन हटाएं | फ्री टेक्स्ट डीडुप्लीकेशन टूल 2024',
@@ -101,7 +91,7 @@ export const removeDuplicateLinesConfig = {
           'duplicate text clean kare'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/remove-duplicate-lines',
+      canonical: getToolCanonicalUrl('remove-duplicate-lines', 'hi'),
       ogImage: '/images/tools/remove-duplicate-lines-og.jpg'
     }
   },

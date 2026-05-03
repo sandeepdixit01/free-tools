@@ -3,6 +3,8 @@
  * Config for /tools/text category page
  */
 
+import { getCategoryCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const textCategoryConfig = {
   id: 'text',
   
@@ -12,13 +14,13 @@ export const textCategoryConfig = {
       title: 'Free Text Tools Online | Word Counter, Case Converter, Text Formatter',
       description: 'Free online text tools. Count words and characters, convert text case, format text, and analyze content. No signup required.',
       keywords: 'text tools, word counter, case converter, text formatter, free text tools',
-      canonical: 'https://freetools.com/tools/text'
+      canonical: getCategoryCanonicalUrl('text', 'en')
     },
     hi: {
       title: 'फ्री टेक्स्ट टूल्स ऑनलाइन | वर्ड काउंटर, केस कन्वर्टर, टेक्स्ट फॉर्मेटर',
       description: 'फ्री ऑनलाइन टेक्स्ट टूल्स। शब्द और कैरेक्टर गिनें, टेक्स्ट केस कन्वर्ट करें, टेक्स्ट फॉर्मेट करें और कंटेंट एनालाइज़ करें। साइनअप की ज़रूरत नहीं।',
       keywords: 'text tools, word counter, case converter, text formatter, free text tools',
-      canonical: 'https://freetools.com/tools/text'
+      canonical: getCategoryCanonicalUrl('text', 'en')
     }
   },
 

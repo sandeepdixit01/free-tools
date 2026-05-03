@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-20
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const imageFormatConverterConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const imageFormatConverterConfig = {
           'photo format changer'
         ]
       },
-      canonical: 'https://freetools.com/tools/image-format-converter',
-      ogImage: '/images/tools/image-format-converter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Image Format Converter',
-        description: 'Free online image format conversion tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-format-converter', 'en'),
+      ogImage: '/images/tools/image-format-converter-og.jpg'
     },
     hi: {
       title: 'इमेज फॉर्मेट कन्वर्टर ऑनलाइन | JPG PNG WEBP फ्री बदलें 2024',
@@ -101,20 +91,8 @@ export const imageFormatConverterConfig = {
           'photo format changer'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/image-format-converter',
-      ogImage: '/images/tools/image-format-converter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'इमेज फॉर्मेट कन्वर्टर',
-        description: 'फ्री ऑनलाइन इमेज फॉर्मेट कन्वर्जन टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-format-converter', 'hi'),
+      ogImage: '/images/tools/image-format-converter-og.jpg'
     }
   },
 

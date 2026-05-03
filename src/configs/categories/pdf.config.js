@@ -3,6 +3,8 @@
  * Config for /tools/pdf category page
  */
 
+import { getCategoryCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const pdfCategoryConfig = {
   id: 'pdf',
   
@@ -12,13 +14,13 @@ export const pdfCategoryConfig = {
       title: 'Free PDF Tools Online | Compress, Merge, Split PDF Files',
       description: 'Free online PDF tools. Compress PDF to 100KB, merge multiple PDFs, split PDF pages, convert images to PDF. No signup required.',
       keywords: 'pdf tools, compress pdf, merge pdf, split pdf, pdf converter, free pdf tools',
-      canonical: 'https://freetools.com/tools/pdf'
+      canonical: getCategoryCanonicalUrl('pdf', 'en')
     },
     hi: {
       title: 'फ्री PDF टूल्स ऑनलाइन | PDF कंप्रेस, मर्ज, स्प्लिट करें',
       description: 'फ्री ऑनलाइन PDF टूल्स। PDF को 100KB में कंप्रेस करें, मल्टीपल PDF मर्ज करें, PDF पेज स्प्लिट करें, इमेज को PDF में कन्वर्ट करें। साइनअप की ज़रूरत नहीं।',
       keywords: 'pdf tools, compress pdf, merge pdf, split pdf, pdf converter, free pdf tools',
-      canonical: 'https://freetools.com/tools/pdf'
+      canonical: getCategoryCanonicalUrl('pdf', 'en')
     }
   },
 

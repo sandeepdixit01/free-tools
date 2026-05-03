@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-20
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const base64EncoderConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const base64EncoderConfig = {
           'base64 to text'
         ]
       },
-      canonical: 'https://freetools.com/tools/base64-encoder-decoder',
-      ogImage: '/images/tools/base64-encoder-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Base64 Encoder/Decoder',
-        description: 'Free online Base64 encoder and decoder with UTF-8 support',
-        applicationCategory: 'DeveloperApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('base64-encoder-decoder', 'en'),
+      ogImage: '/images/tools/base64-encoder-og.jpg'
     },
     hi: {
       title: 'Base64 एनकोडर डिकोडर ऑनलाइन | फ्री UTF-8 सपोर्ट 2024',
@@ -101,20 +91,8 @@ export const base64EncoderConfig = {
           'base64 to text hindi'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/base64-encoder-decoder',
-      ogImage: '/images/tools/base64-encoder-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Base64 एनकोडर/डिकोडर',
-        description: 'UTF-8 सपोर्ट के साथ फ्री ऑनलाइन Base64 एनकोडर और डिकोडर',
-        applicationCategory: 'DeveloperApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('base64-encoder-decoder', 'hi'),
+      ogImage: '/images/tools/base64-encoder-og.jpg'
     }
   },
 

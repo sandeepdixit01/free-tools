@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-04
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const textCaseConverterConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -61,20 +63,8 @@ export const textCaseConverterConfig = {
           'text capitalization converter'
         ]
       },
-      canonical: 'https://freetools.com/tools/text-case-converter',
-      ogImage: '/images/tools/text-case-converter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Text Case Converter',
-        description: 'Free online text case converter tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('text-case-converter', 'en'),
+      ogImage: '/images/tools/text-case-converter-og.jpg'
     },
     hi: {
       title: 'टेक्स्ट केस कन्वर्टर | अपरकेस लोअरकेस टाइटल केस',
@@ -99,20 +89,8 @@ export const textCaseConverterConfig = {
           'text capitalization converter'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/text-case-converter',
-      ogImage: '/images/tools/text-case-converter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'टेक्स्ट केस कन्वर्टर',
-        description: 'फ्री ऑनलाइन टेक्स्ट केस कन्वर्टर टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('text-case-converter', 'hi'),
+      ogImage: '/images/tools/text-case-converter-og.jpg'
     }
   },
 

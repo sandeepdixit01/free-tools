@@ -10,7 +10,6 @@ const Hero = ({ config, quickAccessTools = [] }) => {
   const handleSearch = (e) => {
     e.preventDefault()
     // Handle search logic here
-    console.log('Searching for:', searchQuery)
   }
 
   // Get content from config

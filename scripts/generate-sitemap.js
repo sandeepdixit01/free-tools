@@ -2,16 +2,16 @@
 
 /**
  * Auto-Generate Sitemap from tools.js
- * 
+ *
  * This script reads the tools registry and generates a complete sitemap.xml
  * Run before build or manually to update sitemap
- * 
+ *
  * Usage:
  *   node scripts/generate-sitemap.js
  *   npm run generate-sitemap
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
@@ -19,8 +19,23 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Configuration
-const SITE_URL = 'https://free-tools-nine-delta.vercel.app';
+/**
+ * Read VITE_SITE_URL from .env file
+ */
+function getSiteUrl() {
+  const envPath = join(__dirname, '../.env');
+  if (existsSync(envPath)) {
+    const envContent = readFileSync(envPath, 'utf8');
+    const match = envContent.match(/VITE_SITE_URL=(.+)/);
+    if (match) {
+      return match[1].trim();
+    }
+  }
+  return 'https://freetooldepot.com'; // Fallback
+}
+
+// Configuration - Read from .env or use fallback
+const SITE_URL = getSiteUrl();
 const CURRENT_DATE = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
 
 /**

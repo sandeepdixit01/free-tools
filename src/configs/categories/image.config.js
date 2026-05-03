@@ -3,6 +3,8 @@
  * Config for /tools/image category page
  */
 
+import { getCategoryCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const imageCategoryConfig = {
   id: 'image',
   
@@ -12,13 +14,13 @@ export const imageCategoryConfig = {
       title: 'Free Image Tools Online | Resize, Compress, Convert Images',
       description: 'Free online image tools. Resize images to 20KB, 50KB, 100KB. Compress, crop, and convert images instantly. No signup required.',
       keywords: 'image tools, resize image, compress image, image converter, free image tools',
-      canonical: 'https://freetools.com/tools/image'
+      canonical: getCategoryCanonicalUrl('image', 'en')
     },
     hi: {
       title: 'फ्री इमेज टूल्स ऑनलाइन | इमेज रीसाइज़, कंप्रेस, कन्वर्ट करें',
       description: 'फ्री ऑनलाइन इमेज टूल्स। इमेज को 20KB, 50KB, 100KB में रीसाइज़ करें। इमेज कंप्रेस, क्रॉप और कन्वर्ट तुरंत करें। साइनअप की ज़रूरत नहीं।',
       keywords: 'image tools, resize image, compress image, image converter, free image tools',
-      canonical: 'https://freetools.com/tools/image'
+      canonical: getCategoryCanonicalUrl('image', 'en')
     }
   },
 

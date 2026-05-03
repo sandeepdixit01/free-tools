@@ -51,18 +51,18 @@ const ToolLayout = ({
 }) => {
   return (
     <div className={`tool-layout ${className}`} style={style}>
-      {/* Hero Section */}
-      {showHero && heroComponent && (
-        <section className="tool-layout-section tool-layout-hero">
-          {heroComponent}
-        </section>
-      )}
-
       {/* Breadcrumb Navigation */}
       {showBreadcrumb && toolId && (
         <div className="tool-layout-breadcrumb">
           <Breadcrumb toolId={toolId} />
         </div>
+      )}
+
+      {/* Hero Section */}
+      {showHero && heroComponent && (
+        <section className="tool-layout-section tool-layout-hero">
+          {heroComponent}
+        </section>
       )}
 
       {/* Ad Slot: Top */}

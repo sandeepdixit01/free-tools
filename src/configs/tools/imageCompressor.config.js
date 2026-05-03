@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-20
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const imageCompressorConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const imageCompressorConfig = {
           'image size reducer'
         ]
       },
-      canonical: 'https://freetools.com/tools/image-compressor',
-      ogImage: '/images/tools/image-compressor-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Image Compressor',
-        description: 'Free online image compression tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-compressor', 'en'),
+      ogImage: '/images/tools/image-compressor-og.jpg'
     },
     hi: {
       title: 'इमेज कंप्रेसर ऑनलाइन | JPG PNG WEBP फ्री कंप्रेस करें 2024',
@@ -101,20 +91,8 @@ export const imageCompressorConfig = {
           'image size reducer'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/image-compressor',
-      ogImage: '/images/tools/image-compressor-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'इमेज कंप्रेसर',
-        description: 'फ्री ऑनलाइन इमेज कंप्रेशन टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-compressor', 'hi'),
+      ogImage: '/images/tools/image-compressor-og.jpg'
     }
   },
 

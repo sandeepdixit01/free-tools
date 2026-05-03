@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-19
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const deletePdfPagesConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const deletePdfPagesConfig = {
           'extract pages by deletion'
         ]
       },
-      canonical: 'https://freetools.com/tools/delete-pdf-pages',
-      ogImage: '/images/tools/delete-pdf-pages-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Delete PDF Pages',
-        description: 'Free online PDF page deletion tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('delete-pdf-pages', 'en'),
+      ogImage: '/images/tools/delete-pdf-pages-og.jpg'
     },
     hi: {
       title: 'PDF पेज ऑनलाइन डिलीट करें | PDF से पेज फ्री हटाएं 2024',
@@ -101,20 +91,8 @@ export const deletePdfPagesConfig = {
           'deletion se pages extract kare'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/delete-pdf-pages',
-      ogImage: '/images/tools/delete-pdf-pages-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'PDF पेज डिलीट करें',
-        description: 'फ्री ऑनलाइन PDF पेज डिलीशन टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('delete-pdf-pages', 'hi'),
+      ogImage: '/images/tools/delete-pdf-pages-og.jpg'
     }
   },
 

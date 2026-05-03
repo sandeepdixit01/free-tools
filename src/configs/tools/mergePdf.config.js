@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-04
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const mergePdfConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const mergePdfConfig = {
           'combine pdf pages'
         ]
       },
-      canonical: 'https://freetools.com/tools/merge-pdf',
-      ogImage: '/images/tools/merge-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Merge PDF',
-        description: 'Free online PDF merger tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('merge-pdf', 'en'),
+      ogImage: '/images/tools/merge-pdf-og.jpg'
     },
     hi: {
       title: 'PDF फाइलें ऑनलाइन मर्ज करें | PDF डॉक्यूमेंट तुरंत कंबाइन करें 2024',
@@ -101,20 +91,8 @@ export const mergePdfConfig = {
           'pdf pages combine kare'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/merge-pdf',
-      ogImage: '/images/tools/merge-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'PDF मर्ज करें',
-        description: 'फ्री ऑनलाइन PDF मर्जर टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('merge-pdf', 'hi'),
+      ogImage: '/images/tools/merge-pdf-og.jpg'
     }
   },
 

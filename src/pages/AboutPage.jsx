@@ -7,6 +7,7 @@ import React from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
+import CategoryBreadcrumb from '../components/shared/Navigation/CategoryBreadcrumb'
 import './AboutPage.css'
 
 const AboutPage = () => {
@@ -211,6 +212,11 @@ const AboutPage = () => {
       />
 
       <div className="about-page">
+        {/* Breadcrumb Navigation */}
+        <div className="container">
+          <CategoryBreadcrumb categoryName={language === 'hi' ? 'हमारे बारे में' : 'About'} />
+        </div>
+
         {/* Brand Banner with Image */}
         <section className="about-banner">
           <div className="banner-image-wrapper">

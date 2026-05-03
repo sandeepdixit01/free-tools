@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-04
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const characterCounterConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -61,20 +63,8 @@ export const characterCounterConfig = {
           'count letters and spaces online'
         ]
       },
-      canonical: 'https://freetools.com/tools/character-counter',
-      ogImage: '/images/tools/character-counter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Character Counter',
-        description: 'Free online character counter with and without spaces',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('character-counter', 'en'),
+      ogImage: '/images/tools/character-counter-og.jpg'
     },
     hi: {
       title: 'कैरेक्टर काउंटर | स्पेस के साथ कैरेक्टर गिनें',
@@ -99,20 +89,8 @@ export const characterCounterConfig = {
           'letters aur spaces online gine'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/character-counter',
-      ogImage: '/images/tools/character-counter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'कैरेक्टर काउंटर',
-        description: 'स्पेस के साथ और बिना फ्री ऑनलाइन कैरेक्टर काउंटर',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('character-counter', 'hi'),
+      ogImage: '/images/tools/character-counter-og.jpg'
     }
   },
 

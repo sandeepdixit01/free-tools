@@ -33,7 +33,7 @@
 .banner-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem 3rem;
   text-align: center;
   background: #ffffff;
 }
@@ -340,4 +340,3 @@
   }
 }
 
-/* Made with Bob */

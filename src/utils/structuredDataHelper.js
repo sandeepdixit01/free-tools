@@ -3,7 +3,7 @@
  * Generates JSON-LD schemas from tool configurations
  */
 
-const SITE_URL = 'https://free-tools-nine-delta.vercel.app';
+import { getBaseUrl } from './urlHelper.js';
 
 /**
  * Generate WebApplication schema from tool config
@@ -14,13 +14,24 @@ const SITE_URL = 'https://free-tools-nine-delta.vercel.app';
 export const generateWebApplicationSchema = (config, language = 'en') => {
   const seo = config.seo?.[language] || config.seo?.en || {};
   const content = config.content?.[language] || config.content?.en || {};
-  const name = config.name?.[language] || config.name?.en || '';
+  
+  // ISSUE 1 FIX: Ensure name is never empty - fallback chain
+  const name = config.name?.[language]
+    || config.name?.en
+    || seo.title
+    || content.hero?.title
+    || config.metadata?.id
+    || 'Tool';
+  
+  // ISSUE 2 FIX: Use dynamic base URL (don't use canonical for structured data)
+  const baseUrl = getBaseUrl();
+  const toolPath = config.slug || config.metadata?.id || config.id;
   
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: name,
-    url: seo.canonical || `${SITE_URL}/tools/${config.slug || config.id}`,
+    url: `${baseUrl}/tools/${toolPath}`,
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Any',
     description: seo.description || content.hero?.subtitle || '',
@@ -33,7 +44,11 @@ export const generateWebApplicationSchema = (config, language = 'en') => {
     softwareVersion: config.metadata?.version || '1.0.0',
     author: {
       '@type': 'Organization',
-      name: 'FreeTools'
+      name: 'DesiTechLabs'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'DesiTechLabs'
     }
   };
 };
@@ -46,8 +61,16 @@ export const generateWebApplicationSchema = (config, language = 'en') => {
  */
 export const generateHowToSchema = (config, language = 'en') => {
   const content = config.content?.[language] || config.content?.en || {};
+  const seo = config.seo?.[language] || config.seo?.en || {};
   const howTo = content.howTo;
-  const name = config.name?.[language] || config.name?.en || '';
+  
+  // ISSUE 1 FIX: Ensure name is never empty - same fallback chain
+  const name = config.name?.[language]
+    || config.name?.en
+    || seo.title
+    || content.hero?.title
+    || config.metadata?.id
+    || 'Tool';
   
   if (!howTo || !howTo.steps || howTo.steps.length === 0) {
     return null;

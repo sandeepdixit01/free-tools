@@ -55,16 +55,13 @@ class ImageResizerTool extends BaseTool {
    * @private
    */
   async _processLoadedImage(img, originalImage, settings, mode) {
-    console.log('[ImageResizerTool] Processing with mode:', mode, 'settings:', settings);
     
     // For filesize mode, use iterative compression
     if (mode === 'filesize' || (mode === 'preset' && settings.targetSize)) {
-      console.log('[ImageResizerTool] Using iterative compression for target size:', settings.targetSize);
       return await this._compressToTargetSize(img, originalImage, settings);
     }
     
     // For dimensions mode, use direct processing
-    console.log('[ImageResizerTool] Using direct compression');
     const dimensions = this._calculateDimensions(img, settings, mode, originalImage.size);
     return await this._compressWithDimensions(img, originalImage, dimensions);
   }
@@ -108,9 +105,6 @@ class ImageResizerTool extends BaseTool {
     let lastResult = null;
     let lastSize = 0;
     
-    console.log(`[ImageResizer] Target: ${settings.targetSize}KB (${targetBytes} bytes)`);
-    console.log(`[ImageResizer] Format: ${originalImage.file.type}${isPNG ? ' (PNG - will use dimension reduction)' : ''}`);
-    console.log(`[ImageResizer] Starting dimensions: ${Math.round(currentWidth)}x${Math.round(currentHeight)}`);
     
     while (iteration < maxIterations) {
       iteration++;
@@ -126,11 +120,9 @@ class ImageResizerTool extends BaseTool {
       const sizeDiff = result.size - targetBytes;
       const sizeRatio = result.size / targetBytes;
       
-      console.log(`[ImageResizer] Iteration ${iteration}: ${Math.round(result.size / 1024)}KB (${Math.round(sizeRatio * 100)}% of target), Q:${Math.round(currentQuality * 100)}%, Dim:${result.width}x${result.height}`);
       
       // Check if we're within tolerance and under target
       if (result.size <= targetBytes && sizeRatio >= (1 - tolerance)) {
-        console.log(`[ImageResizer] ✅ Success! Final: ${Math.round(result.size / 1024)}KB`);
         return result;
       }
       
@@ -144,7 +136,6 @@ class ImageResizerTool extends BaseTool {
           continue;
         } else {
           // Quality maxed out, accept result
-          console.log(`[ImageResizer] ✅ Accepted (quality maxed): ${Math.round(result.size / 1024)}KB`);
           return result;
         }
       }
@@ -156,7 +147,6 @@ class ImageResizerTool extends BaseTool {
         
         // If we're close to target (within 20%), accept it to avoid oscillation
         if (sizeRatio <= 1.2 && iteration > 5) {
-          console.log(`[ImageResizer] ✅ Accepted (close enough after ${iteration} iterations): ${Math.round(result.size / 1024)}KB`);
           return result;
         }
         
@@ -172,14 +162,12 @@ class ImageResizerTool extends BaseTool {
           const absoluteMinDimension = 100;
           if (newWidth < absoluteMinDimension || newHeight < absoluteMinDimension) {
             // Can't reduce further, return best attempt
-            console.log(`[ImageResizer] ⚠️ Cannot reduce further (min dimension reached). Final: ${Math.round(result.size / 1024)}KB`);
             return result;
           }
           
           currentWidth = newWidth;
           currentHeight = newHeight;
           currentQuality = 0.92; // Reset quality when resizing
-          console.log(`[ImageResizer] Reducing dimensions to ${Math.round(currentWidth)}x${Math.round(currentHeight)}`);
         } else {
           // For JPEG/WEBP, try reducing quality first
           const excess = result.size - targetBytes;
@@ -192,7 +180,6 @@ class ImageResizerTool extends BaseTool {
     }
     
     // Max iterations reached, return best result
-    console.log(`[ImageResizer] ⚠️ Max iterations reached. Final: ${Math.round(lastResult.size / 1024)}KB`);
     return lastResult;
   }
 

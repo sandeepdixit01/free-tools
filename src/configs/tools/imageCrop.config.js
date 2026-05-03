@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-20
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const imageCropConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const imageCropConfig = {
           'aspect ratio crop'
         ]
       },
-      canonical: 'https://freetools.com/tools/image-crop',
-      ogImage: '/images/tools/image-crop-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Image Crop Tool',
-        description: 'Free online image cropping tool with aspect ratio presets',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-crop', 'en'),
+      ogImage: '/images/tools/image-crop-og.jpg'
     },
     hi: {
       title: 'इमेज क्रॉप टूल ऑनलाइन | फोटो फ्री क्रॉप करें 2024',
@@ -101,7 +91,7 @@ export const imageCropConfig = {
           'aspect ratio crop'
         ]
       },
-      canonical: 'https://freetools.com/tools/image-crop',
+      canonical: getToolCanonicalUrl('image-crop', 'en'),
       ogImage: '/images/tools/image-crop-og.jpg'
     }
   },

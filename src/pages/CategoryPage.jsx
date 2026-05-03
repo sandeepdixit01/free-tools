@@ -10,6 +10,7 @@
  * - Empty state handling
  * - Bilingual support
  * - Integrated ad system
+ * - Breadcrumb navigation
  */
 
 import React, { useMemo } from 'react'
@@ -17,6 +18,9 @@ import PropTypes from 'prop-types'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
+
+// Navigation Components
+import CategoryBreadcrumb from '../components/shared/Navigation/CategoryBreadcrumb'
 
 // Layout Components
 import ToolHero from '../components/shared/Layout/ToolHero'
@@ -72,7 +76,12 @@ const CategoryPage = ({ categoryConfig }) => {
       />
 
       <div className="category-page">
-        {/* Hero Section - MUST BE FIRST */}
+        {/* Breadcrumb Navigation */}
+        <div className="container">
+          <CategoryBreadcrumb categoryName={toolsTitle} />
+        </div>
+
+        {/* Hero Section */}
         {hero.title && (
           <section className="category-hero-section">
             <ToolHero

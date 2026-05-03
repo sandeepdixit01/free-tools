@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-19
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const rotatePdfConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const rotatePdfConfig = {
           'pdf orientation change'
         ]
       },
-      canonical: 'https://freetools.com/tools/rotate-pdf',
-      ogImage: '/images/tools/rotate-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Rotate PDF',
-        description: 'Free online PDF rotation tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('rotate-pdf', 'en'),
+      ogImage: '/images/tools/rotate-pdf-og.jpg'
     },
     hi: {
       title: 'PDF ऑनलाइन रोटेट करें | PDF पेज फ्री रोटेट करें 2024',
@@ -101,20 +91,8 @@ export const rotatePdfConfig = {
           'pdf orientation change kare'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/rotate-pdf',
-      ogImage: '/images/tools/rotate-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'PDF रोटेट करें',
-        description: 'फ्री ऑनलाइन PDF रोटेशन टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('rotate-pdf', 'hi'),
+      ogImage: '/images/tools/rotate-pdf-og.jpg'
     }
   },
 

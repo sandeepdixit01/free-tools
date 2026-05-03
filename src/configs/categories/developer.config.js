@@ -3,6 +3,8 @@
  * Config for /tools/developer category page
  */
 
+import { getCategoryCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const developerCategoryConfig = {
   id: 'developer',
   
@@ -12,13 +14,13 @@ export const developerCategoryConfig = {
       title: 'Free Developer Tools Online | JSON Formatter, Base64, URL & CSV Converter',
       description: 'Free online developer tools including JSON formatter, Base64 encoder/decoder, URL encoder/decoder, and JSON to CSV converter. Format, validate, encode, decode, and convert data instantly. No signup required.',
       keywords: 'developer tools, json formatter, base64 encoder, url encoder, json to csv, base64 decoder, url decoder, csv converter, json validator, format json, encode base64, encode url, convert json to csv, free dev tools',
-      canonical: 'https://freetools.com/tools/developer'
+      canonical: getCategoryCanonicalUrl('developer', 'en')
     },
     hi: {
       title: 'फ्री डेवलपर टूल्स ऑनलाइन | JSON फॉर्मेटर, Base64, URL और CSV कन्वर्टर',
       description: 'JSON फॉर्मेटर, Base64 एनकोडर/डिकोडर, URL एनकोडर/डिकोडर और JSON to CSV कन्वर्टर सहित फ्री ऑनलाइन डेवलपर टूल्स। डेटा तुरंत फॉर्मेट, वैलिडेट, एनकोड, डिकोड और कन्वर्ट करें। साइनअप की ज़रूरत नहीं।',
       keywords: 'developer tools, json formatter, base64 encoder, url encoder, json to csv, base64 decoder, url decoder, csv converter, json validator, json format kare, base64 encode kare, url encode kare, json ko csv me convert kare, free dev tools',
-      canonical: 'https://freetools.com/tools/developer'
+      canonical: getCategoryCanonicalUrl('developer', 'en')
     }
   },
 

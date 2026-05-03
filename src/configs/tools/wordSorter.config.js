@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-20
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const wordSorterConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const wordSorterConfig = {
           'list sorter online'
         ]
       },
-      canonical: 'https://freetools.com/tools/word-sorter',
-      ogImage: '/images/tools/word-sorter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Word Sorter',
-        description: 'Free online tool to sort text lines alphabetically',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('word-sorter', 'en'),
+      ogImage: '/images/tools/word-sorter-og.jpg'
     },
     hi: {
       title: 'वर्ड सॉर्टर ऑनलाइन | टेक्स्ट लाइन वर्णानुक्रम में फ्री सॉर्ट करें 2024',
@@ -101,7 +91,7 @@ export const wordSorterConfig = {
           'list sorter online'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/word-sorter',
+      canonical: getToolCanonicalUrl('word-sorter', 'hi'),
       ogImage: '/images/tools/word-sorter-og.jpg'
     }
   },

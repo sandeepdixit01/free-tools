@@ -36,10 +36,8 @@ const ImageResizerNew = () => {
           console.error('ImageResizer config validation failed:');
           console.error(getValidationReport(imageResizerConfig));
         } else {
-          console.log('✅ ImageResizer config is valid (Schema v2.0)');
         }
       } else {
-        console.log('ℹ️ ImageResizer using old schema - adapter will convert at runtime');
       }
     }
   }, []);

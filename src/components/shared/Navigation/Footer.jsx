@@ -126,4 +126,3 @@ const Footer = () => {
 
 export default Footer;
 
-// Made with Bob

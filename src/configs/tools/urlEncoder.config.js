@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-20
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const urlEncoderConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const urlEncoderConfig = {
           'decode uri component'
         ]
       },
-      canonical: 'https://freetools.com/tools/url-encoder-decoder',
-      ogImage: '/images/tools/url-encoder-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'URL Encoder/Decoder',
-        description: 'Free online URL encoder and decoder tool',
-        applicationCategory: 'DeveloperApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('url-encoder-decoder', 'en'),
+      ogImage: '/images/tools/url-encoder-og.jpg'
     },
     hi: {
       title: 'URL एनकोडर डिकोडर ऑनलाइन | फ्री URL एनकोड डिकोड टूल 2024',
@@ -101,20 +91,8 @@ export const urlEncoderConfig = {
           'decode uri component'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/url-encoder-decoder',
-      ogImage: '/images/tools/url-encoder-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'URL एनकोडर/डिकोडर',
-        description: 'फ्री ऑनलाइन URL एनकोडर और डिकोडर टूल',
-        applicationCategory: 'DeveloperApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('url-encoder-decoder', 'hi'),
+      ogImage: '/images/tools/url-encoder-og.jpg'
     }
   },
 

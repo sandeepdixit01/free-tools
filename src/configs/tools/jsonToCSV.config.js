@@ -3,15 +3,20 @@
  * Schema Version: 2.0
  */
 
-export const jsonToCSVConfig = {
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
+const jsonToCSVConfig = {
   // Tool Metadata
-  id: 'json-to-csv',
-  version: '2.0',
+  metadata: {
+    id: 'json-to-csv',
+    version: '2.0',
+    category: 'developer',
+    schemaVersion: '2.0.0'
+  },
   
-  // Content organized by language at top level
-  en: {
-    // SEO Configuration
-    seo: {
+  // SEO Configuration
+  seo: {
+    en: {
       title: 'Free JSON to CSV Converter Online | Convert JSON to CSV Instantly',
       description: 'Convert JSON to CSV format instantly with our free online tool. Supports nested objects, arrays, and custom delimiters. No signup required, works in your browser.',
       keywords: {
@@ -26,21 +31,30 @@ export const jsonToCSVConfig = {
         ]
       },
       ogImage: '/images/json-to-csv-og.jpg',
-      canonical: 'https://freetools.com/tools/json-to-csv',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'JSON to CSV Converter',
-        description: 'Free online JSON to CSV converter tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('json-to-csv', 'en')
     },
-
+    hi: {
+      title: 'फ्री JSON to CSV कन्वर्टर ऑनलाइन | JSON को CSV में तुरंत बदलें',
+      description: 'हमारे फ्री ऑनलाइन टूल से JSON को CSV फॉर्मेट में तुरंत बदलें। नेस्टेड ऑब्जेक्ट्स, ऐरे और कस्टम डिलिमिटर्स सपोर्ट करता है। साइनअप की ज़रूरत नहीं।',
+      keywords: {
+        primary: ['json to csv', 'json to csv converter', 'json ko csv me convert kare'],
+        secondary: ['json converter', 'csv converter', 'json parser', 'data converter'],
+        longTail: [
+          'json array ko csv me convert kare online',
+          'nested objects ke sath json to csv',
+          'free json to csv converter',
+          'json to csv javascript',
+          'json ko csv me export kare'
+        ]
+      },
+      ogImage: '/images/json-to-csv-og.jpg',
+      canonical: getToolCanonicalUrl('json-to-csv', 'en')
+    }
+  },
+  
+  // Content organized by language
+  content: {
+    en: {
     // Hero Section
     hero: {
       title: 'JSON to CSV Converter',
@@ -254,42 +268,12 @@ export const jsonToCSVConfig = {
       ]
     },
 
-    // CTA Section
-    cta: 'Start converting your JSON data to CSV format now - fast, free, and secure!'
-  },
-
-  // Hindi Content
-  hi: {
-    seo: {
-      title: 'फ्री JSON to CSV कन्वर्टर ऑनलाइन | JSON को CSV में तुरंत बदलें',
-      description: 'हमारे फ्री ऑनलाइन टूल से JSON को CSV फॉर्मेट में तुरंत बदलें। नेस्टेड ऑब्जेक्ट्स, ऐरे और कस्टम डिलिमिटर्स सपोर्ट करता है। साइनअप की ज़रूरत नहीं।',
-      keywords: {
-        primary: ['json to csv', 'json to csv converter', 'json ko csv me convert kare'],
-        secondary: ['json converter', 'csv converter', 'json parser', 'data converter'],
-        longTail: [
-          'json array ko csv me convert kare online',
-          'nested objects ke sath json to csv',
-          'free json to csv converter',
-          'json to csv javascript',
-          'json ko csv me export kare'
-        ]
-      },
-      ogImage: '/images/json-to-csv-og.jpg',
-      canonical: 'https://freetools.com/tools/json-to-csv',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'JSON to CSV कन्वर्टर',
-        description: 'फ्री ऑनलाइन JSON to CSV कन्वर्टर टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      // CTA Section
+      cta: 'Start converting your JSON data to CSV format now - fast, free, and secure!'
     },
 
+    // Hindi Content
+    hi: {
     hero: {
       title: 'JSON to CSV कन्वर्टर',
       subtitle: 'JSON डेटा को CSV फॉर्मेट में तुरंत बदलें। नेस्टेड ऑब्जेक्ट्स, ऐरे और कस्टम डिलिमिटर्स सपोर्ट करता है।',
@@ -496,7 +480,8 @@ export const jsonToCSVConfig = {
       ]
     },
 
-    cta: 'अपने JSON डेटा को CSV फॉर्मेट में अभी बदलना शुरू करें - तेज़, फ्री और सुरक्षित!'
+      cta: 'अपने JSON डेटा को CSV फॉर्मेट में अभी बदलना शुरू करें - तेज़, फ्री और सुरक्षित!'
+    }
   }
 }
 

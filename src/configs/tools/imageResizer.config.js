@@ -9,6 +9,8 @@
  * @lastUpdated 2026-04-02
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 import {
   IMAGE_FORMATS,
   MAX_FILE_SIZE,
@@ -73,20 +75,8 @@ export const imageResizerConfig = {
           'free online image resizer tool'
         ]
       },
-      canonical: 'https://freetools.com/tools/resize-image',
-      ogImage: '/images/tools/image-resizer-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Image Resizer',
-        description: 'Free online image resizer and compressor',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('resize-image', 'en'),
+      ogImage: '/images/tools/image-resizer-og.jpg'
     },
     hi: {
       title: 'इमेज ऑनलाइन फ्री रीसाइज़ करें | इमेज रीसाइज़र टूल 2024',
@@ -113,20 +103,8 @@ export const imageResizerConfig = {
           'free online image resizer tool'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/resize-image',
-      ogImage: '/images/tools/image-resizer-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'इमेज रीसाइज़र',
-        description: 'फ्री ऑनलाइन इमेज रीसाइज़र और कंप्रेसर',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('resize-image', 'hi'),
+      ogImage: '/images/tools/image-resizer-og.jpg'
     }
   },
 

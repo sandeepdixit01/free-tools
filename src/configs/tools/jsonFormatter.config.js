@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-04
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const jsonFormatterConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const jsonFormatterConfig = {
           'json validator'
         ]
       },
-      canonical: 'https://freetools.com/tools/json-formatter',
-      ogImage: '/images/tools/json-formatter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'JSON Formatter',
-        description: 'Free online JSON formatter and validator',
-        applicationCategory: 'DeveloperApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('json-formatter', 'en'),
+      ogImage: '/images/tools/json-formatter-og.jpg'
     },
     hi: {
       title: 'JSON फॉर्मेटर ऑनलाइन | JSON वैलिडेट और ब्यूटिफाई करें 2024',
@@ -101,20 +91,8 @@ export const jsonFormatterConfig = {
           'json validator'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/json-formatter',
-      ogImage: '/images/tools/json-formatter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'JSON फॉर्मेटर',
-        description: 'फ्री ऑनलाइन JSON फॉर्मेटर और वैलिडेटर',
-        applicationCategory: 'DeveloperApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('json-formatter', 'hi'),
+      ogImage: '/images/tools/json-formatter-og.jpg'
     }
   },
 

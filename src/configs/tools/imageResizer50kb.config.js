@@ -3,6 +3,8 @@
  * Reuses ImageResizerTool with 50KB-specific content
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 import imageResizerConfig from './imageResizer.config'
 
 const imageResizer50kbConfig = {
@@ -22,37 +24,13 @@ const imageResizer50kbConfig = {
       title: 'Resize Image to 50KB Online Free',
       description: 'Compress and resize image to 50KB online. Free, fast, secure.',
       keywords: 'resize image to 50KB, compress to 50KB, reduce image size 50KB',
-      canonical: 'https://freetools.com/image-resizer-50kb',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Image Resizer 50KB',
-        description: 'Free online tool to resize images to exactly 50KB',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-resizer-50kb', 'en')
     },
     hi: {
       title: 'इमेज रीसाइज़र 50KB',
       description: 'इमेज को 50KB में ऑनलाइन कंप्रेस और रीसाइज़ करें। फ्री, तेज़, सुरक्षित।',
       keywords: 'image ko 50KB me resize, 50KB me compress, image size 50KB kam kare',
-      canonical: 'https://freetools.com/hi/image-resizer-50kb',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'इमेज रीसाइज़र 50KB',
-        description: 'इमेज को बिल्कुल 50KB में रीसाइज़ करने के लिए फ्री ऑनलाइन टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-resizer-50kb', 'hi')
     }
   },
 

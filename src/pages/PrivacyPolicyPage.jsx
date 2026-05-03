@@ -7,6 +7,7 @@ import React from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useCanonicalUrl } from '../hooks/useCanonicalUrl'
 import SEOHead from '../components/SEO/SEOHead'
+import CategoryBreadcrumb from '../components/shared/Navigation/CategoryBreadcrumb'
 import './PrivacyPolicyPage.css'
 
 const PrivacyPolicyPage = () => {
@@ -359,6 +360,11 @@ const PrivacyPolicyPage = () => {
       />
 
       <div className="privacy-page">
+        {/* Breadcrumb Navigation */}
+        <div className="container">
+          <CategoryBreadcrumb categoryName={language === 'hi' ? 'प्राइवेसी पॉलिसी' : 'Privacy Policy'} />
+        </div>
+
         {/* Hero Section */}
         <section className="privacy-hero">
           <div className="container">

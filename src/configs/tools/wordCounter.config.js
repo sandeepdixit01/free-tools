@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-03
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const wordCounterConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -63,20 +65,8 @@ export const wordCounterConfig = {
           'reading time calculator'
         ]
       },
-      canonical: 'https://freetools.com/tools/word-counter',
-      ogImage: '/images/tools/word-counter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Word Counter',
-        description: 'Free online word and character counter',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('word-counter', 'en'),
+      ogImage: '/images/tools/word-counter-og.jpg'
     },
     hi: {
       title: 'वर्ड काउंटर ऑनलाइन | शब्द और कैरेक्टर तुरंत गिनें 2024',
@@ -103,20 +93,8 @@ export const wordCounterConfig = {
           'reading time calculator'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/word-counter',
-      ogImage: '/images/tools/word-counter-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'वर्ड काउंटर',
-        description: 'फ्री ऑनलाइन वर्ड और कैरेक्टर काउंटर',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('word-counter', 'hi'),
+      ogImage: '/images/tools/word-counter-og.jpg'
     }
   },
 

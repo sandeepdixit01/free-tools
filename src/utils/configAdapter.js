@@ -59,7 +59,6 @@ const isNewSchema = (config) => {
 export const adaptConfig = (config) => {
   // If already new schema, return as-is
   if (isNewSchema(config)) {
-    console.log('[ADAPTER] Config is already new schema, returning as-is')
     return config
   }
 
@@ -76,7 +75,6 @@ export const adaptConfig = (config) => {
     targetSize: 100
   }
   
-  console.log('[ADAPTER] Created defaultSettings:', defaultSettings)
 
   const adapted = {
     // Preserve original structure

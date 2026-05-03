@@ -1,30 +1,20 @@
 /**
  * WordCounter Page
- * Standalone implementation for text-based tool (not file upload)
- * Uses same layout components as ToolPage but with text input instead
+ * Text-based tool using ToolLayoutV2 for layout
+ * Hero section handled at page level (not in layout)
  */
 
 import React, { useEffect, useMemo } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useCanonicalUrl } from '../hooks/useCanonicalUrl';
-import SEOHead from '../components/SEO/SEOHead';
-import ToolLayout from '../components/shared/Layout/ToolLayout';
+import ToolLayoutV2 from '../components/shared/Layout/ToolLayoutV2';
 import ToolHero from '../components/shared/Layout/ToolHero';
-import ToolFeatures from '../components/shared/Layout/ToolFeatures';
-import ToolHowTo from '../components/shared/Layout/ToolHowTo';
-import SEOContent from '../components/shared/Content/SEOContent';
-import FAQ from '../components/shared/Content/FAQ';
-import AdSlot from '../components/ads/AdSlot';
-import { AD_POSITIONS } from '../configs/adPositions';
 import WordCounterTool from '../tools/WordCounterTool';
 import WordCounterControls from '../components/WordCounter/WordCounterControls';
 import wordCounterConfig from '../configs/tools/wordCounter.config';
 import { validateConfig, getValidationReport } from '../utils/configValidator';
-import { generateWebApplicationSchema, generateHowToSchema, generateFAQSchema } from '../utils/structuredDataHelper';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const WordCounter = () => {
   const { language } = useLanguage();
-  const canonical = useCanonicalUrl();
 
   // Validate configuration in development mode
   useEffect(() => {
@@ -35,7 +25,6 @@ const WordCounter = () => {
           console.error('WordCounter config validation failed:');
           console.error(getValidationReport(wordCounterConfig));
         } else {
-          console.log('✅ WordCounter config is valid (Schema v2.0)');
         }
       }
     }
@@ -46,10 +35,7 @@ const WordCounter = () => {
     return wordCounterConfig.content?.[language] || wordCounterConfig.content?.en || {};
   }, [language]);
 
-  const seoData = useMemo(() => {
-    return wordCounterConfig.seo?.[language] || wordCounterConfig.seo?.en || {};
-  }, [language]);
-
+  // Get language-specific UI text
   const uiText = useMemo(() => {
     return wordCounterConfig.uiText?.[language] || wordCounterConfig.uiText?.en || {};
   }, [language]);
@@ -60,133 +46,43 @@ const WordCounter = () => {
   // Tool settings
   const settings = wordCounterConfig.defaultSettings || {};
 
-  // Tool category for ad exclusion
-  const toolCategory = wordCounterConfig.metadata?.category || null;
-
-  // Prepare ad slots
-  const adSlots = useMemo(() => {
-    return {
-      top: <AdSlot position={AD_POSITIONS.TOP_BANNER} excludeCategory={toolCategory} />,
-      afterResult: <AdSlot position={AD_POSITIONS.BELOW_HERO} excludeCategory={toolCategory} />,
-      midContent: <AdSlot position={AD_POSITIONS.MID_CONTENT} excludeCategory={toolCategory} />,
-      bottom: <AdSlot position={AD_POSITIONS.BOTTOM_BANNER} excludeCategory={toolCategory} />
-    };
-  }, [toolCategory]);
-
-  // Generate structured data schemas
-  const structuredData = useMemo(() => {
-    return {
-      webApplication: generateWebApplicationSchema(wordCounterConfig, language),
-      howTo: generateHowToSchema(wordCounterConfig, language),
-      faq: generateFAQSchema(wordCounterConfig, language)
-    };
-  }, [language]);
+  // CTA click handler
+  const handleCtaClick = () => {
+    document.getElementById('text-input')?.focus();
+  };
 
   return (
-    <>
-      {/* SEO Head */}
-      <SEOHead
-        title={seoData.title}
-        description={seoData.description}
-        keywords={
-          seoData.keywords
-            ? (typeof seoData.keywords === 'string'
-                ? seoData.keywords
-                : [...(seoData.keywords.primary || []), ...(seoData.keywords.secondary || []), ...(seoData.keywords.longTail || [])].join(', '))
-            : ''
-        }
-        canonical={canonical}
-        webApplicationData={structuredData.webApplication}
-        howToData={structuredData.howTo}
-        faqData={structuredData.faq}
-      />
+    <ToolLayoutV2
+      config={wordCounterConfig}
+      toolId="word-counter"
+      heroComponent={
+        <ToolHero
+          title={content.hero?.title}
+          subtitle={content.hero?.subtitle}
+          benefits={content.hero?.benefits}
+          ctaText={content.hero?.cta?.primary || content.hero?.cta}
+          privacyNotice={content.hero?.privacyNotice}
+          onCtaClick={handleCtaClick}
+        />
+      }
+    >
+      {/* Main Tool Content */}
+      <div className="tool-content">
+        {/* Privacy Notice */}
+        {content.hero?.privacyNotice && (
+          <div className="privacy-notice">
+            {content.hero.privacyIcon || '🔒'} {content.hero.privacyNotice}
+          </div>
+        )}
 
-      {/* Tool Layout */}
-      <ToolLayout
-        // Tool identification for breadcrumb
-        toolId="word-counter"
-        
-        // Hero Section
-        showHero={true}
-        heroComponent={
-          <ToolHero
-            title={content.hero?.title}
-            subtitle={content.hero?.subtitle}
-            benefits={content.hero?.benefits}
-            ctaText={content.hero?.cta?.primary}
-            privacyNotice={content.hero?.privacyNotice}
-            onCtaClick={() => document.getElementById('text-input')?.focus()}
-          />
-        }
-
-        // Features Section
-        showFeatures={true}
-        featuresComponent={
-          <ToolFeatures
-            title={content.features?.title}
-            subtitle={content.features?.subtitle}
-            features={content.features?.items}
-          />
-        }
-
-        // How To Section
-        showHowTo={true}
-        howToComponent={
-          <ToolHowTo
-            title={content.howTo?.title}
-            subtitle={content.howTo?.subtitle}
-            steps={content.howTo?.steps}
-            tips={content.howTo?.tips}
-          />
-        }
-
-        // SEO Content Section
-        showSEO={!!content.seoContent}
-        seoComponent={
-          content.seoContent ? (
-            <SEOContent
-              title={content.seoContent.mainTitle}
-              intro={content.seoContent.intro}
-              sections={content.seoContent.sections?.map(section => ({
-                ...section,
-                keywords: Array.isArray(section.keywords)
-                  ? section.keywords.join(', ')
-                  : section.keywords
-              }))}
-            />
-          ) : null
-        }
-
-        // FAQ Section
-        showFAQ={true}
-        faqComponent={
-          <FAQ
-            title={content.faq?.title}
-            items={content.faq?.items}
-          />
-        }
-
-        // Ad Slots
-        adSlots={adSlots}
-      >
-        {/* Main Tool Content */}
-        <div className="tool-content">
-          {/* Privacy Notice */}
-          {content.hero?.privacyNotice && (
-            <div className="privacy-notice">
-              {content.hero.privacyIcon || '🔒'} {content.hero.privacyNotice}
-            </div>
-          )}
-
-          {/* Word Counter Controls (Text Input + Stats) */}
-          <WordCounterControls
-            toolInstance={toolInstance}
-            uiText={uiText}
-            settings={settings}
-          />
-        </div>
-      </ToolLayout>
-    </>
+        {/* Word Counter Controls (Text Input + Stats) */}
+        <WordCounterControls
+          toolInstance={toolInstance}
+          uiText={uiText}
+          settings={settings}
+        />
+      </div>
+    </ToolLayoutV2>
   );
 };
 

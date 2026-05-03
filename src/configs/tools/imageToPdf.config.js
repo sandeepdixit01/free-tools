@@ -8,6 +8,8 @@
  * @lastUpdated 2026-04-19
  */
 
+import { getToolCanonicalUrl } from '../../utils/urlHelper.js';
+
 export const imageToPdfConfig = {
   // ============================================================================
   // 1. METADATA (Required)
@@ -62,20 +64,8 @@ export const imageToPdfConfig = {
           'picture to pdf free'
         ]
       },
-      canonical: 'https://freetools.com/tools/image-to-pdf',
-      ogImage: '/images/tools/image-to-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'Image to PDF Converter',
-        description: 'Free online image to PDF converter tool',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-to-pdf', 'en'),
+      ogImage: '/images/tools/image-to-pdf-og.jpg'
     },
     hi: {
       title: 'इमेज से PDF कन्वर्टर ऑनलाइन | JPG PNG को PDF में फ्री बदलें 2024',
@@ -101,20 +91,8 @@ export const imageToPdfConfig = {
           'picture ko pdf me free badle'
         ]
       },
-      canonical: 'https://freetools.com/hi/tools/image-to-pdf',
-      ogImage: '/images/tools/image-to-pdf-og.jpg',
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'इमेज से PDF कन्वर्टर',
-        description: 'फ्री ऑनलाइन इमेज से PDF कन्वर्टर टूल',
-        applicationCategory: 'UtilityApplication',
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD'
-        }
-      }
+      canonical: getToolCanonicalUrl('image-to-pdf', 'hi'),
+      ogImage: '/images/tools/image-to-pdf-og.jpg'
     }
   },
 
