@@ -41,7 +41,7 @@ export const wordCounterConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Word Counter Online | Count Words and Characters Instantly 2024',
+      title: 'Word Counter Online | Count Words and Characters Instantly',
       description: 'Count words, characters, sentences, and paragraphs online. Free word counter for essays, articles, and content writing. Instant results.',
       keywords: {
         primary: [
@@ -69,7 +69,7 @@ export const wordCounterConfig = {
       ogImage: '/images/tools/word-counter-og.jpg'
     },
     hi: {
-      title: 'वर्ड काउंटर ऑनलाइन | शब्द और कैरेक्टर तुरंत गिनें 2024',
+      title: 'वर्ड काउंटर ऑनलाइन | शब्द और कैरेक्टर तुरंत गिनें',
       description: 'शब्द, कैरेक्टर, सेंटेंस और पैराग्राफ ऑनलाइन गिनें। निबंध, आर्टिकल और कंटेंट राइटिंग के लिए फ्री वर्ड काउंटर। तुरंत रिज़ल्ट।',
       keywords: {
         primary: [
@@ -138,8 +138,8 @@ export const wordCounterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Private & Secure',
-            description: 'All processing happens in your browser. Your text never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -325,8 +325,8 @@ export const wordCounterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% प्राइवेट और सिक्योर',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका टेक्स्ट आपके डिवाइस से बाहर नहीं जाता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',

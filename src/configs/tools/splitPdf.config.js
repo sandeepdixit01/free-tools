@@ -41,7 +41,7 @@ export const splitPdfConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Split PDF Online | Separate PDF Pages Free 2024',
+      title: 'Split PDF Online | Separate PDF Pages Free',
       description: 'Split PDF into separate files online. Extract pages or split by custom ranges. Free PDF splitter that works in your browser. Secure, no uploads.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const splitPdfConfig = {
       ogImage: '/images/tools/split-pdf-og.jpg'
     },
     hi: {
-      title: 'PDF ऑनलाइन स्प्लिट करें | PDF पेज फ्री अलग करें 2024',
+      title: 'PDF ऑनलाइन स्प्लिट करें | PDF पेज फ्री अलग करें',
       description: 'PDF को ऑनलाइन अलग फाइलों में स्प्लिट करें। पेज एक्सट्रैक्ट करें या कस्टम रेंज से स्प्लिट करें। फ्री PDF स्प्लिटर जो आपके ब्राउज़र में काम करता है। सिक्योर, कोई अपलोड नहीं।',
       keywords: {
         primary: [
@@ -127,8 +127,8 @@ export const splitPdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your PDF never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📄',
@@ -305,8 +305,8 @@ export const splitPdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका PDF आपके डिवाइस को नहीं छोड़ता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📄',

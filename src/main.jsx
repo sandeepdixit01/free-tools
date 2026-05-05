@@ -13,7 +13,6 @@ import './index.css'
 // Lazy load pages for better performance
 const App = lazy(() => import('./App'))
 const ImageResizerNew = lazy(() => import('./pages/ImageResizerNew'))
-const ImageResizer50KB = lazy(() => import('./pages/ImageResizer50KB'))
 const WordCounter = lazy(() => import('./pages/WordCounter'))
 const TextCaseConverter = lazy(() => import('./pages/TextCaseConverter'))
 const RemoveExtraSpaces = lazy(() => import('./pages/RemoveExtraSpaces'))
@@ -38,6 +37,7 @@ const CategoryPage = lazy(() => import('./pages/CategoryPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 // Category configs
 import { imageCategoryConfig } from './configs/categories/image.config'
@@ -89,11 +89,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 {/* Individual Tool Pages */}
                 {/* Image Tools */}
                 <Route path="/tools/resize-image" element={<ImageResizerNew />} />
-                <Route path="/image-resizer-50kb" element={<ImageResizer50KB />} />
-                <Route path="/resize-image-to-50kb" element={<ImageResizerNew />} />
-                <Route path="/resize-image-to-20kb" element={<ImageResizerNew />} />
-                <Route path="/resize-image-to-100kb" element={<ImageResizerNew />} />
-                <Route path="/compress-image-online" element={<ImageResizerNew />} />
                 
                 {/* Text Tools */}
                 <Route path="/tools/word-counter" element={<WordCounter />} />
@@ -135,6 +130,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 
                 {/* Delete PDF Pages */}
                 <Route path="/tools/delete-pdf-pages" element={<DeletePdfPages />} />
+                <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </Suspense>
               <Footer />

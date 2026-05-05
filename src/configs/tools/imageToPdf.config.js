@@ -41,7 +41,7 @@ export const imageToPdfConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Image to PDF Converter Online | Convert JPG PNG to PDF Free 2024',
+      title: 'Image to PDF Converter Online | Convert JPG PNG to PDF Free',
       description: 'Convert multiple images to PDF online. Free image to PDF converter that works in your browser. Supports JPG, PNG, WEBP, GIF. Secure, no file size limits.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const imageToPdfConfig = {
       ogImage: '/images/tools/image-to-pdf-og.jpg'
     },
     hi: {
-      title: 'इमेज से PDF कन्वर्टर ऑनलाइन | JPG PNG को PDF में फ्री बदलें 2024',
+      title: 'इमेज से PDF कन्वर्टर ऑनलाइन | JPG PNG को PDF में फ्री बदलें',
       description: 'कई इमेज को ऑनलाइन PDF में बदलें। फ्री इमेज से PDF कन्वर्टर जो आपके ब्राउज़र में काम करता है। JPG, PNG, WEBP, GIF सपोर्ट करता है। सिक्योर, कोई फाइल साइज़ लिमिट नहीं।',
       keywords: {
         primary: [
@@ -127,8 +127,8 @@ export const imageToPdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your images never leave your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🖼️',
@@ -305,8 +305,8 @@ export const imageToPdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी इमेज आपके डिवाइस को नहीं छोड़तीं'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🖼️',

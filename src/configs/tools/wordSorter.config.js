@@ -41,7 +41,7 @@ export const wordSorterConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Word Sorter Online | Sort Text Lines Alphabetically Free 2024',
+      title: 'Word Sorter Online | Sort Text Lines Alphabetically Free',
       description: 'Sort text lines alphabetically online. Free word sorter tool with ascending/descending order. Perfect for organizing lists, names, and data.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const wordSorterConfig = {
       ogImage: '/images/tools/word-sorter-og.jpg'
     },
     hi: {
-      title: 'वर्ड सॉर्टर ऑनलाइन | टेक्स्ट लाइन वर्णानुक्रम में फ्री सॉर्ट करें 2024',
+      title: 'वर्ड सॉर्टर ऑनलाइन | टेक्स्ट लाइन वर्णानुक्रम में फ्री सॉर्ट करें',
       description: 'टेक्स्ट लाइन को ऑनलाइन वर्णानुक्रम में सॉर्ट करें। आरोही/अवरोही क्रम के साथ फ्री वर्ड सॉर्टर टूल। लिस्ट, नाम और डेटा को ऑर्गनाइज़ करने के लिए परफेक्ट।',
       keywords: {
         primary: [
@@ -117,7 +117,7 @@ export const wordSorterConfig = {
 
       // Features Section
       features: {
-        title: 'Powerful Text Sorting',
+        title: 'Why use our Word Sorter Tool?',
         subtitle: 'Organize your text data efficiently',
         items: [
           {
@@ -296,7 +296,7 @@ export const wordSorterConfig = {
 
       // Features Section
       features: {
-        title: 'शक्तिशाली टेक्स्ट सॉर्टिंग',
+        title: 'Why use our Word Sorter Tool?',
         subtitle: 'अपने टेक्स्ट डेटा को कुशलता से ऑर्गनाइज़ करें',
         items: [
           {

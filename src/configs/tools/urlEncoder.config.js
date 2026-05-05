@@ -41,7 +41,7 @@ export const urlEncoderConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'URL Encoder Decoder Online | Free URL Encode Decode Tool 2024',
+      title: 'URL Encoder Decoder Online | Free URL Encode Decode Tool',
       description: 'Free online URL encoder and decoder. Encode URLs for safe transmission or decode URL-encoded strings instantly. Perfect for developers, API testing, and web development.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const urlEncoderConfig = {
       ogImage: '/images/tools/url-encoder-og.jpg'
     },
     hi: {
-      title: 'URL एनकोडर डिकोडर ऑनलाइन | फ्री URL एनकोड डिकोड टूल 2024',
+      title: 'URL एनकोडर डिकोडर ऑनलाइन | फ्री URL एनकोड डिकोड टूल',
       description: 'फ्री ऑनलाइन URL एनकोडर और डिकोडर। सुरक्षित ट्रांसमिशन के लिए URLs एनकोड करें या URL-एनकोडेड स्ट्रिंग्स तुरंत डिकोड करें। डेवलपर्स, API टेस्टिंग और वेब डेवलपमेंट के लिए परफेक्ट।',
       keywords: {
         primary: [
@@ -128,8 +128,8 @@ export const urlEncoderConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your data never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🌐',
@@ -265,8 +265,8 @@ export const urlEncoderConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका डेटा कभी आपके डिवाइस से बाहर नहीं जाता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🌐',

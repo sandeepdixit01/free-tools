@@ -5,7 +5,7 @@
 
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { getActiveTools, getToolByRoute } from '../../data/tools'
 import ToolCard from '../ToolCard'
@@ -14,6 +14,7 @@ import './AdFallback.css'
 const AdFallback = ({ type = 'tools', count = 3, excludeCategory = null }) => {
   const { language } = useLanguage()
   const location = useLocation()
+  const navigate = useNavigate()
 
   // Get related tools (same category, exclude current tool)
   const promotedTools = useMemo(() => {
@@ -68,7 +69,7 @@ const AdFallback = ({ type = 'tools', count = 3, excludeCategory = null }) => {
           icon={tool.icon}
           name={tool.name[language] || tool.name.en}
           description={tool.description[language] || tool.description.en}
-          onClick={() => window.location.href = tool.route}
+          onClick={() => navigate(tool.route)}
         />
       </div>
     )
@@ -90,7 +91,7 @@ const AdFallback = ({ type = 'tools', count = 3, excludeCategory = null }) => {
               icon={tool.icon}
               name={tool.name[language] || tool.name.en}
               description={tool.description[language] || tool.description.en}
-              onClick={() => window.location.href = tool.route}
+              onClick={() => navigate(tool.route)}
             />
           ))}
         </div>

@@ -154,8 +154,8 @@ const jsonToCSVConfig = {
         },
         {
           icon: '🔒',
-          title: 'Privacy First',
-          description: 'All conversion happens in your browser. Your data never leaves your device or gets uploaded to any server.'
+          title: '🔒 Files Never Leave Your Device',
+          description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
         },
         {
           icon: '💾',
@@ -369,8 +369,8 @@ const jsonToCSVConfig = {
         },
         {
           icon: '🔒',
-          title: 'प्राइवेसी फर्स्ट',
-          description: 'सभी कन्वर्ज़न आपके ब्राउज़र में होता है। आपका डेटा कभी आपके डिवाइस से बाहर नहीं जाता या किसी सर्वर पर अपलोड नहीं होता।'
+          title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+          description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
         },
         {
           icon: '💾',

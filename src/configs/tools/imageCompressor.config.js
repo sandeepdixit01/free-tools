@@ -41,7 +41,7 @@ export const imageCompressorConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Image Compressor Online | Compress JPG PNG WEBP Free 2024',
+      title: 'Image Compressor Online | Compress JPG PNG WEBP Free',
       description: 'Compress images online with adjustable quality. Free image compressor that reduces file size without losing quality. Supports JPG, PNG, WEBP. Secure, works in browser.',
       keywords: {
         primary: [
@@ -64,11 +64,11 @@ export const imageCompressorConfig = {
           'image size reducer'
         ]
       },
-      canonical: getToolCanonicalUrl('image-compressor', 'en'),
+      canonical: getToolCanonicalUrl('image-compressor'),
       ogImage: '/images/tools/image-compressor-og.jpg'
     },
     hi: {
-      title: 'इमेज कंप्रेसर ऑनलाइन | JPG PNG WEBP फ्री कंप्रेस करें 2024',
+      title: 'इमेज कंप्रेसर ऑनलाइन | JPG PNG WEBP फ्री कंप्रेस करें',
       description: 'एडजस्टेबल क्वालिटी के साथ इमेज को ऑनलाइन कंप्रेस करें। फ्री इमेज कंप्रेसर जो क्वालिटी खोए बिना फाइल साइज़ कम करता है। JPG, PNG, WEBP सपोर्ट करता है। सिक्योर, ब्राउज़र में काम करता है।',
       keywords: {
         primary: [
@@ -91,7 +91,7 @@ export const imageCompressorConfig = {
           'image size reducer'
         ]
       },
-      canonical: getToolCanonicalUrl('image-compressor', 'hi'),
+      canonical: getToolCanonicalUrl('image-compressor'),
       ogImage: '/images/tools/image-compressor-og.jpg'
     }
   },
@@ -124,8 +124,8 @@ export const imageCompressorConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your images never leave your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🎚️',
@@ -249,8 +249,8 @@ export const imageCompressorConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी इमेज कभी आपके डिवाइस से बाहर नहीं जाती'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🎚️',

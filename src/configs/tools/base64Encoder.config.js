@@ -41,7 +41,7 @@ export const base64EncoderConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Base64 Encoder Decoder Online | Free UTF-8 Support 2024',
+      title: 'Base64 Encoder Decoder Online | Free UTF-8 Support',
       description: 'Free online Base64 encoder and decoder with UTF-8 support. Encode text to Base64 or decode Base64 to text instantly. Perfect for developers, API testing, and data encoding.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const base64EncoderConfig = {
       ogImage: '/images/tools/base64-encoder-og.jpg'
     },
     hi: {
-      title: 'Base64 एनकोडर डिकोडर ऑनलाइन | फ्री UTF-8 सपोर्ट 2024',
+      title: 'Base64 एनकोडर डिकोडर ऑनलाइन | फ्री UTF-8 सपोर्ट',
       description: 'UTF-8 सपोर्ट के साथ फ्री ऑनलाइन Base64 एनकोडर और डिकोडर। टेक्स्ट को Base64 में एनकोड करें या Base64 को टेक्स्ट में डिकोड करें। डेवलपर्स, API टेस्टिंग और डेटा एनकोडिंग के लिए परफेक्ट।',
       keywords: {
         primary: [
@@ -128,8 +128,8 @@ export const base64EncoderConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your data never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🌐',
@@ -265,8 +265,8 @@ export const base64EncoderConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका डेटा कभी आपके डिवाइस से बाहर नहीं जाता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🌐',

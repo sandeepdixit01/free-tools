@@ -51,7 +51,7 @@ export const imageResizerConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Resize Image Online Free | Image Resizer Tool 2024',
+      title: 'Resize Image Online Free | Image Resizer Tool',
       description: 'Free online image resizer. Resize images to any size (20KB, 50KB, 100KB) instantly. No signup required. 100% private and secure.',
       keywords: {
         primary: [
@@ -79,7 +79,7 @@ export const imageResizerConfig = {
       ogImage: '/images/tools/image-resizer-og.jpg'
     },
     hi: {
-      title: 'इमेज ऑनलाइन फ्री रीसाइज़ करें | इमेज रीसाइज़र टूल 2024',
+      title: 'इमेज ऑनलाइन फ्री रीसाइज़ करें | इमेज रीसाइज़र टूल',
       description: 'फ्री ऑनलाइन इमेज रीसाइज़र। किसी भी साइज़ (20KB, 50KB, 100KB) में इमेज तुरंत रीसाइज़ करें। साइनअप की ज़रूरत नहीं। 100% प्राइवेट और सिक्योर।',
       keywords: {
         primary: [
@@ -140,8 +140,8 @@ export const imageResizerConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Private & Secure',
-            description: 'All processing happens in your browser. Images never leave your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -324,8 +324,8 @@ export const imageResizerConfig = {
           },
           {
             icon: '🔒',
-            title: '100% प्राइवेट और सिक्योर',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। इमेज आपके डिवाइस से बाहर नहीं जातीं'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',

@@ -1,4 +1,41 @@
 {
+  "redirects": [
+    {
+      "source": "/tools/image-resizer",
+      "destination": "/tools/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/image-resizer-50kb",
+      "destination": "/tools/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/tools/image-resizer-50kb",
+      "destination": "/tools/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/resize-image-to-50kb",
+      "destination": "/tools/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/resize-image-to-20kb",
+      "destination": "/tools/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/resize-image-to-100kb",
+      "destination": "/tools/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/compress-image-online",
+      "destination": "/tools/resize-image",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },

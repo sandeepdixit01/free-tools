@@ -41,7 +41,7 @@ export const removeDuplicateLinesConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Remove Duplicate Lines Online | Free Text Deduplication Tool 2024',
+      title: 'Remove Duplicate Lines Online | Free Text Deduplication Tool',
       description: 'Remove duplicate lines from text online. Free tool to find and delete duplicate lines while preserving order. Perfect for cleaning lists, logs, and data files.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const removeDuplicateLinesConfig = {
       ogImage: '/images/tools/remove-duplicate-lines-og.jpg'
     },
     hi: {
-      title: 'डुप्लीकेट लाइन ऑनलाइन हटाएं | फ्री टेक्स्ट डीडुप्लीकेशन टूल 2024',
+      title: 'डुप्लीकेट लाइन ऑनलाइन हटाएं | फ्री टेक्स्ट डीडुप्लीकेशन टूल',
       description: 'टेक्स्ट से डुप्लीकेट लाइन ऑनलाइन हटाएं। क्रम बनाए रखते हुए डुप्लीकेट लाइन खोजने और डिलीट करने के लिए फ्री टूल। लिस्ट, लॉग और डेटा फाइल साफ करने के लिए परफेक्ट।',
       keywords: {
         primary: [
@@ -117,7 +117,7 @@ export const removeDuplicateLinesConfig = {
 
       // Features Section
       features: {
-        title: 'Powerful Duplicate Line Removal',
+        title: 'Why use our Remove Duplicate Lines Tool?',
         subtitle: 'Clean your text data efficiently',
         items: [
           {
@@ -296,7 +296,7 @@ export const removeDuplicateLinesConfig = {
 
       // Features Section
       features: {
-        title: 'शक्तिशाली डुप्लीकेट लाइन रिमूवल',
+        title: 'Why use our Remove Duplicate Lines Tool?',
         subtitle: 'अपने टेक्स्ट डेटा को कुशलता से साफ करें',
         items: [
           {

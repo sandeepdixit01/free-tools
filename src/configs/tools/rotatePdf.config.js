@@ -41,7 +41,7 @@ export const rotatePdfConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Rotate PDF Online | Rotate PDF Pages Free 2024',
+      title: 'Rotate PDF Online | Rotate PDF Pages Free',
       description: 'Rotate PDF pages online for free. Rotate all pages or individual pages by 90°, 180°, or 270°. Free PDF rotator that works in your browser. Secure, no uploads.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const rotatePdfConfig = {
       ogImage: '/images/tools/rotate-pdf-og.jpg'
     },
     hi: {
-      title: 'PDF ऑनलाइन रोटेट करें | PDF पेज फ्री रोटेट करें 2024',
+      title: 'PDF ऑनलाइन रोटेट करें | PDF पेज फ्री रोटेट करें',
       description: 'PDF पेज को फ्री में ऑनलाइन रोटेट करें। सभी पेज या अलग-अलग पेज को 90°, 180°, या 270° रोटेट करें। फ्री PDF रोटेटर जो आपके ब्राउज़र में काम करता है। सिक्योर, कोई अपलोड नहीं।',
       keywords: {
         primary: [
@@ -127,8 +127,8 @@ export const rotatePdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your PDF never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🔄',
@@ -305,8 +305,8 @@ export const rotatePdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका PDF आपके डिवाइस को नहीं छोड़ता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🔄',

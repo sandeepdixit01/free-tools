@@ -41,7 +41,7 @@ export const deletePdfPagesConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Delete PDF Pages Online | Remove Pages from PDF Free 2024',
+      title: 'Delete PDF Pages Online | Remove Pages from PDF Free',
       description: 'Delete unwanted pages from PDF online. Select and remove specific pages from your PDF documents. Free PDF page remover that works in your browser. Secure, no uploads.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const deletePdfPagesConfig = {
       ogImage: '/images/tools/delete-pdf-pages-og.jpg'
     },
     hi: {
-      title: 'PDF पेज ऑनलाइन डिलीट करें | PDF से पेज फ्री हटाएं 2024',
+      title: 'PDF पेज ऑनलाइन डिलीट करें | PDF से पेज फ्री हटाएं',
       description: 'PDF से अनचाहे पेज ऑनलाइन डिलीट करें। अपने PDF दस्तावेज़ों से स्पेसिफिक पेज चुनें और हटाएं। फ्री PDF पेज रिमूवर जो आपके ब्राउज़र में काम करता है। सिक्योर, कोई अपलोड नहीं।',
       keywords: {
         primary: [
@@ -127,8 +127,8 @@ export const deletePdfPagesConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your PDF never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🎯',
@@ -305,8 +305,8 @@ export const deletePdfPagesConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका PDF आपके डिवाइस को नहीं छोड़ता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🎯',

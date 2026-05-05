@@ -25,7 +25,7 @@ export const allToolsConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Free Online Tools - PDF, Image, Text & Developer Tools 2024',
+      title: 'Free Online Tools - PDF, Image, Text & Developer Tools',
       description: 'Discover 100+ free online tools for PDF editing, image processing, text manipulation, and web development. No signup required. Works on all devices.',
       keywords: {
         primary: [
@@ -44,17 +44,17 @@ export const allToolsConfig = {
         ],
         longTail: [
           'free online tools no signup',
-          'best free online tools 2024',
+          'best free online tools',
           'online tools for students',
           'web based tools free',
           'online productivity tools'
         ]
       },
-      canonical: getPageCanonicalUrl('tools', 'en'),
+      canonical: getPageCanonicalUrl('tools'),
       ogImage: '/images/all-tools-og.jpg'
     },
     hi: {
-      title: 'फ्री ऑनलाइन टूल्स - PDF, इमेज, टेक्स्ट और डेवलपर टूल्स 2024',
+      title: 'फ्री ऑनलाइन टूल्स - PDF, इमेज, टेक्स्ट और डेवलपर टूल्स',
       description: 'PDF एडिटिंग, इमेज प्रोसेसिंग, टेक्स्ट मैनिपुलेशन और वेब डेवलपमेंट के लिए 100+ फ्री ऑनलाइन टूल्स खोजें। साइनअप की ज़रूरत नहीं। सभी डिवाइस पर काम करता है।',
       keywords: {
         primary: [
@@ -73,13 +73,13 @@ export const allToolsConfig = {
         ],
         longTail: [
           'फ्री ऑनलाइन टूल्स बिना साइनअप',
-          'बेस्ट फ्री ऑनलाइन टूल्स 2024',
+          'बेस्ट फ्री ऑनलाइन टूल्स',
           'स्टूडेंट्स के लिए ऑनलाइन टूल्स',
           'वेब बेस्ड टूल्स फ्री',
           'ऑनलाइन प्रोडक्टिविटी टूल्स'
         ]
       },
-      canonical: getPageCanonicalUrl('tools', 'en'),
+      canonical: getPageCanonicalUrl('tools'),
       ogImage: '/images/all-tools-og.jpg'
     }
   },

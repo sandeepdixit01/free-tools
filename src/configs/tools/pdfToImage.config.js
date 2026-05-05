@@ -41,7 +41,7 @@ export const pdfToImageConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'PDF to Image Converter Online | Convert PDF to PNG JPG Free 2024',
+      title: 'PDF to Image Converter Online | Convert PDF to PNG JPG Free',
       description: 'Convert PDF pages to images online. Free PDF to image converter that works in your browser. Export to PNG or JPG. Secure, no file size limits.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const pdfToImageConfig = {
       ogImage: '/images/tools/pdf-to-image-og.jpg'
     },
     hi: {
-      title: 'PDF से इमेज कन्वर्टर ऑनलाइन | PDF को PNG JPG में फ्री बदलें 2024',
+      title: 'PDF से इमेज कन्वर्टर ऑनलाइन | PDF को PNG JPG में फ्री बदलें',
       description: 'PDF पेज को ऑनलाइन इमेज में बदलें। फ्री PDF से इमेज कन्वर्टर जो आपके ब्राउज़र में काम करता है। PNG या JPG में एक्सपोर्ट करें। सिक्योर, कोई फाइल साइज़ लिमिट नहीं।',
       keywords: {
         primary: [
@@ -127,8 +127,8 @@ export const pdfToImageConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your PDF never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🖼️',
@@ -305,8 +305,8 @@ export const pdfToImageConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका PDF आपके डिवाइस को नहीं छोड़ता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🖼️',

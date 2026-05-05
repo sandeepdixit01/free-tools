@@ -41,7 +41,7 @@ export const mergePdfConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Merge PDF Files Online | Combine PDF Documents Instantly 2024',
+      title: 'Merge PDF Files Online | Combine PDF Documents Instantly',
       description: 'Combine multiple PDF files into one document online. Free PDF merger that works in your browser. Secure, no file size limits.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const mergePdfConfig = {
       ogImage: '/images/tools/merge-pdf-og.jpg'
     },
     hi: {
-      title: 'PDF फाइलें ऑनलाइन मर्ज करें | PDF डॉक्यूमेंट तुरंत कंबाइन करें 2024',
+      title: 'PDF फाइलें ऑनलाइन मर्ज करें | PDF डॉक्यूमेंट तुरंत कंबाइन करें',
       description: 'कई PDF फाइलों को एक डॉक्यूमेंट में ऑनलाइन कंबाइन करें। फ्री PDF मर्जर जो आपके ब्राउज़र में काम करता है। सिक्योर, कोई फाइल साइज़ लिमिट नहीं।',
       keywords: {
         primary: [
@@ -127,8 +127,8 @@ export const mergePdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your files never leave your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📄',
@@ -305,8 +305,8 @@ export const mergePdfConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें आपके डिवाइस को नहीं छोड़तीं'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📄',

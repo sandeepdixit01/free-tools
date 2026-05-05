@@ -5,12 +5,14 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../contexts/LanguageContext'
 import CategoryCard from '../CategoryCard'
 import './CategoryGrid.css'
 
 const CategoryGrid = ({ categories }) => {
   const { language } = useLanguage()
+  const navigate = useNavigate()
 
   if (!categories || categories.length === 0) {
     return null
@@ -24,7 +26,7 @@ const CategoryGrid = ({ categories }) => {
           icon={category.icon}
           title={category.title[language] || category.title.en}
           description={category.description[language] || category.description.en}
-          onClick={() => window.location.href = category.route}
+          onClick={() => navigate(category.route)}
         />
       ))}
     </div>

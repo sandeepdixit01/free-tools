@@ -134,8 +134,8 @@ export const characterCounterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Private & Secure',
-            description: 'All processing happens in your browser. Your text never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -331,8 +331,8 @@ export const characterCounterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% प्राइवेट और सिक्योर',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका टेक्स्ट आपके डिवाइस से बाहर नहीं जाता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',

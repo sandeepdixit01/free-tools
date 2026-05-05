@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import CategoryCard from './CategoryCard'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations/translations'
@@ -6,6 +7,7 @@ import './Categories.css'
 
 const Categories = () => {
   const { language } = useLanguage()
+  const navigate = useNavigate()
   const t = (key) => translations[language][key]
 
   const categories = [
@@ -46,7 +48,7 @@ const Categories = () => {
               icon={category.icon}
               title={category.title}
               description={category.description}
-              onClick={() => window.location.href = category.href}
+              onClick={() => navigate(category.href)}
             />
           ))}
         </div>

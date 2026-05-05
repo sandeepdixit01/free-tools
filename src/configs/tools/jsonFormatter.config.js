@@ -41,7 +41,7 @@ export const jsonFormatterConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'JSON Formatter Online | Validate and Beautify JSON 2024',
+      title: 'JSON Formatter Online | Validate and Beautify JSON',
       description: 'Format, minify, and validate JSON data online. Free JSON formatter and validator for developers, API testing, and debugging.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const jsonFormatterConfig = {
       ogImage: '/images/tools/json-formatter-og.jpg'
     },
     hi: {
-      title: 'JSON फॉर्मेटर ऑनलाइन | JSON वैलिडेट और ब्यूटिफाई करें 2024',
+      title: 'JSON फॉर्मेटर ऑनलाइन | JSON वैलिडेट और ब्यूटिफाई करें',
       description: 'JSON डेटा को ऑनलाइन फॉर्मेट, मिनिफाई और वैलिडेट करें। डेवलपर्स, API टेस्टिंग और डिबगिंग के लिए फ्री JSON फॉर्मेटर और वैलिडेटर।',
       keywords: {
         primary: [
@@ -141,8 +141,8 @@ export const jsonFormatterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Private & Secure',
-            description: 'All processing happens in your browser. Your JSON never leaves your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -338,8 +338,8 @@ export const jsonFormatterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% प्राइवेट और सिक्योर',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका JSON आपके डिवाइस से बाहर नहीं जाता'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',

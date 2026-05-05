@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './AdSlot.css'
 
 const AdSlot = ({
@@ -15,6 +16,8 @@ const AdSlot = ({
   toolCTA = 'Open Tool →',
   toolLink = '#'
 }) => {
+  const navigate = useNavigate()
+
   // Banner style (image-based)
   if (type === 'banner') {
     return (
@@ -40,7 +43,7 @@ const AdSlot = ({
   return (
     <div
       className={`ad-slot ad-slot-${type} ad-slot-native`}
-      onClick={() => window.location.href = toolLink}
+      onClick={() => navigate(toolLink)}
       role="button"
       tabIndex={0}
     >

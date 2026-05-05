@@ -41,7 +41,7 @@ export const imageFormatConverterConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Image Format Converter Online | Convert JPG PNG WEBP Free 2024',
+      title: 'Image Format Converter Online | Convert JPG PNG WEBP Free',
       description: 'Convert images between JPG, PNG, and WEBP formats online. Free image format converter that works in your browser. Fast, secure, no file size limits.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const imageFormatConverterConfig = {
       ogImage: '/images/tools/image-format-converter-og.jpg'
     },
     hi: {
-      title: 'इमेज फॉर्मेट कन्वर्टर ऑनलाइन | JPG PNG WEBP फ्री बदलें 2024',
+      title: 'इमेज फॉर्मेट कन्वर्टर ऑनलाइन | JPG PNG WEBP फ्री बदलें',
       description: 'JPG, PNG, और WEBP फॉर्मेट के बीच इमेज को ऑनलाइन कन्वर्ट करें। फ्री इमेज फॉर्मेट कन्वर्टर जो आपके ब्राउज़र में काम करता है। तेज़, सुरक्षित, कोई फाइल साइज़ लिमिट नहीं।',
       keywords: {
         primary: [
@@ -124,8 +124,8 @@ export const imageFormatConverterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% Secure',
-            description: 'All processing happens in your browser. Your images never leave your device'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '🔄',
@@ -249,8 +249,8 @@ export const imageFormatConverterConfig = {
           },
           {
             icon: '🔒',
-            title: '100% सुरक्षित',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी इमेज कभी आपके डिवाइस से बाहर नहीं जाती'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '🔄',

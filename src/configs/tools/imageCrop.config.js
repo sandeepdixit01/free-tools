@@ -41,7 +41,7 @@ export const imageCropConfig = {
   // ============================================================================
   seo: {
     en: {
-      title: 'Image Crop Tool Online | Crop Photos Free 2024',
+      title: 'Image Crop Tool Online | Crop Photos Free',
       description: 'Crop images online with custom dimensions and aspect ratios. Free image cropping tool with 1:1, 16:9, 4:3 presets. Fast, secure, works in your browser.',
       keywords: {
         primary: [
@@ -68,7 +68,7 @@ export const imageCropConfig = {
       ogImage: '/images/tools/image-crop-og.jpg'
     },
     hi: {
-      title: 'इमेज क्रॉप टूल ऑनलाइन | फोटो फ्री क्रॉप करें 2024',
+      title: 'इमेज क्रॉप टूल ऑनलाइन | फोटो फ्री क्रॉप करें',
       description: 'कस्टम डाइमेंशन और आस्पेक्ट रेशियो के साथ इमेज को ऑनलाइन क्रॉप करें। 1:1, 16:9, 4:3 प्रीसेट के साथ फ्री इमेज क्रॉपिंग टूल। तेज़, सुरक्षित, ब्राउज़र में काम करता है।',
       keywords: {
         primary: [
@@ -115,7 +115,7 @@ export const imageCropConfig = {
       },
 
       features: {
-        title: 'Powerful Cropping Features',
+        title: 'Why use our Image Crop Tool?',
         subtitle: 'Professional image cropping made simple',
         items: [
           {
@@ -145,8 +145,8 @@ export const imageCropConfig = {
           },
           {
             icon: '🔒',
-            title: 'Privacy First',
-            description: 'All processing happens in your browser'
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           }
         ]
       },
@@ -252,7 +252,7 @@ export const imageCropConfig = {
 
       seoContent: {
         mainTitle: 'Professional Image Cropping Made Easy',
-        intro: 'Our free online image crop tool helps you trim, resize, and perfect your photos with precision. Whether you need to crop images for social media, create profile pictures, or prepare photos for your website, our tool makes it simple and fast. You can also <a href="/tools/image-resizer">resize images</a> or <a href="/tools/image-compressor">compress images</a> for optimal web performance.',
+        intro: 'Our free online image crop tool helps you trim, resize, and perfect your photos with precision. Whether you need to crop images for social media, create profile pictures, or prepare photos for your website, our tool makes it simple and fast. You can also <a href="/tools/resize-image">resize images</a> or <a href="/tools/image-compressor">compress images</a> for optimal web performance.',
         sections: [
           {
             title: 'Why Use Our Image Crop Tool?',
@@ -318,8 +318,8 @@ export const imageCropConfig = {
           },
           {
             icon: '🔒',
-            title: 'प्राइवेसी फर्स्ट',
-            description: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है'
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           }
         ]
       },
@@ -425,7 +425,7 @@ export const imageCropConfig = {
 
       seoContent: {
         mainTitle: 'प्रोफेशनल इमेज क्रॉपिंग को आसान बनाया गया',
-        intro: 'हमारा फ्री ऑनलाइन इमेज क्रॉप टूल आपको सटीकता के साथ अपनी फोटो को ट्रिम, रीसाइज़ और परफेक्ट करने में मदद करता है। चाहे आपको सोशल मीडिया के लिए इमेज क्रॉप करनी हो, प्रोफाइल पिक्चर बनानी हो, या अपनी वेबसाइट के लिए फोटो तैयार करनी हो, हमारा टूल इसे सिंपल और फास्ट बनाता है। आप ऑप्टिमल वेब परफॉर्मेंस के लिए <a href="/tools/image-resizer">इमेज रीसाइज़</a> या <a href="/tools/image-compressor">इमेज कंप्रेस</a> भी कर सकते हैं।',
+        intro: 'हमारा फ्री ऑनलाइन इमेज क्रॉप टूल आपको सटीकता के साथ अपनी फोटो को ट्रिम, रीसाइज़ और परफेक्ट करने में मदद करता है। चाहे आपको सोशल मीडिया के लिए इमेज क्रॉप करनी हो, प्रोफाइल पिक्चर बनानी हो, या अपनी वेबसाइट के लिए फोटो तैयार करनी हो, हमारा टूल इसे सिंपल और फास्ट बनाता है। आप ऑप्टिमल वेब परफॉर्मेंस के लिए <a href="/tools/resize-image">इमेज रीसाइज़</a> या <a href="/tools/image-compressor">इमेज कंप्रेस</a> भी कर सकते हैं।',
         sections: [
           {
             title: 'हमारे इमेज क्रॉप टूल का उपयोग क्यों करें?',

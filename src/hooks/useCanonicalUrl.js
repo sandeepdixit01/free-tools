@@ -8,8 +8,8 @@
  * 
  * @example
  * const canonical = useCanonicalUrl();
- * // Returns: "http://localhost:5173/tools/image-resizer" (dev)
- * // Returns: "https://yourdomain.com/tools/image-resizer" (production)
+ * // Returns: "http://localhost:5173/tools/resize-image" (dev)
+ * // Returns: "https://yourdomain.com/tools/resize-image" (production)
  */
 
 import { useMemo } from 'react';
