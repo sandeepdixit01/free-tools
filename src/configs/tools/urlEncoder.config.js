@@ -122,14 +122,14 @@ export const urlEncoderConfig = {
         subtitle: 'Powerful features for reliable URL encoding and decoding',
         items: [
           {
-            icon: '⚡',
-            title: 'Lightning Fast',
-            description: 'Instant encoding and decoding with no server delays'
-          },
-          {
             icon: '🔒',
             title: '🔒 Files Never Leave Your Device',
             description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
+            icon: '⚡',
+            title: 'Lightning Fast',
+            description: 'Instant encoding and decoding with no server delays'
           },
           {
             icon: '🌐',
@@ -259,14 +259,14 @@ export const urlEncoderConfig = {
         subtitle: 'विश्वसनीय URL एनकोडिंग और डिकोडिंग के लिए शक्तिशाली फीचर्स',
         items: [
           {
-            icon: '⚡',
-            title: 'बिजली की तेजी',
-            description: 'बिना सर्वर डिले के तुरंत एनकोडिंग और डिकोडिंग'
-          },
-          {
             icon: '🔒',
             title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
             description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
+            icon: '⚡',
+            title: 'बिजली की तेजी',
+            description: 'बिना सर्वर डिले के तुरंत एनकोडिंग और डिकोडिंग'
           },
           {
             icon: '🌐',

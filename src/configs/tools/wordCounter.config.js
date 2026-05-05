@@ -127,6 +127,11 @@ export const wordCounterConfig = {
         subtitle: 'Comprehensive text analysis tools for writers and content creators',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '📊',
             title: 'Complete Text Statistics',
             description: 'Get word count, character count (with/without spaces), sentence count, paragraph count, and reading time'
@@ -135,11 +140,6 @@ export const wordCounterConfig = {
             icon: '⚡',
             title: 'Real-Time Counting',
             description: 'See results update instantly as you type or paste text'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 Files Never Leave Your Device',
-            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -314,6 +314,11 @@ export const wordCounterConfig = {
         subtitle: 'लेखकों और कंटेंट क्रिएटर्स के लिए कॉम्प्रिहेंसिव टेक्स्ट एनालिसिस टूल्स',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
             icon: '📊',
             title: 'कम्पलीट टेक्स्ट स्टैटिस्टिक्स',
             description: 'वर्ड काउंट, कैरेक्टर काउंट (स्पेस के साथ/बिना), सेंटेंस काउंट, पैराग्राफ काउंट और रीडिंग टाइम पाएं'
@@ -322,11 +327,6 @@ export const wordCounterConfig = {
             icon: '⚡',
             title: 'रियल-टाइम काउंटिंग',
             description: 'टाइप या पेस्ट करते ही तुरंत रिज़ल्ट अपडेट देखें'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
-            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',

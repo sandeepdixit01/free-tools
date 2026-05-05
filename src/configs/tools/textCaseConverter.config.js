@@ -123,6 +123,11 @@ export const textCaseConverterConfig = {
         subtitle: 'Powerful text transformation tools for all your formatting needs',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '🔤',
             title: 'Multiple Case Options',
             description: 'Convert to UPPERCASE, lowercase, Title Case, Sentence case, and more with one click'
@@ -131,11 +136,6 @@ export const textCaseConverterConfig = {
             icon: '⚡',
             title: 'Instant Conversion',
             description: 'See results immediately as you select different case options'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 Files Never Leave Your Device',
-            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -310,6 +310,11 @@ export const textCaseConverterConfig = {
         subtitle: 'आपकी सभी फॉर्मेटिंग ज़रूरतों के लिए पावरफुल टेक्स्ट ट्रांसफॉर्मेशन टूल्स',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
             icon: '🔤',
             title: 'मल्टिपल केस ऑप्शन',
             description: 'एक क्लिक से UPPERCASE, lowercase, Title Case, Sentence case और अधिक में कन्वर्ट करें'
@@ -318,11 +323,6 @@ export const textCaseConverterConfig = {
             icon: '⚡',
             title: 'तुरंत कन्वर्ज़न',
             description: 'अलग-अलग केस ऑप्शन सेलेक्ट करते ही तुरंत रिज़ल्ट देखें'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
-            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',

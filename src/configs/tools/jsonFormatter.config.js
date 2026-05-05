@@ -125,6 +125,11 @@ export const jsonFormatterConfig = {
         subtitle: 'Essential JSON tools for developers and API testing',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '🎨',
             title: 'Pretty Print JSON',
             description: 'Format JSON with proper indentation and line breaks for easy reading'
@@ -138,11 +143,6 @@ export const jsonFormatterConfig = {
             icon: '✅',
             title: 'Validate JSON',
             description: 'Check JSON syntax and get clear error messages for invalid JSON'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 Files Never Leave Your Device',
-            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -322,6 +322,11 @@ export const jsonFormatterConfig = {
         subtitle: 'डेवलपर्स और API टेस्टिंग के लिए ज़रूरी JSON टूल्स',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
             icon: '🎨',
             title: 'JSON प्रिटी प्रिंट',
             description: 'आसान रीडिंग के लिए प्रॉपर इंडेंटेशन और लाइन ब्रेक के साथ JSON फॉर्मेट करें'
@@ -335,11 +340,6 @@ export const jsonFormatterConfig = {
             icon: '✅',
             title: 'JSON वैलिडेट',
             description: 'JSON सिंटैक्स चेक करें और इनवैलिड JSON के लिए क्लियर एरर मैसेज पाएं'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
-            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',

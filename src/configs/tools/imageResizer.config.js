@@ -134,14 +134,14 @@ export const imageResizerConfig = {
         subtitle: 'Powerful features for perfect image resizing',
         items: [
           {
-            icon: '⚡',
-            title: 'Instant Processing',
-            description: 'Resize images in seconds with our lightning-fast tool'
-          },
-          {
             icon: '🔒',
             title: '🔒 Files Never Leave Your Device',
             description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
+            icon: '⚡',
+            title: 'Instant Processing',
+            description: 'Resize images in seconds with our lightning-fast tool'
           },
           {
             icon: '📱',
@@ -318,14 +318,14 @@ export const imageResizerConfig = {
         subtitle: 'परफेक्ट इमेज रीसाइज़िंग के लिए शक्तिशाली फीचर्स',
         items: [
           {
-            icon: '⚡',
-            title: 'तुरंत प्रोसेसिंग',
-            description: 'हमारे लाइटनिंग-फास्ट टूल से सेकंड में इमेज रीसाइज़ करें'
-          },
-          {
             icon: '🔒',
             title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
             description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
+            icon: '⚡',
+            title: 'तुरंत प्रोसेसिंग',
+            description: 'हमारे लाइटनिंग-फास्ट टूल से सेकंड में इमेज रीसाइज़ करें'
           },
           {
             icon: '📱',

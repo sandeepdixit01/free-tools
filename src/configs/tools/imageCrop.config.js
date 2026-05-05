@@ -119,6 +119,11 @@ export const imageCropConfig = {
         subtitle: 'Professional image cropping made simple',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '✂️',
             title: 'Drag to Crop',
             description: 'Select crop area by dragging on the image'
@@ -142,11 +147,6 @@ export const imageCropConfig = {
             icon: '💾',
             title: 'Multiple Formats',
             description: 'Save as JPG, PNG, or WEBP'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 Files Never Leave Your Device',
-            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           }
         ]
       },
@@ -292,6 +292,11 @@ export const imageCropConfig = {
         subtitle: 'प्रोफेशनल इमेज क्रॉपिंग को आसान बनाया गया',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
             icon: '✂️',
             title: 'ड्रैग टू क्रॉप',
             description: 'इमेज पर ड्रैग करके क्रॉप एरिया सिलेक्ट करें'
@@ -315,11 +320,6 @@ export const imageCropConfig = {
             icon: '💾',
             title: 'मल्टिपल फॉर्मेट',
             description: 'JPG, PNG, या WEBP के रूप में सेव करें'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
-            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           }
         ]
       },
