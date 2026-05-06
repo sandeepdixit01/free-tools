@@ -50,6 +50,14 @@ const Hero = ({ config, quickAccessTools = [] }) => {
               ))}
             </div>
           )}
+          
+          {/* Trust Message - Homepage */}
+          <div className="hero-trust-message">
+            {language === 'hi'
+              ? '🔒 कोई अपलोड नहीं • आपके ब्राउज़र में चलता है • हमेशा मुफ्त'
+              : '🔒 No uploads • Runs in your browser • Free forever'
+            }
+          </div>
         </div>
       </div>
     </section>

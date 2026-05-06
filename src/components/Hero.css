@@ -141,3 +141,28 @@
   }
 }
 
+
+/* Hero Trust Message */
+.hero-trust-message {
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* Mobile Styles for Trust Message */
+@media (max-width: 767px) {
+  .hero-trust-message {
+    font-size: 0.8125rem;
+    margin-top: 1.25rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-trust-message {
+    font-size: 0.875rem;
+  }
+}
