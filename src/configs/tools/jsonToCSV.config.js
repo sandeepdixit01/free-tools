@@ -128,6 +128,11 @@ const jsonToCSVConfig = {
       subtitle: 'Powerful features for reliable JSON to CSV conversion',
       items: [
         {
+          icon: '🔒',
+          title: '🔒 Files Never Leave Your Device',
+          description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+        },
+        {
           icon: '🔄',
           title: 'Smart Conversion',
           description: 'Automatically handles nested objects, arrays, and various JSON structures with intelligent flattening.'
@@ -151,11 +156,6 @@ const jsonToCSVConfig = {
           icon: '✅',
           title: 'JSON Validation',
           description: 'Validates JSON syntax before conversion and provides clear error messages for invalid input.'
-        },
-        {
-          icon: '🔒',
-          title: '🔒 Files Never Leave Your Device',
-          description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
         },
         {
           icon: '💾',

@@ -123,6 +123,11 @@ export const characterCounterConfig = {
         subtitle: 'Essential character counting tool for social media and content creation',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '📊',
             title: 'Dual Character Count',
             description: 'Get character count both with spaces and without spaces for different platform requirements'
@@ -131,11 +136,6 @@ export const characterCounterConfig = {
             icon: '⚡',
             title: 'Real-Time Counting',
             description: 'See character count update instantly as you type or paste text'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 Files Never Leave Your Device',
-            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
