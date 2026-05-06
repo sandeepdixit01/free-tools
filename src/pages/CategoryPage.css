@@ -140,3 +140,21 @@
   }
 }
 
+
+/* Category Trust Message */
+.category-trust-message {
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #6b7280;
+  margin: 1rem 0 0 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+/* Responsive adjustments for trust message */
+@media (max-width: 768px) {
+  .category-trust-message {
+    font-size: 0.8125rem;
+    margin: 0.875rem 0 0 0;
+  }
+}

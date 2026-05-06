@@ -108,6 +108,13 @@ const CategoryPage = ({ categoryConfig }) => {
                   ? 'तुरंत इस्तेमाल के लिए तैयार टूल्स'
                   : 'Ready to use instantly'}
               </p>
+              
+              {/* Trust Message - Category Page */}
+              <p className="category-trust-message">
+                {language === 'hi'
+                  ? '🔒 सभी टूल आपके ब्राउज़र में चलते हैं — किसी फाइल अपलोड की जरूरत नहीं'
+                  : '🔒 All tools run in your browser — no file uploads required'}
+              </p>
             </div>
             <ToolGrid
               tools={categoryTools}
