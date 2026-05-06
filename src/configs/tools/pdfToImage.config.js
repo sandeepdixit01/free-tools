@@ -121,14 +121,14 @@ export const pdfToImageConfig = {
         title: 'Why Use Our PDF to Image Converter?',
         items: [
           {
-            icon: '⚡',
-            title: 'Lightning Fast',
-            description: 'Convert PDF pages to images in seconds with our optimized processing engine'
-          },
-          {
             icon: '🔒',
             title: '🔒 Files Never Leave Your Device',
             description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
+            icon: '⚡',
+            title: 'Lightning Fast',
+            description: 'Convert PDF pages to images in seconds with our optimized processing engine'
           },
           {
             icon: '🖼️',
