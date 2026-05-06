@@ -121,6 +121,11 @@ export const wordSorterConfig = {
         subtitle: 'Organize your text data efficiently',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '🔤',
             title: 'Alphabetical Sorting',
             description: 'Sort lines from A to Z (ascending) or Z to A (descending)'
@@ -299,6 +304,11 @@ export const wordSorterConfig = {
         title: 'Why use our Word Sorter Tool?',
         subtitle: 'अपने टेक्स्ट डेटा को कुशलता से ऑर्गनाइज़ करें',
         items: [
+          {
+            icon: '🔒',
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
           {
             icon: '🔤',
             title: 'वर्णानुक्रम सॉर्टिंग',

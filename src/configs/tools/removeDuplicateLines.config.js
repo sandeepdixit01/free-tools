@@ -121,6 +121,11 @@ export const removeDuplicateLinesConfig = {
         subtitle: 'Clean your text data efficiently',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '🧹',
             title: 'Remove Duplicates',
             description: 'Automatically find and remove duplicate lines while keeping the first occurrence'
@@ -299,6 +304,11 @@ export const removeDuplicateLinesConfig = {
         title: 'Why use our Remove Duplicate Lines Tool?',
         subtitle: 'अपने टेक्स्ट डेटा को कुशलता से साफ करें',
         items: [
+          {
+            icon: '🔒',
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
           {
             icon: '🧹',
             title: 'डुप्लीकेट हटाएं',
