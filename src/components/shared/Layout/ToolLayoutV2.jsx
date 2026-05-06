@@ -164,6 +164,14 @@ const ToolLayoutV2 = ({
       >
         {/* Main Tool Content - Hero + Controls from tool page */}
         {children}
+        
+        {/* Trust Message - Localized */}
+        <div className="trust-message">
+          {language === 'hi'
+            ? '🔒 फाइलें आपके ब्राउज़र में प्रोसेस होती हैं — कभी अपलोड नहीं होतीं'
+            : '🔒 Files processed in your browser — never uploaded'
+          }
+        </div>
       </ToolLayout>
     </>
   );
