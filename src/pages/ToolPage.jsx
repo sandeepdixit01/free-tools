@@ -400,6 +400,11 @@ const ToolPage = ({ config, ToolClass, customControls: CustomControls }) => {
             removeFileLabel={uiText.upload?.removeFile}
           />
           
+          {/* Trust Message - Pilot Implementation */}
+          <div className="trust-message">
+            🔒 Files processed in your browser — never uploaded
+          </div>
+          
           {/* Error Message */}
           {error && (
             <ErrorMessage

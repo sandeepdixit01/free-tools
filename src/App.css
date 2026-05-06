@@ -85,3 +85,36 @@ img {
   loading: lazy;
 }
 
+
+/* Trust Message - Pilot Implementation */
+.trust-message {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 12px 0 0 0;
+  padding: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.trust-message::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trust-message {
+    font-size: 0.8125rem;
+    margin: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-message {
+    font-size: 0.75rem;
+    margin: 8px 0 0 0;
+  }
+}
