@@ -121,14 +121,14 @@ export const splitPdfConfig = {
         title: 'Why Use Our PDF Splitter?',
         items: [
           {
-            icon: '⚡',
-            title: 'Lightning Fast',
-            description: 'Split PDF pages in seconds with our optimized processing engine'
-          },
-          {
             icon: '🔒',
             title: '🔒 Files Never Leave Your Device',
             description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
+            icon: '⚡',
+            title: 'Lightning Fast',
+            description: 'Split PDF pages in seconds with our optimized processing engine'
           },
           {
             icon: '📄',
@@ -299,14 +299,14 @@ export const splitPdfConfig = {
         title: 'हमारे PDF स्प्लिटर का उपयोग क्यों करें?',
         items: [
           {
-            icon: '⚡',
-            title: 'बिजली की तेज़ी',
-            description: 'हमारे ऑप्टिमाइज़्ड प्रोसेसिंग इंजन के साथ सेकंडों में PDF पेज स्प्लिट करें'
-          },
-          {
             icon: '🔒',
             title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
             description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
+            icon: '⚡',
+            title: 'बिजली की तेज़ी',
+            description: 'हमारे ऑप्टिमाइज़्ड प्रोसेसिंग इंजन के साथ सेकंडों में PDF पेज स्प्लिट करें'
           },
           {
             icon: '📄',

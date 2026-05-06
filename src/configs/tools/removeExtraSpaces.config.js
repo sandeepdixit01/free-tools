@@ -123,6 +123,11 @@ export const removeExtraSpacesConfig = {
         subtitle: 'Powerful text cleanup features for perfect formatting',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 Files Never Leave Your Device',
+            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
+          },
+          {
             icon: '🧹',
             title: 'Remove Multiple Spaces',
             description: 'Automatically replace multiple consecutive spaces with a single space between words'
@@ -136,11 +141,6 @@ export const removeExtraSpacesConfig = {
             icon: '⚡',
             title: 'Instant Results',
             description: 'See cleaned text immediately as you paste or type content'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 Files Never Leave Your Device',
-            description: 'All processing happens locally in your browser. Your files are never uploaded to our servers. Works even without internet after page load.'
           },
           {
             icon: '📱',
@@ -310,6 +310,11 @@ export const removeExtraSpacesConfig = {
         subtitle: 'परफेक्ट फॉर्मेटिंग के लिए पावरफुल टेक्स्ट क्लीनअप फीचर्स',
         items: [
           {
+            icon: '🔒',
+            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
+            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
+          },
+          {
             icon: '🧹',
             title: 'मल्टिपल स्पेस हटाएं',
             description: 'शब्दों के बीच मल्टिपल कंसीक्यूटिव स्पेस को ऑटोमैटिकली सिंगल स्पेस से रिप्लेस करें'
@@ -323,11 +328,6 @@ export const removeExtraSpacesConfig = {
             icon: '⚡',
             title: 'तुरंत रिज़ल्ट',
             description: 'कंटेंट पेस्ट या टाइप करते ही तुरंत साफ किया गया टेक्स्ट देखें'
-          },
-          {
-            icon: '🔒',
-            title: '🔒 आपकी फाइलें आपके डिवाइस से बाहर नहीं जातीं',
-            description: 'सारा प्रोसेसिंग आपके ब्राउज़र में लोकली होता है। आपकी फाइलें कभी हमारे सर्वर पर अपलोड नहीं होतीं। पेज लोड होने के बाद बिना इंटरनेट भी काम करता है।'
           },
           {
             icon: '📱',
