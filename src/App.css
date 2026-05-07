@@ -48,10 +48,15 @@
   }
 }
 
-/* Mobile */
+/* Mobile - Reduced padding for faster initial render */
 @media (max-width: 480px) {
   .home-section {
     padding: 2rem 0;
+  }
+  
+  /* Hide ads on very small screens to improve mobile performance */
+  .ad-slot-position-top-banner {
+    display: none;
   }
 }
 
@@ -60,12 +65,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Performance optimization - will-change for animated elements */
-.tool-card,
-.category-card,
-.quick-access-link {
-  will-change: transform;
-}
+/* Performance optimization - REMOVED will-change to reduce memory */
+/* will-change should only be used just before animation */
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
@@ -79,12 +80,6 @@ html {
     scroll-behavior: auto;
   }
 }
-
-/* Loading state optimization */
-img {
-  loading: lazy;
-}
-
 
 /* Trust Message - Pilot Implementation */
 .trust-message {

@@ -83,7 +83,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */ /* Removed for performance */
 }
 
 .quick-access-link:hover {

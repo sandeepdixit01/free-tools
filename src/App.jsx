@@ -10,6 +10,7 @@ import WhyUseOurTools from './components/WhyUseOurTools'
 import SEOContent from './components/shared/Content/SEOContent'
 import FAQ from './components/shared/Content/FAQ'
 import AdSlot from './components/ads/AdSlot'
+import LazySection from './components/LazySection'
 import { AD_POSITIONS } from './configs/adPositions'
 import { homeConfig } from './configs/homeConfig'
 import { getPopularTools, getRandomTools, getFeaturedTools } from './data/tools'
@@ -63,47 +64,59 @@ function App() {
         </div>
       </section>
       
-      {/* Categories Section */}
-      <section className="home-section">
-        <div className="container">
-          <SectionHeader
-            title={homeConfig.sections.categories[language]?.title || homeConfig.sections.categories.en?.title}
-            subtitle={homeConfig.sections.categories[language]?.subtitle}
-            align="center"
-          />
-          <CategoryGrid categories={homeConfig.categories} />
-        </div>
-      </section>
+      {/* Categories Section - Lazy loaded */}
+      <LazySection>
+        <section className="home-section">
+          <div className="container">
+            <SectionHeader
+              title={homeConfig.sections.categories[language]?.title || homeConfig.sections.categories.en?.title}
+              subtitle={homeConfig.sections.categories[language]?.subtitle}
+              align="center"
+            />
+            <CategoryGrid categories={homeConfig.categories} />
+          </div>
+        </section>
+      </LazySection>
       
-      {/* Ad Slot: Mid Content */}
-      <AdSlot position={AD_POSITIONS.MID_CONTENT} />
+      {/* Ad Slot: Mid Content - Lazy loaded */}
+      <LazySection>
+        <AdSlot position={AD_POSITIONS.MID_CONTENT} />
+      </LazySection>
       
-      {/* Why Use Our Tools Section */}
-      <WhyUseOurTools config={homeConfig.whyUse} />
+      {/* Why Use Our Tools Section - Lazy loaded */}
+      <LazySection>
+        <WhyUseOurTools config={homeConfig.whyUse} />
+      </LazySection>
       
-      {/* SEO Content Section */}
-      <section className="home-section">
-        <div className="container">
-          <SEOContent
-            title={homeConfig.seoContent[language]?.mainTitle}
-            intro={homeConfig.seoContent[language]?.intro}
-            sections={homeConfig.seoContent[language]?.sections || []}
-          />
-        </div>
-      </section>
+      {/* SEO Content Section - Lazy loaded */}
+      <LazySection>
+        <section className="home-section">
+          <div className="container">
+            <SEOContent
+              title={homeConfig.seoContent[language]?.mainTitle}
+              intro={homeConfig.seoContent[language]?.intro}
+              sections={homeConfig.seoContent[language]?.sections || []}
+            />
+          </div>
+        </section>
+      </LazySection>
       
-      {/* FAQ Section */}
-      <section className="home-section">
-        <div className="container">
-          <FAQ
-            title={homeConfig.faq[language]?.title}
-            items={homeConfig.faq[language]?.items || []}
-          />
-        </div>
-      </section>
+      {/* FAQ Section - Lazy loaded */}
+      <LazySection>
+        <section className="home-section">
+          <div className="container">
+            <FAQ
+              title={homeConfig.faq[language]?.title}
+              items={homeConfig.faq[language]?.items || []}
+            />
+          </div>
+        </section>
+      </LazySection>
       
-      {/* Ad Slot: Bottom Banner */}
-      <AdSlot position={AD_POSITIONS.BOTTOM_BANNER} />
+      {/* Ad Slot: Bottom Banner - Lazy loaded */}
+      <LazySection>
+        <AdSlot position={AD_POSITIONS.BOTTOM_BANNER} />
+      </LazySection>
       
       {/* Subtle Branding */}
       <section className="home-branding">

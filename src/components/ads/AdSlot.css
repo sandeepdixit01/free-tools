@@ -1,4 +1,4 @@
-/* AdSlot Component Styles (Refactored) */
+/* AdSlot Component Styles (Refactored + CLS Optimized) */
 
 .ad-slot-wrapper {
   width: 100%;
@@ -6,27 +6,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* CLS FIX: Reserve minimum space for ads */
+  min-height: 250px;
+  position: relative;
 }
 
 /* Position-specific styles */
 .ad-slot-position-top-banner {
   margin-top: 1rem;
   margin-bottom: 2rem;
+  min-height: 90px; /* Standard banner height */
 }
 
 .ad-slot-position-below-hero {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  min-height: 250px; /* Medium rectangle */
 }
 
 .ad-slot-position-mid-content {
   margin-top: 3rem;
   margin-bottom: 3rem;
+  min-height: 250px; /* Medium rectangle */
 }
 
 .ad-slot-position-bottom-banner {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  min-height: 90px; /* Standard banner height */
 }
 
 /* AdSense container (future) */
@@ -52,26 +59,31 @@
 @media (max-width: 768px) {
   .ad-slot-wrapper {
     margin: 1.5rem 0;
+    min-height: 200px; /* Reduced for mobile */
   }
 
   .ad-slot-position-top-banner {
     margin-top: 0.75rem;
     margin-bottom: 1.5rem;
+    min-height: 50px; /* Mobile banner */
   }
 
   .ad-slot-position-below-hero {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    min-height: 200px;
   }
 
   .ad-slot-position-mid-content {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    min-height: 200px;
   }
 
   .ad-slot-position-bottom-banner {
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
+    min-height: 50px;
   }
 
   .ad-slot-adsense {
@@ -82,6 +94,7 @@
 @media (max-width: 480px) {
   .ad-slot-wrapper {
     margin: 1rem 0;
+    min-height: 150px; /* Further reduced for small mobile */
   }
 
   .ad-slot-position-top-banner,
@@ -90,6 +103,6 @@
   .ad-slot-position-bottom-banner {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    min-height: 150px;
   }
 }
-
