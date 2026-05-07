@@ -112,7 +112,7 @@ export const base64EncoderConfig = {
           { icon: '🆓', text: 'Completely free' }
         ],
         cta: 'Start Encoding',
-        privacyNotice: 'All processing happens in your browser. Your data never leaves your device.',
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.',
         privacyIcon: '🔒'
       },
 
@@ -249,7 +249,7 @@ export const base64EncoderConfig = {
           { icon: '🆓', text: 'पूरी तरह फ्री' }
         ],
         cta: 'एनकोडिंग शुरू करें',
-        privacyNotice: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपका डेटा कभी आपके डिवाइस से बाहर नहीं जाता।',
+        privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।',
         privacyIcon: '🔒'
       },
 

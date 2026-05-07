@@ -124,7 +124,7 @@ export const imageResizerConfig = {
           { icon: '🆓', text: 'Completely free' }
         ],
         cta: 'Start Resizing',
-        privacyNotice: 'Images are processed in your browser. Not uploaded to any server.',
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.',
         privacyIcon: '🔒'
       },
 
@@ -308,7 +308,7 @@ export const imageResizerConfig = {
           { icon: '🆓', text: 'पूरी तरह फ्री' }
         ],
         cta: 'रीसाइज़ शुरू करें',
-        privacyNotice: 'इमेज आपके ब्राउज़र में प्रोसेस होती हैं। किसी सर्वर पर अपलोड नहीं होतीं।',
+        privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।',
         privacyIcon: '🔒'
       },
 

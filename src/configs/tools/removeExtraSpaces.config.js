@@ -113,7 +113,7 @@ export const removeExtraSpacesConfig = {
           primary: 'Start Cleaning',
           secondary: 'Learn More'
         },
-        privacyNotice: 'All text processing happens in your browser. Your content never leaves your device.',
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.',
         privacyIcon: '🔒'
       },
 
@@ -300,7 +300,7 @@ export const removeExtraSpacesConfig = {
           primary: 'क्लीनिंग शुरू करें',
           secondary: 'और जानें'
         },
-        privacyNotice: 'सभी टेक्स्ट प्रोसेसिंग आपके ब्राउज़र में होती है। आपका कंटेंट आपके डिवाइस से बाहर नहीं जाता।',
+        privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।',
         privacyIcon: '🔒'
       },
 

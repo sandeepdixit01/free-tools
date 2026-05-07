@@ -49,7 +49,7 @@ const imageResizer50kbConfig = {
           { icon: '🎯', text: 'Exact 50KB size' },
           { icon: '🆓', text: 'Completely free' }
         ],
-        privacyNotice: 'Images are processed in your browser. Not uploaded to any server.'
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.'
       }
     },
 

@@ -201,15 +201,24 @@
 .category-name {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1a202c;
+  color: #1a202c !important;
   margin: 0 0 0.5rem 0;
 }
 
 .category-description {
   font-size: 0.95rem;
-  color: #4a5568;
+  color: #1f2937 !important;
   line-height: 1.6;
   margin: 0;
+}
+
+/* Additional specificity to ensure color is applied */
+.about-page .tools-categories .category-item .category-description {
+  color: #1f2937 !important;
+}
+
+.about-page .category-description {
+  color: #1f2937 !important;
 }
 
 /* Contact Section */
@@ -220,13 +229,14 @@
 }
 
 .contact-section .section-title {
-  color: white;
+  color: white !important;
 }
 
 .contact-description {
   font-size: 1.125rem;
   margin: 0 0 2rem 0;
   opacity: 0.95;
+  color: white !important;
 }
 
 .contact-info {
@@ -237,10 +247,15 @@
 .contact-email {
   font-size: 1.125rem;
   margin: 0 0 1rem 0;
+  color: white !important;
+}
+
+.contact-email strong {
+  color: white !important;
 }
 
 .contact-email a {
-  color: white;
+  color: white !important;
   text-decoration: underline;
   font-weight: 600;
 }
@@ -253,6 +268,7 @@
   font-size: 1.125rem;
   margin: 0;
   opacity: 0.95;
+  color: white !important;
 }
 
 /* Responsive */

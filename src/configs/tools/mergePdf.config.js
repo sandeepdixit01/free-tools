@@ -112,7 +112,7 @@ export const mergePdfConfig = {
           { icon: '🆓', text: 'Completely free' }
         ],
         cta: 'Upload PDF Files',
-        privacyNotice: 'All processing happens in your browser. Your files never leave your device.',
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.',
         privacyIcon: '🔒'
       },
 
@@ -290,7 +290,7 @@ export const mergePdfConfig = {
           { icon: '🆓', text: 'पूरी तरह से फ्री' }
         ],
         cta: 'PDF फाइलें अपलोड करें',
-        privacyNotice: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें आपके डिवाइस को नहीं छोड़तीं।',
+        privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।',
         privacyIcon: '🔒'
       },
 

@@ -56,28 +56,14 @@ const SplitPdf = () => {
           title={splitPdfConfig.content?.[language]?.hero?.title}
           subtitle={splitPdfConfig.content?.[language]?.hero?.subtitle}
           benefits={splitPdfConfig.content?.[language]?.hero?.benefits}
-          ctaText={splitPdfConfig.content?.[language]?.hero?.cta}
-          privacyNotice={splitPdfConfig.content?.[language]?.hero?.privacyNotice}
-          onCtaClick={handleCtaClick}
+          ctaText={splitPdfConfig.content?.[language]?.hero?.cta}          onCtaClick={handleCtaClick}
         />
       }
     >
-      {/* Security Notice */}
-      {uiText.securityNote && (
-        <div className="security-notice" style={{
-          padding: '12px 16px',
-          backgroundColor: '#f0f9ff',
-          border: '1px solid #bae6fd',
-          borderRadius: '8px',
-          marginBottom: '24px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          fontSize: '14px',
-          color: '#0c4a6e'
-        }}>
-          <span style={{ fontSize: '18px' }}>🔒</span>
-          <span>{uiText.securityNote}</span>
+      {/* Privacy Notice */}
+      {splitPdfConfig.content?.[language]?.hero?.privacyNotice && (
+        <div className="privacy-notice">
+          🔒 {splitPdfConfig.content[language].hero.privacyNotice}
         </div>
       )}
 

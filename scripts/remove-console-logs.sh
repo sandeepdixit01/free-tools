@@ -11,5 +11,3 @@ find src -type f \( -name "*.js" -o -name "*.jsx" \) -exec sed -i '' '/console\.
 echo "✅ Debug console statements removed!"
 echo "📊 Remaining console statements (should only be error/warn):"
 grep -r "console\." src/ --include="*.js" --include="*.jsx" | wc -l
-
-# Made with Bob

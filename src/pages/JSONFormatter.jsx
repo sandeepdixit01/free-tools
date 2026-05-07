@@ -59,9 +59,7 @@ const JSONFormatter = () => {
           title={content.hero?.title}
           subtitle={content.hero?.subtitle}
           benefits={content.hero?.benefits}
-          ctaText={content.hero?.cta?.primary || content.hero?.cta}
-          privacyNotice={content.hero?.privacyNotice}
-          onCtaClick={handleCtaClick}
+          ctaText={content.hero?.cta?.primary || content.hero?.cta}          onCtaClick={handleCtaClick}
         />
       }
     >

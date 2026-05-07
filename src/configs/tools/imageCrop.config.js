@@ -111,7 +111,7 @@ export const imageCropConfig = {
           { icon: '🔒', text: '100% secure - no upload to server' }
         ],
         cta: 'Upload Image to Crop',
-        privacyNotice: 'Your images are processed locally in your browser. We never upload or store your files.'
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.'
       },
 
       features: {
@@ -284,7 +284,7 @@ export const imageCropConfig = {
           { icon: '🔒', text: '100% सुरक्षित - सर्वर पर कोई अपलोड नहीं' }
         ],
         cta: 'क्रॉप करने के लिए इमेज अपलोड करें',
-        privacyNotice: 'आपकी इमेज आपके ब्राउज़र में लोकली प्रोसेस होती हैं। हम कभी भी आपकी फाइलें अपलोड या स्टोर नहीं करते।'
+        privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।'
       },
 
       features: {

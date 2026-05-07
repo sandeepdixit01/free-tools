@@ -64,7 +64,9 @@ const jsonToCSVConfig = {
         { icon: '🔒', text: '100% Private' },
         { icon: '📊', text: 'Handles nested data' },
         { icon: '🆓', text: 'Completely free' }
-      ]
+      ],
+      privacyNotice: 'All processing happens in your browser. Your files are never uploaded.',
+      privacyIcon: '🔒'
     },
 
     // Tool Interface Text
@@ -282,7 +284,9 @@ const jsonToCSVConfig = {
         { icon: '🔒', text: '100% प्राइवेट' },
         { icon: '📊', text: 'नेस्टेड डेटा हैंडल करता है' },
         { icon: '🆓', text: 'पूरी तरह फ्री' }
-      ]
+      ],
+      privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।',
+      privacyIcon: '🔒'
     },
 
     uiText: {

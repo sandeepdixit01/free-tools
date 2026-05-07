@@ -56,28 +56,14 @@ const RotatePdf = () => {
           title={rotatePdfConfig.content?.[language]?.hero?.title}
           subtitle={rotatePdfConfig.content?.[language]?.hero?.subtitle}
           benefits={rotatePdfConfig.content?.[language]?.hero?.benefits}
-          ctaText={rotatePdfConfig.content?.[language]?.hero?.cta}
-          privacyNotice={rotatePdfConfig.content?.[language]?.hero?.privacyNotice}
-          onCtaClick={handleCtaClick}
+          ctaText={rotatePdfConfig.content?.[language]?.hero?.cta}          onCtaClick={handleCtaClick}
         />
       }
     >
-      {/* Security Notice */}
-      {uiText.securityNote && (
-        <div className="security-notice" style={{
-          padding: '12px 16px',
-          backgroundColor: '#f0f9ff',
-          border: '1px solid #bae6fd',
-          borderRadius: '8px',
-          marginBottom: '24px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          fontSize: '14px',
-          color: '#0c4a6e'
-        }}>
-          <span style={{ fontSize: '18px' }}>🔒</span>
-          <span>{uiText.securityNote}</span>
+      {/* Privacy Notice */}
+      {rotatePdfConfig.content?.[language]?.hero?.privacyNotice && (
+        <div className="privacy-notice">
+          🔒 {rotatePdfConfig.content[language].hero.privacyNotice}
         </div>
       )}
 

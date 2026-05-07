@@ -57,27 +57,14 @@ const ImageCrop = () => {
           subtitle={imageCropConfig.content?.[language]?.hero?.subtitle}
           benefits={imageCropConfig.content?.[language]?.hero?.benefits}
           ctaText={imageCropConfig.content?.[language]?.hero?.cta}
-          privacyNotice={imageCropConfig.content?.[language]?.hero?.privacyNotice}
           onCtaClick={handleCtaClick}
         />
       }
     >
-      {/* Security Notice */}
-      {uiText.securityNote && (
-        <div className="security-notice" style={{
-          padding: '12px 16px',
-          backgroundColor: '#f0f9ff',
-          border: '1px solid #bae6fd',
-          borderRadius: '8px',
-          marginBottom: '24px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          fontSize: '14px',
-          color: '#0c4a6e'
-        }}>
-          <span style={{ fontSize: '18px' }}>🔒</span>
-          <span>{uiText.securityNote}</span>
+      {/* Privacy Notice */}
+      {imageCropConfig.content?.[language]?.hero?.privacyNotice && (
+        <div className="privacy-notice">
+          🔒 {imageCropConfig.content[language].hero.privacyNotice}
         </div>
       )}
 

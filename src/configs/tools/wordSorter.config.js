@@ -112,7 +112,7 @@ export const wordSorterConfig = {
           { icon: '🆓', text: 'Completely free' }
         ],
         cta: 'Start Sorting',
-        privacyNotice: 'All text processing happens in your browser. Your content never leaves your device.'
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.'
       },
 
       // Features Section
@@ -296,7 +296,7 @@ export const wordSorterConfig = {
           { icon: '🆓', text: 'पूरी तरह फ्री' }
         ],
         cta: 'सॉर्टिंग शुरू करें',
-        privacyNotice: 'सभी टेक्स्ट प्रोसेसिंग आपके ब्राउज़र में होती है। आपका कंटेंट कभी भी आपके डिवाइस को नहीं छोड़ता।'
+        privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।'
       },
 
       // Features Section

@@ -90,5 +90,3 @@ echo "  ❌ Errors: $error_count"
 echo "  📝 Total processed: ${#tools[@]}"
 echo ""
 echo "✨ Done! Backup files created with .backup extension"
-
-# Made with Bob

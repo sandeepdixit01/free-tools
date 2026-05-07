@@ -41,5 +41,3 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
-
-// Made with Bob

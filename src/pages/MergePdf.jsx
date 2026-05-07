@@ -56,28 +56,14 @@ const MergePdf = () => {
           title={mergePdfConfig.content?.[language]?.hero?.title}
           subtitle={mergePdfConfig.content?.[language]?.hero?.subtitle}
           benefits={mergePdfConfig.content?.[language]?.hero?.benefits}
-          ctaText={mergePdfConfig.content?.[language]?.hero?.cta}
-          privacyNotice={mergePdfConfig.content?.[language]?.hero?.privacyNotice}
-          onCtaClick={handleCtaClick}
+          ctaText={mergePdfConfig.content?.[language]?.hero?.cta}          onCtaClick={handleCtaClick}
         />
       }
     >
-      {/* Security Notice */}
-      {uiText.securityNote && (
-        <div className="security-notice" style={{
-          padding: '12px 16px',
-          backgroundColor: '#f0f9ff',
-          border: '1px solid #bae6fd',
-          borderRadius: '8px',
-          marginBottom: '24px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          fontSize: '14px',
-          color: '#0c4a6e'
-        }}>
-          <span style={{ fontSize: '18px' }}>🔒</span>
-          <span>{uiText.securityNote}</span>
+      {/* Privacy Notice */}
+      {mergePdfConfig.content?.[language]?.hero?.privacyNotice && (
+        <div className="privacy-notice">
+          🔒 {mergePdfConfig.content[language].hero.privacyNotice}
         </div>
       )}
 

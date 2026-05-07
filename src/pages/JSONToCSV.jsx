@@ -42,13 +42,19 @@ const JSONToCSV = () => {
           subtitle={content.hero?.subtitle}
           benefits={content.hero?.benefits}
           ctaText={content.hero?.cta?.primary || content.hero?.cta}
-          privacyNotice={content.hero?.privacyNotice}
           onCtaClick={handleCtaClick}
         />
       }
     >
       {/* Main Tool Content */}
       <div className="tool-content">
+        {/* Privacy Notice */}
+        {content.hero?.privacyNotice && (
+          <div className="privacy-notice">
+            🔒 {content.hero.privacyNotice}
+          </div>
+        )}
+
         {/* JSON to CSV Controls - Tool comes first */}
         <JSONToCSVControls
           toolInstance={toolInstance}

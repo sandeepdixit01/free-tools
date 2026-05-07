@@ -290,8 +290,8 @@ const AboutPage = () => {
             <div className="tools-categories">
               {t.tools.categories.map((category, index) => (
                 <div key={index} className="category-item">
-                  <h3 className="category-name">{category.name}</h3>
-                  <p className="category-description">{category.description}</p>
+                  <h3 className="category-name" style={{ color: '#1a202c' }}>{category.name}</h3>
+                  <p className="category-description" style={{ color: '#1f2937' }}>{category.description}</p>
                 </div>
               ))}
             </div>
@@ -299,15 +299,15 @@ const AboutPage = () => {
         </section>
 
         {/* Contact */}
-        <section className="about-section contact-section">
+        <section className="about-section contact-section" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: '#ffffff' }}>
           <div className="container">
-            <h2 className="section-title">{t.contact.title}</h2>
-            <p className="contact-description">{t.contact.description}</p>
+            <h2 className="section-title" style={{ color: '#ffffff' }}>{t.contact.title}</h2>
+            <p className="contact-description" style={{ color: '#ffffff' }}>{t.contact.description}</p>
             <div className="contact-info">
-              <p className="contact-email">
-                <strong>Email:</strong> <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
+              <p className="contact-email" style={{ color: '#ffffff' }}>
+                <strong style={{ color: '#ffffff' }}>Email:</strong> <a href={`mailto:${t.contact.email}`} style={{ color: '#ffffff', textDecoration: 'underline' }}>{t.contact.email}</a>
               </p>
-              <p className="contact-location">{t.contact.location}</p>
+              <p className="contact-location" style={{ color: '#ffffff' }}>{t.contact.location}</p>
             </div>
           </div>
         </section>

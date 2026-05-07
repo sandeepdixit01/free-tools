@@ -111,7 +111,7 @@ export const imageCompressorConfig = {
           { icon: '🆓', text: 'Completely free' }
         ],
         cta: 'Upload Images',
-        privacyNotice: 'All processing happens in your browser. Your files never leave your device.',
+        privacyNotice: 'All processing happens in your browser. Your files are never uploaded.',
         privacyIcon: '🔒'
       },
       features: {
@@ -236,7 +236,7 @@ export const imageCompressorConfig = {
           { icon: '🆓', text: 'पूरी तरह फ्री' }
         ],
         cta: 'इमेज अपलोड करें',
-        privacyNotice: 'सभी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी आपके डिवाइस से बाहर नहीं जाती।',
+        privacyNotice: 'सारी प्रोसेसिंग आपके ब्राउज़र में होती है। आपकी फाइलें कभी अपलोड नहीं की जातीं।',
         privacyIcon: '🔒'
       },
       features: {
